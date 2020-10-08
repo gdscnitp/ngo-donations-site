@@ -17,7 +17,7 @@ The site will be having two portals:
     - Photo of items(in case of clothes, stationary, etc.) if needed.
     - Location
     - Contact information
-
+   -They can scroll the feeds uploaded by the NGO organisation which will inform the the person willing to donate That either the organisation is active or not.
     Or they can directly ping any relevant organisation to ask them.
     While creating a profile on the platform they can fill “yes” or “no” for if the are open from sponsoring or providing funds to any NGO event so that they can be contacted by     the organisations if required.
 
@@ -26,6 +26,7 @@ The site will be having two portals:
     - They can create events on the website whenever they are organising one for their ngo and it would be a good platform for them to raise funds or any goodies for their event.
     - They will need not to go to different hotels to ask if food is available so that they can donate if any hotel is willing they can directly come to know from the website and    can directly contact that hotel it will save their time and effort thereby attracting more people to volunteer for the organisation.
     - It will even provide a platform to the NGOs to collaborate together and come up with new initiatives.
+    - On a single platform they will be able to share the feeds of there help to needy which will attract the people to donate to the organisation. It can be helpful to watch out the most active organisation nearby by the person willing to donate.
 
 ### Goals: 
 - Our project aims at reducing the gap between the people who are willing to help and the people who are searching for such volunteers. 
