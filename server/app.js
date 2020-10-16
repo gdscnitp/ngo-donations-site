@@ -3,19 +3,21 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const { join } = require('path');    //for getting path of the static directory
-const { env, exit } = require('process');
+const { exit } = require('process');
 const logger = require('morgan');
 const userRouter = require('./routes/user.js');
 const morgan = require('morgan');
 require('dotenv').config();
 
 const PORT = process.env.PORT || 3000;
-const DB_NAME = 'muckIn_testing'        // later change it according to database selected
-mongoose.connect( process.env.MONGO_DB_URI || 'mongodb://localhost:27017', {
+const DB_NAME = 'auth'        // later change it according to database
+const MONGO_DB_URI = `mongodb+srv://dscnitp_webdept_muckin:${process.env.DB_PASSWORD}@cluster0.kokfw.gcp.mongodb.net`;
+mongoose.connect( MONGO_DB_URI , {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
-    dbName: DB_NAME
+    dbName: DB_NAME,
+    w: 'majority'
 }).catch(err => { console.error(`Error in DB connection: mongo DB couldn't be reached`); exit(1); });
 
 const db = mongoose.connection; //access to the pending connection
@@ -35,8 +37,6 @@ app.use( express.static( join( __dirname, 'public'  ) ) );
 
 // Routes START
 app.use('/user', userRouter);   //login, logout
-
-
 // Routes END
 
 

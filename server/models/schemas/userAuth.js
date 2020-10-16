@@ -17,7 +17,6 @@ const userAuth = mongoose.Schema({
 });
 
 userAuth.pre('save', function(next) {
-	console.log('here before saving', next, this)
     const salt_rounds = 10; //to be able to change, as the app scales
 
 	// @note - can be replaced with just bcrypt.hash later
@@ -27,8 +26,6 @@ userAuth.pre('save', function(next) {
 				.then(encrypted => {
 					this.pass = encrypted;
 					next();
-					// @question - Is it possible, that the document is saved even before this callback completely executes (and, in that case `this.pass` will only change the password locally or in remote db too ? )	
-					// @answer - No, since we won't reach the next middleware, without calling next()
 				})
 				.catch(err => {
 					console.error(`Error in generating encrypted password, ${err.code}`)
@@ -57,15 +54,15 @@ userAuth.statics.authenticate = function(user_id, pass, callback) {
 					return callback(null, doc);
 				}else{
 					console.log(`Failed login attempt by ${user_id}`);
-					err = {msg: `Password is wrong`};
+					err = {message: `Failed Login Attempt`};
 					err.status = 401;
 					return callback(err);	
 				}
 			})
 			.catch(err => {
-				err.msg = `Password comparison failed with an error`;
-				console.error(err.msg);
-				return  callback({msg: err.msg, code: err.code});
+				err.message = `Password comparison failed with an error`;
+				console.error(err.message, err);
+				return  callback({msg: err.message, code: err.code});
 			})
 	});
 }
