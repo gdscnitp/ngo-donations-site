@@ -1,0 +1,22 @@
+{
+  "files": [
+    "src/PageFlip.ts"
+  ],
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "lib": ["es6", "es2016", "dom", "dom.iterable"],
+    "module": "es6",
+    "target": "es2017"
+  },
+  "typedocOptions": {
+      "name": "StPageFlip",
+      "mode": "file",
+      "out": "dist/docs",
+      "readme": "none",
+      "excludePrivate": true,
+      "excludeNotExported": true,
+      "excludeProtected": true,
+      "categorizeByGroup": true,
+  },
+  "reference": [],
+}
