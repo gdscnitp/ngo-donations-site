@@ -133,3 +133,34 @@
     position: relative;
 }
 
+
+
+/* Added cause one component */
+.causes_area {
+    padding: 130px 0px 100px; }
+    @media (max-width: 991px) {
+      .causes_area {
+        padding: 70px 0px 40px; } }
+  
+  .single_causes {
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: none;
+    text-align: center;
+    margin-bottom: 30px;
+    transition: all 300ms linear 0s;
+    background: #f9fafc; }
+    @media (max-width: 575px) {
+      .single_causes {
+        padding: 50px 10px; } }
+    .single_causes img {
+      margin-bottom: 35px; }
+    .single_causes h4 {
+      font-size: 20px;
+      margin-bottom: 40px; }
+    .single_causes p {
+      margin-bottom: 0px; }
+    .single_causes:hover {
+      box-shadow: 0px 20px 30px rgba(153, 153, 153, 0.2); }
+  
+
