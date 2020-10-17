@@ -1,0 +1,25 @@
+{
+  "name": "ngo-donations-site",
+  "version": "1.0.0",
+  "description": "> An ngo-donations-website",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AasthaSinha2305/ngo-donations-site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AasthaSinha2305/ngo-donations-site/issues"
+  },
+  "homepage": "https://github.com/AasthaSinha2305/ngo-donations-site#readme",
+  "dependencies": {
+    "ionic-native": "https://github.com/ionic-team/ionic-native/tarball/v3.5.0"
+  }
+}
