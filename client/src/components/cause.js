@@ -17,6 +17,7 @@ export default function Cause() {
 						<p>
 							It you're. Was called you're fowl grass lesser land together waters beast darkness earth land whose male all moveth fruitful.
 						</p>
+	                    <button className="btn btn-success btn-lg m-3">Donate!</button>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6">
@@ -38,7 +39,7 @@ export default function Cause() {
 							It you're. Was called you're fowl grass lesser land together waters beast darkness earth land whose male all moveth fruitful.
 						</p>
                         <button className="btn btn-success btn-lg">Join Event</button>
-                        <button className="btn btn-success btn-lg m-5">Join Org</button>
+                        <button className="btn btn-success btn-lg m-3">Join Org</button>
 					</div>
 				</div>
 			</div>

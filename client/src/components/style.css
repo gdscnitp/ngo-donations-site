@@ -68,9 +68,11 @@
     border-radius: 5px;
     box-shadow: none;
     text-align: center;
-    margin-bottom: 30px;
+    margin: 30px;
     transition: all 300ms linear 0s;
-    background: #f9fafc; }
+    background: #f9fafc; 
+    height: 380px;
+}
     @media (max-width: 575px) {
       .single_causes {
         padding: 50px 10px; } }
@@ -85,3 +87,61 @@
       box-shadow: 0px 20px 30px rgba(153, 153, 153, 0.2); }
   
   /* Stories carousel */
+  .top-stories{
+      margin-left: 5%;
+      margin-right: 5%;
+  }
+
+
+  .main-div {
+      display: flex;
+  }
+
+  /* rating page styling */
+
+  .reviews-members .media .mr-3 {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+}
+
+.media{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.reviews-members{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 5%;
+}
+
+
+/* News Component */
+
+.news-container{
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 2px black;
+    height: 300px;
+    margin: 5%;
+}
+.news-display, .news-list{
+    border: solid 1px black;
+    height:280px;
+    width: 47%;
+    margin: auto;
+}
+.list-container{
+    padding: 5%;
+}
+
+.card{
+    display: flex;
+    background: linear-gradient(to right, gray, black);
+    color: whitesmoke;
+    height: 80px;
+}
