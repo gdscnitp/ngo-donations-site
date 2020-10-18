@@ -11,18 +11,15 @@
 }
 
 
-#btn{
-  position: relative;
-}
+
 
 .img{
   width: 100%;
-  height: 50vh ;
+  height: 23.5rem ;
 }
 
 #bottom{
-  margin: 0.625rem; 
-  margin-left: 4.6875rem;
+ margin-left: 4.2rem;
 }
 
 .evt{
@@ -36,8 +33,9 @@
 }
 
 .filter{
-  float: right;
+  float : right;
   margin-top: 3rem;
+  min-width: 20rem;
 }
 
 .nav-img{
@@ -49,9 +47,26 @@ p{
   padding: 20px;
 }
 
+.add-event{
+  display: flex;
+  flex-direction: column;
+
+}
 #button{
-  margin-top: 2rem;
-  margin-left: 4rem;
+    padding: 10px;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+
+
+.event-card{
+  min-width:17rem;
+  margin: 0.625rem; 
+  display: flex;
+  flex-wrap: wrap;
 
 }
 

@@ -18,7 +18,7 @@ const Navbar = () => {
       <a id="search" href="#top" class="nav-link">Search &nbsp;<i class="fa fa-search" aria-hidden="true"></i></a>
       </li>
       <li  className="nav-item">
-      <a id="sign-in" href="#top" className="nav-link" role="button">&nbsp; Sign in &nbsp;<i class="fa fa-sign-in" aria-hidden="true"></i></a>
+      <a id="sign-in" href="#top" className="nav-link" role="button">Sign in &nbsp;<i class="fa fa-sign-in" aria-hidden="true"></i></a>
       </li>
     </ul>
   </div>

@@ -1,9 +1,10 @@
 import React from 'react';
 
+
 const Filter = () => {
     return(
         <>
-        <div class="filter col-md-2">
+        <div class="filter col-lg-2 col-sm-12">
        <div class="card">
   <div class="card-body">
     <h5 class="card-title text-center">Filter</h5>
@@ -13,11 +14,16 @@ const Filter = () => {
     <p><a class="nav-link dropdown-toggle text-center" href="#top" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Country
         </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#top">USA</a>
+          <a class="dropdown-item" href="#top">India</a>
+          <a class="dropdown-item" href="#top">Sri Lanka</a>
+        </div>
     </p>
   </div>
 </div>
     
-      <button class="btn btn-warning" id="button" href="#top">Add Event</button>
+     <div className="add-event"> <button class="btn btn-warning" id="button" href="#top">Add Event</button></div>
     </div>
 
 
