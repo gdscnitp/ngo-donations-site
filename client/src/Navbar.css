@@ -247,11 +247,17 @@ button, input, optgroup, select, textarea {
     right: -40px;
     margin-left: 50px;
   
+    
   }
-  
+    .sidebar button {
+    padding: 0px 68px 1px 1px;
+    text-decoration: none;
+    border:2px solid black;
+    font-size: 40px;
+    color: #fff;
+    display: block;
+    background-color:black;
+    opacity:0.9;
+    transition: 0.3s;
+  }
 
-  /*hover*/
-
-a:hover{
-    color: green;
-}

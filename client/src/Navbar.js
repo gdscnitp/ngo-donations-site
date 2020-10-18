@@ -40,7 +40,7 @@ export const Navbar = () => {
             </nav>
           </div>
           <div id="mySidebar" class="sidebar">
-            <a href="javascript:void(0)" class="closebtn" onClick={closeNav}>×</a>
+            <button class="closebtn" onClick={closeNav}>×</button>
             <a href="https://www.google.co.in/">Events</a>
             <a href="https://www.google.co.in/">About us</a>
             <a href="https://www.google.co.in/">FAQs</a>
