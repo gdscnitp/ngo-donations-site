@@ -21,7 +21,7 @@ const Boots = () => {
         
   <div className=" col-md-4 col-10">
     <div className="card" >
-  <img src={c1} className="card-img-top" alt="Picture 1" />
+  <img src={c1} className="card-img-top" alt="Prathma" />
   <div className="card-body">
     <h2>Prathma</h2>
     <div className="mb-1 text-muted">October 30, 2020, 12:00 PM
@@ -33,7 +33,7 @@ const Boots = () => {
   </div>
   <div className=" col-md-4 col-10">
     <div className="card" >
-  <img src={c2} className="card-img-top" alt="Picture 2" />
+  <img src={c2} className="card-img-top" alt="Girl's Education" />
   <div className="card-body">
     <h2>Girl's Education</h2>
     <div className="mb-1 text-muted">October 24, 2020, 06:30 PM
@@ -45,7 +45,7 @@ const Boots = () => {
   </div>
   <div className=" col-md-4 col-10">
     <div className="card">
-  <img src={c3} className="card-img-top" alt="Picture 3" />
+  <img src={c3} className="card-img-top" alt="Lend a Hand" />
   <div className="card-body">
     <h2>Lend a Hand</h2>
     <div className="mb-1 text-muted">November 01, 2020, 06:30 PM
