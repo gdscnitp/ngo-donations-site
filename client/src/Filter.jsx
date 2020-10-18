@@ -17,7 +17,7 @@ const Filter = () => {
   </div>
 </div>
     
-      <button class="btn btn-warning" id="button" href="#">Add Event</button>
+      <button class="btn btn-warning" id="button" href="#top">Add Event</button>
     </div>
 
 
