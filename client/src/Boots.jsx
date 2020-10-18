@@ -26,7 +26,7 @@ const Boots = () => {
     <h2>Prathma</h2>
     <div className="mb-1 text-muted">October 30, 2020, 12:00 PM
             </div>
-            <div><button className="btn btn-primary" href="#">Know More!</button></div>
+            <div><button className="btn btn-primary" href="#top">Know More!</button></div>
   </div>
 </div>
 
@@ -38,7 +38,7 @@ const Boots = () => {
     <h2>Girl's Education</h2>
     <div className="mb-1 text-muted">October 24, 2020, 06:30 PM
             </div>
- <div><button className="btn btn-primary" href="#">Know More!</button></div>
+ <div><button className="btn btn-primary" href="#top">Know More!</button></div>
   </div>
 </div>
 
@@ -50,7 +50,7 @@ const Boots = () => {
     <h2>Lend a Hand</h2>
     <div className="mb-1 text-muted">November 01, 2020, 06:30 PM
             </div>
-<div><button className="btn btn-primary" href="#">Know More!</button></div>
+<div><button className="btn btn-primary" href="#top">Know More!</button></div>
   </div>
 </div>
 
