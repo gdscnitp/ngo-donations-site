@@ -4,12 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+
     "start": "node app.js",
     "dev": "nodemon app.js"
+
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\""
+
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+
     "bcrypt": "^5.0.0",
     "dotenv": "^8.2.0",
     "express": "^5.0.0-alpha.8",
@@ -18,5 +24,8 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.5"
+
+    "prettier": "^2.1.2"
+
   }
 }
