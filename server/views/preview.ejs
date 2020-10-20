@@ -1,0 +1,24 @@
+<html><head></head><body><br/>
+<br/><%=user.name%>
+<br/><%=user.email%>
+<br/><%=user.contactNumber%>
+<br/><%=user.Name_of_organisation%>
+<br/><%=user.Address_of_organisation%>
+
+<br/><%=user.License_number%>
+<br/>
+<%=user.Type_of_organisation%>
+<br/>
+<%=user.Description_of_organisation%>
+<br/>
+
+<%=user.Volunteers_number%>
+<br/>
+<%=user.Type_of_help%>
+<br/><%=user.Open_for_volunteers%>
+I agree that all the above informations are correct.
+<form action="/sign_up/org/preview" method="post">
+<input type = "checkbox">
+<button type="submit">Okay done</button>
+</form>
+</body></html>
