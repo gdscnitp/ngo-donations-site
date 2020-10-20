@@ -4,11 +4,13 @@ import MyBook from './components/home/book'
 import Rating from './components/home/Rating';
 import Cause from './components/home/cause'
 import Stories from './components/home/stories'
-
+import { Navbar } from "./Navbar";
+import { Footer } from "./Footer";
 
 function App() {
   return (
     <div className="App">
+      <Navbar></Navbar>
       <header className="App-header">
         <p>
          Welcome to MuckIn!!
@@ -37,6 +39,7 @@ function App() {
         <br />
         <br />
         <br />
+      <Footer></Footer>
     </div>
   );
 }
