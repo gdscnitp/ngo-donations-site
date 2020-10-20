@@ -25,7 +25,7 @@ export default class Review extends Component {
                             <img alt="Generic placeholder" src={str} class="mr-3 rounded-pill" />
                             </div>
                                 <div class="reviews-members-header">
-                                    <h6 class="mb-1"><a class="text-black">{this.state[this.props.id].name}</a></h6>
+                                    <h6 class="mb-1"><a class="text-black" href="/profile">{this.state[this.props.id].name}</a></h6>
                                     <p class="text-gray">{this.state[this.props.id].time}</p>
                                 </div>
                                 <div class="reviews-members-body">
