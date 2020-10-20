@@ -4,7 +4,6 @@ import MyBook from './components/book'
 import Rating from './components/Rating';
 import Cause from './components/cause'
 import Stories from './components/stories'
-import News from './components/news';
 
 
 function App() {
@@ -23,9 +22,6 @@ function App() {
           <br />
           
          <Stories />
-         <br/>
-         <br/>
-         <h3><strong>NEWS!</strong></h3>
           <br />
           <br />
           <Cause />
