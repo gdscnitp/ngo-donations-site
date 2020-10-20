@@ -28,7 +28,6 @@ function App() {
          <h3><strong>NEWS!</strong></h3>
           <br />
           <br />
-          <News />
           <Cause />
           <h3><strong>About Us BOOK!</strong></h3>
           <MyBook />

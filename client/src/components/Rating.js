@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import Button from 'react-bootstrap/Button';
+import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Review from './review';
 import OwlCarousel from 'react-owl-carousel';

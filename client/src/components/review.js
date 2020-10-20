@@ -22,10 +22,10 @@ export default class Review extends Component {
             <div class="reviews-members pt-4 pb-4">
                         <div class="media">
                             <div className="image">
-                            <a href="#"><img alt="Generic placeholder image" src={str} class="mr-3 rounded-pill" /></a>
+                            <img alt="Generic placeholder" src={str} class="mr-3 rounded-pill" />
                             </div>
                                 <div class="reviews-members-header">
-                                    <h6 class="mb-1"><a class="text-black" href="#">{this.state[this.props.id].name}</a></h6>
+                                    <h6 class="mb-1"><a class="text-black">{this.state[this.props.id].name}</a></h6>
                                     <p class="text-gray">{this.state[this.props.id].time}</p>
                                 </div>
                                 <div class="reviews-members-body">
