@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import '../FAQ Page/faq.js';
 
 function App() {
   return (
