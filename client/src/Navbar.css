@@ -20,7 +20,7 @@ div {
     display: block;
 }
 
-@media (min-width: 992px){
+/* @media (min-width: 992px){
 .container {
     max-width: 960px;
 }
@@ -34,9 +34,9 @@ div {
 .container {
     max-width: 540px;
 }
-}
+} */
 
-.container {
+/* .container {
     margin-right: 0;
     margin-left: auto;
     padding-right: 15px;
@@ -44,7 +44,7 @@ div {
     margin-bottom: 15px;
     width: 100%;
     text-align: right;
-}
+} */
 row {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -156,7 +156,7 @@ img{
     max-height: 50px;
 }
 
-@media (min-width: 992px){
+/* @media (min-width: 992px){
 .container {
     max-width: 960px;
 }
@@ -171,7 +171,7 @@ img{
 .container {
     max-width: 540px;
 }
-}
+} */
 
 @media (max-width: 992px){
     

@@ -12,18 +12,17 @@ export const Navbar = () => {
     document.getElementById("mySidebar").style.width = "0";
   }
   return (
-    <div class="menu menu--active" id="menu">
-      <div class="logo">
-        <img src="logo192.png" alt="react logo" class="picture"></img>
-        <div class="search-bar">
+    <div className="menu menu--active" id="menu">
+      <div className="logo">
+        <img src="logo192.png" alt="react logo" className="picture"></img>
+        <div className="search-bar">
           <SearchBar></SearchBar>
         </div>
       </div>
-
-      <div class="container">
-        <div class="row">
-          <div class="menu__wrapper d-none d-lg-block col-md-12">
-            <nav class="">
+      <div className="col-12">
+        <div className="row d-flex justify-content-end">
+          <div className="menu__wrapper d-none d-lg-block col-md-12">
+            <nav className="">
               <ul>
                 <li>
                   <a href="https://www.google.co.in/">Signup/Login</a>
@@ -40,8 +39,8 @@ export const Navbar = () => {
               </ul>
             </nav>
           </div>
-          <div id="mySidebar" class="sidebar">
-            <button class="closebtn" onClick={closeNav}>
+          <div id="mySidebar" className="sidebar">
+            <button className="closebtn" onClick={closeNav}>
               ×
             </button>
             <a href="https://www.google.co.in/">Events</a>
@@ -49,10 +48,14 @@ export const Navbar = () => {
             <a href="https://www.google.co.in/">FAQs</a>
             <a href="https://www.google.co.in/">Signup/Login</a>
           </div>
-          <div class="menu__wrapper col-md-12 d-lg-none">
-            <button type="button" class="menu__mobile-button" onClick={openNav}>
+          <div className="menu__wrapper col-md-12 d-lg-none">
+            <button
+              type="button"
+              className="menu__mobile-button"
+              onClick={openNav}
+            >
               <span>
-                <i class="fa fa-bars" aria-hidden="true"></i>
+                <i className="fa fa-bars" aria-hidden="true"></i>
               </span>
             </button>
           </div>
