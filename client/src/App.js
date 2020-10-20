@@ -3,7 +3,7 @@ import './App.css';
 import MyBook from './components/home/book'
 import Rating from './components/home/Rating';
 import Cause from './components/home/cause'
-import Stories from './components/homestories'
+import Stories from './components/home/stories'
 
 
 function App() {
