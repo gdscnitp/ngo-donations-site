@@ -5,12 +5,12 @@ import './style.css'
 function MyBook(props) {
   return (
     <HTMLFlipBook width={400}
-    height={600} maxShadowOpacity={0.5} ma>
+    height={600} maxShadowOpacity={0.5} >
       <div className="demoPageOdd">
          <div className="page-odd">
          <center>
-         <img src="https://www.adyogi.com/hs-fs/hubfs/about-us.png?width=1563&name=about-us.png" alt="" id="aboutus"/>
-	      <h1>AboutUs</h1>
+          <img src="https://www.adyogi.com/hs-fs/hubfs/about-us.png?width=1563&name=about-us.png" alt="about us" id="aboutus"/>
+	        <h1>AboutUs</h1>
           </center>
          </div>
       </div>

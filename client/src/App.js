@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import MyBook from './components/book'
-import Rating from './components/Rating';
-import Cause from './components/cause'
-import Stories from './components/stories'
+import MyBook from './components/home/book'
+import Rating from './components/home/Rating';
+import Cause from './components/home/cause'
+import Stories from './components/homestories'
 
 
 function App() {
