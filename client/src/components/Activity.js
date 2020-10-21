@@ -1,5 +1,6 @@
 import React from 'react';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './style.css'
 function Activity(props) {
     return (
         <div  className="activities-content" > 
