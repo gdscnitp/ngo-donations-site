@@ -1,8 +1,8 @@
 import React from 'react';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
-import Form from './donation-form';
-import Form2 from './need-form';
+import Donation from '../src/components/donation_and_need_form/donation-form.js';
+import Need from '../src/components/donation_and_need_form/need-form.js';
 
 
 function App() {
@@ -10,8 +10,8 @@ function App() {
     
       <div>
     
-      <Form />
-      <Form2 />
+      <Donation />
+      <Need />
     
     
       </div>

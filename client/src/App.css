@@ -1,4 +1,4 @@
 
-@import './need-form.css';
-@import './donation-form.css';
+@import '../src/components/donation_and_need_form/need-form.css';
+@import '../src/components/donation_and_need_form/donation-form.css';
 
