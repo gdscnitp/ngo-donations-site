@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const { join } = require('path');    //for getting path of the static directory
 const { exit } = require('process');
 const logger = require('morgan');
-const userRouter = require('./routes/api.js');
+const userRouter = require('./routes/user.js');
 const morgan = require('morgan');
 require('dotenv').config();
 
