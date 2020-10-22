@@ -1,5 +1,5 @@
 import React from 'react';
-import c2 from '../src/c2.jpg';
+import c2 from '../src/c2.png';
 
 const Cover = () => {
     return(
