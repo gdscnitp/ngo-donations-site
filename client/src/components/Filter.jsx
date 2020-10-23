@@ -3,12 +3,12 @@ import React from "react";
 const Filter = () => {
   return (
     <>
-      <div className="container col-3 mt-5" className="fill">
+      <div className="container col-3 mt-5 fill">
         <div className="row">
           <div className="col-md-12">
-            <div class="card filter-card">
-              <div class="card-body">
-                <h5 class="card-title text-center filter-title">Filter</h5>
+            <div className="card filter-card">
+              <div className="card-body">
+                <h5 className="card-title text-center filter-title">Filter</h5>
                 <p className="filter-event-type text-center">
                   <a className="card-link" href="#top">
                     Upcoming Events
@@ -26,7 +26,7 @@ const Filter = () => {
                 </p>
                 <p>
                   <a
-                    class="nav-link dropdown-toggle filter-event-type text-center"
+                    className="nav-link dropdown-toggle filter-event-type text-center"
                     href="#top"
                     id="navbarDropdown"
                     role="button"
@@ -36,14 +36,14 @@ const Filter = () => {
                   >
                     Country
                   </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#top">
+                  <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a className="dropdown-item" href="#top">
                       USA
                     </a>
-                    <a class="dropdown-item" href="#top">
+                    <a className="dropdown-item" href="#top">
                       India
                     </a>
-                    <a class="dropdown-item" href="#top">
+                    <a className="dropdown-item" href="#top">
                       Sri Lanka
                     </a>
                   </div>
@@ -53,7 +53,7 @@ const Filter = () => {
           </div>
         </div>
         <div className="add-event-btn">
-          <button class="btn btn-warning" id="add-button" href="#top">
+          <button className="btn btn-warning" id="add-button" href="#top">
             Add Event
           </button>
         </div>

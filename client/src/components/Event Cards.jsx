@@ -13,7 +13,7 @@ const EventCards = () => {
           </div>
 
           <div className="row" id="search">
-            <div class="active-cyan-4 mt-3 col-md-10">
+            <div className="active-cyan-4 mt-3 col-md-10">
               <input
                 class="form-control"
                 type="text"
