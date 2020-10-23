@@ -7,7 +7,6 @@ export default class News extends Component {
     return (
       <div>
         <div className="news-container">
-          <div className="news-display"></div>
           <div className="news-list">
             <Newslist />
           </div>

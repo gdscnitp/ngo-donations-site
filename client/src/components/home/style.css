@@ -18,6 +18,14 @@
     border-radius: 50%;
     width:70%;
 }
+
+.dev{
+    transition: 500ms;
+}
+
+.dev:hover{
+    transform: scale(1.3,1.3);
+}
 .page-odd{
     background: linear-gradient(to left, rgb(218, 218, 218), white, white);
     display: flex;
@@ -47,8 +55,10 @@
     border-left-color: rgb(209, 209, 209);
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
+    overflow-y: auto;
 
 }
+
 .dev{
     width:100px;
 }
@@ -58,20 +68,21 @@
 
 /* Added cause one component */
 .causes_area {
+    display: block;
     padding: 130px 0px 100px; }
     @media (max-width: 991px) {
       .causes_area {
         padding: 70px 0px 40px; } }
   
   .single_causes {
-    padding: 50px;
+    padding: 30px;
     border-radius: 5px;
     box-shadow: none;
     text-align: center;
     margin: 30px;
     transition: all 300ms linear 0s;
     background: #f9fafc; 
-    height: 380px;
+    width: 80%;
 }
     @media (max-width: 575px) {
       .single_causes {
@@ -90,7 +101,7 @@
   .top-stories{
       margin-left: 5%;
       margin-right: 5%;
-  }
+  } */
 
 
   .main-div {
@@ -124,24 +135,37 @@
 
 .news-container{
     display: flex;
-    flex-wrap: wrap;
-    border: solid 2px black;
-    height: 300px;
+    flex-direction: row;
+    border-radius: 5px;
+    height: auto;
     margin: 5%;
+    justify-content: space-around;
+    
 }
-.news-display, .news-list{
-    border: solid 1px black;
-    height:280px;
-    width: 47%;
-    margin: auto;
+
+.news-list{
+height: 500px;
+overflow-x: unset;
+overflow-y: auto;
 }
-.list-container{
-    padding: 5%;
+
+#more{
+    display: none;
+}
+
+.desc{
+    font-size: medium;
+}
+
+#read-more-btn{
+    width: 30%;
 }
 
 .card{
+    flex-wrap: wrap;
+    width: 45rem;
+}
+
+.news-detail{
     display: flex;
-    background: linear-gradient(to right, gray, black);
-    color: whitesmoke;
-    height: 80px;
 }

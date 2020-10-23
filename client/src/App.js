@@ -1,10 +1,10 @@
 import React from "react";
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MyBook from "./components/home/book";
 import Rating from "./components/home/Rating";
 import Cause from "./components/home/cause";
 import Stories from "./components/home/stories";
+import News from "./components/home/news";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 
@@ -19,14 +19,17 @@ function App() {
       <br />
       <center>
         <h3>
-          <strong>Top Stories!</strong>
+          <strong>Recent Events</strong>
         </h3>
         <br />
         <br />
-
         <Stories />
         <br />
         <br />
+        <h3>
+          <strong>Why Should I Care?</strong>
+        </h3>
+        <News />
         <Cause />
         <h3>
           <strong>About Us BOOK!</strong>

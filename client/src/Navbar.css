@@ -12,13 +12,13 @@
     height: 80px;
     transition: all .5s;
 }
-*, :after, :before {
+/* *, :after, :before {
     box-sizing: inherit;
-}
+} */
 
-div {
+/* div {
     display: block;
-}
+} */
 
 /* @media (min-width: 992px){
 .container {
@@ -94,9 +94,9 @@ address, dl, ol, ul {
 nav ul li {
     display: inline-block;
 }
-*, :after, :before {
+/* *, :after, :before {
     box-sizing: inherit;
-}
+} */
 
 li {
     display: list-item;
@@ -131,7 +131,7 @@ a {
     color: grey;
 }
 li{
-    float: right;
+    float: right ;
 }
 ul {
     display: block;
@@ -142,7 +142,7 @@ ul {
     margin-inline-end: 0px;
     padding-inline-start: 40px;
 }
-img{
+.picture{
     float: left;
 }
 .logo
@@ -151,7 +151,7 @@ img{
     padding: 8px;
 }
 
-.logo img
+.logo, .picture
 {
     max-height: 50px;
 }
@@ -260,4 +260,8 @@ button, input, optgroup, select, textarea {
     opacity:0.9;
     transition: 0.3s;
   }
+
+
+
+
 

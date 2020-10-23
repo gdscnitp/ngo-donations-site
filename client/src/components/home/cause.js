@@ -1,4 +1,7 @@
 import React from "react";
+import Donate from './donate.svg'
+import Volunteer from './volunteer.svg'
+import Event from './event.svg'
 
 export default function Cause() {
   return (
@@ -6,19 +9,16 @@ export default function Cause() {
       <section class="causes_area">
         <div class="row">
           <div class="col-12 main_title">
-            <h2>Our major causes</h2>
-            <p>
-              Creepeth called face upon face yielding midst is after moveth{" "}
-            </p>
+            <h2>Your small help can bring smiles to many</h2>
           </div>
           <div class="row d-flex justify-content-center">
             <div class="col-lg-3 col-md-6">
               <div class="single_causes">
-                <h4>Help By Donation</h4>
                 <img
-                  src="https://colorlib.com/preview/theme/seelife/img/causes/c1.png"
+                  src={Donate}
                   alt="abc"
                 />
+                <h4>Help By Donation</h4>
                 <p>
                   It you're. Was called you're fowl grass lesser land together
                   waters beast darkness earth land whose male all moveth
@@ -29,11 +29,11 @@ export default function Cause() {
             </div>
             <div class="col-lg-3 col-md-6">
               <div class="single_causes">
-                <h4>Help By Inspiring</h4>
                 <img
-                  src="https://colorlib.com/preview/theme/seelife/img/causes/c2.png"
+                  src={Event}
                   alt="def"
                 />
+                <h4>Help By Inspiring</h4>
                 <p>
                   It you're. Was called you're fowl grass lesser land together
                   waters beast darkness earth land whose male all moveth
@@ -45,18 +45,18 @@ export default function Cause() {
             </div>
             <div class="col-lg-3 col-md-6">
               <div class="single_causes">
-                <h4>Volunteer</h4>
                 <img
-                  src="https://colorlib.com/preview/theme/seelife/img/causes/c3.png"
-                  alt=""
+                  src={Volunteer}
+                  alt="ghi"
                 />
+                <h4>Volunteer</h4>
                 <p>
                   It you're. Was called you're fowl grass lesser land together
                   waters beast darkness earth land whose male all moveth
                   fruitful.
                 </p>
                 <button className="btn btn-success btn-lg">Join Event</button>
-                <button className="btn btn-success btn-lg m-3">Join Org</button>
+                <button className="btn btn-success btn-lg m-1">Join Org</button>
               </div>
             </div>
           </div>
