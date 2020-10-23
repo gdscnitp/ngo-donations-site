@@ -8,7 +8,7 @@ const logger = require('morgan');
 const userRouter = require('./routes/user.js');
 const morgan = require('morgan');
 require('dotenv').config();
-
+const User = require('./models/User')
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}))
