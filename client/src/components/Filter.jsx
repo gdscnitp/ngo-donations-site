@@ -40,6 +40,12 @@ const Filter = () => {
                     <a class="dropdown-item" href="#top">
                       USA
                     </a>
+                    <a class="dropdown-item" href="#top">
+                      India
+                    </a>
+                    <a class="dropdown-item" href="#top">
+                      Sri Lanka
+                    </a>
                   </div>
                 </p>
               </div>
