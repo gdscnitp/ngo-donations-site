@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar } from "../src/components/Navbar/Navbar";
 import { Footer } from "../src/components/Footer/Footer";
 import Donation from '../src/components/donation_and_need_form/donation-form.js';
@@ -32,7 +33,7 @@ function App() {
           <strong>Why Should I Care?</strong>
         </h3>
         <News />
-        <Cause />
+        {/* <Cause /> */}
         <h3>
           <strong>About Us BOOK!</strong>
         </h3>
