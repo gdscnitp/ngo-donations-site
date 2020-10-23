@@ -42,7 +42,20 @@ function MyBook(props) {
       </div>
       <div className="demoPageEven">
         <div class="page-even">
+          
           <div className="dev">
+            <div className="member">
+              <center>
+                <img
+                  className="display"
+                  src="https://media-exp1.licdn.com/dms/image/C5103AQGx9ejln11v4g/profile-displayphoto-shrink_200_200/0?e=1608163200&v=beta&t=jvsjGLUEnr9z8wPpwB1W0oEo7L2fx4ee2OqnZ9rTIhg"
+                  alt="not"
+                />
+                <p>Arnav</p>
+              </center>
+            </div>
+          </div>
+    <div className="dev">
             <div className="member">
               <center>
                 <img
@@ -54,7 +67,7 @@ function MyBook(props) {
               </center>
             </div>
           </div>
-          <div className="dev">
+      <div className="dev">
             <div className="member">
               <center>
                 <img
@@ -63,18 +76,6 @@ function MyBook(props) {
                   alt="not"
                 />
                 <p>Palak</p>
-              </center>
-            </div>
-          </div>
-          <div className="dev">
-            <div className="member">
-              <center>
-                <img
-                  className="display"
-                  src="https://media-exp1.licdn.com/dms/image/C5103AQGx9ejln11v4g/profile-displayphoto-shrink_200_200/0?e=1608163200&v=beta&t=jvsjGLUEnr9z8wPpwB1W0oEo7L2fx4ee2OqnZ9rTIhg"
-                  alt="not"
-                />
-                <p>Arnav</p>
               </center>
             </div>
           </div>
