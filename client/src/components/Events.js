@@ -1,5 +1,5 @@
 import React from "react";
-import "./Events.css";
+import "../App.css";
 import Navbar from "./Navbar";
 import Filter from "./Filter";
 import Cover from "./Cover";
