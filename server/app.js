@@ -8,7 +8,9 @@ const logger = require('morgan');
 const userRouter = require('./routes/user.js');
 const morgan = require('morgan');
 require('dotenv').config();
-
+var user
+const User = require('./models/Users')
+app.set('view engine', 'ejs');
 const PORT = process.env.PORT || 3000;
 const DB_NAME = 'auth'        // later change it according to database
 const MONGO_DB_URI = `mongodb+srv://dscnitp_webdept_muckin:${process.env.DB_PASSWORD}@cluster0.kokfw.gcp.mongodb.net`;
@@ -47,6 +49,82 @@ app.use( (req, res, next) => {  //catch any request to endpoint not available
 app.use( (err, req, res, next) => { //error handler
     res.status( err.status || 500 ).send(err.message || `Request couldn't be completed`);
 })
+
+app.get("/sign_up", (req, res)=>{
+
+res.render("sign_up")
+});
+
+app.post("/sign_up",(req,res)=>{
+bcrypt.hash(req.body.password,10,(err,hash)=>{
+if(err){
+  console.log('Password can not be encrypted')
+}
+    user= new User({
+     name:req.body.name,
+     contactNumber:req.body.contactNumber,
+     email:req.body.email,
+     password:hash
+    })
+    user.save().then(()=>{
+     console.log(user)
+    })
+
+    })
+      res.redirect('/sign_up/org')
+    })
+
+app.get("/sign_up/org", (req, res)=>{
+    res.render("sign_up")
+});
+
+app.post("/sign_up/org",(req,res)=>{
+  user.Name_of_organisation = req.body.Name_of_organisation,
+  user.Address_of_organisation = req.body.Address_of_organisation,
+  user.License_number=req.body.License_number,
+  user.Type_of_organisation=req.body.Type_of_organisation,
+    user.Description_of_organisation=req.body.Description_of_organisation,
+      user.Volunteers_number=req.body.Volunteers_number,
+      user.Type_of_help=req.body.Type_of_help,
+      user.Open_for_volunteers=req.body.Open_for_volunteers
+      User.updateOne({_id:user._id},{
+        name:user.name,
+        email:user.email,
+        contactNumber:user.contactNumber,
+        password:user.password,
+        Name_of_organisation : req.body.Name_of_organisation,
+        Address_of_organisation : req.body.Address_of_organisation,
+          License_number:req.body.License_number,
+          Type_of_organisation:req.body.Type_of_organisation,
+        Description_of_organisation:req.body.Description_of_organisation,
+          Volunteers_number:req.body.Volunteers_number,
+          Type_of_help:req.body.Type_of_help,
+          Open_for_volunteers:req.body.Open_for_volunteers})
+          .then(()=>{
+
+      })
+
+   res.redirect('/sign_up/org/preview')
+})
+
+app.get("/sign_up/org/preview",(req,res)=>{
+  res.render("preview",{
+    user:user
+  })
+})
+
+app.post("/sign_up/org/preview",(req,res)=>{
+  res.redirect('/sign_up')
+})
+
+
+
+
+
+
+
+
+
 
 
 app.listen(
