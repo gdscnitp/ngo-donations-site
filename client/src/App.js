@@ -10,6 +10,7 @@ import Rating from "./components/home/Rating";
 import Cause from "./components/home/cause";
 import Stories from "./components/home/stories";
 import News from "./components/home/news";
+import { Faq } from "../src/components/FAQ/faq";
 
 function App() {
   return (
@@ -47,7 +48,7 @@ function App() {
 
       <Donation />
       <Need />
-
+         <Faq />
       <Footer />
     </div>
   );
