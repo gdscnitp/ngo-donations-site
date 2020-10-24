@@ -6,25 +6,22 @@ import Activity from './Activity.js'
 
 function User(){
     return(
-    <div>
-
-  <div class="container-fluid">
-  <img src="//placehold.it/100"  alt="Organization " class="avatar User-profile-top-img" />
-   <div className="User-profile-top">
-     <div className="text-center User-profile-top-content">
-         <label for="file-upload" className="User-profile-custom-file-upload">+</label>
-
-
-          <input id="User-profile-file-upload" type="file"/>  <br />
-          <input placeholder=" Name of Organization " class="User-profile-top-input" /> 
-          <i class="fa fa-pencil" aria-hidden="true"></i>
-          <br/>
-         <input placeholder=" Other Info " class="User-profile-top-input" /> 
-         <i class="fa fa-pencil" aria-hidden="true"></i>    
+  <div>
+ <div className="User-profile-head" >
+     <div className="Userprofile-head-img" > 
+        <img src="//placehold.it/100"  alt="Organization " class="avatar User-profile-top-img" />
+        <label for="file-upload" className="User-profile-custom-file-upload">+</label>
+        <input id="User-profile-file-upload" type="file"/>  <br />
      </div>
-   </div>
- </div>
- <hr/>
+     <div className="   container-fluid  User-profile-head-detail"> 
+        <input placeholder=" Name of Organization " class="User-profile-top-input"  /> 
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+        <br/>
+        <input placeholder=" Other Info " class="User-profile-top-input" /> 
+        <i class="fa fa-pencil" aria-hidden="true"></i>    
+      </div>
+  </div>
+  <hr/>
   { /* Activity SECTION */}
 
  <div className="User-profile-middle">  
@@ -65,7 +62,7 @@ function User(){
                </div>
           </div>
     </div>
- </div>
+  </div>
  </div>
   <hr />
  {    /* CARDS SECTION END */}
