@@ -21,22 +21,22 @@ div {
 }
 
 @media (min-width: 992px){
-.container {
+.container-sm {
     max-width: 960px;
 }
 }
 @media (min-width: 768px){
-.container {
+.container-sm {
     max-width: 720px;
 }
 }
 @media (min-width: 576px){
-.container {
+.container-sm {
     max-width: 540px;
 }
 }
 
-.container {
+.container-sm {
     margin-right: 0;
     margin-left: auto;
     padding-right: 15px;
@@ -45,7 +45,7 @@ div {
     width: 100%;
     text-align: right;
 }
-row {
+.row-sm {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -69,7 +69,7 @@ row {
     text-transform: uppercase;
     font-weight: 700;
 }
-nav {
+.navbar {
     font-size: 12px;
     line-height: 18px;
     font-family: Roboto Mono,monospace;
@@ -77,37 +77,37 @@ nav {
     font-weight: 700;
     margin-bottom: 30px;
 }
-ol, ul {
+.navbar ul {
     padding: 0;
     list-style: none;
 }
-hr, ol, ul {
+.navbar ul {
     margin: 0;
 }
-dl, ol, ul {
+.navbar ul {
     margin-top: 0;
 }
-address, dl, ol, ul {
+.navbar ul {
     margin-bottom: 1rem;
 }
 
-nav ul li {
+.navbar ul li {
     display: inline-block;
 }
 *, :after, :before {
     box-sizing: inherit;
 }
 
-li {
+.navbar li {
     display: list-item;
     text-align: -webkit-match-parent;
 }
-ol, ul {
+.navbar ul {
     padding: 0;
     list-style: none;
 }
 
-ul {
+.navbar ul {
     list-style-type: disc;
     padding-bottom: 20px;
 }
@@ -115,10 +115,10 @@ ul {
     color: black;
     opacity: 1;
 }
-nav ul li a {
+.navbar ul li a {
     padding-right: 50px;
 }
-a {
+.navbar ul li a {
     font-size: 16px;
     transition: all .3s;
     position: relative;
@@ -130,10 +130,10 @@ a {
 .menu .menu__wrapper nav a:hover{
     color: grey;
 }
-li{
+.navbar ul li{
     float: right;
 }
-ul {
+.navbar ul {
     display: block;
     list-style-type: disc;
     margin-block-start: 1em;
@@ -142,7 +142,7 @@ ul {
     margin-inline-end: 0px;
     padding-inline-start: 40px;
 }
-img{
+.pictureimg{
     float: left;
 }
 .logo
@@ -157,18 +157,18 @@ img{
 }
 
 @media (min-width: 992px){
-.container {
+.container-sm {
     max-width: 960px;
 }
 
 }
 @media (min-width: 768px){
-.container {
+.container-sm {
     max-width: 720px;
 }
 }
 @media (min-width: 576px){
-.container {
+.container-sm {
     max-width: 540px;
 }
 }
@@ -193,7 +193,7 @@ img{
     border: none;
     padding-right: 5px;
 }
-button, input, optgroup, select, textarea {
+.input{
     font-family: sans-serif;
     font-size: 100%;
     margin: 0;
@@ -260,4 +260,4 @@ button, input, optgroup, select, textarea {
     opacity:0.9;
     transition: 0.3s;
   }
-
+  

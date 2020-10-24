@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
 const Heading = () => {
-    return(
-        <>
-        <div  className="h1">
+  return (
+    <>
+      <div className="h1">
         <h1>No one has ever become poor by giving!!!</h1>
-        </div>
-        </>
-    )
-}
+      </div>
+    </>
+  );
+};
 
 export default Heading;

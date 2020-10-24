@@ -4,7 +4,12 @@ import "./style.css";
 
 function MyBook(props) {
   return (
-    <HTMLFlipBook width={450} height={600} swipeDistance={0} maxShadowOpacity={0.5}>
+    <HTMLFlipBook
+      width={450}
+      height={600}
+      swipeDistance={0}
+      maxShadowOpacity={0.5}
+    >
       <div className="demoPageOdd">
         <div className="page-odd">
           <center>
@@ -24,9 +29,21 @@ function MyBook(props) {
               <h3>This is a Muck In App</h3>
               <p>
                 <ul>
-                  <li>Our project aims at reducing the gap between the people who are willing to help and the people who are searching for such volunteers.</li>
-                  <li>It will provide a way for the best utilisation of the resources,one thing discarded by someone can be of ultimate use to others.</li>
-                  <li>It will help in increasing the involvement of more people in the NGOs as the task will be digitalized and so would not require much effort</li>
+                  <li>
+                    Our project aims at reducing the gap between the people who
+                    are willing to help and the people who are searching for
+                    such volunteers.
+                  </li>
+                  <li>
+                    It will provide a way for the best utilisation of the
+                    resources,one thing discarded by someone can be of ultimate
+                    use to others.
+                  </li>
+                  <li>
+                    It will help in increasing the involvement of more people in
+                    the NGOs as the task will be digitalized and so would not
+                    require much effort
+                  </li>
                 </ul>
               </p>
             </center>
@@ -42,7 +59,6 @@ function MyBook(props) {
       </div>
       <div className="demoPageEven">
         <div class="page-even">
-          
           <div className="dev">
             <div className="member">
               <center>
@@ -55,7 +71,7 @@ function MyBook(props) {
               </center>
             </div>
           </div>
-    <div className="dev">
+          <div className="dev">
             <div className="member">
               <center>
                 <img
@@ -67,7 +83,7 @@ function MyBook(props) {
               </center>
             </div>
           </div>
-      <div className="dev">
+          <div className="dev">
             <div className="member">
               <center>
                 <img
