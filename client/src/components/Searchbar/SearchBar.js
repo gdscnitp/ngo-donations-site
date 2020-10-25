@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../Searchbar/SearchBar.css";
 export const SearchBar = () => {
   return (
     <div class="search-container">
@@ -13,6 +13,7 @@ export const SearchBar = () => {
           placeholder="Search organisation/NGO"
           name="search"
           size="25"
+          class="input"
         ></input>
         <button type="submit">
           <i class="fa fa-search"></i>
