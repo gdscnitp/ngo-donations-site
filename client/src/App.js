@@ -1,9 +1,16 @@
 import React from "react";
 import "./App.css";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/css/bootstrap-grid.min.css';
-
+import { Navbar } from "../src/components/Navbar/Navbar";
+import { Footer } from "../src/components/Footer/Footer";
+import Donation from "../src/components/donation_and_need_form/donation-form.js";
+import Need from "../src/components/donation_and_need_form/need-form.js";
+import MyBook from "./components/home/book";
+import Rating from "./components/home/Rating";
+import Cause from "./components/home/cause";
+import Stories from "./components/home/stories";
+import News from "./components/home/news";
 import User from  "./components/User-profile/User.js";
 
 import { Navbar } from "../src/components/Navbar/Navbar";
@@ -25,6 +32,7 @@ function App() {
       <header className="App-header">
         <p>Welcome to MuckIn!!</p>
       </header>
+
       <User/>
 
       <br />
@@ -56,6 +64,7 @@ function App() {
 
       <Donation />
       <Need />
+
       <Footer />
     </div>
 
