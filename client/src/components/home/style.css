@@ -1,13 +1,4 @@
 
-.demoPageOdd{
-    border-bottom-left-radius: 25px;
-    border-top-left-radius: 25px;
-
-}
-.demoPageEven{
-    border-bottom-right-radius: 25px;
-    border-top-right-radius: 25px;
-}
 #aboutus{
     width: 80%;
 }
@@ -60,6 +51,47 @@
     padding: 20px;
 
 }
+.footer-of-page{
+    display: none;
+}
+
+/* making it mobile friendly the book pages */
+@media screen and (max-width: 900px) {
+    .page-odd{
+        background: linear-gradient(to left, rgb(218, 218, 218), white, white);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 3%;
+        height: 560px;
+        border: solid 2px rgb(167, 167, 167);
+        border-radius: 20px;
+        padding: 20px;
+    }
+    .page-even{
+        background: linear-gradient(to right, rgb(218, 218, 218), white, white);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 3%;
+        height: 560px;
+        border: solid 2px rgb(167, 167, 167);
+        border-radius: 20px;
+        scrollbar-width: none;
+        padding: 20px;
+    
+    }
+    .footer-of-page{
+        display: block;
+        position: absolute;
+        bottom: 30px;
+        left: 250px;
+        font-size: 30px;
+        text-align: right;
+    }
+    
+  }
 
 .dev-container{
     padding: 30px;
@@ -83,9 +115,11 @@
         transition: 500ms linear;
         padding: 20px;
         background-color: rgb(88, 177, 168);
+        box-shadow: 0px 20px 30px rgba(153, 153, 153, 0.2); 
     }
     .cards-container{
-        flex-direction: row;
+      display: flex;
+      flex-wrap: wrap;
     }
     div.card.card-cause{
         width: 250px;
@@ -95,8 +129,9 @@
         font-weight: 5000;
         color: rgb(80, 4, 67);
     }
-    .card-cause:hover {
-      box-shadow: 0px 20px 30px rgba(153, 153, 153, 0.2); }
+
+
+
   
   /* Stories carousel */
   .top-stories{
@@ -108,6 +143,7 @@
   .main-div {
       display: flex;
   }
+
 
   /* rating page styling */
 
@@ -162,11 +198,18 @@ overflow-y: auto;
     width: 30%;
 }
 
-.card{
-    flex-wrap: wrap;
-    width: 45rem;
-}
-
 .news-detail{
     display: flex;
 }
+@media screen and (max-width: 600px){
+    .card{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .news-detail img{
+       height: 100px;
+       width: 200px;
+       border-radius: 5px;
+    }
+}
+

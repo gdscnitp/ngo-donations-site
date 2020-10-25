@@ -5,7 +5,7 @@ import Dev from './subComponents/dev'
 
 function MyBook(props) {
   return (
-    <HTMLFlipBook width={450} height={600} swipeDistance={0} maxShadowOpacity={0.5} >
+    <HTMLFlipBook width={400} height={600} swipeDistance={0} maxShadowOpacity={0.5} >
 
       <div className="demoPageOdd">
         <div className="page-odd">
@@ -17,6 +17,9 @@ function MyBook(props) {
             />
             <h1>AboutUs</h1>
           </center>
+          <div className="footer-of-page" >
+            <p style={{fontSize: '10px'}}>Click To change Page!<span style={{fontSize: '30px'}}>&rarr;</span> </p>
+          </div>
         </div>
       </div>
       <div className="demoPageEven">
@@ -46,6 +49,9 @@ function MyBook(props) {
             </center>
           </div>
         </div>
+        <div className="footer-of-page" >
+            <p style={{fontSize: '10px'}}>Click To change Page!<span style={{fontSize: '30px'}}>&rarr;</span> </p>
+          </div>
       </div>
       <div className="demoPageOdd">
         <div className="page-odd">
@@ -53,6 +59,9 @@ function MyBook(props) {
             <h1>Our Developers</h1>
           </div>
         </div>
+        <div className="footer-of-page" >
+            <p style={{fontSize: '10px'}}>Click To change Page! <span style={{fontSize: '30px'}}>&rarr;</span> </p>
+          </div>
       </div>
       <div className="demoPageEven">
         <div class="page-even">
@@ -60,6 +69,9 @@ function MyBook(props) {
             <Dev />
         </div>
         </div>
+        <div className="footer-of-page" >
+            <p style={{fontSize: '10px'}}>Click To change Page! <span style={{fontSize: '30px'}}>&rarr;</span> </p>
+          </div>
       </div>
     </HTMLFlipBook>
   );

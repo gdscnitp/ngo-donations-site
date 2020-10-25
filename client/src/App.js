@@ -33,7 +33,15 @@ function App() {
           <strong>Why Should I Care?</strong>
         </h3>
         <News />
+        <br/>
+        <br />
+        <br/>
+        <br/>
+        <br/>
         <Cause />
+        <br/>
+        <br/>
+        <br/>
         <h3>
           <strong>About Us BOOK!</strong>
         </h3>
