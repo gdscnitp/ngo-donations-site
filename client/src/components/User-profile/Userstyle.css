@@ -1,25 +1,33 @@
 body{
     background-color: #b4c7c7;
   }
-  
-.User-profile-head-detail{
+.User-profile-head{
+  height: 500px;
+  position: relative;
   margin:auto;
   width: 80%;
-  background-color: #407088;
-  padding-top: 10%;
-  margin-bottom: 40px;
 }
 .User-profile-top-img{
-    height: 250px;
-    width: 300px;
-    border: 1px solid;
-    border-radius: 50%;
+  height: 250px;
+  width: 300px;
+  border: 1px solid;
+  border-radius: 50%;
 }
+.User-profile-head-detail{
+  background-color: #407088;
+  padding-top: 10%;
+  margin-bottom: 0%;
+  width:100%;
+  position: absolute;
+  top: 250px;
+  z-index: -1;
+}
+
 .Userprofile-head-img{
   margin: auto;
   position: relative;
   width: 300px;
-  top: 85px;
+  top: 65px;
 }
 .User-profile-top-input{
   background-color:#00587a ;
@@ -39,14 +47,14 @@ input[type="file"] {
     cursor: pointer;
     background-color: #8db596;
     position: absolute;
-    bottom: 9px;
-    right: 6px;
+    top: 200px;
+    left:220px;
 }
   
   /* ACTIVITIES   SECTION STYLE*/
   
   .User-profile-middle{
-    margin-bottom: 60px;
+    margin : 40px 40px 60px 40px;
     }
     
     
@@ -84,7 +92,7 @@ input[type="file"] {
   }
   
   .User-profile-activities{
-    width:500px;
+    width:550px;
     padding-top: 10px;
     border-style: ridge;
     margin-left: 0%;
@@ -136,9 +144,9 @@ input[type="file"] {
   /* FEATURES SECTION */
   .User-profile-bottom{
     background-color: #68b0ab;
-    padding-top: 40px;
-    padding-bottom: 30px;
+    padding: 40px 20px 30px 30px;
     height: 450px;
+    width:100%;
   
   }
   
@@ -158,6 +166,7 @@ input[type="file"] {
   
   /* Feature image section */
   .User-profile-feature{
+    margin: auto;
     width: 350px;
     padding-left: 2px;
     border: 2px solid #51a3ad;

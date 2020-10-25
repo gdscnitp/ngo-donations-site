@@ -1,8 +1,9 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './Userstyle.css'
 import Feature from './feature.js'
 import Activity from './Activity.js'
+import './Userstyle.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap-grid.css';
 
 function User(){
     return(
@@ -13,25 +14,29 @@ function User(){
         <label for="file-upload" className="User-profile-custom-file-upload">+</label>
         <input id="User-profile-file-upload" type="file"/>  <br />
      </div>
-     <div className="   container-fluid  User-profile-head-detail"> 
+    
+     <div className="User-profile-head-detail"> 
+     
+
         <input placeholder=" Name of Organization " class="User-profile-top-input"  /> 
         <i class="fa fa-pencil" aria-hidden="true"></i>
         <br/>
         <input placeholder=" Other Info " class="User-profile-top-input" /> 
         <i class="fa fa-pencil" aria-hidden="true"></i>    
       </div>
+      
   </div>
   <hr/>
   { /* Activity SECTION */}
 
  <div className="User-profile-middle">  
-  <div class="container">
-    <div class= "row">
-       <div class="col-md-3">
+    <div className= "row">
+       <div className="col-md-3">
           <div className="User-profile-boxs ">  
           <div className=" User-profile-box-side">
           <div className="User-profile-inside">   
           <p>" Around 200 people have joined our organization.  Hoping to expand help as much we can"</p>   
+           
             </div>   
             </div>
             </div>
@@ -60,7 +65,6 @@ function User(){
                    </div>   
                 </div>
                </div>
-          </div>
     </div>
   </div>
  </div>
@@ -71,7 +75,7 @@ function User(){
  { /* Featured */}
 
  <div className="User-profile-bottom"> 
-  <div class="container">
+  <div clclassName="container">
      <div class="row">
             <div class="col-md-6     User-profile-bottom-item">
              <h4>Featured Photos : </h4>

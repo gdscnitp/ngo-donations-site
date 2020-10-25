@@ -1,6 +1,5 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './Userstyle.css'
+
 function Activity(props) {
     return (
         <div  className="User-profile-activities-content" > 
