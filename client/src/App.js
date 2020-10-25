@@ -14,9 +14,6 @@ import Homepage from './pages/Homepage';
 
 function App() {
   return (
-
-
-    <Router>
     <div className="App">
        <header className="App-header">
          <p>Welcome to MuckIn!!</p>
