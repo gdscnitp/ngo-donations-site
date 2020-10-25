@@ -21,10 +21,11 @@
 
 .dev{
     transition: 500ms;
+    margin: 0px;
 }
 
 .dev:hover{
-    transform: scale(1.3,1.3);
+    transform: scale(1.5,1.5);
 }
 .page-odd{
     background: linear-gradient(to left, rgb(218, 218, 218), white, white);
@@ -39,7 +40,7 @@
     border-right-color: rgb(209, 209, 209);
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
-
+    padding: 20px;
 }
 .page-even{
     background: linear-gradient(to right, rgb(218, 218, 218), white, white);
@@ -55,12 +56,19 @@
     border-left-color: rgb(209, 209, 209);
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
-    overflow-y: auto;
+    scrollbar-width: none;
+    padding: 20px;
 
 }
-.dev-proj{
-    margin-top: 20px;
-    width: 200px;
+
+.dev-container{
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 400px;
 }
 
 .dev{
