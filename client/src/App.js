@@ -18,8 +18,6 @@ function App() {
        <header className="App-header">
          <p>Welcome to MuckIn!!</p>
        </header>
-       <a href="/donate" style={{float: "left"}}>Donate</a>
-       <a href="/need" style={{float: "right"}}>Need</a>
        <br />
        <br />
         <Navbar />
