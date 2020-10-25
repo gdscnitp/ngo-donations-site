@@ -1,6 +1,5 @@
 import React from "react";
 import { SearchBar } from "../Searchbar/SearchBar";
-import "../Searchbar/SearchBar.css";
 import "./Navbar.css";
 
 export const Navbar = () => {
@@ -14,16 +13,16 @@ export const Navbar = () => {
   return (
     <div class="menu menu--active" id="menu">
       <div class="logo">
-        <img src="logo.svg" alt="react logo" class="picture"></img>
+        <img src="logo.svg" alt="react logo" class="pictureimg"></img>
         <div class="search-bar">
           <SearchBar></SearchBar>
         </div>
       </div>
 
-      <div class="container">
-        <div class="row">
+      <div class="container-sm">
+        <div class="row-sm">
           <div class="menu__wrapper d-none d-lg-block col-md-12">
-            <nav class="">
+            <nav class="navbar">
               <ul>
                 <li>
                   <a href="https://www.google.co.in/">Signup/Login</a>
