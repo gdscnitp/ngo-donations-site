@@ -12,17 +12,17 @@ function User(){
      <div className="Userprofile-head-img" > 
         <img src="//placehold.it/100"  alt="Organization " class="avatar User-profile-top-img" />
         <label for="file-upload" className="User-profile-custom-file-upload">+</label>
-        <input id="User-profile-file-upload" type="file"/>  <br />
+        <input id="file-upload" type="file"/>  <br />
+        
      </div>
     
      <div className="User-profile-head-detail"> 
-     
 
-        <input placeholder=" Name of Organization " class="User-profile-top-input"  /> 
-        <i class="fa fa-pencil" aria-hidden="true"></i>
+        <input placeholder=" Name of Organization"  class="User-profile-top-input"  /> 
+        <i class="fa fa-pencil head-icons"  aria-hidden="true"></i>
         <br/>
-        <input placeholder=" Other Info " class="User-profile-top-input" /> 
-        <i class="fa fa-pencil" aria-hidden="true"></i>    
+        <input placeholder=" Other Info" class="User-profile-top-input" /> 
+        <i class="fa fa-pencil head-icons"  aria-hidden="true"></i>    
       </div>
       
   </div>
@@ -45,7 +45,7 @@ function User(){
          <div class="col-md-6 ">
              <div className="User-profile-boxs User-profile-boxs-center"> 
                   <h1  className="User-profile-activities-head" >Activities</h1>
-                  <div className="User-profile-activities">
+                  <div className=" User-profile-activities">
                      <Activity img="https://bootdey.com/img/Content/avatar/avatar1.png"
                            description="First Activity" />  
                      <br/>
