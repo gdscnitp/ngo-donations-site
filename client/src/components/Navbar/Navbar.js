@@ -19,8 +19,8 @@ export const Navbar = () => {
         </div>
       </div>
 
-      <div class="container-sm">
-        <div class="row-sm">
+      <div class="container navcontainer">
+        <div class="row navrow">
           <div class="menu__wrapper d-none d-lg-block col-md-12">
             <nav class="navbar">
               <ul>
