@@ -25,7 +25,7 @@ export default class Review extends Component {
     var str = "http://bootdey.com/img/Content/avatar/avatar" + i + ".png";
     return (
       <div>
-        <div class="reviews-members pt-4 pb-4">
+        <div class="reviews-members review-container pt-4 pb-4">
           <div class="media">
             <div className="image">
               <img

@@ -114,7 +114,7 @@ export default class Newslist extends Component {
             <div class="card-body">
               <h5 class="card-title">{news.title}</h5>
               <div className="news-detail">
-                <img className="w-25" src={news.poster} alt="news poster" />
+                <img className="" src={news.poster} alt="news poster" />
                 <div className="text-of-news">
                   <p class="card-text">
                     {news.desc.less}

@@ -56,7 +56,7 @@
 }
 
 /* making it mobile friendly the book pages */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 815px) {
     .page-odd{
         background: linear-gradient(to left, rgb(218, 218, 218), white, white);
         display: flex;
@@ -135,6 +135,8 @@
   
   /* Stories carousel */
   .top-stories{
+      margin-bottom: 10%;
+      margin-top: 10%;
       margin-left: 5%;
       margin-right: 5%;
   } */
@@ -147,7 +149,16 @@
 
   /* rating page styling */
 
-  .reviews-members .media .mr-3 {
+  .ratings{
+   
+      margin-top: 15%;
+      margin-bottom: 15%;
+      
+    
+  }
+
+
+.reviews-members .media .mr-3 {
     width: 56px;
     height: 56px;
     object-fit: cover;
@@ -184,6 +195,7 @@
 height: 500px;
 overflow-x: unset;
 overflow-y: auto;
+scrollbar-width: none;
 }
 
 #more{
@@ -197,9 +209,16 @@ overflow-y: auto;
 #read-more-btn{
     width: 30%;
 }
-
+.text-of-news{
+    width: 70%;
+    margin-left: 10%;
+}
 .news-detail{
     display: flex;
+}
+.news-detail img{
+   width: 15%;
+   height: auto;
 }
 @media screen and (max-width: 600px){
     .card{
@@ -207,9 +226,9 @@ overflow-y: auto;
         flex-wrap: wrap;
     }
     .news-detail img{
-       height: 100px;
-       width: 200px;
-       border-radius: 5px;
+         width: 30%;
+         height: 50%;
+         border-radius: 5px;
     }
 }
 

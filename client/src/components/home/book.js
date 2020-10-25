@@ -5,8 +5,9 @@ import Dev from './subComponents/dev'
 
 function MyBook(props) {
   return (
+  
     <HTMLFlipBook width={400} height={600} swipeDistance={0} maxShadowOpacity={0.5} >
-
+   
       <div className="demoPageOdd">
         <div className="page-odd">
           <center>
