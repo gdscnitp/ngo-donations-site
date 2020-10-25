@@ -219,7 +219,7 @@ input[type="file"] {
   @media only screen and (max-width: 1300px){
     .User-profile-head-detail{
       padding-top: 70px;
-      margin-top: 250px;
+      margin-top: 0px;
     }
   }
  
