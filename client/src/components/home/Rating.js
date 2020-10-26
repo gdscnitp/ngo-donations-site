@@ -9,7 +9,7 @@ export default class Rating extends Component {
     return (
       <div className="ratings">
         <div className="heading">
-        <h3>What Do People Say?</h3>
+          <h3>What Do People Say?</h3>
         </div>
         <OwlCarousel
           className="owl-theme"

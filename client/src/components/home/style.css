@@ -181,17 +181,9 @@
 
 /* News Component */
 
-.news-container{
-    display: flex;
-    flex-direction: row;
-    border-radius: 5px;
-    height: auto;
-    margin: 5%;
-    justify-content: space-around;
-    
-}
 
 .news-list{
+    width: 60%;
 height: 500px;
 overflow-x: unset;
 overflow-y: auto;
