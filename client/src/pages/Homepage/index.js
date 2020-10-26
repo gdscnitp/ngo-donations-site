@@ -11,15 +11,16 @@ const Homepage = () => {
       <h3>
         <strong>Recent Events</strong>
       </h3>
-      <br />
-      <br />
       <Stories />
       <br />
       <br />
       <h3>
         <strong>Why Should I Care?</strong>
       </h3>
+      <br />
       <News />
+      <br/>
+      <br />
       <Cause />
       <h3>
         <strong>About Us BOOK!</strong>
@@ -27,7 +28,6 @@ const Homepage = () => {
       <MyBook />
       <br />
       <br />
-      <h3>What Do People Say?</h3>
       <br />
       <Rating />
     </center>

@@ -8,9 +8,6 @@ export default class Stories extends Component {
   render() {
     return (
       <div className="top-stories">
-        <h3>
-          <strong>Recent Events</strong>
-        </h3>
         <OwlCarousel
           className="owl-theme"
           margin={100}
