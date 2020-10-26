@@ -183,7 +183,7 @@
 
 
 .news-list{
-    width: 60%;
+ width: 60%;
 height: 500px;
 overflow-x: unset;
 overflow-y: auto;
@@ -216,6 +216,10 @@ scrollbar-width: none;
     .card{
         display: flex;
         flex-wrap: wrap;
+    }
+
+    .news-list{
+        width: 90%;
     }
     .news-detail img{
          width: 30%;
