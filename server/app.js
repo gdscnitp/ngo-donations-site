@@ -77,7 +77,7 @@ user.save().then(()=>{
 
 
 
-  // res.redirect('/sign_up/org')
+  //res.redirect('/sign_up/org')
 
   })
 
@@ -86,6 +86,7 @@ user.save().then(()=>{
 // });
 
 app.post("/sign_up/org",limiter,(req,res)=>{
+try{
   user.Name_of_organisation = req.body.Name_of_organisation,
   user.Address_of_organisation = req.body.Address_of_organisation,
   user.License_number=req.body.License_number,
@@ -118,13 +119,18 @@ app.post("/sign_up/org",limiter,(req,res)=>{
             Volunteers_number:user.Volunteers_number,
             Type_of_help:user.Type_of_help,
             Open_for_volunteers:user.Open_for_volunteers}).then(()=>{
-            // console.log(req.body.Volunteers_number)
+            console.log(req.body.Volunteers_number)
             })
       }
 
+}
+catch(err){
+  console.log(error)
+}
 
 
 // res.redirect("/sign_up/org/preview")
+
 })
 
 // app.get("/sign_up/org/preview",(req,res)=>{
@@ -132,7 +138,7 @@ app.post("/sign_up/org",limiter,(req,res)=>{
 //     user:user
 //   })
 // })
-//
+
 // app.post("/sign_up/org/preview",(req,res)=>{
 //   user.isChecked=true
 //   User.updateOne({_id:user._id},{
