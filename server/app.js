@@ -1,4 +1,9 @@
 const express = require('express');
+const rateLimit = require('express-rate-limit')
+const limiter  = rateLimit({
+  windowMs:600*1000,
+  max:5
+});
 const router = express.Router()
 const app = express();
 const mongoose = require('mongoose');
@@ -77,7 +82,7 @@ user.save().then(()=>{
 //     res.render("sign_up")
 // });
 
-app.post("/sign_up/org",(req,res)=>{
+app.post("/sign_up/org",limiter,(req,res)=>{
 
       User.updateOne({_id:user._id},{
         name:user.name,
