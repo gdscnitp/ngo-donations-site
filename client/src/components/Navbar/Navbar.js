@@ -13,7 +13,9 @@ export const Navbar = () => {
   return (
     <div class="menu menu--active" id="menu">
       <div class="logo">
-        <a href="/"><img src="logo.svg" alt="react logo" class="pictureimg"></img></a>
+        <a href="/">
+          <img src="logo.svg" alt="react logo" class="pictureimg"></img>
+        </a>
         <div class="search-bar">
           <SearchBar></SearchBar>
         </div>
