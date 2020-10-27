@@ -40,7 +40,7 @@ app.use( morgan('dev') );   //to log requests made to api
 app.use( express.urlencoded({extended: false}) );
 app.use( express.json() );
 app.use( express.static( join( __dirname, 'public'  ) ) );
-//app.set('view engine','ejs')
+// app.set('view engine','ejs')
 
 
 // Routes START
@@ -110,15 +110,15 @@ app.post("/sign_up/org",limiter,(req,res)=>{
           email:user.email,
           contactNumber:user.contactNumber,
           password:user.password,
-          Name_of_organisation : req.body.Name_of_organisation,
-          Address_of_organisation : req.body.Address_of_organisation,
-            License_number:req.body.License_number,
-            Type_of_organisation:req.body.Type_of_organisation,
-          Description_of_organisation:req.body.Description_of_organisation,
-            Volunteers_number:req.body.Volunteers_number,
-            Type_of_help:req.body.Type_of_help,
-            Open_for_volunteers:req.body.Open_for_volunteers}).then(()=>{
-            //  console.log(req.body.Volunteers_number)
+          Name_of_organisation : user.Name_of_organisation,
+          Address_of_organisation : user.Address_of_organisation,
+            License_number:user.License_number,
+            Type_of_organisation:user.Type_of_organisation,
+          Description_of_organisation:user.Description_of_organisation,
+            Volunteers_number:user.Volunteers_number,
+            Type_of_help:user.Type_of_help,
+            Open_for_volunteers:user.Open_for_volunteers}).then(()=>{
+            // console.log(req.body.Volunteers_number)
             })
       }
 
@@ -141,7 +141,7 @@ app.post("/sign_up/org",limiter,(req,res)=>{
 //   })
 //
 // })
-
+//
 
     //404 and Error handlers
 app.use( (req, res, next) => {  //catch any request to endpoint not available
