@@ -97,7 +97,7 @@ app.post("/sign_up/org",limiter,(req,res)=>{
 
 
 
-    try(){
+    try{
       User.updateOne({_id:user._id},{
         name:user.name,
         email:user.email,
