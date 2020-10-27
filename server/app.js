@@ -97,6 +97,7 @@ app.post("/sign_up/org",limiter,(req,res)=>{
 
 
 
+    try(){
       User.updateOne({_id:user._id},{
         name:user.name,
         email:user.email,
@@ -110,7 +111,11 @@ app.post("/sign_up/org",limiter,(req,res)=>{
           Volunteers_number:req.body.Volunteers_number,
           Type_of_help:req.body.Type_of_help,
           Open_for_volunteers:req.body.Open_for_volunteers})
-          
+
+    }
+    catch(err){
+      console.log(err)
+    }
 
 
 })
