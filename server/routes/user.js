@@ -1,7 +1,10 @@
 const router = require('express').Router();
 const authModel = require("../models/schemas/userAuth");
 const { validateLoginData } = require('../util/validators')
+router.get("/sign_up", (req, res)=>{
 
+res.render("../views/sign_up")
+});
     //temporary route for testing, will be replaced by the one made by signup backend team
 router.post('/signup', (req, res) => {
     const user_id = req.body.userName;
@@ -15,7 +18,7 @@ router.post('/signup', (req, res) => {
         if( !err && doc){
             res.sendStatus(200);
         }
-        else res.sendStatus(500);         
+        else res.sendStatus(500);
     })
 });
 
