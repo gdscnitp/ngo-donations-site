@@ -83,6 +83,19 @@ user.save().then(()=>{
 // });
 
 app.post("/sign_up/org",limiter,(req,res)=>{
+  user.Name_of_organisation = req.body.Name_of_organisation,
+  user.Address_of_organisation = req.body.Address_of_organisation,
+  user.License_number=req.body.License_number,
+  user.Type_of_organisation=req.body.Type_of_organisation,
+    user.Description_of_organisation=req.body.Description_of_organisation,
+      user.Volunteers_number=req.body.Volunteers_number,
+      user.Type_of_help=req.body.Type_of_help,
+      user.Open_for_volunteers=req.body.Open_for_volunteers
+
+
+
+
+
 
       User.updateOne({_id:user._id},{
         name:user.name,
@@ -97,16 +110,7 @@ app.post("/sign_up/org",limiter,(req,res)=>{
           Volunteers_number:req.body.Volunteers_number,
           Type_of_help:req.body.Type_of_help,
           Open_for_volunteers:req.body.Open_for_volunteers})
-          .then(()=>{
-                  user.Name_of_organisation = req.body.Name_of_organisation,
-                  user.Address_of_organisation = req.body.Address_of_organisation,
-                  user.License_number=req.body.License_number,
-                  user.Type_of_organisation=req.body.Type_of_organisation,
-                    user.Description_of_organisation=req.body.Description_of_organisation,
-                      user.Volunteers_number=req.body.Volunteers_number,
-                      user.Type_of_help=req.body.Type_of_help,
-                      user.Open_for_volunteers=req.body.Open_for_volunteers
-      })
+          
 
 
 })
