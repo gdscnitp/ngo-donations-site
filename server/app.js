@@ -48,7 +48,7 @@ app.use('/user', userRouter);   //login, logout
 // Routes END
 
 // app.get("/sign_up", (req, res)=>{
-// 
+//
 // res.render("sign_up")
 // });
 
@@ -77,7 +77,7 @@ user.save().then(()=>{
 
 
 
-  //  res.redirect('/sign_up/org')
+  // res.redirect('/sign_up/org')
 
   })
 
@@ -94,14 +94,15 @@ app.post("/sign_up/org",limiter,(req,res)=>{
       user.Volunteers_number=req.body.Volunteers_number,
       user.Type_of_help=req.body.Type_of_help,
       user.Open_for_volunteers=req.body.Open_for_volunteers
+// console.log(typeof(req.body.Address_of_organisation))
+// console.log(typeof(req.body.Volunteers_number))
 
 
 
 
 
 
-
-      if( typeof(user.email) == 'string' ){
+      if( typeof(req.body.Address_of_organisation) == 'string' && typeof(req.body.Type_of_organisation) == 'string'  && typeof(req.body.Name_of_organisation) == 'string'  && typeof(req.body.Description_of_organisation) == 'string' && typeof(req.body.Type_of_help) == 'string'  &&  (typeof(req.body.License_number) == 'string' || typeof(req.body.License_number) == 'Number' )   && typeof(req.body.Open_for_volunteers) == 'string' && typeof(req.body.Volunteers_number) == 'string'){
 
 
         User.updateOne({_id:user._id},{
@@ -117,13 +118,13 @@ app.post("/sign_up/org",limiter,(req,res)=>{
             Volunteers_number:req.body.Volunteers_number,
             Type_of_help:req.body.Type_of_help,
             Open_for_volunteers:req.body.Open_for_volunteers}).then(()=>{
-              console.log('Working')
+            //  console.log(req.body.Volunteers_number)
             })
       }
 
 
 
-//res.redirect("/sign_up/org/preview")
+// res.redirect("/sign_up/org/preview")
 })
 
 // app.get("/sign_up/org/preview",(req,res)=>{
@@ -131,14 +132,14 @@ app.post("/sign_up/org",limiter,(req,res)=>{
 //     user:user
 //   })
 // })
-// 
+//
 // app.post("/sign_up/org/preview",(req,res)=>{
 //   user.isChecked=true
 //   User.updateOne({_id:user._id},{
 //     user:user}).then(()=>{
 //     console.log(user)
 //   })
-// 
+//
 // })
 
 
