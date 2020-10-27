@@ -6,10 +6,8 @@ export default class News extends Component {
   render() {
     return (
       <div>
-        <div className="news-container">
-          <div className="news-list">
-            <Newslist />
-          </div>
+        <div className="news-list">
+          <Newslist />
         </div>
       </div>
     );

@@ -7,7 +7,10 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 export default class Rating extends Component {
   render() {
     return (
-      <div className="top-stories">
+      <div className="ratings">
+        <div className="heading">
+          <h3>What Do People Say?</h3>
+        </div>
         <OwlCarousel
           className="owl-theme"
           items={1}

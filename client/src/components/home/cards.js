@@ -7,18 +7,21 @@ export default class Card extends Component {
       desc:
         "It you're. Was called you're fowl grass lesser land together waters beast darkness earth land whose male all moveth fruitful",
       btn: "Donate Now",
+      href:"/donate"
     },
     {
       title: "Help By Inspiring",
       desc:
         "It you're. Was called you're fowl grass lesser land together waters beast darkness earth land whose male all moveth fruitful",
       btn: "Create A Event",
+      href: "/events"
     },
     {
       title: "Volunteer",
       desc:
         "It you're. Was called you're fowl grass lesser land together waters beast darkness earth land whose male all moveth fruitful",
       btn: "Join As Volunteer",
+      href: "/signup"
     },
   ];
 
@@ -32,7 +35,7 @@ export default class Card extends Component {
           </h2>
           <br />
           <p className="card-text">{this.state[this.props.id].desc}</p>
-          <a href="#event" className="btn btn-success btn-text">
+          <a href= {this.state[this.props.id].href} className="btn btn-success btn-text">
             {this.state[this.props.id].btn}
           </a>
         </div>
