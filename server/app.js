@@ -4,8 +4,8 @@ const limiter  = rateLimit({
   windowMs:600*1000,
   max:5
 });
-var trycatch = require('trycatch')
-
+//var trycatch = require('trycatch')
+//const Schema = mongoose.Schema
 
 const router = express.Router()
 const app = express();
@@ -48,7 +48,7 @@ app.use('/user', userRouter);   //login, logout
 // Routes END
 
 // app.get("/sign_up", (req, res)=>{
-//
+// 
 // res.render("sign_up")
 // });
 
@@ -77,7 +77,7 @@ user.save().then(()=>{
 
 
 
-    res.redirect('/sign_up/org')
+  //  res.redirect('/sign_up/org')
 
   })
 
@@ -101,7 +101,9 @@ app.post("/sign_up/org",limiter,(req,res)=>{
 
 
 
-      trycatch(function(){
+      if( typeof(user.email) == 'string' ){
+
+
         User.updateOne({_id:user._id},{
           name:user.name,
           email:user.email,
@@ -117,9 +119,7 @@ app.post("/sign_up/org",limiter,(req,res)=>{
             Open_for_volunteers:req.body.Open_for_volunteers}).then(()=>{
               console.log('Working')
             })
-      },function(err){
-        console.log(err)
-      })
+      }
 
 
 
@@ -131,14 +131,14 @@ app.post("/sign_up/org",limiter,(req,res)=>{
 //     user:user
 //   })
 // })
-//
+// 
 // app.post("/sign_up/org/preview",(req,res)=>{
 //   user.isChecked=true
 //   User.updateOne({_id:user._id},{
 //     user:user}).then(()=>{
 //     console.log(user)
 //   })
-//
+// 
 // })
 
 
