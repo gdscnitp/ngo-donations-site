@@ -87,14 +87,7 @@ user.save().then(()=>{
 
 app.post("/sign_up/org",limiter,(req,res)=>{
 try{
-  user.Name_of_organisation = req.body.Name_of_organisation,
-  user.Address_of_organisation = req.body.Address_of_organisation,
-  user.License_number=req.body.License_number,
-  user.Type_of_organisation=req.body.Type_of_organisation,
-    user.Description_of_organisation=req.body.Description_of_organisation,
-      user.Volunteers_number=req.body.Volunteers_number,
-      user.Type_of_help=req.body.Type_of_help,
-      user.Open_for_volunteers=req.body.Open_for_volunteers
+  
 // console.log(typeof(req.body.Address_of_organisation))
 // console.log(typeof(req.body.Volunteers_number))
 
@@ -104,7 +97,14 @@ try{
 
 
       if( typeof(req.body.Address_of_organisation) == 'string' && typeof(req.body.Type_of_organisation) == 'string'  && typeof(req.body.Name_of_organisation) == 'string'  && typeof(req.body.Description_of_organisation) == 'string' && typeof(req.body.Type_of_help) == 'string'  &&  (typeof(req.body.License_number) == 'string' || typeof(req.body.License_number) == 'Number' )   && typeof(req.body.Open_for_volunteers) == 'string' && typeof(req.body.Volunteers_number) == 'string'){
-
+user.Name_of_organisation = req.body.Name_of_organisation,
+  user.Address_of_organisation = req.body.Address_of_organisation,
+  user.License_number=req.body.License_number,
+  user.Type_of_organisation=req.body.Type_of_organisation,
+    user.Description_of_organisation=req.body.Description_of_organisation,
+      user.Volunteers_number=req.body.Volunteers_number,
+      user.Type_of_help=req.body.Type_of_help,
+      user.Open_for_volunteers=req.body.Open_for_volunteers
 
         User.updateOne({_id:user._id},{
           name:user.name,
