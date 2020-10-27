@@ -4,6 +4,9 @@ const limiter  = rateLimit({
   windowMs:600*1000,
   max:5
 });
+var trycatch = require('trycatch')
+
+
 const router = express.Router()
 const app = express();
 const mongoose = require('mongoose');
@@ -97,27 +100,30 @@ app.post("/sign_up/org",limiter,(req,res)=>{
 
 
 
-    try{
-      User.updateOne({_id:user._id},{
-        name:user.name,
-        email:user.email,
-        contactNumber:user.contactNumber,
-        password:user.password,
-        Name_of_organisation : req.body.Name_of_organisation,
-        Address_of_organisation : req.body.Address_of_organisation,
-          License_number:req.body.License_number,
-          Type_of_organisation:req.body.Type_of_organisation,
-        Description_of_organisation:req.body.Description_of_organisation,
-          Volunteers_number:req.body.Volunteers_number,
-          Type_of_help:req.body.Type_of_help,
-          Open_for_volunteers:req.body.Open_for_volunteers})
 
-    }
-    catch(err){
-      console.log(err)
-    }
+      trycatch(function(){
+        User.updateOne({_id:user._id},{
+          name:user.name,
+          email:user.email,
+          contactNumber:user.contactNumber,
+          password:user.password,
+          Name_of_organisation : req.body.Name_of_organisation,
+          Address_of_organisation : req.body.Address_of_organisation,
+            License_number:req.body.License_number,
+            Type_of_organisation:req.body.Type_of_organisation,
+          Description_of_organisation:req.body.Description_of_organisation,
+            Volunteers_number:req.body.Volunteers_number,
+            Type_of_help:req.body.Type_of_help,
+            Open_for_volunteers:req.body.Open_for_volunteers}).then(()=>{
+              console.log('Working')
+            })
+      },function(err){
+        console.log(err)
+      })
 
 
+
+//res.redirect("/sign_up/org/preview")
 })
 
 // app.get("/sign_up/org/preview",(req,res)=>{
