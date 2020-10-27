@@ -100,7 +100,9 @@ try{
 if(typeof(req.body.Name_of_organisation) === 'string' ){
    user.Name_of_organisation = req.body.Name_of_organisation
    }
-  user.Address_of_organisation = req.body.Address_of_organisation,
+        org_add = req.body.Address_of_organisation
+  user.Address_of_organisation = org_add
+    
   user.License_number=req.body.License_number,
   user.Type_of_organisation=req.body.Type_of_organisation,
     user.Description_of_organisation=req.body.Description_of_organisation,
