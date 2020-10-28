@@ -48,7 +48,7 @@ export const Faq = () => {
         alt="little box with an arroba symbol on it"
       />
 
-      <div class="card">
+      <div class="Fcard">
         <div class="container-accordion">
           <h1>FAQ</h1>
 
