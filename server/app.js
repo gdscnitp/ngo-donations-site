@@ -124,7 +124,9 @@ if(typeof(req.body.Name_of_organisation) === 'string' ){
             Type_of_help:user.Type_of_help,
             Open_for_volunteers:user.Open_for_volunteers}).then(()=>{
             console.log(req.body.Volunteers_number)
-            })
+            }).catch((err)=>{
+          console.log(err)
+        })
       }
 
 }
