@@ -6,7 +6,7 @@ const limiter  = rateLimit({
 });
 //var trycatch = require('trycatch')
 //const Schema = mongoose.Schema
-
+var sanitizer = require('sanitize')()
 const router = express.Router()
 const app = express();
 const mongoose = require('mongoose');
@@ -103,7 +103,7 @@ if(typeof(req.body.Name_of_organisation) === 'string' ){
         org_add = req.body.Address_of_organisation
   user.Address_of_organisation = org_add
     
-  user.License_number=req.body.License_number,
+  user.License_number=sanitizer.value(req.body.License_number,'string')
   user.Type_of_organisation=req.body.Type_of_organisation,
     user.Description_of_organisation=req.body.Description_of_organisation,
       user.Volunteers_number=req.body.Volunteers_number,
