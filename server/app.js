@@ -86,29 +86,17 @@ user.save().then(()=>{
 // });
 
 app.post("/sign_up/org",limiter,(req,res)=>{
-try{
-  
+
+  user.Name_of_organisation = sanitizer.value(req.body.Name_of_organisation,'string')
+  user.Address_of_organisation = sanitizer.value(req.body.Address_of_organisation,'string')
+  user.License_number=sanitizer.value(req.body.License_number,'string')
+  user.Type_of_organisation=sanitizer.value(req.body.Type_of_organisation,'string')
+    user.Description_of_organisation=sanitizer.value(req.body.Description_of_organisation,'string')
+      user.Volunteers_number=sanitizer.value(req.body.Volunteers_number,'string')
+      user.Type_of_help=sanitizer.value(req.body.Type_of_help,'string')
+      user.Open_for_volunteers=sanitizer.value(req.body.Open_for_volunteers,'string')
 // console.log(typeof(req.body.Address_of_organisation))
 // console.log(typeof(req.body.Volunteers_number))
-
-
-
-
-
-
-      if( typeof(req.body.Address_of_organisation) == 'string' && typeof(req.body.Type_of_organisation) == 'string'  && typeof(req.body.Name_of_organisation) == 'string'  && typeof(req.body.Description_of_organisation) == 'string' && typeof(req.body.Type_of_help) == 'string'  &&  (typeof(req.body.License_number) == 'string' || typeof(req.body.License_number) == 'Number' )   && typeof(req.body.Open_for_volunteers) == 'string' && typeof(req.body.Volunteers_number) == 'string'){
-if(typeof(req.body.Name_of_organisation) === 'string' ){
-   user.Name_of_organisation = req.body.Name_of_organisation
-   }
-        org_add = req.body.Address_of_organisation
-  user.Address_of_organisation = org_add
-    
-  user.License_number=sanitizer.value(req.body.License_number,'string')
-  user.Type_of_organisation=req.body.Type_of_organisation,
-    user.Description_of_organisation=req.body.Description_of_organisation,
-      user.Volunteers_number=req.body.Volunteers_number,
-      user.Type_of_help=req.body.Type_of_help,
-      user.Open_for_volunteers=req.body.Open_for_volunteers
 
         User.updateOne({_id:user._id},{
           name:user.name,
@@ -124,17 +112,8 @@ if(typeof(req.body.Name_of_organisation) === 'string' ){
             Type_of_help:user.Type_of_help,
             Open_for_volunteers:user.Open_for_volunteers}).then(()=>{
             console.log(req.body.Volunteers_number)
-            }).catch((err)=>{
-          console.log(err)
-        })
-      }
-
-}
-catch(err){
-  console.log(error)
-}
-
-
+            })
+      
 // res.redirect("/sign_up/org/preview")
 
 })
