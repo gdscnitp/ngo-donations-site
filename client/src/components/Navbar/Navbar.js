@@ -1,6 +1,5 @@
 import React from "react";
 import { SearchBar } from "../Searchbar/SearchBar";
-import "../Searchbar/SearchBar.css";
 import "./Navbar.css";
 
 export const Navbar = () => {
@@ -14,28 +13,30 @@ export const Navbar = () => {
   return (
     <div class="menu menu--active" id="menu">
       <div class="logo">
-        <img src="logo.svg" alt="react logo" class="picture"></img>
+        <a href="/">
+          <img src="logo.svg" alt="react logo" class="pictureimg"></img>
+        </a>
         <div class="search-bar">
           <SearchBar></SearchBar>
         </div>
       </div>
 
-      <div class="container">
-        <div class="row">
+      <div class="container navcontainer">
+        <div class="row navrow">
           <div class="menu__wrapper d-none d-lg-block col-md-12">
-            <nav class="">
+            <nav class="navbar">
               <ul>
                 <li>
-                  <a href="https://www.google.co.in/">Signup/Login</a>
+                  <a href="/signup">Signup/Login</a>
                 </li>
                 <li>
-                  <a href="https://www.google.co.in/">FAQs</a>
+                  <a href="/faqs">FAQs</a>
                 </li>
                 <li>
-                  <a href="https://www.google.co.in/">About us</a>
+                  <a href="/aboutus">About us</a>
                 </li>
                 <li>
-                  <a href="https://www.google.co.in/">Events</a>
+                  <a href="/events">Events</a>
                 </li>
               </ul>
             </nav>
@@ -44,10 +45,10 @@ export const Navbar = () => {
             <button class="closebtn" onClick={closeNav}>
               ×
             </button>
-            <a href="https://www.google.co.in/">Events</a>
-            <a href="https://www.google.co.in/">About us</a>
-            <a href="https://www.google.co.in/">FAQs</a>
-            <a href="https://www.google.co.in/">Signup/Login</a>
+            <a href="/events">Events</a>
+            <a href="/aboutus">About us</a>
+            <a href="/faqs">FAQs</a>
+            <a href="/signup">Signup/Login</a>
           </div>
           <div class="menu__wrapper col-md-12 d-lg-none">
             <button type="button" class="menu__mobile-button" onClick={openNav}>
