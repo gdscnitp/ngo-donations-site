@@ -10,6 +10,7 @@ import Need from "../src/components/donation_and_need_form/need-form.js";
 import MyBook from "./components/home/book";
 import Stories from "./components/home/stories";
 import User from  "./components/User-profile/User.js";
+import {Loginpage} from "./components/Login-page/Login-page";
 import Homepage from "./pages/Homepage";
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
             <Route path="/need" component={Need} />
           </Switch>
         </center>
+        <Loginpage />
         <Footer />
 
       </div>
