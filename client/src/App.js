@@ -12,6 +12,7 @@ import Stories from "./components/home/stories";
 import User from  "./components/User-profile/User.js";
 import {Loginpage} from "./components/Login-page/Login-page";
 import Homepage from "./pages/Homepage";
+import Events from "./components/Event Page/Events";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           </Switch>
         </center>
         <Loginpage />
+        <Events />
         <Footer />
 
       </div>
