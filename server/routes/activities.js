@@ -1,7 +1,7 @@
 const express = require ('express');
 const router = express.Router();
 const multer = require('multer');
-const User = require('../models/Activity');
+const User = require('../models/Activities');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -74,7 +74,7 @@ router.patch("/update-details/",function(req,res,next){ // check added later
                 })
 
            });
-);
+});
 
 // delete records route
 router.delete("/delete-details/",function(req,res,next){
