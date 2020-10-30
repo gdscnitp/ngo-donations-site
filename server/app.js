@@ -18,7 +18,15 @@ const route2 = require('./routes/orgSignup');
 const editUser = require('./routes/api.js');
 const editActivity = require('./routes/activities.js');
 
+<<<<<<< HEAD
 >>>>>>> signup (org + ind) looking for help Backend
+=======
+const route1 = require('./routes/userSignup');
+const route2 = require('./routes/orgSignup');
+const editUser = require('./routes/api.js');
+const editActivity = require('./routes/activities.js');
+
+>>>>>>> 7c4eb99f5d15a0992a172bdc34aa419ad6fd1767
 const PORT = process.env.PORT || 3000;
 const DB_NAME = 'auth'        // later change it according to database
 const MONGO_DB_URI = `mongodb+srv://dscnitp_webdept_muckin:${process.env.DB_PASSWORD}@cluster0.kokfw.gcp.mongodb.net`;
@@ -30,8 +38,11 @@ mongoose.connect( MONGO_DB_URI , {
     w: 'majority'
 }).catch(err => { console.error(`Error in DB connection: mongo DB couldn't be reached`); exit(1); });
 <<<<<<< HEAD
+<<<<<<< HEAD
 const bcrypt = require('bcryptjs')
 =======
+=======
+>>>>>>> 7c4eb99f5d15a0992a172bdc34aa419ad6fd1767
 mongoose.set("useCreateIndex",true);
 
 >>>>>>> signup (org + ind) looking for help Backend
