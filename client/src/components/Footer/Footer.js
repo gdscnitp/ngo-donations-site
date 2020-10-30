@@ -40,9 +40,9 @@ export const Footer = () => {
           <span class="sas2-4">
          <ul>
           <li class="li_img">Cities we serve</li>
-          <li class="li_img"><img src={github_images} class="img1" alt="image" /></li>
-          <li class="li_img"><img src={github_images} class="img1"  alt="image" /></li>
-               <li class="li_img"><img src={github_images} class="img1"  alt="image" /></li>
+          <li class="li_img"><img src={github_images} class="img1" alt="cityIma" /></li>
+          <li class="li_img"><img src={github_images} class="img1"  alt="cityIma" /></li>
+               <li class="li_img"><img src={github_images} class="img1"  alt="cityIma" /></li>
 
           </ul>
     </span>
