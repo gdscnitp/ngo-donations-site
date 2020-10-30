@@ -42,7 +42,7 @@ app.use(express.static(join(__dirname, "public")));
 // Routes START
 app.use("/user", userRouter); // login, logout
 app.use("/activities", activitiesRouter); // image, update-details, delete-details
-app.use("/");
+app.use("/feed", feedRouter); // image, update-details, delete-details
 // Routes END
 
 //404 and Error handlers

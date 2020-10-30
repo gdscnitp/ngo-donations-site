@@ -9,7 +9,7 @@ router.post('/new', (req, res) => {
 
     const newRequest = {
         desc: req.body.desc,
-        tag: typeof req.body.needs === 'object' ? req.body.needs : null,
+        tag: Array.isArray(req.body.needs) ? req.body.needs : null,
         loc: req.body.loc,
         reason: req.body.reason,
         needy: req.body.needy,
@@ -20,9 +20,13 @@ router.post('/new', (req, res) => {
     reqModel.create(newRequest)
         .then((doc) => {
             console.log(`Created a new request with ID: ${doc.id}`);
+            res.status(200).send({
+                'Added Doc': doc
+            });
         })
         .catch((err) => {
             console.error(`Couldn't create a new request, initiated by ${req.body.requester}\n due to: `, err);
+            res.sendStatus(500);
         });
 });
 
