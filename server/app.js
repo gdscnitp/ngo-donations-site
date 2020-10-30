@@ -18,6 +18,14 @@ const route2 = require('./routes/orgSignup');
 const editUser = require('./routes/api.js');
 const editActivity = require('./routes/activities.js');
 
+<<<<<<< HEAD
+>>>>>>> signup (org + ind) looking for help Backend
+=======
+const route1 = require('./routes/userSignup');
+const route2 = require('./routes/orgSignup');
+const editUser = require('./routes/api.js');
+const editActivity = require('./routes/activities.js');
+
 >>>>>>> signup (org + ind) looking for help Backend
 const PORT = process.env.PORT || 3000;
 const DB_NAME = 'auth'        // later change it according to database
@@ -30,8 +38,11 @@ mongoose.connect( MONGO_DB_URI , {
     w: 'majority'
 }).catch(err => { console.error(`Error in DB connection: mongo DB couldn't be reached`); exit(1); });
 <<<<<<< HEAD
+<<<<<<< HEAD
 const bcrypt = require('bcryptjs')
 =======
+=======
+>>>>>>> signup (org + ind) looking for help Backend
 mongoose.set("useCreateIndex",true);
 
 >>>>>>> signup (org + ind) looking for help Backend
