@@ -9,7 +9,16 @@ const logger = require('morgan');
 const userRouter = require('./routes/user.js');
 const morgan = require('morgan');
 require('dotenv').config();
+<<<<<<< HEAD
 const User=require('./models/person')
+=======
+
+const route1 = require('./routes/userSignup');
+const route2 = require('./routes/orgSignup');
+const editUser = require('./routes/api.js');
+const editActivity = require('./routes/activities.js');
+
+>>>>>>> signup (org + ind) looking for help Backend
 const PORT = process.env.PORT || 3000;
 const DB_NAME = 'auth'        // later change it according to database
 const MONGO_DB_URI = `mongodb+srv://dscnitp_webdept_muckin:${process.env.DB_PASSWORD}@cluster0.kokfw.gcp.mongodb.net`;
@@ -20,7 +29,12 @@ mongoose.connect( MONGO_DB_URI , {
     dbName: DB_NAME,
     w: 'majority'
 }).catch(err => { console.error(`Error in DB connection: mongo DB couldn't be reached`); exit(1); });
+<<<<<<< HEAD
 const bcrypt = require('bcryptjs')
+=======
+mongoose.set("useCreateIndex",true);
+
+>>>>>>> signup (org + ind) looking for help Backend
 const db = mongoose.connection; //access to the pending connection
 db.on('error', (err) => {
         console.log(`Error in DB connection`)
@@ -44,7 +58,11 @@ app.use( express.static( join( __dirname, 'public'  ) ) );
 
 
 // Routes START
-app.use('/user', userRouter);   //login, logout
+app.use('/user', userRouter);   //login,
+app.use('/editUser',editUser); // edit user profile
+app.use('/edit',editActivity); // edit activities
+app.use('/api1', route1);  // signup user looking for help
+app.use('/api2',route2); // signup org looking for help
 // Routes END
 
 
