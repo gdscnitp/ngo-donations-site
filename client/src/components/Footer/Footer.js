@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import github_images from "./images/github.png";
 
 export const Footer = () => {
   return (
@@ -8,6 +9,46 @@ export const Footer = () => {
         rel="stylesheet"
         href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
       ></link>
+      <div class="sas2">
+      <div class="sas2-1">
+         <ul class="cities1">
+          <li>Cities we serve</li>
+          <li>lorem</li>
+          <li>lorem</li>
+               <li>lorem</li>
+               <li>lorem</li>
+          </ul>
+    </div>
+          <div class="sas2-2">
+         <ul class="cities1">
+          <li>Cities we serve</li>
+          <li>lorem</li>
+          <li>lorem</li>
+               <li>lorem</li>
+               <li>lorem</li>
+          </ul>
+    </div>
+          <div class="sas2-3">
+         <ul class="cities1">
+          <li>Cities we serve</li>
+          <li>lorem</li>
+          <li>lorem</li>
+               <li>lorem</li>
+               <li>lorem</li>
+          </ul>
+    </div>
+          <span class="sas2-4">
+         <ul>
+          <li class="li_img">Cities we serve</li>
+          <li class="li_img"><img src={github_images} class="img1" alt="image"></li>
+          <li class="li_img"><img src={github_images} class="img1"  alt="image"></li>
+               <li class="li_img"><img src={github_images} class="img1"  alt="image"></li>
+
+          </ul>
+    </span>
+       <p class="worklink">@Worklink, all right reserved</p>
+      </div>
+
       <div class="sas">
         <div class="stars">
           <p>Rate our Website</p>

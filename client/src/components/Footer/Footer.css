@@ -1,9 +1,48 @@
 .footer{
     height:400px;
+    background-color:grey;
+    height:550px;
+}
+.sas2{
+    width: 90%;
+     float:left;
+    margin-top: 3%;
+   color: white
+}
+.sas2-1,.sas2-2,.sas2-3,.sas2-4{
+    float:left;
+    margin-top: 3%;
+   color: white
+}
+li{
+    list-style-type: none;
+    font-size: 120%
+   
+}
+
+.cities1 li{
+    text-align: center;
+    padding: 16%;
+}
+.li_img{
+    margin-left: 10%;
+    margin-top: 4%;
+}
+
+
+.img1{
+    width:20%;
+    height: 70px;
+    padding: 2%
+}
+.sas{
+ float: right;
+ margin-top: -39%;
+ margin-right: 5%;
 }
 .stars p{
   font-family: Roboto Mono,monospace;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 
@@ -43,7 +82,12 @@ label.star:before {
 }
 
 
-
+.worklink{
+    color: black;
+   margin-top: 35%;
+    font-size: 170%;
+    margin-left: 10%;
+}
 /*suggestion box*/
 
 .csm {
@@ -55,8 +99,9 @@ label.star:before {
 #suggestion_box textarea, #suggestion_box button[type="submit"] { font:400 16px/16px "Open Sans", Helvetica, Arial, sans-serif; }
 
 #suggestion_box {
-  
-  background:rgb(141, 137, 137);
+  width:80%;
+  text-align: center;
+  background-color: lightgray;
   padding: 15px 50px 50px 50px;
 	margin:50px 50px 50px 50px;
 }
