@@ -6,6 +6,7 @@ const { join } = require("path"); //for getting path of the static directory
 const { exit } = require("process");
 const userRouter = require("./routes/user");
 const activitiesRouter = require("./routes/activities");
+const feedRouter = require("./routes/feed");
 const morgan = require("morgan");
 require("dotenv").config();
 

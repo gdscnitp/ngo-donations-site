@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const authModel = require("../models/schemas/userAuth");
+const userModel = require("../models/schemas/user");
 const { validateLoginData } = require("../util/validators");
 
 //temporary route for testing, will be replaced by the one made by signup backend team
@@ -14,12 +14,12 @@ router.post("/signup", (req, res) => {
 		});
 	}
 
-	authModel.create({ userName: user_id, pass: pass }, (err, doc) => {
+	userModel.create({ userName: user_id, pass: pass }, (err, doc) => {
 		if (!err && doc) {
 			res.sendStatus(200);
 		} else {
-            res.sendStatus(500);
-        }
+			res.sendStatus(500);
+		}
 	});
 });
 
@@ -33,7 +33,7 @@ router.post("/login", (req, res, next) => {
 		});
 	}
 
-	authModel.authenticate(user_id, pass, (err, user) => {
+	userModel.authenticate(user_id, pass, (err, user) => {
 		if (err) {
 			return next(err);
 		}

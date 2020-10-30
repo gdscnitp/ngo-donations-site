@@ -9,13 +9,30 @@ const userAuth = Schema({
 		trim: true,
 		unique: true,
 		required: true,
+		index: true
 	},
+	email: {	// email or mobile on of them should be required
+        type: String,
+        unique: true,
+    },
+    mobile: {
+        type: String,
+        unique: true,
+    },
 	pass: {
 		type: String,
 		required: true,
 	},
+	profileImg: {	// will be a URL
+		type: String,
+	}
 });
+
 userAuth.pre("save", function (next) {
+	if (!this.email && !this.mobile) {
+		console.error(`Atleast email or mobile number, ${this.userName}`);
+	}
+
 	const salt_rounds = 10; //to be able to change, as the app scales	// @note - can be replaced with just bcrypt.hash later
 	bcrypt
 		.genSalt(salt_rounds)
@@ -70,6 +87,7 @@ userAuth.statics.authenticate = function (user_id, pass, callback) {
 			.catch((err) => {
 				err.message = `Password comparison failed with an error`;
 				console.error(err.message, err);
+
 				return callback({ msg: err.message, code: err.code });
 			});
 	});

@@ -1,3 +1,4 @@
+/* eslint-disable*/
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
@@ -30,7 +31,7 @@ var upload = multer({
 		fileSize: 1024 * 1024 * 5, // later updated;
 	},
 	fileFilter: fileFilter,
-});// image path// limit: 5mb// filter : png, jpeg,jpg// later checkAuth added to check user signin or not;
+}); // image path// limit: 5mb// filter : png, jpeg,jpg// later checkAuth added to check user signin or not;
 router.patch("/update-profile/:id", upload.single("profileImage"), function (
 	req,
 	res,
