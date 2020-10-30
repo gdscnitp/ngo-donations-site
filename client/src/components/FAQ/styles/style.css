@@ -101,7 +101,7 @@ main {
 
 /* Accordions
 ---------------------------------------------------------------------*/
-.card {
+.Fcard {
   margin: 12em auto 7em auto;
   background-color: white;
   border-radius: 20px;
@@ -113,7 +113,7 @@ main {
 }
 
 @media only screen and (min-width: 1200px) {
-  .card {
+  .Fcard {
     width: 75%;
     margin-top: 7em;
     height: 480px;
