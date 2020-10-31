@@ -4,7 +4,7 @@ import c4 from "./images/react.png"
 const Navbar = () => {
     return(
         <>
-
+        <hr />
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <img src={c4} className="nav-img" alt="Logo" />
   <a class="navbar-brand title-navbar" href="#top"> &nbsp;NGO</a>

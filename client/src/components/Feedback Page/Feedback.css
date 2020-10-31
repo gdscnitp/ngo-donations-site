@@ -1,0 +1,41 @@
+.feed-card{
+    min-width:18rem;
+    
+}
+
+.feed-table{
+   margin-top: 25px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.feed-up-btn{
+    margin:80px;
+    margin-bottom: 10px;
+}
+
+.nav1-link{
+    margin:5px;
+    white-space: nowrap;
+}
+hr {
+    border: dotted #EAF6F6 6px;
+    border-bottom: none;
+    width: 4%;
+    margin: 100px auto;
+  }
+
+@media only screen and (max-width:750px) {
+    
+    .feed-up-btn{
+        margin:30px;
+        margin-bottom: 10px;
+        display: inline-block;
+        
+    }
+    .feed-card-btn{
+        margin-bottom: 25px;
+    }
+    
+  }
+  
