@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+.title-navbar{
+  font-size: 2rem;
+}
+
+.search-form {
+  padding: 10px;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.active-cyan-4 input[type="text"] {
+  border: 1px solid #4dd0e1;
+  box-shadow: 0 0 0 1px #4dd0e1;
+  margin-left: -0.7rem;
+}
+
+.nav-img {
+  height: 3.75rem;
+  border-radius: 50%;
+}
+
+.filter-event-type {
+  padding: 20px;
+}
+
+.add-event-btn {
+  display: flex;
+  flex-direction: column;
+}
+#add-button {
+  padding: 10px;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+.filter-link {
+  text-decoration: none;
+}
+
+.card-heading {
+  text-align: center;
+}
+
+.fill {
+  margin: 20px;
+  margin-top: 50px;
+  float: right;
+  width: 20rem;
+}
+
+.find-event{
+  font-size: 45px;
+}
+#head{
+  min-width: 20rem;
+}
+
+.filter-title{
+  font-size: 30px;
+  text-decoration: underline;
+}
+.fill{
+  min-width: 20rem;
+}
+
+@media only screen and (max-width: 2500px) {
+  .filter-card{
+    width:100%;
+  }
+  .paragraph{
+    position: absolute;
+    top:10%;
+    right:-40%;
+  }
+  
+  .card-button{
+    position: absolute;
+    right:-40%;
+    bottom: 10%;
+    
+  }
+  .cardss{
+    max-width: 50rem;
+    height:auto;
+  }
+  .image-card{
+    height:11rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .hello {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  #card-cont {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .filter-card{
+    width:100%;
+  }
+  .paragraph{
+    position: absolute;
+    top:5%;
+    right:-40%;
+  }
+  
+  .card-button{
+    position: absolute;
+    right:-40%;
+    bottom: 5%;
+    
+  }
+  .cardss{
+    height:auto;
+  }
+  
+  
+}
+
+@media only screen and (max-width: 1000px) {
+  .hello {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  #card-cont {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .card-button{
+    position: absolute;
+    right:-40%;
+    bottom: 15px;
+  }
+  .img-responsive{
+    width:100%;
+  }
+  .class1, .class2, .class3, .class4{
+    margin:5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+}
+
+@media only screen and (max-width: 770px) {
+  .hello {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  #card-cont {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+  }
+  .cardss{
+    width: 17rem;
+  }
+  
+  .class4{
+    display: inline-block;
+    padding:15px;
+   }
+
+   .class2{
+     position: absolute;
+     top:-10%;
+     right:4%;
+     white-space: nowrap;
+     display: flex;
+     justify-content: space-between;
+   }
+   .paragraph{
+     background-color: aqua;
+   }
+   
+}
+
+
+@media only screen and (max-width:750px) {
+  .hello {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  #card-cont {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+  }
+  .cardss{
+    width: 17rem;
+  }
+  .card-button{
+    position: absolute;
+    right:30%;
+    bottom: 5%;
+  }
+  .class4{
+    display: inline-block;
+    padding:15px;
+   }
+
+   .class2{
+     position: absolute;
+     top:-10%;
+     right:4%;
+     white-space: nowrap;
+     display: flex;
+     justify-content: space-between;
+   }
+   .paragraph{
+     background-color: aqua;
+   }
+   
+   
+  
+}
+
+

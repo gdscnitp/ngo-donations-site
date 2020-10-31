@@ -11,12 +11,8 @@ import MyBook from "./components/home/book";
 import Stories from "./components/home/stories";
 import User from  "./components/User-profile/User.js";
 import {Loginpage} from "./components/Login-page/Login-page";
-import {SignupOption} from "./components/signup/SignupOption";
 import Homepage from "./pages/Homepage";
-import {Sign1} from "./components/signup/SignUp1/Sign1";
-import {Sign2} from "./components/signup/SignUp2/Sign2";
-import {Sign3} from "./components/signup/SignUp3/Sign3";
-import {Sign4} from "./components/signup/SignUp4/Sign4";
+import Events from "./components/Event Page/Events";
 
 function App() {
   return (
@@ -47,17 +43,8 @@ function App() {
           </Switch>
         </center>
         <Loginpage />
-        <SignupOption />
-        <Sign1/>
-        <br/>
-        <Sign2/>
-        <br/>
-        <Sign3/>
-        <br/>
-        <Sign4/>
-        <br/>
-        <Footer/>
-
+        <Events />
+        <Footer />
 
       </div>
     </Router>
