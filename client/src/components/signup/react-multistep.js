@@ -84,11 +84,6 @@ export default function MultiStep(props) {
   let showNav = true
   if (props.showNavigation) showNav = props.showNavigation
 
-  let prevStyle = {}
-  if (props.prevStyle) prevStyle = props.prevStyle
-
-  let nextStyle = {}
-  if (props.nextStyle) nextStyle = props.nextStyle
 
   const [stylesState, setStyles] = useState(getTopNavStyles(0, props.steps.length))
   const [compState, setComp] = useState(0)

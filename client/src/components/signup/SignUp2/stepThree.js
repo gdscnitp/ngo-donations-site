@@ -10,10 +10,10 @@ export default () => {
           <span>By clicking "Accept" I agree that:</span>
           <ul className='docs-terms'>
             <li>
-              I have read and accepted the <a href='#'>User Agreement</a>
+              I have read and accepted the User Agreement
             </li>
             <li>
-              I have read and accepted the <a href='#'>Privacy Policy</a>
+              I have read and accepted the Privacy Policy
             </li>
             <li>I am at least 18 years old</li>
           </ul>
