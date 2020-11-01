@@ -3,3 +3,5 @@
 
 /node_modules
 
+# else there will be 3 lock files only
+pnpm-lock.yaml

@@ -1,5 +1,4 @@
 const express = require("express");
-
 const app = express();
 const mongoose = require("mongoose");
 const { join } = require("path"); //for getting path of the static directory
@@ -7,11 +6,16 @@ const { exit } = require("process");
 const userRouter = require("./routes/user");
 const activitiesRouter = require("./routes/activities");
 const feedRouter = require("./routes/feed");
+const requestRouter = require('./routes/request');
 const morgan = require("morgan");
+const session = require('express-session');	// @note - Session data is not saved in the cookie itself, just the session ID. Session data is stored server-side
+const { random16BaseString } = require("./utils/random");
+const mongoStore = require('connect-mongo')(session);
 require("dotenv").config();
 
 const PORT = process.env.PORT || 3000;
-const DB_NAME = "auth"; // later change it according to database
+const DB_NAME = "muckin_testing";
+
 const MONGO_DB_URI = `mongodb+srv://dscnitp_webdept_muckin:${process.env.DB_PASSWORD}@cluster0.kokfw.gcp.mongodb.net`;
 mongoose
 	.connect(MONGO_DB_URI, {
@@ -23,26 +27,39 @@ mongoose
 	})
 	.catch((err) => {
 		console.error(`Error in DB connection: mongo DB couldn't be reached`);
+		console.error(err);
 		exit(1);
 	});
 
 const db = mongoose.connection; //access to the pending connection
 db.on("error", (err) => {
 	console.log(`Error in DB connection`);
+	console.error(err);
 });
 db.once("open", () => {
 	console.log(`Connected to the database : ${DB_NAME}`);
 });
 
-app.use(morgan("dev")); //to log requests made to api
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+app.use(morgan("dev")); // to log requests made to api
+app.use(express.urlencoded({ extended: false }));	// to parse url encoded data and form inputs
+app.use(express.json());	// to parse json data
 app.use(express.static(join(__dirname, "public")));
+app.use(session({
+	secret: random16BaseString(10),
+	resave: false,	// since connect-mongo implements `touch` method, so resave:true not required
+	saveUninitialized: false,	// useful for implementing login sessions
+	cookie: {
+		// secure: true,	// @note - uncomment, if all clients will be on HTTPS
+		maxAge: 14 * 24 * 3600,	// 14 days
+	},
+	store: mongoStore
+}));
 
 // Routes START
 app.use("/user", userRouter); // login, logout
 app.use("/activities", activitiesRouter); // image, update-details, delete-details
-app.use("/feed", feedRouter); // image, update-details, delete-details
+app.use("/requests", requestRouter); // /new request
+app.use("/feeds", feedRouter); // /get feeds
 // Routes END
 
 //404 and Error handlers

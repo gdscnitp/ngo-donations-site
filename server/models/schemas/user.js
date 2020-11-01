@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, SchemaTypes } = require("mongoose");
 
 const bcrypt = require("bcrypt");
 
@@ -11,20 +11,35 @@ const userAuth = Schema({
 		required: true,
 		index: true
 	},
-	email: {	// email or mobile on of them should be required
+	email: {	// email or mobile one of them should be required
         type: String,
         unique: true,
     },
     mobile: {
-        type: String,
-        unique: true,
-    },
+		type: String,
+		unique: true,
+	},
+	oauth: {	// oauth token
+		type: String,
+		unique: true,
+		trim: true
+	},
+	verified: {
+		profile: Boolean,	// if profile is verified
+		oauth: Boolean,
+		email: Boolean,
+		mobile: Boolean,
+	},
 	pass: {
 		type: String,
 		required: true,
+		alias: 'password'	// not stored on db
 	},
 	profileImg: {	// will be a URL
 		type: String,
+	},
+	orgs: {	// ids of organisations (in their collection) of which the user is a part, role to be determined from organisation database storing the roles of members
+		type: [SchemaTypes.ObjectId],
 	}
 });
 

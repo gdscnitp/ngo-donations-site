@@ -1,12 +1,15 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
 //create schema for todo
 const ActivitySchema = new Schema({
 	_id: mongoose.Schema.Types.ObjectId,
 	details: {
 		type: String,
-		required: [true, "The todo text field is required"],
+		required: [
+			true,
+			"The todo text field is required"
+		],
 	},
 	Image: {
 		type: String,
@@ -14,6 +17,6 @@ const ActivitySchema = new Schema({
 });
 
 //create model for todo
-const Activity = mongoose.model("activity", UserSchema);
+const Activity = mongoose.model("activity", ActivitySchema);
 
 module.exports = Activity;

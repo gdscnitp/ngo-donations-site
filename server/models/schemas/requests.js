@@ -18,7 +18,7 @@ const requestSchema = Schema({
         type: String,
     },
     needy: {
-        type: Number,
+        type: [Number], //a range, should be a pair of number
         alias: 'num_needy'
     },
     req: { //organisation or individual name
@@ -38,4 +38,4 @@ requestSchema.pre('save', function () {
     }
 });
 
-module.exports = model('request', requestSchema);
+module.exports = model('requests', requestSchema); // @note_to_self (remove later) -> Actually what mongoose does behind the scenes, is that it `plurizes` the "request" to "requests" and that is used as collection name. May seem simple but It took almost 20-30 minutes to dig this much deep into mongoose (find it at -> node_modules/mongoose@5.x.xx/node_modules/mongoose/lib/index.js, line no. 567 )
