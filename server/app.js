@@ -52,7 +52,10 @@ app.use(session({
 		// secure: true,	// @note - uncomment, if all clients will be on HTTPS
 		maxAge: 14 * 24 * 3600,	// 14 days
 	},
-	store: mongoStore
+	store: new mongoStore({
+		url: MONGO_DB_URI,
+		dbName: 'session-store'
+	})
 }));
 
 // Routes START
