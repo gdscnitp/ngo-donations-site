@@ -3,15 +3,17 @@ const app = express();
 const mongoose = require("mongoose");
 const { join } = require("path"); //for getting path of the static directory
 const { exit } = require("process");
+const morgan = require("morgan");
+const session = require('express-session');	// @note - Session data is not saved in the cookie itself, just the session ID. Session data is stored server-side
+const mongoStore = require('connect-mongo')(session);
 const userRouter = require("./routes/user");
 const activitiesRouter = require("./routes/activities");
 const feedRouter = require("./routes/feed");
 const requestRouter = require('./routes/request');
-const morgan = require("morgan");
-const session = require('express-session');	// @note - Session data is not saved in the cookie itself, just the session ID. Session data is stored server-side
+const signupRouter = require('./routes/sign_up');
 const { random16BaseString } = require("./utils/random");
-const mongoStore = require('connect-mongo')(session);
 require("dotenv").config();
+
 
 const PORT = process.env.PORT || 3000;
 const DB_NAME = "muckin_testing";
@@ -60,6 +62,7 @@ app.use(session({
 
 // Routes START
 app.use("/user", userRouter); // login, logout
+app.use("/sign_up", signupRouter); // sign_up individual and organisation
 app.use("/activities", activitiesRouter); // image, update-details, delete-details
 app.use("/requests", requestRouter); // /new request
 app.use("/feeds", feedRouter); // /get feeds
@@ -76,5 +79,13 @@ app.use((err, req, res, next) => {
 		err.message || `Request couldn't be completed`
 	);
 });
+
+	//404 and Error handlers
+app.use( (req, res, next) => {  //catch any request to endpoint not available
+    next({status: 404, message: `Route ${req.baseUrl} not found`}, req, res);
+})
+app.use( (err, req, res, next) => { //error handler
+    res.status( err.status || 500 ).send(err.message || `Request couldn't be completed`);
+})
 
 app.listen(PORT, console.log(`Server listening on ${PORT}`));

@@ -2,14 +2,17 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap-grid.min.css';
 import { Navbar } from "../src/components/Navbar/Navbar";
 import { Footer } from "../src/components/Footer/Footer";
 import Donation from "../src/components/donation_and_need_form/donation-form.js";
 import Need from "../src/components/donation_and_need_form/need-form.js";
 import MyBook from "./components/home/book";
 import Stories from "./components/home/stories";
-
+import User from  "./components/User-profile/User.js";
+import {Loginpage} from "./components/Login-page/Login-page";
 import Homepage from "./pages/Homepage";
+import Events from "./components/Event Page/Events";
 
 function App() {
   return (
@@ -18,6 +21,7 @@ function App() {
         <header className="App-header">
           <p>Welcome to MuckIn!!</p>
         </header>
+      <User/>
         <a href="/donate" className="btn btn-info" style={{ float: "left", margin: "1rem" }}>
           Donate
         </a>
@@ -26,6 +30,7 @@ function App() {
         </a>
         <br />
         <br />
+
         <Navbar />
         <center>
           <Switch>
@@ -37,9 +42,13 @@ function App() {
             <Route path="/need" component={Need} />
           </Switch>
         </center>
+        <Loginpage />
+        <Events />
         <Footer />
+
       </div>
     </Router>
+
   );
 }
 
