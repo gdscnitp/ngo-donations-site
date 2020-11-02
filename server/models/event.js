@@ -11,32 +11,41 @@ const eventSchema = new Schema({
     type: String,
     // required: true
   },
-  Description: {
+  description: {
     type: String,
     // required: true
   },
-  Region: {
+  region: {
     type: String,
-    // required: true
+     //required: true
   },
-  StartDate: {
+  startDate: {
     type: Date,
-    // required: true
+     //required: true
   },
-  EndDate: {
+  endDate: {
     type: Date,
-    // required: true
+     //required: true
 
-  },
-  StartTime: {
-    type: Date,
-    // required: true
-  },
-  EndTime: {
-    type: Date,
-    // required: true
+    startTime:
+    {
+      type: String,
+     //required: true
+
+    },
+    endTime:
+    {
+      type: String,
+     //required: true
+    }
+
   }
-})
+  
+  
+  
+  
+  
+});
 
 const Event = mongoose.model('Event', eventSchema);
 module.exports = Event;
