@@ -141,6 +141,7 @@ export default function MultiStep(props) {
         </button>
         <button
           style={buttonsState.showSubmitBtn ? props.nextStyle : { display: 'none' }}
+          onClick = {console.log("clickced submit")}
         >
           Submit
         </button>
