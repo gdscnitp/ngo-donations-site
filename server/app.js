@@ -1,26 +1,30 @@
 const express = require('express');
 const rateLimit = require('express-rate-limit')
-const { body } = require('express-validator');
-const app = express();
+//const { body } = require('express-validator');
+
 const mongoose = require('mongoose');
-const { join } = require('path');    //for getting path of the static directory
+const { join } = require('path'); 
+const bcrypt = require('bcryptjs')   //for getting path of the static directory
 const { exit } = require('process');
 const logger = require('morgan');
 const userRouter = require('./routes/user.js');
+
 const morgan = require('morgan');
 require('dotenv').config();
-const User=require('./models/person')
+const User=require('./models/person');
+//const Event=require('./models/event');
 const PORT = process.env.PORT || 3000;
-const DB_NAME = 'auth'        // later change it according to database
-const MONGO_DB_URI = `mongodb+srv://dscnitp_webdept_muckin:${process.env.DB_PASSWORD}@cluster0.kokfw.gcp.mongodb.net`;
-mongoose.connect( MONGO_DB_URI , {
+const DB_NAME = 'events'        // later change it according to database
+const MONGO_DB_URI = `mongodb+srv://dscnitp_webdept_muckin:dscnitp_webdept_muckin@cluster0.kokfw.gcp.mongodb.net/project2?retryWrites=true&w=majority`;
+mongoose.connect( MONGO_DB_URI , 
+  {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
     dbName: DB_NAME,
-    w: 'majority'
+    //w: 'majority'
 }).catch(err => { console.error(`Error in DB connection: mongo DB couldn't be reached`); exit(1); });
-const bcrypt = require('bcryptjs')
+
 const db = mongoose.connection; //access to the pending connection
 db.on('error', (err) => {
         console.log(`Error in DB connection`)
@@ -35,17 +39,17 @@ const limiter  = rateLimit({
 var string = require('string-sanitizer')
 var sanitizer=require('sanitize')();
 
-var user
+const app = express();
 app.use( morgan('dev') );   //to log requests made to api
 app.use( express.urlencoded({extended: false}) );
 app.use( express.json() );
 app.use( express.static( join( __dirname, 'public'  ) ) );
+
+
 // app.set('view engine','ejs')
 
 
-// Routes START
-app.use('/user', userRouter);   //login, logout
-// Routes END
+
 
 
 
@@ -83,6 +87,7 @@ user.save().then(()=>{
   // res.redirect('/sign_up/org')
 
   })
+
 
 // app.get("/sign_up/org", (req, res)=>{
 //     res.render("sign_up")
@@ -140,6 +145,16 @@ app.post("/sign_up/org",limiter,(req,res)=>{
 
 
 
+
+app.get('/', function(req, res){
+  console.log("Root Route")
+  res.json({ message: "hello world" });
+});
+
+
+
+app.use('/user', userRouter);
+app.use('/event', require('./routes/event'));
 
 
 

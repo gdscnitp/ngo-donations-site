@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const authModel = require("../models/schemas/userAuth");
-const { validateLoginData } = require('../util/validators')
+// const { validateLoginData } = require('../util/validators')
 
     //temporary route for testing, will be replaced by the one made by signup backend team
 router.post('/signup', (req, res) => {
