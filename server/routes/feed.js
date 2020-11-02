@@ -28,18 +28,14 @@ db.once("open", () => {
     } else if (opType === "rename") {
       // Collection name changed
       console.warn(
-        `[${Date.now()}] ⚠⚠ Collection name has been changed from ${
-          delta.to.db
-        }.${delta.to.coll} ⚠⚠`
+        `[${Date.now()}] ⚠⚠ Collection name has been changed from ${delta.to.db}.${delta.to.coll} ⚠⚠`
       );
     } else if (opType === "invalidate") {
       // caused by drop or rename
       io.emit("critical:deleteAll", null); // since the server side data has been deleted, remove ALL from client side, let it know it's a critical error (rather i think the client should be taken down)
 
       console.error(
-        `[${Date.now()}] ‼‼🔺 Watch on collection ${
-          reqModel.collection.name
-        } INVALIDATED due to ${opType}. Resume Token is ${delta._id}`
+        `[${Date.now()}] ‼‼🔺 Watch on collection ${reqModel.collection.name} INVALIDATED due to ${opType}. Resume Token is ${delta._id}`
       );
     }
   });
@@ -48,9 +44,11 @@ db.once("open", () => {
 /**
  *  @about get ALL types of feeds (limited by param passed) in database
  *  @note returns both requests and activities (activities is @todo)
- *  @example_url -> `https://<website>/feeds/get?limit=25`
- *  @params -> Accepts a `limit` parameter (for how many feeds to return), if not given, defaults to 100
- *  @request_body -> {}
+ *  @example_url -> `https://<website>/feeds/get?limit=25&type=requests` // both are optional in query string
+ *
+ *  @params -> Accepts a `limit` parameter [RECOMMENDED] (for how many feeds to return), if not given, defaults to 100
+ *            Also takes in a `type` parameter [OPTIONAL], having value either 'requests' or 'activities'
+ *  @request_body -> {} // OR, { limit: some_number, type: 'requests'/'activities' }
  *
  *  @response -> When successful, responds with an ARRAY of objects
  * 				And each object will have a `type` attribute, which is either 'request' or 'activity'
@@ -58,45 +56,47 @@ db.once("open", () => {
  *  @working -> just calls reqModel.create() after creating `newRequest`
  */
 app.get("/get", (req, res) => {
-  // Fetching requests
   const max_limit = 100; //max feeds to fetch (ONLY `if` limit)
-  const num = Number(req.query.limit) || max_limit;
+  const num = parseInt(req.query.limit) || parseInt(req.body.limit) || max_limit;
+  const type = req.query.type || req.body.type || null; // by default both types to be returned
 
   let feeds = []; // feeds to return
 
   // fetching requests
   const query = reqModel.find({}).limit(num).sort({ createdAt: "desc" });
-  query.exec((err, docs) => {
-    if (err) {
-      console.error("Couldn't fetch all feeds: ", err);
-    }
-    if (docs.length === 0) {
-      if (reqModel.estimatedDocumentCount() === 0) {
-        if (reqModel.count() === 0) {
-          //making it sure, doing this earlier can be comparatively costly for large databases (ours can become if it becomes famous (though :D))
-          console.log("No feeds were found in the database (All time)");
+  query.exec()
+    .then((docs) => {
+      if (docs.length === 0) {
+        if (reqModel.estimatedDocumentCount() === 0 && reqModel.count() === 0) {
+            //making it sure, doing .count() earlier can be comparatively costly for large databases (ours can become if it becomes famous (though :D))
+            console.log(`[${Date()}] No feeds were found in the database (All time)`);
 
-          return res.status(200).send({ err: "No Feeds in database" });
+            return res.status(200).send({ err: "No Feeds in database" });
         }
       }
-    }
 
-    docs = docs.map((doc) => ({
-      org_name: doc.req, //requester
-      desc: doc.desc,
-      reason: doc.reason,
-      num: doc.needy, // range of people that will be benefited
-      contact: doc.call, //contact
-    }));
+      docs = docs.map((doc) => ({
+        org_name: doc.req, //requester
+        desc: doc.desc,
+        reason: doc.reason,
+        num: doc.needy, // range of people that will be benefited
+        contact: doc.call, //contact
+      }));
 
-    feeds = feeds.concat(docs);
+      feeds = feeds.concat(docs);
 
-    // @todo - Fetch activites too (so as to add to `feeds`, and specify type as 'activity')
+      // @todo - Fetch activites too (so as to add to `feeds`, and specify type as 'activity')
 
-    feeds.sort((feed1, feed2) => feed1.createdAt < feed2.createdAt);
+      feeds.sort((feed1, feed2) => feed1.createdAt < feed2.createdAt);
 
-    return res.send({ feeds: feeds.slice(-num) }); // `newest` num feeds
-  });
+      return res.send({ feeds: feeds.slice(-num) }); // `newest` num feeds
+    })
+    .then((feeds) => {
+
+    })
+    .catch((err) => {
+      console.error("Couldn't fetch all feeds: ", err);
+    });
 });
 
 app.get("/get/:id", (req, res) => {
