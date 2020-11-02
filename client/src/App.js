@@ -17,10 +17,10 @@ import Event from "./components/Event/Event.js"
 
 import Events from "./components/Event Page/Events";
 import { SignupOption } from "./components/signup/SignupOption";
-import { Sign1 } from "./components/signup/willingOrganisation/Sign1";
-import { Sign2 } from "./components/signup/willingIndividual/Sign2";
-import { Sign3 } from "./components/signup/lookingIndividual/Sign3";
-import { Sign4 } from "./components/signup/lookingOrganisation/Sign4";
+import { Sign1 } from "./components/signup/willingOrganisation/willingOrganisationSignup";
+import { Sign2 } from "./components/signup/willingIndividual/willingIndividualSignup";
+import { Sign3 } from "./components/signup/lookingIndividual/lookingIndividualSignup";
+import { Sign4 } from "./components/signup/lookingOrganisation/lookingOrganisationSignup";
 
 
 function App() {
