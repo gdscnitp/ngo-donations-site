@@ -12,6 +12,7 @@ import Stories from "./components/home/stories";
 import User from  "./components/User-profile/User.js";
 import {Loginpage} from "./components/Login-page/Login-page";
 import Homepage from "./pages/Homepage";
+import Feedback from "./components/Feed Page/Feedback";
 
 import Event from "./components/Event/Event.js"
 
@@ -50,6 +51,7 @@ function App() {
         </center>
         <Loginpage />
         <Events />
+        <Feedback />
         <Footer />
 
       </div>
