@@ -30,5 +30,27 @@ router.post("", (req, res,next) => {
 
    
 });
+router.get("/update", (req,res,next)=>{
+  res.send("Get request handled by event page");
+});
+
+    
+router.post("/update", (req,res,next)=> {
+  // let _id  = req.body.id;
+  let _id = "5fa182069e2cd54b404d3573";
+
+  Event.findByIdAndUpdate(_id, req.body, ()=>{
+    console.log("data updated");
+    });
+    res.send('updated');
+});
+router.delete("/delete", (req,res,next)=> {
+  // let _id  = req.body.id;
+  let _id = "5fa189a1874d2c455884c9bc";
+  Event.findByIdAndRemove(_id, ()=>{
+    console.log("Event deleted successfully");
+  });
+  res.send("Deleted");
+});
 
 module.exports = router;
