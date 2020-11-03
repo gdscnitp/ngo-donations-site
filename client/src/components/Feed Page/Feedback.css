@@ -88,6 +88,9 @@
         left:20%;
         
     }
+    .tab-cont{
+        margin-left: 40%;
+    }
   }
   
   @media only screen and (max-width:500px) {
@@ -112,5 +115,8 @@
         top:80%;
         left:5%;
         
+    }
+    .tab-cont{
+        margin-left: 35%;
     }
   }
