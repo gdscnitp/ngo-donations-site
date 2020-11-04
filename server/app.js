@@ -11,15 +11,15 @@ const signupRouter = require("./routes/sign_up");
 const morgan = require("morgan");
 require("dotenv").config();
 const PORT = process.env.PORT || 3000;
-const DB_NAME = "muckin_testing"; // later change it according to database
-const MONGO_DB_URI = `mongodb+srv://dscnitp_webdept_muckin:dscnitp_webdept_muckin@cluster0.kokfw.gcp.mongodb.net/project2?retryWrites=true&w=majority`;
+const DB_NAME = "muckin_testing"; // @note - later change it according to database used in production
+const MONGO_DB_URI = `mongodb+srv://dscnitp_webdept_muckin:${process.env.DB_PASSWORD}@cluster0.kokfw.gcp.mongodb.net?retryWrites=true`; // @note - Don't modify this, if it doesn't work for you please ask
 mongoose
   .connect(MONGO_DB_URI, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
     dbName: DB_NAME,
-    //w: 'majority'
+    w: 'majority'
   })
   .catch((err) => {
     console.error(`Error in DB connection: mongo DB couldn't be reached`);
@@ -38,7 +38,7 @@ app.use(
   rateLimit({
     // preliminary rate limit
     windowMs: 24 * 60 * 60 * 1000,
-    max: 100,
+    max: process.env.NODE_ENV === 'PRODUCTION' ? 5000: 10000, // mnay deployments provide this env variable, but NOT all
   })
 );
 app.use(morgan("dev")); //to log requests made to api
