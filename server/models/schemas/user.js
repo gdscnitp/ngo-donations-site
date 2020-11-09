@@ -3,7 +3,7 @@ const { Schema, model, SchemaTypes } = require("mongoose");
 const bcrypt = require("bcrypt");
 
 // @note - this model will change according to the one used by signup backend team, according to how the info is originally stored
-const userAuth = Schema({
+const user = Schema({
   userName: {
     type: String,
     trim: true,
@@ -47,7 +47,7 @@ const userAuth = Schema({
   },
 });
 
-userAuth.pre("save", function (next) {
+user.pre("save", function (next) {
   if (!this.email && !this.mobile) {
     console.error(`Atleast email or mobile number, ${this.userName}`);
   }
@@ -74,8 +74,8 @@ userAuth.pre("save", function (next) {
     });
 });
 
-const userModel = model("auth", userAuth);
-userAuth.statics.authenticate = function (user_id, pass, callback) {
+const userModel = model("auth", user);
+user.statics.authenticate = function (user_id, pass, callback) {
   userModel.findOne({ userName: user_id }, (err, doc) => {
     if (err) {
       return callback(err);
