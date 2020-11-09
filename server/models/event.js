@@ -1,10 +1,9 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
 
 //create schema for Event Schema
 const eventSchema = new Schema({
-  _id : {
+  _id: {
     type: mongoose.Schema.Types.ObjectID,
   },
   name: {
@@ -17,37 +16,26 @@ const eventSchema = new Schema({
   },
   region: {
     type: String,
-     //required: true
+    //required: true
   },
-    startDate: {
+  startDate: {
     type: Date,
-     //required: true
-    },
-   endDate: {
+    //required: true
+  },
+  endDate: {
     type: Date,
-     //required: true
-   },
-    startTime:
-    {
-      type: String,
-     //required: true
+    //required: true
 
+    startTime: {
+      type: String,
+      //required: true
     },
-    endTime:
-    {
+    endTime: {
       type: String,
-     //required: true
-    }
-
-
-
-  
-  
-  
-  
-  
-  
+      //required: true
+    },
+  },
 });
 
-const Event = mongoose.model('Event', eventSchema);
+const Event = mongoose.model("Event", eventSchema);
 module.exports = Event;

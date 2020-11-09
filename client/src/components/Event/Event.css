@@ -57,11 +57,11 @@
   }
   
   @media only screen and (max-width: 800px) {
-    td {
-      width: 42%;
-    }
-    .Event-input {
+        .Event-input {
       width: 90%;
     }
+    .Event-center{
+      width:70%;
+   }
   }
   
