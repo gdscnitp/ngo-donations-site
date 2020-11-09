@@ -18,9 +18,9 @@ const fileFilter = (req, file, cb) => {
     file.mimetype === "image/jpg" ||
     file.mimetype === "image/png"
   ) {
-    cb(null, true);
+    return cb(null, true);
   } else {
-    cb(null, false);
+    return cb(null, false);
   }
 };
 
