@@ -14,7 +14,6 @@ import { Loginpage } from "./components/Login-page/Login-page";
 import Homepage from "./pages/Homepage";
 import Event from "./components/Event/Event.js";
 import Carousel from "./components/carousel/carousel.js";
-
 import Events from "./components/Event Page/Events";
 import { SignupOption } from "./components/signup/SignupOption";
 import { WillingOrganisationSignup } from "./components/signup/willingOrganisation/WillingOrganisationSignup";
