@@ -2,34 +2,18 @@ const router = require("express").Router();
 const userModel = require("../models/schemas/user");
 const { validateLoginData, loggedInCheck } = require("../utils/validators");
 const { hash } = require("bcrypt");
+const csurf = require('csurf');
 
-//temporary route for testing, will be replaced by the one made by signup backend team
-router.post("/signup", (req, res) => {
-  const user_id = req.body.userName;
-  const pass = req.body.password;
-
-  if (!validateLoginData(user_id, pass)) {
-    return res.status(401).send({
-      error: "Invalid login data passed or All fields not filled",
-      receivedUserName: req.body.userName,
-    });
-  }
-
-  userModel.create({ userName: user_id, pass: pass }, (err, doc) => {
-    if (!err && doc) {
-      res.sendStatus(200);
-    } else {
-      res.sendStatus(500);
-    }
-  });
-});
+router.use( csurf({ cookie: true }) );
 
 /**
  * Login @route -> /user/login
  *
  * @note -> If login is successful the userName is also stored in the session,
  * 			and can be accessed using `req.session.uName`
- *
+ * 
+ * @token_&_session - Later JWT tokens maybe used, but as for now, sessions seem enough to keep track of users
+ * 
  * @request_body -> { "userName": "<username of user>", "pass": "<password of user>" }
  *
  * @response -> @statusCode -> 200 (if success)
