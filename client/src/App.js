@@ -17,10 +17,10 @@ import Carousel from "./components/carousel/carousel.js";
 
 import Events from "./components/Event Page/Events";
 import { SignupOption } from "./components/signup/SignupOption";
-import { Sign1 } from "./components/signup/willingOrganisation/willingOrganisationSignup";
-import { Sign2 } from "./components/signup/willingIndividual/willingIndividualSignup";
-import { Sign3 } from "./components/signup/lookingIndividual/lookingIndividualSignup";
-import { Sign4 } from "./components/signup/lookingOrganisation/lookingOrganisationSignup";
+import { WillingOrganisationSignup } from "./components/signup/willingOrganisation/WillingOrganisationSignup";
+import { WillingIndividualSignup } from "./components/signup/willingIndividual/WillingIndividualSignup";
+import { LookingIndividualSignup } from "./components/signup/lookingIndividual/LookingIndividualSignup";
+import { LookingOrganisationSignup } from "./components/signup/lookingOrganisation/LookingOrganisationSignup";
 
 
 function App() {
@@ -56,6 +56,17 @@ function App() {
             <Route path="/events" component={Events} />
           </Switch>
         </center>
+        <br />
+        <SignupOption />
+        <br />
+        <WillingOrganisationSignup />
+        <br />
+        <WillingIndividualSignup />
+        <br />
+        <LookingIndividualSignup />
+        <br />
+        <LookingOrganisationSignup/>
+        <br /> 
         <Footer />
 
       </div>

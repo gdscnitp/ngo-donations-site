@@ -14,7 +14,7 @@ const steps = [
 const prevStyle = {'background': '#33c3f0', 'border-width': '2px'}
 const nextStyle = {'background': '#33c3f0',  'border-width': '2px'}
 
-export const Sign4 = () => (
+export const LookingOrganisationSignup = () => (
   <div className='container cnt1' style={{backgroundColor:"white"}}>
     <MultiStep steps={steps} prevStyle={prevStyle} nextStyle={nextStyle} />
     <div className='container app-footer' >
