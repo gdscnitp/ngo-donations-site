@@ -19,7 +19,7 @@ const Homepage = () => {
       </h3>
       <br />
       <News />
-      <br/>
+      <br />
       <br />
       <Cause />
       <h3>

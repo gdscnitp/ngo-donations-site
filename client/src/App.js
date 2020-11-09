@@ -9,11 +9,11 @@ import Donation from "../src/components/donation_and_need_form/donation-form.js"
 import Need from "../src/components/donation_and_need_form/need-form.js";
 import MyBook from "./components/home/book";
 import Stories from "./components/home/stories";
-import User from  "./components/User-profile/User.js";
-import {Loginpage} from "./components/Login-page/Login-page";
+import User from "./components/User-profile/User.js";
+import { Loginpage } from "./components/Login-page/Login-page";
 import Homepage from "./pages/Homepage";
-
-import Event from "./components/Event/Event.js"
+import Event from "./components/Event/Event.js";
+import Carousel from "./components/carousel/carousel.js";
 
 import Events from "./components/Event Page/Events";
 import { SignupOption } from "./components/signup/SignupOption";
@@ -27,11 +27,11 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <header className="App-header">
-          <p>Welcome to MuckIn!!</p>
-        </header>
-      <User/>
-      
+        <br />
+        <br />
+        
+        <Carousel />
+
         <a href="/donate" className="btn btn-info" style={{ float: "left", margin: "1rem" }}>
           Donate
         </a>
@@ -44,28 +44,18 @@ function App() {
         
         <center>
           <Switch>
-            <Route path="/event" component={Event}/>
+            <Route path="/createevent" component={Event} />
             <Route path="/" exact component={Homepage} />
             <Route path="/aboutus" component={MyBook} />
             <Route path="/faqs" component={Stories} />
             <Route path="/signup" component={Homepage} />
+            <Route path="/login" component={Loginpage} />
             <Route path="/donate" component={Donation} />
             <Route path="/need" component={Need} />
+            <Route path="/userprofile" component={User} />
+            <Route path="/events" component={Events} />
           </Switch>
         </center>
-        <Loginpage />
-        <Events />
-        <br/>
-        <SignupOption/>
-        <br />
-        <Sign1 />
-        <br />
-        <Sign2/>
-        <br />
-        <Sign3/>
-        <br />
-        <Sign4 />
-        <br />
         <Footer />
 
       </div>
