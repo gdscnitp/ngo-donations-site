@@ -19,7 +19,7 @@ import { SignupOption } from "./components/signup/SignupOption";
 import { WillingIndividualSignup } from "./components/signup/willingIndividual/WillingIndividualSignup";
 import { LookingIndividualSignup } from "./components/signup/lookingIndividual/LookingIndividualSignup";
 import { LookingOrganisationSignup } from "./components/signup/lookingOrganisation/LookingOrganisationSignup";
-import { WillingOrganisationSignup } from "./components/signup/willingOrganisation/WillingOrganisationSignup";
+
 
 
 function App() {
@@ -58,7 +58,7 @@ function App() {
         <br />
         <SignupOption />
         <br />
-        <WillingOrganisationSignup />
+       
         <br />
         <WillingIndividualSignup />
         <br />
