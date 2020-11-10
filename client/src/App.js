@@ -17,10 +17,6 @@ import Carousel from "./components/carousel/carousel.js";
 
 import Events from "./components/Event Page/Events";
 import { SignupOption } from "./components/signup/SignupOption";
-import { WillingOrganisationSignup } from "./components/signup/willingOrganisation/WillingOrganisationSignup";
-import { WillingIndividualSignup } from "./components/signup/willingIndividual/WillingIndividualSignup";
-import { LookingIndividualSignup } from "./components/signup/lookingIndividual/LookingIndividualSignup";
-import { LookingOrganisationSignup } from "./components/signup/lookingOrganisation/LookingOrganisationSignup";
 
 
 function App() {
@@ -59,13 +55,13 @@ function App() {
         <br />
         <SignupOption />
         <br />
-        <WillingOrganisationSignup />
+
         <br />
-        <WillingIndividualSignup />
+      
         <br />
-        <LookingIndividualSignup />
+  
         <br />
-        <LookingOrganisationSignup/>
+  
         <br /> 
         <Footer />
 
