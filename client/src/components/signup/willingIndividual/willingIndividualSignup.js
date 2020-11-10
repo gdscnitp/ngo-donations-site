@@ -4,6 +4,7 @@ import '../css/skeleton.css'
 import StepOne from './StepOne'
 import StepTwo from './StepTwo'
 import StepThree from './StepThree'
+import WillingOrganisationSignup from '../WillingOrganisation/WillingOrganisationSignup'
 
 
 
@@ -16,7 +17,7 @@ const steps = [
 const prevStyle = {'background': '#33c3f0', 'border-width': '2px'}
 const nextStyle = {'background': '#33c3f0',  'border-width': '2px'}
 
-export const WillingIndividualSignup = () => (
+const WillingIndividualSignup = () => (
   <div className='container cnt1' style={{backgroundColor:"white"}}>
     <MultiStep steps={steps} prevStyle={prevStyle} nextStyle={nextStyle} />
     <div className='container app-footer' >
@@ -24,3 +25,4 @@ export const WillingIndividualSignup = () => (
   </div>
 )
 
+export default WillingIndividualSignup;

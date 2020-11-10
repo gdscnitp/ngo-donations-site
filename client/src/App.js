@@ -16,10 +16,10 @@ import Event from "./components/Event/Event.js";
 import Carousel from "./components/carousel/carousel.js";
 import Events from "./components/Event Page/Events";
 import { SignupOption } from "./components/signup/SignupOption";
-import { LookingIndividualSignup } from "./components/signup/LookingIndividual/LookingIndividualSignup";
-import { LookingOrganisationSignup } from "./components/signup/LookingOrganisation/LookingOrganisationSignup";
-import { WillingIndividualSignup } from "./components/signup/WillingIndividual/WillingIndividualSignup";
-import { WillingOrganisationSignup } from "./components/signup/WillingOrganisation/WillingOrganisationSignup";
+import LookingIndividualSignup from "./components/signup/LookingIndividual/LookingIndividualSignup";
+import LookingOrganisationSignup from "./components/signup/LookingOrganisation/LookingOrganisationSignup";
+import WillingIndividualSignup from "./components/signup/WillingIndividual/WillingIndividualSignup";
+import WillingOrganisationSignup from "./components/signup/WillingOrganisation/WillingOrganisationSignup";
 
 function App() {
   return (
