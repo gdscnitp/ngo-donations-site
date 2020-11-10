@@ -14,7 +14,7 @@ import { Loginpage } from "./components/Login-page/Login-page";
 import Homepage from "./pages/Homepage";
 import Event from "./components/Event/Event.js";
 import Carousel from "./components/carousel/carousel.js";
-
+import {Videopopup } from './components/VideoPopup/Video-popup';
 import Events from "./components/Event Page/Events";
 
 
@@ -51,6 +51,8 @@ function App() {
             <Route path="/events" component={Events} />
           </Switch>
         </center>
+        <Videopopup />
+
         <Footer />
 
       </div>

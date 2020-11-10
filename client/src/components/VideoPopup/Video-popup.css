@@ -1,0 +1,63 @@
+
+
+@-ms-viewport{
+  width: device-width;
+  height: device-height;
+  initial-scale: 1;
+}
+.popup{
+  width: 700px;
+  position: relative;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 13%;
+  background-color: rgb(248, 243, 243);
+  border-radius: 10px;
+} 
+
+*{
+box-sizing: border-box;
+}
+ @media only screen and (max-width: 700px) {
+   .popup{
+    width: 70vw;
+    position: relative;
+    height: 32vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25vh;
+    margin-bottom: 25vh;
+    background-color: white;
+  } 
+} 
+
+#x11 {
+    position: absolute;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 0px solid;
+    border-radius: 50%;
+    background-color: rgb(173, 166, 166);
+	  color: white;
+    top: -15px;
+    right: -15px;
+    z-index: 100;
+}
+#x11:hover{
+  cursor: pointer;
+  background-color: rgb(89, 90, 94);
+}
+.wrapper {
+  position: relative;
+  padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */
+}
+
+.player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
