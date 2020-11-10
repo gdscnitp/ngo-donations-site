@@ -14,10 +14,12 @@ import { Loginpage } from "./components/Login-page/Login-page";
 import Homepage from "./pages/Homepage";
 import Event from "./components/Event/Event.js";
 import Carousel from "./components/carousel/carousel.js";
-
 import Events from "./components/Event Page/Events";
 import { SignupOption } from "./components/signup/SignupOption";
-
+import { LookingIndividualSignup } from "./components/signup/LookingIndividual/LookingIndividualSignup";
+import { LookingOrganisationSignup } from "./components/signup/LookingOrganisation/LookingOrganisationSignup";
+import { WillingIndividualSignup } from "./components/signup/WillingIndividual/WillingIndividualSignup";
+import { WillingOrganisationSignup } from "./components/signup/WillingOrganisation/WillingOrganisationSignup";
 
 function App() {
   return (
@@ -55,13 +57,13 @@ function App() {
         <br />
         <SignupOption />
         <br />
-
+        <LookingIndividualSignup />
         <br />
-      
+        <LookingOrganisationSignup />
         <br />
-  
+        <WillingIndividualSignup />
         <br />
-  
+        <WillingOrganisationSignup />
         <br /> 
         <Footer />
 
