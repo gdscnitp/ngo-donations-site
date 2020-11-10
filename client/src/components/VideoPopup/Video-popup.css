@@ -1,28 +1,26 @@
 
+
 @-ms-viewport{
   width: device-width;
   height: device-height;
   initial-scale: 1;
 }
 .popup{
-  width: 900px;
+  width: 700px;
   position: relative;
-  height: 600px;
+  height: 500px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 7%;
-  background-color: rgb(139, 45, 45);
-  padding: 100px;
-  border: none;
-  border-radius: 25px;
-  box-shadow: 15px 14px 18px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 13%;
+  background-color: rgb(248, 243, 243);
+  border-radius: 10px;
+} 
 
-}
 *{
 box-sizing: border-box;
 }
  @media only screen and (max-width: 700px) {
-  .popup{
+   .popup{
     width: 70vw;
     position: relative;
     height: 32vh;
@@ -30,26 +28,11 @@ box-sizing: border-box;
     margin-right: auto;
     margin-top: 25vh;
     margin-bottom: 25vh;
-    background-color: rgb(139, 45, 45);
-    padding: 50px;
-    border: none;
-    border-radius: 25px;
-    box-shadow: 15px 14px 18px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  
-  }
+    background-color: white;
+  } 
 } 
 
-/* .innerdiv{ 
-  position: absolute;
-  width: 70%;
-  height: 65%;
-  top:108px;
-  bottom: 105px;
-  left: 135px;
-  right:135px ;
-} */
-
-#x {
+#x11 {
     position: absolute;
     padding: 5px;
     width: 30px;
@@ -58,10 +41,11 @@ box-sizing: border-box;
     border-radius: 50%;
     background-color: rgb(173, 166, 166);
 	  color: white;
-    top: -20px;
-    right: -20px;
+    top: -15px;
+    right: -15px;
+    z-index: 100;
 }
-#x:hover{
+#x11:hover{
   cursor: pointer;
   background-color: rgb(89, 90, 94);
 }
