@@ -20,6 +20,8 @@ import LookingIndividualSignup from "./components/signup/lookingIndividual/looki
 import LookingOrganisationSignup from "./components/signup/lookingOrganisation/lookingOrganisationSignup";
 import WillingIndividualSignup from "./components/signup/willingIndividual/willingIndividualSignup";
 import WillingOrganisationSignup from "./components/signup/willingOrganisation/willingOrganisationSignup";
+import Feedback from "./components/Feed Page/Feedback";
+
 
 function App() {
   return (
@@ -52,6 +54,7 @@ function App() {
             <Route path="/need" component={Need} />
             <Route path="/userprofile" component={User} />
             <Route path="/events" component={Events} />
+           
           </Switch>
         </center>
         <br />
@@ -65,6 +68,7 @@ function App() {
         <br />
         <WillingOrganisationSignup />
         <br /> 
+        <Feedback/>
         <Footer />
 
       </div>

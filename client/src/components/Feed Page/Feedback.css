@@ -1,0 +1,112 @@
+.feed-card {
+  min-width: 18rem;
+}
+
+.feed-btn-1 {
+  width: 40%;
+  margin-right: 50px;
+}
+.feed-btn-2 {
+  width: 40%;
+}
+
+.feed-para {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+}
+.nav1-link {
+  margin: 5px;
+  white-space: nowrap;
+}
+.feed-hr {
+  border: dotted #eaf6f6 6px;
+  border-bottom: none;
+  width: 4%;
+  margin: 100px auto;
+}
+.feed-a {
+  margin-left: 37.5%;
+  margin-top: 20%;
+  font-weight: bold;
+  font-size: larger;
+}
+.feed-a1 {
+  margin-left: 13.5%;
+  margin-top: 20%;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.tabContainer {
+  width: 100%;
+}
+.tabContainer .buttonContainer {
+  height: 15%;
+}
+.tab-btn-2 {
+  border-right: none;
+}
+.tab-btn-1 {
+  border-right: 1px solid white;
+}
+.tabContainer .buttonContainer button {
+  width: 45%;
+  height: 100%;
+  border-bottom: 1px solid white;
+  border-top: none;
+  border-left: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+  background-color: inherit;
+}
+.tabContainer .buttonContainer button:hover {
+  background-color: #30d818;
+}
+
+@media only screen and (max-width: 800px) {
+  .feed-up-btn {
+    margin: 30px;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+  .feed-card-btn {
+    margin-bottom: 10px;
+    margin-left: 0%;
+  }
+  .feed-img {
+    width: 100%;
+  }
+  .feed-para {
+    position: absolute;
+    top: 100%;
+    left: 20%;
+  }
+  .tab-cont {
+    margin-left: 40%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .feed-up-btn {
+    margin: 30px;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+  .feed-card-btn {
+    margin-bottom: 10px;
+    margin-left: 0%;
+  }
+  .feed-img {
+    width: 100%;
+  }
+  .feed-para {
+    position: absolute;
+    top: 80%;
+    left: 5%;
+  }
+  .tab-cont {
+    margin-left: 35%;
+  }
+}
