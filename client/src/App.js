@@ -14,8 +14,8 @@ import { Loginpage } from "./components/Login-page/Login-page";
 import Homepage from "./pages/Homepage";
 import Event from "./components/Event/Event.js";
 import Carousel from "./components/carousel/carousel.js";
-
 import Events from "./components/Event Page/Events";
+import Feedback from "./components/Feed Page/Feedback";
 
 
 function App() {
@@ -49,8 +49,10 @@ function App() {
             <Route path="/need" component={Need} />
             <Route path="/userprofile" component={User} />
             <Route path="/events" component={Events} />
+           
           </Switch>
         </center>
+        <Feedback/>
         <Footer />
 
       </div>
