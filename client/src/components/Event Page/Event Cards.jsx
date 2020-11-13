@@ -26,21 +26,34 @@ const EventCards = () => {
           <div className="card mt-3 cardss">
             <div className="row">
               <div className="col-md-3 class5">
-                <img src={c1} alt="Prathma" className="img-responsive image-card" />
+                <img
+                  src={c1}
+                  alt="Prathma"
+                  className="img-responsive image-card"
+                />
               </div>
               <div className="col-md-6">
-              <div className="class1">
-                <h2 className="card-title mt-2 card-heading">Prathma</h2></div>
+                <div className="class1">
+                  <h2 className="card-title mt-2 card-heading">Prathma</h2>
+                </div>
                 <div className="class2">
-                <p className="paragraph"><i class="fa fa-calendar" aria-hidden="true"></i>
-                  &nbsp;October 31, 2020</p></div>
-                  <div className="class3"><p>
-                  Pratham is an innovative learning organization created to
-                  improve the quality of education in India. Established in 1995
-                  to provide education to children in the slums of Mumbai.
-                </p></div>
+                  <p className="paragraph">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    &nbsp;October 31, 2020
+                  </p>
+                </div>
+                <div className="class3">
+                  <p>
+                    Pratham is an innovative learning organization created to
+                    improve the quality of education in India. Established in
+                    1995 to provide education to children in the slums of
+                    Mumbai.
+                  </p>
+                </div>
                 <div className="class4">
-                <button className="btn btn-primary card-button">Know More!</button>
+                  <button className="btn btn-primary card-button">
+                    Know More!
+                  </button>
                 </div>
               </div>
             </div>
@@ -48,21 +61,33 @@ const EventCards = () => {
           <div className="card mt-3 cardss">
             <div className="row">
               <div className="col-md-3 class5">
-                <img src={c2} alt="Education" className="img-responsive image-card" />
+                <img
+                  src={c2}
+                  alt="Education"
+                  className="img-responsive image-card"
+                />
               </div>
               <div className="col-md-6">
-              <div className="class1">
-                <h2 className="card-title mt-2 card-heading">Education</h2></div>
+                <div className="class1">
+                  <h2 className="card-title mt-2 card-heading">Education</h2>
+                </div>
                 <div className="class2">
-                <p className="paragraph"><i class="fa fa-calendar" aria-hidden="true"></i>
-                  &nbsp;October 31, 2020</p></div>
-                  <div className="class3"><p>
-                  Girls' education is a strategic development priority. Better
-                  educated women tend to be more informed about nutrition and
-                  healthcare, have fewer children, marry at a later age.
-                </p></div>
+                  <p className="paragraph">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    &nbsp;October 31, 2020
+                  </p>
+                </div>
+                <div className="class3">
+                  <p>
+                    Girls' education is a strategic development priority. Better
+                    educated women tend to be more informed about nutrition and
+                    healthcare, have fewer children, marry at a later age.
+                  </p>
+                </div>
                 <div className="class4">
-                <button className="btn btn-primary card-button">Know More!</button>
+                  <button className="btn btn-primary card-button">
+                    Know More!
+                  </button>
                 </div>
               </div>
             </div>
@@ -70,21 +95,33 @@ const EventCards = () => {
           <div className="card mt-3 cardss">
             <div className="row">
               <div className="col-md-3 class5">
-                <img src={c3} alt="Child" className="img-responsive image-card" />
+                <img
+                  src={c3}
+                  alt="Child"
+                  className="img-responsive image-card"
+                />
               </div>
               <div className="col-md-6">
-              <div className="class1">
-                <h2 className="card-title mt-2 card-heading">Child</h2></div>
+                <div className="class1">
+                  <h2 className="card-title mt-2 card-heading">Child</h2>
+                </div>
                 <div className="class2">
-                <p className="paragraph"><i class="fa fa-calendar" aria-hidden="true"></i>
-                  &nbsp;October 31, 2020</p></div>
-                  <div className="class3"><p>
-                  There are 36 million unemployed youth in India. Of these 24
-                  million live in villages and substantial number move to cities
-                  in search of employment.
-                </p></div>
+                  <p className="paragraph">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    &nbsp;October 31, 2020
+                  </p>
+                </div>
+                <div className="class3">
+                  <p>
+                    There are 36 million unemployed youth in India. Of these 24
+                    million live in villages and substantial number move to
+                    cities in search of employment.
+                  </p>
+                </div>
                 <div className="class4">
-                <button className="btn btn-primary card-button">Know More!</button>
+                  <button className="btn btn-primary card-button">
+                    Know More!
+                  </button>
                 </div>
               </div>
             </div>
