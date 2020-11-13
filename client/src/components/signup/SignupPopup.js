@@ -3,9 +3,7 @@ import { Modal } from "react-bootstrap";
 import { SignupOption } from "./SignupOption";
 
 export class SignupPopup extends Component {
-  constructor(props) {
-    super(props);
-  }
+ 
   render() {
     return (
       <Modal
