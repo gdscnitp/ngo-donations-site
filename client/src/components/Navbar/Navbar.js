@@ -34,22 +34,22 @@ export class Navbar extends Component {
               <nav class="navbar">
                 <ul>
                   <li>
-                    <a onClick={() => this.setState({ addModelShow: true })}>
+                    <div onClick={() => this.setState({ addModelShow: true })}>
                       Signup/Login
-                    </a>
+                    </div>
                     <SignupPopup
                       show={this.state.addModelShow}
                       onHide={addModelClose}
                     />
                   </li>
                   <li>
-                    <a href="/faqs">FAQs</a>
+                    <div href="/faqs">FAQs</div>
                   </li>
                   <li>
-                    <a href="/aboutus">About us</a>
+                    <div href="/aboutus">About us</div>
                   </li>
                   <li>
-                    <a href="/events">Events</a>
+                    <div href="/events">Events</div>
                   </li>
                 </ul>
               </nav>
@@ -58,15 +58,15 @@ export class Navbar extends Component {
               <button class="closebtn" onClick={this.closeNav}>
                 ×
               </button>
-              <a href="/events">Events</a>
-              <a href="/aboutus">About us</a>
-              <a href="/faqs">FAQs</a>
-              <a
+              <div href="/events">Events</div>
+              <div href="/aboutus">About us</div>
+              <div href="/faqs">FAQs</div>
+              <div
                 onClick={() => this.setState({ addModelShow: true })}
                 style={{ color: "white", cursor: "pointer" }}
               >
                 Signup/Login
-              </a>
+              </div>
               <SignupPopup
                 show={this.state.addModelShow}
                 onHide={addModelClose}

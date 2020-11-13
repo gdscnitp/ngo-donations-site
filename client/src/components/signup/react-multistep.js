@@ -12,7 +12,7 @@ const LiClass = (props) => css`
   display: inline-block;
   text-align: center;
   line-height: 4.5rem;
-  padding: 0 0.1rem;
+  padding: 0.005rem;
   cursor: pointer;
 
   color: ${props.state === "todo" ? "silver" : "black"};
@@ -43,7 +43,7 @@ const LiClass = (props) => css`
     content: "\\00a0\\00a0";
   }
   span {
-    padding: 0 1.5rem;
+    padding: 0 0.5rem;
   }
 `;
 const getTopNavStyles = (indx, length) => {
