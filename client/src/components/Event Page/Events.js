@@ -7,7 +7,6 @@ import EventCards from "./Event Cards";
 function Events() {
   return (
     <>
-      
       <Cover />
       <div className="hello">
         <Filter />

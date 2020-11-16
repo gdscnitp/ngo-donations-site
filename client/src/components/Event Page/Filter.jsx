@@ -36,7 +36,10 @@ const Filter = () => {
                   >
                     Country
                   </a>
-                  <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <div
+                    className="dropdown-menu"
+                    aria-labelledby="navbarDropdown"
+                  >
                     <a className="dropdown-item" href="#top">
                       USA
                     </a>

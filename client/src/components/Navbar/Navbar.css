@@ -109,14 +109,14 @@
     list-style-type: disc;
     padding-bottom: 20px;
 }
-.menu .menu__wrapper nav a{
+.menu .menu__wrapper nav div{
     color: black;
     opacity: 1;
 }
-.navbar ul li a {
+.navbar ul li div {
     padding-right: 50px;
 }
-.navbar ul li a {
+.navbar ul li div {
     font-size: 16px;
     transition: all .3s;
     position: relative;
@@ -125,7 +125,7 @@
     font-family: Roboto Mono,monospace;
     
 }
-.menu .menu__wrapper nav a:hover{
+.menu .menu__wrapper nav div:hover{
     color: grey;
 }
 .navbar ul li{
@@ -225,7 +225,7 @@
   }
   
   
-  .sidebar a {
+  .sidebar div {
     padding: 22px 65px 28px 120px;
     text-decoration: none;
     font-size: 20px;
@@ -235,7 +235,7 @@
     float:left;
   }
   
-  .sidebar a:hover {
+  .sidebar div:hover {
     color: grey;
   }
 
