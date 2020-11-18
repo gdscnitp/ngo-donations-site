@@ -1,32 +1,18 @@
 const express = require("express");
 const app = express();
-<<<<<<< HEAD
 const mongoose = require('mongoose');
 const { join } = require('path');    //for getting path of the static directory
 const { exit } = require('process');
 const logger = require('morgan');
 const userRouter = require('./routes/user.js');
 const morgan = require('morgan');
-require('dotenv').config();
-<<<<<<< HEAD
 const User=require('./models/person')
-=======
 
 const route1 = require('./routes/userSignup');
 const route2 = require('./routes/orgSignup');
 const editUser = require('./routes/api.js');
 const editActivity = require('./routes/activities.js');
 
-<<<<<<< HEAD
->>>>>>> signup (org + ind) looking for help Backend
-=======
-const route1 = require('./routes/userSignup');
-const route2 = require('./routes/orgSignup');
-const editUser = require('./routes/api.js');
-const editActivity = require('./routes/activities.js');
-
->>>>>>> signup (org + ind) looking for help Backend
-=======
 const mongoose = require("mongoose");
 const { join } = require("path"); //for getting path of the static directory
 const { exit } = require("process");
@@ -64,6 +50,7 @@ const bcrypt = require('bcryptjs')
 =======
 >>>>>>> signup (org + ind) looking for help Backend
 mongoose.set("useCreateIndex",true);
+mongoose.Promise = global.Promise;
 
 >>>>>>> signup (org + ind) looking for help Backend
 =======
