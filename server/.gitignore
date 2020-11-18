@@ -2,7 +2,4 @@
 npm-debug.log
 .DS_Store
 /*.env
-
-# eslint not being used now, and 2 lock files already present
-eslintrc.json
-pnpm-lock.yaml
+.sample_env
