@@ -1,5 +1,11 @@
 /node_modules
+<<<<<<< HEAD
 npm-debug.log
 .DS_Store
 /*.env
 .sample_env
+=======
+
+# else there will be 3 lock files only
+pnpm-lock.yaml
+>>>>>>> upstream/master
