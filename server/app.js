@@ -1,18 +1,7 @@
 const express = require("express");
 const app = express();
-const mongoose = require('mongoose');
-const { join } = require('path');    //for getting path of the static directory
-const { exit } = require('process');
-const logger = require('morgan');
-const userRouter = require('./routes/user.js');
-const morgan = require('morgan');
-const User=require('./models/person')
-
-const route1 = require('./routes/userSignup');
-const route2 = require('./routes/orgSignup');
-const editUser = require('./routes/api.js');
-const editActivity = require('./routes/activities.js');
-
+const express = require("express");
+const app = express();
 const mongoose = require("mongoose");
 const { join } = require("path"); //for getting path of the static directory
 const { exit } = require("process");
@@ -25,8 +14,11 @@ const activitiesRouter = require("./routes/activities");
 const feedRouter = require("./routes/feed");
 const requestRouter = require("./routes/request");
 const signupRouter = require("./routes/sign_up");
+const route1 = require('./routes/userSignup');
+const route2 = require('./routes/orgSignup');
+const editUser = require('./routes/api.js');
+const editActivity = require('./routes/activities.js');
 const { random16BaseString } = require("./utils/random");
-
 require("dotenv").config();
 >>>>>>> upstream/master
 const PORT = process.env.PORT || 3000;
@@ -40,20 +32,6 @@ mongoose
     useCreateIndex: true,
     useUnifiedTopology: true,
     dbName: DB_NAME,
-<<<<<<< HEAD
-    w: 'majority'
-}).catch(err => { console.error(`Error in DB connection: mongo DB couldn't be reached`); exit(1); });
-<<<<<<< HEAD
-<<<<<<< HEAD
-const bcrypt = require('bcryptjs')
-=======
-=======
->>>>>>> signup (org + ind) looking for help Backend
-mongoose.set("useCreateIndex",true);
-mongoose.Promise = global.Promise;
-
->>>>>>> signup (org + ind) looking for help Backend
-=======
     w: "majority",
   })
   .catch((err) => {
@@ -62,7 +40,7 @@ mongoose.Promise = global.Promise;
     exit(1);
   });
 
->>>>>>> upstream/master
+
 const db = mongoose.connection; //access to the pending connection
 db.on("error", (err) => {
   console.log(`Error in DB connection`);
@@ -97,6 +75,7 @@ app.use(
     }),
   })
 );
+
 
 // Routes START
 <<<<<<< HEAD
