@@ -1,2 +1,3 @@
-MONGO_DB_URI=
 DB_PASSWORD=
+
+# Don't delete(or add to gitignore) this file, this file is used to tell what a .env file for this project should define

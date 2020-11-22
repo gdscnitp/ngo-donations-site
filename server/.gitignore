@@ -1,11 +1,10 @@
-/node_modules
-<<<<<<< HEAD
+node_modules
+.env
+
 npm-debug.log
 .DS_Store
-/*.env
-.sample_env
-=======
+.vscode
 
-# else there will be 3 lock files only
+# keeping only npm lockfiles in git for now
+yarn.lock
 pnpm-lock.yaml
->>>>>>> upstream/master
