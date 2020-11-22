@@ -1,7 +1,5 @@
 const express = require("express");
 const app = express();
-const express = require("express");
-const app = express();
 const mongoose = require("mongoose");
 const { join } = require("path"); //for getting path of the static directory
 const { exit } = require("process");
@@ -17,10 +15,8 @@ const signupRouter = require("./routes/sign_up");
 const route1 = require('./routes/userSignup');
 const route2 = require('./routes/orgSignup');
 const editUser = require('./routes/api.js');
-const editActivity = require('./routes/activities.js');
 const { random16BaseString } = require("./utils/random");
 require("dotenv").config();
->>>>>>> upstream/master
 const PORT = process.env.PORT || 3000;
 const DB_NAME = "muckin_testing"; // @note - later change it according to database used in production
 
@@ -76,34 +72,16 @@ app.use(
   })
 );
 
-
 // Routes START
-<<<<<<< HEAD
 app.use('/user', userRouter);   //login,
-app.use('/editUser',editUser); // edit user profile
-app.use('/edit',editActivity); // edit activities
-app.use('/api1', route1);  // signup user looking for help
-app.use('/api2',route2); // signup org looking for help
-=======
-app.use("/user", userRouter); // login, logout
 app.use("/sign_up", signupRouter); // sign_up individual and organisation
-app.use("/activities", activitiesRouter); // image, update-details, delete-details
 app.use("/requests", requestRouter); // /new request
 app.use("/feeds", feedRouter); // /get feeds
->>>>>>> upstream/master
+app.use('/editUser',editUser); // edit user profile
+app.use("/activities", activitiesRouter); // edit activities
+app.use('/api1', route1);  // signup user looking for help
+app.use('/api2',route2); // signup org looking for help
 // Routes END
-
-//404 and Error handlers
-app.use((req, res, next) => {
-  //catch any request to endpoint not available
-  next({ status: 404, message: `Route ${req.baseUrl} not found` }, req, res);
-});
-app.use((err, req, res, next) => {
-  //error handler
-  res
-    .status(err.status || 500)
-    .send(err.message || `Request couldn't be completed`);
-});
 
 //404 and Error handlers
 app.use((req, res, next) => {
