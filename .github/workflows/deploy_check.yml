@@ -22,7 +22,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: npm start
+    - run: npm deploy_check
       env:
         CI: true
         DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
