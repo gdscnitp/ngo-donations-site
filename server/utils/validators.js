@@ -14,8 +14,8 @@ const validateLoginData = (u_id, pass) => {
 };
 
 /*
- * @about the next line and the if condition, checks if a user is already logged in
- * @note - Frontend client should not call the /login route for logged in user, the next if condition is just a preventive measure in case it happens maybe due to a bug
+ * @about -> the next line and the if condition, checks if a user is already logged in
+ * @note -> Frontend client should not call the /login route for logged in user, the next if condition is just a preventive measure in case it happens maybe due to a bug
  */
 const loggedInCheck = async (req, res, next) => {
   if (req.session.uName && req.session.uHash) {
@@ -46,6 +46,8 @@ const loggedInCheck = async (req, res, next) => {
 
         return res.sendStatus(500);
       }); // server error; couldn't query the database
+  }else{
+    next(req, res);
   }
 };
 

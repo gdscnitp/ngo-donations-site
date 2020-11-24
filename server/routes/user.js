@@ -26,7 +26,7 @@ router.post("/login", loggedInCheck, (req, res, next) => {
   const { userName, pass } = req.body;
 
   if (!validateLoginData(userName, pass)) {
-    return res.status(401).send({
+    return res.status(401).json({
       error: "Invalid login data passed or All fields not filled",
     });
   }
@@ -43,10 +43,11 @@ router.post("/login", loggedInCheck, (req, res, next) => {
     hash(user.userName + user.password, 2, (err, hashed) => {
       if (!err) {
         req.session.uHash = hashed;
+        return res.status(200).send("Login of user successful"); //logic successful
+      }else{
+        return res.sendStatus(500);
       }
     });
-
-    return res.status(200).send("Login of user successful"); //logic successful
   });
 });
 
