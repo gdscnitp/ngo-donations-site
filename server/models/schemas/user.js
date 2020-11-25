@@ -75,6 +75,7 @@ user.pre("save", function (next) {
 });
 
 const userModel = model("auth", user);
+// @todo - Modify this static authenticate function to return a promise, instead of using the callback
 user.statics.authenticate = function (user_id, pass, callback) {
   userModel.findOne({ userName: user_id }, (err, doc) => {
     if (err) {
