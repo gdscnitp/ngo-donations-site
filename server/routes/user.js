@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const userModel = require("../models/schemas/user");
-const { validateLoginData, loggedInCheck } = require("../utils/validators");
-const { hash } = require("bcrypt");
+const { validateLoginData } = require("../utils/validators");
 const csurf = require('csurf');
 const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
@@ -47,6 +46,15 @@ passport.use(new localStrategy(
  * 							   5xx (Server failure)
  */
 router.post('/login', (req, res, next) => {
+
+  try{
+    // checking if both username and password match regex patterns, @note - This can be done client side too
+    if( ! validateLoginData(req.body.username, req.body.password) ){
+      return next({ status: 401 });
+    }
+  }catch(err){
+    return next({ status: 401 });
+  };
 
   passport.authenticate("local", (err, user, info) => {
     if( err ){  // err also has status code, applied by the localStrategy
