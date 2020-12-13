@@ -20,6 +20,7 @@ import LookingOrganisationSignup from "./components/signup/lookingOrganisation/l
 import WillingIndividualSignup from "./components/signup/willingIndividual/willingIndividualSignup";
 import WillingOrganisationSignup from "./components/signup/willingOrganisation/willingOrganisationSignup";
 import Feedback from "./components/Feed Page/Feedback";
+import {Videopopup } from './components/Video-popup/Video-popup';
 
 function App() {
   return (
@@ -79,6 +80,7 @@ function App() {
           </Switch>
         </center>
         <br />
+        <Videopopup />
         <Feedback />
         <Footer />
       </div>
