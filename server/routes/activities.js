@@ -1,12 +1,9 @@
 const express = require("express");
 const router = express.Router();
-<<<<<<< HEAD
-const multer = require('multer');
-const User = require('../models/Activities');
-=======
+
 const multer = require("multer");
 const User = require("../models/Activities");
->>>>>>> upstream/master
+
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -67,10 +64,6 @@ router.patch("/image/:id", upload.single("profileImage"), function (
 // update records route
 router.patch("/update-details/", function (req, res, next) {
   // check added later
-
-<<<<<<< HEAD
-           });
-=======
   const id = req.params.id;
   const Info = req.body.details;
   userModel.findById(id, function (err, data) {
@@ -87,7 +80,6 @@ router.patch("/update-details/", function (req, res, next) {
         res.json(err);
       });
   });
->>>>>>> upstream/master
 });
 
 // delete records route

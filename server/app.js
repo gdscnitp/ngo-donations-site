@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 3000;
 const DB_NAME = "muckin_testing"; // @note - later change it according to database used in production
 
 const MONGO_DB_URI = `mongodb+srv://dscnitp_webdept_muckin:${process.env.DB_PASSWORD}@cluster0.kokfw.gcp.mongodb.net?retryWrites=true`; // @note - Don't modify this, if it doesn't work for you please ask
-
+//const MONGO_DB_URI = `mongodb://localhost:27017/AuthDB`;
 mongoose
   .connect(MONGO_DB_URI, {
     useNewUrlParser: true,
@@ -77,8 +77,8 @@ app.use('/user', userRouter);   //login,
 app.use("/sign_up", signupRouter); // sign_up individual and organisation
 app.use("/requests", requestRouter); // /new request
 app.use("/feeds", feedRouter); // /get feeds
-app.use('/editUser',editUser); // edit user profile
-app.use("/activities", activitiesRouter); // edit activities
+//app.use('/editUser',editUser); // edit user profile
+//app.use("/activities", activitiesRouter); // edit activities
 app.use('/api1', route1);  // signup user looking for help
 app.use('/api2',route2); // signup org looking for help
 // Routes END

@@ -20,7 +20,7 @@ router.get("",(req,res,next)=>{
 });
 
 router.post("", (req, res,next) => {
-    
+
   const User = new Event({
     _id: new mongoose.Types.ObjectId(),
 
@@ -37,10 +37,10 @@ router.post("", (req, res,next) => {
     .save()
     .then(()=>{
       console.log(User);
-    })  
+    })
     .catch(err => console.log(err));
 
-   
+
 });
 
 // Edit Event
@@ -48,7 +48,7 @@ router.get("/update", (req,res,next)=>{
   res.send("Get request handled by event page");
 });
 
-    
+
 router.post("/update",limiter, (req,res,next)=> {
   // let _id  = req.body.id;
   let _id = "5fa182069e2cd54b404d3573";
@@ -98,5 +98,4 @@ router.post("", (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
-module.exports = router;
-
+//module.exports = router;

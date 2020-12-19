@@ -13,12 +13,6 @@ const UserSchema = new Schema({
   },
 });
 
-<<<<<<< HEAD
-//create model for user
 const User = mongoose.model('edituser', UserSchema);
-=======
-//create model for todo
-const User = mongoose.model("user", UserSchema);
->>>>>>> upstream/master
 
 module.exports = User;
