@@ -77,8 +77,8 @@ app.use('/user', userRouter);   //login,
 app.use("/sign_up", signupRouter); // sign_up individual and organisation
 app.use("/requests", requestRouter); // /new request
 app.use("/feeds", feedRouter); // /get feeds
-//app.use('/editUser',editUser); // edit user profile
-//app.use("/activities", activitiesRouter); // edit activities
+app.use('/editUser',editUser); // edit user profile
+app.use("/activities", activitiesRouter); // edit activities
 app.use('/api1', route1);  // signup user looking for help
 app.use('/api2',route2); // signup org looking for help
 // Routes END
