@@ -14,16 +14,16 @@ passport.use(new localStrategy(
         if( !user ){
           return done(null, false, { message: "User not Found" });
         }else{
-          userModel.authenticate(uname, pass, (err, user) => {
-            if (err) {
-              err.status = 401;
+          userModel.authenticate(uname, pass)
+                      .then((user) => {
+                        return done(null, user, {message: "Login of user successful"}); //logic successful
+                      })
+                      .catch((err) => {
+                        err.status = 401;
 
-              return done(err, false, {message: `Error during logging in uname - ${uname}`});
+                        return done(err, false, {message: `Error during logging in uname - ${uname}`});          
+                      })
             }
-
-            return done(null, user, {message: "Login of user successful"}); //logic successful
-          });
-        }
       })
       .catch((err) => {
         err.status = 401;
