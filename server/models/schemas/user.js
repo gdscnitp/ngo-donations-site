@@ -75,40 +75,45 @@ user.pre("save", function (next) {
 });
 
 const userModel = model("auth", user);
-// @todo - Modify this static authenticate function to return a promise, instead of using the callback
-user.statics.authenticate = function (user_id, pass, callback) {
-  userModel.findOne({ userName: user_id }, (err, doc) => {
-    if (err) {
-      return callback(err);
-    } else if (!doc) {
-      //couldn't find a matching document
-      err = { msg: `User ${user_id} Not Found` };
-      err.status = 401;
+/**
+ * @note - This function will take in user_id and passowrd, and RETURNS A PROMISE
+ * So that it can be easily used with then and catch instead of providing callbacks
+ */
+user.statics.authenticate = (user_id, pass) => (
+  new Promise((resolve, reject) => {
+    userModel.findOne({ userName: user_id }, (err, doc) => {
+      if (err) {
+        return reject(err);
+      } else if (!doc) {
+        //couldn't find a matching document
+        err = { msg: `User ${user_id} Not Found` };
+        err.status = 401;
 
-      return callback(err);
-    }
-    bcrypt
-      .compare(pass, doc.pass)
-      .then((result) => {
-        if (result === true) {
-          console.log(`Successful Login of ${user_id}`);
+        return reject(err);
+      }
+      bcrypt
+        .compare(pass, doc.pass)
+        .then((result) => {
+          if (result === true) {
+            console.log(`Successful Login of ${user_id}`);
 
-          return callback(null, doc);
-        } else {
-          console.log(`Failed login attempt by ${user_id}`);
-          err = { message: `Failed Login Attempt` };
-          err.status = 401;
-
-          return callback(err);
-        }
-      })
-      .catch((err) => {
-        err.message = `Password comparison failed with an error`;
-        console.error(err.message, err);
-
-        return callback({ msg: err.message, code: err.code });
-      });
-  });
-};
+            return resolve( doc );  // SUCCESS
+          } else {
+            console.log(`Failed login attempt by ${user_id}`);
+            err = { message: `Failed Login Attempt` };
+            err.status = 401;
+  
+            return reject(err);
+          }
+        })
+        .catch((err) => {
+          err.message = `Password comparison failed with an error`;
+          console.error(err.message, err);
+  
+          return reject({ msg: err.message, code: err.code });
+        });
+    });
+  })
+);
 
 module.exports = userModel;
