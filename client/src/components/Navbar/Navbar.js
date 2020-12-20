@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { SearchBar } from "../Searchbar/SearchBar";
 import "./Navbar.css";
 import { SignupPopup } from "../signup/SignupPopup";
-import { BrowserRouter as Router, Route, Switch,Link } from 'react-router-dom';
 
 export class Navbar extends Component {
   constructor(props) {
