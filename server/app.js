@@ -12,7 +12,7 @@ const activitiesRouter = require("./routes/activities");
 const feedRouter = require("./routes/feed");
 const requestRouter = require("./routes/request");
 const signupRouter = require("./routes/sign_up");
-const { random16BaseString } = require("./utils/random");
+const { SESSION_SECRET } = require("./secretConfig");
 
 require("dotenv").config();
 const PORT = process.env.PORT || 3000;
@@ -55,7 +55,7 @@ app.use(express.json()); // to parse json data
 app.use(express.static(join(__dirname, "public")));
 app.use(
   session({
-    secret: random16BaseString(10),
+    secret: SESSION_SECRET,
     resave: false, // since connect-mongo implements `touch` method, so resave:true not required
     saveUninitialized: false, // useful for implementing login sessions
     cookie: {

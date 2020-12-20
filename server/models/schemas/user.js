@@ -10,6 +10,7 @@ const user = Schema({
     unique: true,
     required: true,
     index: true,
+    alias: "name"
   },
   email: {
     // email or mobile one of them should be required

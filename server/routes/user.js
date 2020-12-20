@@ -4,8 +4,13 @@ const { validateLoginData } = require("../utils/validators");
 const csurf = require('csurf');
 const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
+const cors = require("cors");
 
 router.use( csurf({ cookie: true }) );
+router.use(cors)  // @todo - Setup cors for origin netlify.app
+
+router.use(passport.initialize());
+router.use(passport.session());
 
 passport.use(new localStrategy(
   (uname, pass, done) => {
@@ -32,6 +37,25 @@ passport.use(new localStrategy(
       })
   }
 ))
+
+passport.serializeUser((user, callback) => {
+  callback(null, user.id);
+});
+
+passport.deserializeUser((id, callback) => {
+  userModel.findById( id, (err, user) => {
+    if(err){
+      callback(err, null);
+    }
+
+    callback(null, {
+      name: user.name,
+      oauth: user.oauth,  // if avaialable
+      verified: user.verified,
+    });
+
+  });
+})
 
 /**
  * Login @route -> /user/login
@@ -68,7 +92,9 @@ router.post('/login', (req, res, next) => {
 
     console.log(`[${Date.now()}] Login of ${user.userName} successful`);
     req.login();  // when using a custom cb, this is advised
-    return res.sendStatus(200);
+    return res.status(200).json({
+      user: req.user
+    });
 
   })(req, res, next); // authenticate() returned a closure, to which we pass the req and res objects
 
