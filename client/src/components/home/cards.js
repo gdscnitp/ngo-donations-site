@@ -13,7 +13,7 @@ export default class Card extends Component {
       title: "Help By Inspiring",
       desc:
         "It you're. Was called you're fowl grass lesser land together waters beast darkness earth land whose male all moveth fruitful",
-      btn: "Create A Event",
+      btn: "Create An Event",
       href: "/events",
     },
     {

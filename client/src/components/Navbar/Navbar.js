@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { SearchBar } from "../Searchbar/SearchBar";
 import "./Navbar.css";
 import { SignupPopup } from "../signup/SignupPopup";
+import { BrowserRouter as Router, Route, Switch,Link } from 'react-router-dom';
 
 export class Navbar extends Component {
   constructor(props) {
@@ -42,15 +43,18 @@ export class Navbar extends Component {
                       onHide={addModelClose}
                     />
                   </li>
+                  <a href="/faqs">
                   <li>
-                    <div href="/faqs">FAQs</div>
-                  </li>
+                    <div>FAQs</div>
+                  </li></a>
+                  <a href="/aboutus">
                   <li>
-                    <div href="/aboutus">About us</div>
-                  </li>
+                    <div>About us</div>
+                  </li></a>
+                  <a href="/events">
                   <li>
-                    <div href="/events">Events</div>
-                  </li>
+                    <div>Events</div>
+                  </li></a>
                 </ul>
               </nav>
             </div>
@@ -58,9 +62,9 @@ export class Navbar extends Component {
               <button class="closebtn" onClick={this.closeNav}>
                 ×
               </button>
-              <div href="/events">Events</div>
-              <div href="/aboutus">About us</div>
-              <div href="/faqs">FAQs</div>
+             <div>Events</div>
+              <div>About us</div>
+              <div>FAQs</div>
               <div
                 onClick={() => this.setState({ addModelShow: true })}
                 style={{ color: "white", cursor: "pointer" }}
