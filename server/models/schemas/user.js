@@ -3,7 +3,7 @@ const { Schema, model, SchemaTypes } = require("mongoose");
 const bcrypt = require("bcrypt");
 
 // @note - this model will change according to the one used by signup backend team, according to how the info is originally stored
-const user = Schema({
+const userSchema = Schema({
   userName: {
     type: String,
     trim: true,
@@ -16,10 +16,12 @@ const user = Schema({
     // email or mobile one of them should be required
     type: String,
     unique: true,
+    sparse: true
   },
   mobile: {
     type: String,
     unique: true,
+    sparse: true
   },
   oauth: {
     // oauth token
@@ -48,7 +50,7 @@ const user = Schema({
   },
 });
 
-user.pre("save", function (next) {
+userSchema.pre("save", function (next) {
   if (!this.email && !this.mobile) {
     console.error(`Atleast email or mobile number, ${this.userName}`);
   }
@@ -75,12 +77,11 @@ user.pre("save", function (next) {
     });
 });
 
-const userModel = model("auth", user);
 /**
  * @note - This function will take in user_id and passowrd, and RETURNS A PROMISE
  * So that it can be easily used with then and catch instead of providing callbacks
  */
-user.statics.authenticate = (user_id, pass) => (
+userSchema.statics.authenticate = (user_id, pass) => (
   new Promise((resolve, reject) => {
     userModel.findOne({ userName: user_id }, (err, doc) => {
       if (err) {
@@ -117,4 +118,5 @@ user.statics.authenticate = (user_id, pass) => (
   })
 );
 
+const userModel = model("auth", userSchema);
 module.exports = userModel;

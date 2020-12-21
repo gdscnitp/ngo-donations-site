@@ -4,10 +4,8 @@ const { validateLoginData } = require("../utils/validators");
 const csurf = require('csurf');
 const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
-const cors = require("cors");
 
-router.use( csurf({ cookie: true }) );
-router.use(cors)  // @todo - Setup cors for origin netlify.app
+// router.use( csurf({ cookie: true }) ); // Currently commented it, misconfigured csrf
 
 router.use(passport.initialize());
 router.use(passport.session());
@@ -31,6 +29,7 @@ passport.use(new localStrategy(
             }
       })
       .catch((err) => {
+        console.log("Error: ", err);
         err.status = 401;
 
         return done(err, false, {message: `Error during logging in uname - ${uname}`});
@@ -91,13 +90,29 @@ router.post('/login', (req, res, next) => {
     }
 
     console.log(`[${Date.now()}] Login of ${user.userName} successful`);
-    req.login();  // when using a custom cb, this is advised
+    req.login( {
+      id: user.id,
+      name: user.name,
+      oauth: user.oauth,  // if avaialable
+      verified: user.verified,
+    }, (err) => {console.log("Error in login() call", err )} );  // when using a custom cb, this is advised
     return res.status(200).json({
       user: req.user
     });
 
   })(req, res, next); // authenticate() returned a closure, to which we pass the req and res objects
 
+})
+
+/**
+ * @brief -> Get current logged in user, stored in req object, in case the frontend needs this route
+ */
+router.get('/get_current', (req, res) => {
+  if( req.user ){
+    return res.json(req.user);  // note that sensitive data not sent, currently it's filtered out in passport.desearliseUser()
+  }else{
+    return res.sendStatus(401);
+  }
 })
 
 module.exports = router;
