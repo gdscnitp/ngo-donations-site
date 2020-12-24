@@ -153,7 +153,7 @@ export default function MultiStep(props) {
           style={
             buttonsState.showSubmitBtn ? props.nextStyle : { display: "none" }
           }
-          onClick={console.log("clickced submit")}
+          onClick={console.log("Clicked submit")} // @todo -> Modifying onClick behaviour to call UserService.SignUp with the data
         >
           Submit
         </button>

@@ -46,7 +46,7 @@ export class Navbar extends Component {
                     <div href="/faqs">FAQs</div>
                   </li>
                   <li>
-                    <div href="/aboutus">About us</div>
+                    <div href="/about-us">About us</div>
                   </li>
                   <li>
                     <div href="/events">Events</div>
@@ -59,7 +59,7 @@ export class Navbar extends Component {
                 ×
               </button>
               <div href="/events">Events</div>
-              <div href="/aboutus">About us</div>
+              <div href="/about-us">About us</div>
               <div href="/faqs">FAQs</div>
               <div
                 onClick={() => this.setState({ addModelShow: true })}
