@@ -106,7 +106,7 @@ router.post("/filter", async (req, res) => {
           $lte: endDate,
         },
         region: location 
-      },
+      }
     );
     if (response.length === 0) res.send("NO EVENT FOUND");
     res.send(response);
