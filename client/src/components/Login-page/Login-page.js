@@ -12,21 +12,25 @@ export const Loginpage = () => {
   const [password, setPassword] = useState("");
   const [rememberMe, toggleRemember] = useState(false);
 
-  let emailField = useRef(null);
-  let passField = useRef(null);
-  let rememberCheckBox = useRef(null);
-
   async function submitHandler(event) {
-    await LoginUser( emailField, passField, rememberCheckBox )
-                  .then((data) => {
-                    const { token } = data; // later if refresh tokens implemented, add it in destructure
+    event.preventDefault();
+    console.log("Trying to log in..., with ", email, password)
 
-                    localStorage.setItem('token', token);
+    await LoginUser( email, password )
+                  .then((data) => {
+                    const { user } = data; // later if refresh tokens implemented, add it in destructure
+
+                     // by default uses sessionStorage, if rememberMe is true we use localStorage
+                    rememberMe ? 
+                      localStorage.setItem('user', user):
+                      sessionStorage.setItem('user', user);
+
+                      console.log("Login Successful")
 
                     // @todo -> Maybe store in the store, that the user is logged in, so we don't need to show the login button anymore
                     Promise.resolve();
                   })
-                  .catch((err) => alert(err.msg || "Login Failed"));
+                  .catch((err) => console.log(err.msg || "Login Failed"));
   }
 
   return (
@@ -42,10 +46,9 @@ export const Loginpage = () => {
             </label>
             <input
               type="text"
-              ref={emailField}
               placeholder="Enter Email"
               name="email"
-              onChange={() => setEmail(emailField.current.value)}
+              onChange={(e) => setEmail(e.target.value)}
               required
             ></input>
             <br></br>
@@ -55,9 +58,8 @@ export const Loginpage = () => {
             </label>
             <input
               type="password"
-              ref={passField}
               placeholder="Password"
-              onChange={() => setPassword(passField.current.value)}
+              onChange={(e) => setPassword(e.target.value)}
               name="pass"
               required
             ></input>
@@ -65,8 +67,7 @@ export const Loginpage = () => {
 
             <input 
               type="checkbox" 
-              ref={rememberCheckBox}
-              onChange={()=>toggleRemember(rememberCheckBox.current.checked)}
+              onChange={(e)=>toggleRemember(e.target.checked)}
               name="remember" 
             />
             <label for="remember" style={{ marginRight: "200px" }}>

@@ -4,4 +4,8 @@
 exports.BASE_API_ROUTE = "http://localhost:3000";
 
 exports.LOGIN_ROUTE = `${this.BASE_API_ROUTE}/user/login`;
-exports.SIGN_UP_ROUTE = `${this.BASE_API_ROUTE}/user/login`;
+
+exports.SIGN_UP_ROUTES = {
+    ind: `${this.BASE_API_ROUTE}/sign_up`,
+    org: `${this.BASE_API_ROUTE}/sign_up/org`
+};

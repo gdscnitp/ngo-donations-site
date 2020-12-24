@@ -6,7 +6,6 @@ import "bootstrap/dist/css/bootstrap-grid.min.css";
 // import Carousel from "./components/carousel/carousel"
 import { Navbar } from "../src/components/Navbar/Navbar";
 import { Footer } from "../src/components/Footer/Footer";
-import { Loginpage } from "./components/Login-page/Login-page";
 import Feedback from "./components/Feed Page/Feedback";
 import getSwitchToRoutes from "./routes"
 

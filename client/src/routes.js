@@ -9,6 +9,7 @@ import User from "./components/User-profile/User.js";
 import Event from "./components/Event/Event";
 import HomePage from "./pages/Homepage"
 import Events from "./components/Event Page/Events";
+import { Loginpage } from "./components/Login-page/Login-page";
 import LookingIndividualSignup from "./components/signup/lookingIndividual/lookingIndividualSignup";
 import LookingOrganisationSignup from "./components/signup/lookingOrganisation/lookingOrganisationSignup";
 import WillingIndividualSignup from "./components/signup/willingIndividual/willingIndividualSignup";
@@ -59,6 +60,11 @@ const routes = [
     component: Events,
   },
   {
+    path: '/login',
+    exact: false,
+    component: Loginpage
+  },
+  {
     path: '/looking/signup',
     exact: true,
     component: LookingIndividualSignup,
@@ -89,6 +95,7 @@ export default function getSwitchToRoutes() {
             path={route.path}
             exact={route.exact}
             component={route.component}
+            key={index}
           />
         )
       )}
