@@ -13,7 +13,8 @@ var user;
 // res.render("sign_up")
 // });
 
-app.post("/", (req, res) => { // finally url will be "/sign_up/" (as the previous one used)
+app.post("/", (req, res) => {
+  // finally url will be "/sign_up/" (as the previous one used)
   bcrypt.hash(req.body.password, 10, (err, hash) => {
     if (err) {
       console.log("Password can not be encrypted");
@@ -36,7 +37,8 @@ app.post("/", (req, res) => { // finally url will be "/sign_up/" (as the previou
 //     res.render("sign_up")
 // });
 
-app.post("/org", (req, res) => { // finally url will be "/sign_up/org" (as the previous one used)
+app.post("/org", (req, res) => {
+  // finally url will be "/sign_up/org" (as the previous one used)
   user.Name_of_organisation = string.sanitize(req.body.Name_of_organisation);
   user.Address_of_organisation = string.sanitize(
     req.body.Address_of_organisation

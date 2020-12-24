@@ -2,18 +2,18 @@ const router = require("express").Router();
 const userModel = require("../models/schemas/user");
 const { validateLoginData, loggedInCheck } = require("../utils/validators");
 const { hash } = require("bcrypt");
-const csurf = require('csurf');
+const csurf = require("csurf");
 
-router.use( csurf({ cookie: true }) );
+router.use(csurf({ cookie: true }));
 
 /**
  * Login @route -> /user/login
  *
  * @note -> If login is successful the userName is also stored in the session,
  * 			and can be accessed using `req.session.uName`
- * 
+ *
  * @token_&_session - Later JWT tokens maybe used, but as for now, sessions seem enough to keep track of users
- * 
+ *
  * @request_body -> { "userName": "<username of user>", "pass": "<password of user>" }
  *
  * @response -> @statusCode -> 200 (if success)

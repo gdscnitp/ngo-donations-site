@@ -10,6 +10,7 @@ const rateLimit = require("express-rate-limit");
 const userRouter = require("./routes/user");
 const activitiesRouter = require("./routes/activities");
 const feedRouter = require("./routes/feed");
+const events = require("./routes/event");
 const requestRouter = require("./routes/request");
 const signupRouter = require("./routes/sign_up");
 const { random16BaseString } = require("./utils/random");
@@ -75,6 +76,7 @@ app.use("/sign_up", signupRouter); // sign_up individual and organisation
 app.use("/activities", activitiesRouter); // image, update-details, delete-details
 app.use("/requests", requestRouter); // /new request
 app.use("/feeds", feedRouter); // /get feeds
+app.use("/events", events);
 // Routes END
 
 //404 and Error handlers
