@@ -43,6 +43,9 @@ db.once("open", () => {
   console.log(`Connected to the database : ${DB_NAME}`);
 });
 
+app.use(require("cors")({
+  origin: "http://localhost:3001"
+}))
 app.use(
   rateLimit({
     windowMs: 24 * 60 * 60 * 1000,

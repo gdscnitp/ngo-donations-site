@@ -1,4 +1,4 @@
-import { LOGIN_ROUTE, SIGN_UP_ROUTES } from "../constants/baseurl";
+import { BASE_API_ROUTE, LOGIN_ROUTE, SIGN_UP_ROUTES } from "../constants/baseurl";
 
 /**
  * @note -> The services only act as connections to the backend, and contact the backend,
@@ -20,10 +20,10 @@ export function LoginUser ( email, pass ) {
     }
 
     return fetch( LOGIN_ROUTE , options ).then(response => {
-        if( response.status >= 300 )    throw {msg: response.statusText}
+        if( !response.ok )    throw {msg: response.statusText}
 
         return response.json();
-    });
+    })
 }
 
 export function SignUpInd( username, password, email, mobile ) {

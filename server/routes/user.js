@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const userModel = require("../models/schemas/user");
+const personModel = require("../models/person");
 const { validateLoginData } = require("../utils/validators");
 const csurf = require('csurf');
 const passport = require('passport');
@@ -11,20 +11,20 @@ router.use(passport.initialize());
 router.use(passport.session());
 
 passport.use(new localStrategy(
-  (uname, pass, done) => {
-    userModel.findOne({userName: uname}).exec()
+  (email, pass, done) => {
+    personModel.findOne({email: email}).exec()
       .then((user) => {
         if( !user ){
           return done(null, false, { message: "User not Found" });
         }else{
-          userModel.authenticate(uname, pass)
+          personModel.authenticate(email, pass)
                       .then((user) => {
                         return done(null, user, {message: "Login of user successful"}); //logic successful
                       })
                       .catch((err) => {
                         err.status = 401;
 
-                        return done(err, false, {message: `Error during logging in uname - ${uname}`});          
+                        return done(err, false, {message: `Error during logging in uname - ${email}`});          
                       })
             }
       })
@@ -32,7 +32,7 @@ passport.use(new localStrategy(
         console.log("Error: ", err);
         err.status = 401;
 
-        return done(err, false, {message: `Error during logging in uname - ${uname}`});
+        return done(err, false, {message: `Error during logging in: ${email}`});
       })
   }
 ))
@@ -42,15 +42,17 @@ passport.serializeUser((user, callback) => {
 });
 
 passport.deserializeUser((id, callback) => {
-  userModel.findById( id, (err, user) => {
+  personModel.findById( id, (err, user) => {
+    console.log(`Deserealizing, Result of finding by id: ${id}: `, err, user);
     if(err){
       callback(err, null);
     }
 
     callback(null, {
+      id: user.id,
       name: user.name,
-      oauth: user.oauth,  // if avaialable
-      verified: user.verified,
+      email: user.email,
+      contactNumber: user.contactNumber  // if avaialable
     });
 
   });
@@ -61,7 +63,7 @@ passport.deserializeUser((id, callback) => {
  *
  * @note -> If login is successful then req.user is set by passport
  * 
- * @request_body -> { "userName": "<username of user>", "pass": "<password of user>" }
+ * @request_body -> { "username": "<email/username of user>", "password": "<password of user>" }
  *
  * @response -> @statusCode -> 200 (if success)
  *
@@ -89,16 +91,22 @@ router.post('/login', (req, res, next) => {
       return next({ status: 401 });
     }
 
-    console.log(`[${Date.now()}] Login of ${user.userName} successful`);
+    console.log(`[${Date.now()}] Login of ${user.email} successful`);
     req.login( {
       id: user.id,
       name: user.name,
-      oauth: user.oauth,  // if avaialable
-      verified: user.verified,
-    }, (err) => {console.log("Error in login() call", err )} );  // when using a custom cb, this is advised
-    return res.status(200).json({
-      user: req.user
-    });
+      email: user.email,
+      contactNumber: user.contactNumber  // if avaialable
+    }, (err) => {
+      if( !err ) {
+        return res.status(200).json({
+          user: req.user
+        });
+      }
+
+      console.log("Error in login() call: ", err.message )
+      return res.status(500).send("Couldn't Login");
+    });  // when using a custom cb, this is advised
 
   })(req, res, next); // authenticate() returned a closure, to which we pass the req and res objects
 

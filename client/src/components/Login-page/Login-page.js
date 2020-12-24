@@ -14,23 +14,21 @@ export const Loginpage = () => {
 
   async function submitHandler(event) {
     event.preventDefault();
-    console.log("Trying to log in..., with ", email, password)
-
     await LoginUser( email, password )
                   .then((data) => {
                     const { user } = data; // later if refresh tokens implemented, add it in destructure
 
                      // by default uses sessionStorage, if rememberMe is true we use localStorage
                     rememberMe ? 
-                      localStorage.setItem('user', user):
-                      sessionStorage.setItem('user', user);
+                      localStorage.setItem('user', JSON.stringify(user)):
+                      sessionStorage.setItem('user', JSON.stringify(user));
 
-                      console.log("Login Successful")
+                    console.log("Login Successful", user)
 
                     // @todo -> Maybe store in the store, that the user is logged in, so we don't need to show the login button anymore
                     Promise.resolve();
                   })
-                  .catch((err) => console.log(err.msg || "Login Failed"));
+                  .catch((err) => console.log(err.msg || "Login Failed", err));
   }
 
   return (

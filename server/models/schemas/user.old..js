@@ -1,3 +1,4 @@
+  // won't use now, but left as a template for future change
 const { Schema, model, SchemaTypes } = require("mongoose");
 
 const bcrypt = require("bcrypt");
@@ -118,5 +119,5 @@ userSchema.statics.authenticate = (user_id, pass) => (
   })
 );
 
-const userModel = model("auth", userSchema);
-module.exports = userModel;
+// const userModel = model("auth", userSchema);
+// module.exports = userModel;  // no more in use, so intentionally commenting out
