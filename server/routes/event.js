@@ -11,10 +11,13 @@ const limiter = rateLimit({
 var string = require("string-sanitizer");
 var sanitizer = require("sanitize")();
 
-router.get("", (req, res, next) => {
-  res.send("Get request handled by event page");
+//Get all the events
+router.get("/", async (req, res, next) => {
+  const response = await Event.find({});
+  res.send(response);
 });
 
+//Create a new Event
 router.post("", (req, res, next) => {
   const User = new Event({
     _id: new mongoose.Types.ObjectId(),
@@ -40,14 +43,8 @@ router.post("", (req, res, next) => {
 });
 
 // Edit Event
-router.get("/update", (req, res, next) => {
-  res.send("Get request handled by event page");
-});
-
-router.post("/update", limiter, (req, res, next) => {
-  // let _id  = req.body.id;
-  let _id = "5fa182069e2cd54b404d3573";
-
+router.post("/update/:id", limiter, (req, res, next) => {
+  let _id  = req.params.id;
   Event.findByIdAndUpdate(_id, string.sanitize(req.body), () => {
     console.log("data updated");
   });
@@ -55,9 +52,8 @@ router.post("/update", limiter, (req, res, next) => {
 });
 
 //Delete Event
-router.delete("/delete", limiter, (req, res, next) => {
-  // let _id  = req.body.id;
-  let _id = "5fa189a1874d2c455884c9bc";
+router.delete("/delete/:id", limiter, (req, res, next) => {
+  let _id  = req.params.id;
   Event.findByIdAndRemove(_id, () => {
     console.log("Event deleted successfully");
   });
@@ -88,7 +84,6 @@ router.post("", (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
-module.exports = router;
 
 //@desc filter the events
 //@method POST
@@ -119,3 +114,6 @@ router.post("/filter", async (req, res) => {
     console.log(error.message);
   }
 });
+
+
+module.exports = router;
