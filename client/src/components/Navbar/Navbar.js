@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import { SearchBar } from "../Searchbar/SearchBar";
 import "./Navbar.css";
 import { SignupPopup } from "../signup/SignupPopup";

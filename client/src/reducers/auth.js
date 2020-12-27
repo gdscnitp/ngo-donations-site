@@ -8,10 +8,12 @@ function clearStorage() {
 /**
  * 
  * @param rememberMe - Whether the user to be stored permanently (until logged out), or only for session 
+ * 
+ * @note -> Can be helpful, commented only since eslint gives this as warning hence blocking the deploy
  */
-function choseStorage(rememberMe) {
-    return rememberMe ? localStorage : sessionStorage;
-}
+// function choseStorage(rememberMe) {
+//     return rememberMe ? localStorage : sessionStorage;
+// }
 
 const initialState = {
     user: JSON.parse( localStorage.getItem('user') ) || JSON.parse( sessionStorage.getItem('user') ),

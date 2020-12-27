@@ -1,4 +1,4 @@
-import { BASE_API_ROUTE, LOGIN_ROUTE, SIGN_UP_ROUTES } from "../constants/baseurl";
+import { LOGIN_ROUTE } from "../constants/baseurl";
 
 /**
  * @note -> The services only act as connections to the backend, and contact the backend,
@@ -26,7 +26,7 @@ export function LoginUser ( email, pass ) {
     })
 }
 
-export function SignUpInd( username, password, email, mobile ) {
+// export function SignUpInd( username, password, email, mobile ) {
     // @todo
 
     // const options = {
@@ -44,10 +44,10 @@ export function SignUpInd( username, password, email, mobile ) {
     // }
 
     // return fetch( SIGN_UP_ROUTE, options ).then(response => response.json());
-}
+// }
 
-export function SignUpOrg( username, password, email, mobile ) {
-    // @todo @me
+// export function SignUpOrg( username, password, email, mobile ) {
+    // @todo
 
     // const options = {
     //     method: 'POST',
@@ -64,8 +64,4 @@ export function SignUpOrg( username, password, email, mobile ) {
     // }
 
     // return fetch( SIGN_UP_ROUTE, options ).then(response => response.json());
-}
-
-export function UpdateDP ( pic_stream ) {
-    // @todo
-}
+// }

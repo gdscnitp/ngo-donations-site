@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default (props) => {
   // expecting the state management by the WillingIndividualSignup component, since it finally handles the submission; Not using redux here, can be more cleaner in a way then

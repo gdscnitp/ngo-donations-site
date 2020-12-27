@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux"; // only using to have all components easy access to check if user logged in or not
 import { useHistory } from "react-router-dom";
 import { AiFillMail } from "react-icons/ai";
