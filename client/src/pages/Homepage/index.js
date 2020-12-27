@@ -4,10 +4,13 @@ import Cause from "./../../components/home/cause";
 import Stories from "./../../components/home/stories";
 import News from "./../../components/home/news";
 import Rating from "./../../components/home/Rating";
+import Carousel from "./../../components/carousel/carousel.js";
 
 const Homepage = () => {
   return (
-    <center>
+    <center> 
+<Carousel/>
+
       <h3>
         <strong>Recent Events</strong>
       </h3>

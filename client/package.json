@@ -14,6 +14,7 @@
     "react-owl-carousel": "^2.3.1",
     "react-pageflip": "^1.0.0",
     "react-redux": "^7.2.2",
+    "react-player": "^2.6.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.4",
     "reactstrap": "^8.7.1",

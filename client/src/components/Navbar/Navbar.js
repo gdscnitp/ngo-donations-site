@@ -7,8 +7,8 @@ import { useSelector } from "react-redux";
 export function Navbar() {  // converted to functiona components to use the useSelector hook instead of storing complete state
   const [ addModelShow, setModelShow ] = useState(false);
 
-  const isAlreadyLoggedIn = useSelector(state => state.auth.isLoggedIn)
-  const userName = useSelector(state => state.auth.user.email)
+  const userAuth = useSelector(state => state.auth)
+  const isAlreadyLoggedIn = userAuth.isLoggedIn;
 
   function openNav() {
     document.getElementById("mySidebar").style.width = "300px";
@@ -40,7 +40,7 @@ export function Navbar() {  // converted to functiona components to use the useS
                     {
                       isAlreadyLoggedIn ? (
                         <div>
-                          {"User: " + userName}
+                          {"User: " + userAuth.user.email}
                         </div>
                       ) : 
                       (<>
@@ -54,14 +54,35 @@ export function Navbar() {  // converted to functiona components to use the useS
                       </>)
                     }
                   </li>
-                  <li>
-                    <div href="/faqs">FAQs</div>
+                  <li><a href="/donate">
+                    <div>Donate</div>
+                    </a>
                   </li>
                   <li>
                     <div href="/about-us">About us</div>
                   </li>
+                   <li><a href="/feedback">
+                    <div>Feed</div>
+                    </a>
+                  </li>
+                  <li><a href="/need">
+                    <div>Need</div>
+                    </a>
+                  </li>
+                   <li><a href="/videopopup">
+                    <div>How to Use</div>
+                    </a>
+                  </li>
+                  <li><a href="/faqs">
+                    <div>FAQs
+                    </div>
+                    </a>
+                  </li>
                   <li>
-                    <div href="/events">Events</div>
+                    <div>About us</div>
+                  </li>
+                  <li><a href="/events">
+                    <div>Events</div></a>
                   </li>
                 </ul>
               </nav>
@@ -70,6 +91,9 @@ export function Navbar() {  // converted to functiona components to use the useS
               <button class="closebtn" onClick={closeNav}>
                 ×
               </button>
+               <div href="/donate">Donate</div>
+                <div href="/events">Need</div>
+                 <div href="/events">How to Use</div>
               <div href="/events">Events</div>
               <div href="/about-us">About us</div>
               <div href="/faqs">FAQs</div>

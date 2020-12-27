@@ -20,7 +20,7 @@ export function LoginUser ( email, pass ) {
     }
 
     return fetch( LOGIN_ROUTE , options ).then(response => {
-        if( !response.ok )    throw {msg: response.statusText}
+        if( !response.ok )    throw Error({msg: response.statusText})
 
         return response.json();
     })

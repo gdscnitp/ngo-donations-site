@@ -6,7 +6,6 @@ import "bootstrap/dist/css/bootstrap-grid.min.css";
 // import Carousel from "./components/carousel/carousel"
 import { Navbar } from "../src/components/Navbar/Navbar";
 import { Footer } from "../src/components/Footer/Footer";
-import Feedback from "./components/Feed Page/Feedback";
 import getSwitchToRoutes from "./routes"
 
 export default function App() {
@@ -34,12 +33,14 @@ export default function App() {
         <br />
         <br />
         <Navbar />
-
+        <br />
+        <br />
         <center>
-          {getSwitchToRoutes()}
+          { // adding and managing more routes should be easier in routes.js
+            getSwitchToRoutes()
+          }
         </center>
         <br />
-        <Feedback />
         <Footer />
       </div>
     </Router>

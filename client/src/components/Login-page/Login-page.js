@@ -52,7 +52,7 @@ export const Loginpage = () => {
                     Promise.resolve();
                   })
                   .catch((err) => {
-                    alert(err.msg || "Login Failed... please try again")
+                    alert(err.msg || "Login Failed... Please try again")
 
                     console.log(err);
                   });
