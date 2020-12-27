@@ -4,7 +4,7 @@ import "../css/skeleton.css";
 import StepOne from "./stepOne";
 import StepTwo from "./stepTwo";
 import StepThree from "./stepThree";
-import { SignUpUser } from "../../../services/user_service";
+import {} from "../../../services/user_service";
 
 const steps = [
   { component: <StepOne /> },

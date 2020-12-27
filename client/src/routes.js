@@ -14,6 +14,8 @@ import LookingIndividualSignup from "./components/signup/lookingIndividual/looki
 import LookingOrganisationSignup from "./components/signup/lookingOrganisation/lookingOrganisationSignup";
 import WillingIndividualSignup from "./components/signup/willingIndividual/willingIndividualSignup";
 import WillingOrganisationSignup from "./components/signup/willingOrganisation/willingOrganisationSignup";
+import Feedback from "./components/Feed Page/Feedback";
+import {Videopopup } from './components/Video-popup/Video-popup';
 
 /**
  * @learnt -> The history and match arguments are passed to the component you want to be rendered `by the Route component` itself
@@ -58,6 +60,14 @@ const routes = [
     path: '/events',
     exact: false,
     component: Events,
+  },
+  {
+    path: '/videopopup',
+    component: Videopopup
+  },
+  {
+    path: '/feedback',
+    component: Feedback
   },
   {
     path: '/login',

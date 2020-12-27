@@ -15,7 +15,7 @@ const signupRouter = require("./routes/sign_up");
 const { SESSION_SECRET } = require("./secretConfig");
 
 require("dotenv").config();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;  // change so that react client can still run on port 3000
 const DB_NAME = "muckin_testing"; // @note - later change it according to database used in production
 
 const MONGO_DB_URI = `mongodb+srv://dscnitp_webdept_muckin:${process.env.DB_PASSWORD}@cluster0.kokfw.gcp.mongodb.net?retryWrites=true`; // @note - Don't modify this, if it doesn't work for you please ask
@@ -43,9 +43,12 @@ db.once("open", () => {
   console.log(`Connected to the database : ${DB_NAME}`);
 });
 
-app.use(require("cors")({
-  origin: "http://localhost:3001"
-}))
+if( process.env.NODE_ENV !== 'production' )
+  app.use(
+    require("cors")({
+    origin: "*"
+  }))
+
 app.use(
   rateLimit({
     windowMs: 24 * 60 * 60 * 1000,

@@ -1,4 +1,4 @@
-import { BASE_API_ROUTE, LOGIN_ROUTE, SIGN_UP_ROUTES } from "../constants/baseurl";
+import { LOGIN_ROUTE } from "../constants/baseurl";
 
 /**
  * @note -> The services only act as connections to the backend, and contact the backend,
@@ -20,52 +20,48 @@ export function LoginUser ( email, pass ) {
     }
 
     return fetch( LOGIN_ROUTE , options ).then(response => {
-        if( !response.ok )    throw {msg: response.statusText}
+        if( !response.ok )    throw Error({msg: response.statusText})
 
         return response.json();
     })
 }
 
-export function SignUpInd( username, password, email, mobile ) {
-    // @todo @me
-
-    // const options = {
-    //     method: 'POST',
-    //     headers: {
-    //         "Accept": "application/json",
-    //         "Content-Type": "application/json;charset=UTF-8"
-    //     },
-    //     body: JSON.stringify({
-    //         username,
-    //         password,
-    //         email,
-    //         mobile
-    //     })
-    // }
-
-    // return fetch( SIGN_UP_ROUTE, options ).then(response => response.json());
-}
-
-export function SignUpOrg( username, password, email, mobile ) {
-    // @todo @me
-
-    // const options = {
-    //     method: 'POST',
-    //     headers: {
-    //         "Accept": "application/json",
-    //         "Content-Type": "application/json;charset=UTF-8"
-    //     },
-    //     body: JSON.stringify({
-    //         username,
-    //         password,
-    //         email,
-    //         mobile
-    //     })
-    // }
-
-    // return fetch( SIGN_UP_ROUTE, options ).then(response => response.json());
-}
-
-export function UpdateDP ( pic_stream ) {
+// export function SignUpInd( username, password, email, mobile ) {
     // @todo
-}
+
+    // const options = {
+    //     method: 'POST',
+    //     headers: {
+    //         "Accept": "application/json",
+    //         "Content-Type": "application/json;charset=UTF-8"
+    //     },
+    //     body: JSON.stringify({
+    //         username,
+    //         password,
+    //         email,
+    //         mobile
+    //     })
+    // }
+
+    // return fetch( SIGN_UP_ROUTE, options ).then(response => response.json());
+// }
+
+// export function SignUpOrg( username, password, email, mobile ) {
+    // @todo
+
+    // const options = {
+    //     method: 'POST',
+    //     headers: {
+    //         "Accept": "application/json",
+    //         "Content-Type": "application/json;charset=UTF-8"
+    //     },
+    //     body: JSON.stringify({
+    //         username,
+    //         password,
+    //         email,
+    //         mobile
+    //     })
+    // }
+
+    // return fetch( SIGN_UP_ROUTE, options ).then(response => response.json());
+// }
