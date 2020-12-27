@@ -2,6 +2,6 @@
 .eslintrc.json
 
 /node_modules
-yarn.lock
+
 # else there will be 3 lock files only
 pnpm-lock.yaml
