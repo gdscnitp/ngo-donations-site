@@ -27,7 +27,7 @@ export function LoginUser ( email, pass ) {
 }
 
 export function SignUpInd( username, password, email, mobile ) {
-    // @todo @me
+    // @todo
 
     // const options = {
     //     method: 'POST',

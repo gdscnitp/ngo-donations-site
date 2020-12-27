@@ -1,7 +1,7 @@
 // @note - All these routes will be without a trailibg forward slash '/', so concat endpoints yourselves
 
 // @todo -> Replace with the url to the deployed
-exports.BASE_API_ROUTE = "http://localhost:3000";
+exports.BASE_API_ROUTE = "http://localhost:8080";
 
 exports.LOGIN_ROUTE = `${this.BASE_API_ROUTE}/user/login`;
 

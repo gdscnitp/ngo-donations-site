@@ -92,7 +92,7 @@ router.post('/login', (req, res, next) => {
     }
 
     console.log(`[${Date.now()}] Login of ${user.email} successful`);
-    req.login( {
+    req.login({
       id: user.id,
       name: user.name,
       email: user.email,

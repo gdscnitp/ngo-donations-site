@@ -1,10 +1,13 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux"; // only using to have all components easy access to check if user logged in or not
+import { useHistory } from "react-router-dom";
 import { AiFillMail } from "react-icons/ai";
 import { AiFillLock } from "react-icons/ai";
 import { AiFillFacebook } from "react-icons/ai";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import "./Login-page.css";
 import { LoginUser } from "../../services/user_service";
+import { STORE_AUTH } from "../../reducers/action_types";
 //  import Image from "div2.jpg"
 
 export const Loginpage = () => {
@@ -12,8 +15,20 @@ export const Loginpage = () => {
   const [password, setPassword] = useState("");
   const [rememberMe, toggleRemember] = useState(false);
 
+  const history = useHistory(); // using to redirect user after login
+  const dispatch = useDispatch(); // only to store in redux store, so that can check from any component whether logged in or not
+  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+  const auth = useSelector(state => state.auth);
+
   async function submitHandler(event) {
     event.preventDefault();
+
+    if( isLoggedIn ) {  // if already logged in, then redirect
+      alert("You are already logged in :D");
+
+      history.push('/');  // redirecting to homepage
+      window.location.reload();
+    }
     await LoginUser( email, password )
                   .then((data) => {
                     const { user } = data; // later if refresh tokens implemented, add it in destructure
@@ -23,12 +38,24 @@ export const Loginpage = () => {
                       localStorage.setItem('user', JSON.stringify(user)):
                       sessionStorage.setItem('user', JSON.stringify(user));
 
-                    console.log("Login Successful", user)
+                    // [DONE] @todo -> Maybe store in the store, that the user is logged in, so we don't need to show the login button anymore
+                    dispatch({type: STORE_AUTH, payload: user});
+                    console.log("Login Successful...", user)
+                    console.debug("Now other components can check if user logged in through state.auth.isLoggedIn", user)
+                    console.debug("User object in redux state is: ", auth);
 
-                    // @todo -> Maybe store in the store, that the user is logged in, so we don't need to show the login button anymore
+                    alert("[REMOVE FROM PROD] Namaste ! Login Successful :D");
+                    // redirecting to homepage
+                    history.push('/');
+                    window.location.reload();
+
                     Promise.resolve();
                   })
-                  .catch((err) => console.log(err.msg || "Login Failed", err));
+                  .catch((err) => {
+                    alert(err.msg || "Login Failed... please try again")
+
+                    console.log(err);
+                  });
   }
 
   return (
