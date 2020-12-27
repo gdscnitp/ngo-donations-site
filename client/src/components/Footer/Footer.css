@@ -165,8 +165,8 @@ fieldset {
 
 #suggestion_box button[type="submit"]:hover {
 	background:black;
-	-webkit-transition:background 0.3s ease-in-out;
-	-moz-transition:background 0.3s ease-in-out;
+	-webkit-transition: 0.3s ease-in-out;
+	-moz-transition:  0.3s ease-in-out;
 	transition:background-color 0.3s ease-in-out;
 }
 
