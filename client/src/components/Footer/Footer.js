@@ -42,9 +42,9 @@ export const Footer = () => {
           <span className="sas2-4" id="IconSpan">
          <ul>
           <li class="li_img"><strong>Find us on </strong></li>
-          <li class="li_img"><a href=""><AiFillFacebook className="footerIcons" /></a></li>
-          <li class="li_img"><a href=""><AiFillGoogleCircle className="footerIcons" /> </a></li>
-          <li class="li_img"><a href=""><AiFillLinkedin className="footerIcons" /></a></li>
+          <li class="li_img"><a href=" "><AiFillFacebook className="footerIcons" /></a></li>
+          <li class="li_img"><a href=" "><AiFillGoogleCircle className="footerIcons" /> </a></li>
+          <li class="li_img"><a href=" "><AiFillLinkedin className="footerIcons" /></a></li>
 
           </ul>
     </span>
