@@ -78,5 +78,46 @@ const User = new Schema({
   isChecked: { type: Boolean, default: false },
 });
 
-const user = mongoose.model("User", User);
-module.exports = user;
+/**
+ * @note - This function will take in email_id and passowrd, and RETURNS A PROMISE
+ * So that it can be easily used with then and catch instead of providing callbacks
+ */
+User.statics.authenticate = (email_id, pass) => (
+  new Promise((resolve, reject) => {
+    personModel.findOne({ email: email_id }, (err, doc) => {
+      if (err) {
+        return reject(err);
+      } else if (!doc) {
+        //couldn't find a matching document
+        err = { msg: `User ${email_id} Not Found` };
+        err.status = 401;
+
+        return reject(err);
+      }
+      bcrypt
+        .compare(pass, doc.password)
+        .then((result) => {
+          if (result === true) {
+            console.log(`Successful Login of ${email_id}`);
+
+            return resolve( doc );  // SUCCESS
+          } else {
+            console.log(`Failed login attempt by ${email_id}`);
+            err = { message: `Failed Login Attempt` };
+            err.status = 401;
+  
+            return reject(err);
+          }
+        })
+        .catch((err) => {
+          err.message = `Password comparison failed with an error`;
+          console.error(err.message, err);
+  
+          return reject({ msg: err.message, code: err.code });
+        });
+    });
+  })
+);
+
+const personModel = mongoose.model("User", User);
+module.exports = personModel;
