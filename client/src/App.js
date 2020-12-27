@@ -13,7 +13,6 @@ import User from "./components/User-profile/User.js";
 import { Loginpage } from "./components/Login-page/Login-page";
 import Homepage from "./pages/Homepage";
 import Event from "./components/Event/Event.js";
-import Carousel from "./components/carousel/carousel.js";
 import Events from "./components/Event Page/Events";
 import LookingIndividualSignup from "./components/signup/lookingIndividual/lookingIndividualSignup";
 import LookingOrganisationSignup from "./components/signup/lookingOrganisation/lookingOrganisationSignup";
@@ -26,28 +25,12 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <br />
-        <br />
-
-        <Carousel />
-
-        <a
-          href="/donate"
-          className="btn btn-info"
-          style={{ float: "left", margin: "1rem" }}
-        >
-          Donate
-        </a>
-        <a
-          href="/need"
-          className="btn btn-info"
-          style={{ float: "right", margin: "1rem" }}
-        >
-          Need
-        </a>
+        
         <br />
         <br />
         <Navbar />
+<br />
+<br />
 
         <center>
           <Switch>
@@ -61,6 +44,9 @@ function App() {
             <Route path="/need" component={Need} />
             <Route path="/userprofile" component={User} />
             <Route path="/events" component={Events} />
+            <Route path="/videopopup" component={Videopopup} />
+              <Route path="/feedback" component={Feedback} />
+
             <Route
               path="/lookingindividualsignup"
               component={LookingIndividualSignup}
@@ -80,8 +66,6 @@ function App() {
           </Switch>
         </center>
         <br />
-        <Videopopup />
-        <Feedback />
         <Footer />
       </div>
     </Router>

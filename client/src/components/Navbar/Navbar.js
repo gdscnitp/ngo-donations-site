@@ -42,14 +42,32 @@ export class Navbar extends Component {
                       onHide={addModelClose}
                     />
                   </li>
-                  <li>
-                    <div href="/faqs">FAQs</div>
+                  <li><a href="/donate">
+                    <div>Donate</div>
+                    </a>
+                  </li>
+                   <li><a href="/feedback">
+                    <div>Feed</div>
+                    </a>
+                  </li>
+                  <li><a href="/need">
+                    <div>Need</div>
+                    </a>
+                  </li>
+                   <li><a href="/videopopup">
+                    <div>How to Use</div>
+                    </a>
+                  </li>
+                  <li><a href="/faqs">
+                    <div>FAQs
+                    </div>
+                    </a>
                   </li>
                   <li>
-                    <div href="/aboutus">About us</div>
+                    <div>About us</div>
                   </li>
-                  <li>
-                    <div href="/events">Events</div>
+                  <li><a href="/events">
+                    <div>Events</div></a>
                   </li>
                 </ul>
               </nav>
@@ -58,6 +76,9 @@ export class Navbar extends Component {
               <button class="closebtn" onClick={this.closeNav}>
                 ×
               </button>
+               <div href="/donate">Donate</div>
+                <div href="/events">Need</div>
+                 <div href="/events">How to Use</div>
               <div href="/events">Events</div>
               <div href="/aboutus">About us</div>
               <div href="/faqs">FAQs</div>
