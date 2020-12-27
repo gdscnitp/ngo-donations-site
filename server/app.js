@@ -12,10 +12,14 @@ const activitiesRouter = require("./routes/activities");
 const feedRouter = require("./routes/feed");
 const requestRouter = require("./routes/request");
 const signupRouter = require("./routes/sign_up");
+const route1 = require('./routes/userSignup');
+const route2 = require('./routes/orgSignup');
+const editUser = require('./routes/api.js');
+
 const { random16BaseString } = require("./utils/random");
 
 require("dotenv").config();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 const DB_NAME = "muckin_testing"; // @note - later change it according to database used in production
 
 const MONGO_DB_URI = `mongodb+srv://dscnitp_webdept_muckin:${process.env.DB_PASSWORD}@cluster0.kokfw.gcp.mongodb.net?retryWrites=true`; // @note - Don't modify this, if it doesn't work for you please ask
@@ -72,9 +76,12 @@ app.use(
 // Routes START
 app.use("/user", userRouter); // login, logout
 app.use("/sign_up", signupRouter); // sign_up individual and organisation
-app.use("/activities", activitiesRouter); // image, update-details, delete-details
 app.use("/requests", requestRouter); // /new request
 app.use("/feeds", feedRouter); // /get feeds
+app.use("/activities", activitiesRouter); // image, update-details, delete-details
+app.use('/editUser',editUser); // edit user profile
+app.use('/api1', route1);  // signup user looking for help
+app.use('/api2',route2); // signup org looking for help
 // Routes END
 
 //404 and Error handlers
