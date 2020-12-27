@@ -1,5 +1,8 @@
 import React from "react";
 import "./Footer.css";
+import { AiFillFacebook } from "react-icons/ai";
+import { AiFillGoogleCircle } from "react-icons/ai";
+import { AiFillLinkedin } from "react-icons/ai";
 
 export const Footer = () => {
   return (
@@ -8,9 +11,49 @@ export const Footer = () => {
         rel="stylesheet"
         href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
       ></link>
+      <div class="sas2">
+      <div class="sas2-1">
+         <ul class="cities1">
+          <li><strong>Cities we serve</strong></li>
+          <li>lorem</li>
+          <li>lorem</li>
+               <li>lorem</li>
+               <li>lorem</li>
+          </ul>
+    </div>
+          <div class="sas2-2">
+         <ul class="cities1">
+          <li><strong>Cities we serve</strong></li>
+          <li>lorem</li>
+          <li>lorem</li>
+               <li>lorem</li>
+               <li>lorem</li>
+          </ul>
+    </div>
+          <div class="sas2-3">
+         <ul class="cities1">
+          <li><strong>Cities we serve</strong></li>
+          <li>lorem</li>
+          <li>lorem</li>
+               <li>lorem</li>
+               <li>lorem</li>
+          </ul>
+    </div>
+          <span className="sas2-4" id="IconSpan">
+         <ul>
+          <li class="li_img"><strong>Find us on </strong></li>
+          <li class="li_img"><a href="#"><AiFillFacebook className="footerIcons" /></a></li>
+          <li class="li_img"><a href="#"><AiFillGoogleCircle className="footerIcons" /> </a></li>
+          <li class="li_img"><a href="#"><AiFillLinkedin className="footerIcons" /></a></li>
+
+          </ul>
+    </span>
+       <p class="worklink">© 2020 Muckin.All rights reserved.</p>
+      </div>
+
       <div class="sas">
         <div class="stars">
-          <p>Rate our Website</p>
+          <p style={{color: "white"}}><strong>Rate our Website</strong></p>
           <form action="">
             <input class="star star-5" id="star-5" type="radio" name="star" />
             <label class="star star-5" for="star-5"></label>
