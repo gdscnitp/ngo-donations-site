@@ -17,10 +17,10 @@ import Events from "./components/Event Page/Events";
 import LookingIndividualSignup from "./components/signup/lookingIndividual/lookingIndividualSignup";
 import LookingOrganisationSignup from "./components/signup/lookingOrganisation/lookingOrganisationSignup";
 import WillingIndividualSignup from "./components/signup/willingIndividual/willingIndividualSignup";
-import WillingOrganisationSignup from "./components/signup/willingOrganisation/willingOrganisationSignup";
+import { WillingOrganisationSignupStep1, WillingOrganisationSignupStep2, WillingOrganisationSignupStep3 } from "./components/signup/willingOrganisation/willingOrganisationSignup";
 import Feedback from "./components/Feed Page/Feedback";
 import {Videopopup } from './components/Video-popup/Video-popup';
-
+//import MultiStep from './components/signup/react-multistep';
 function App() {
   return (
     <Router>
@@ -60,9 +60,19 @@ function App() {
               component={WillingIndividualSignup}
             />
             <Route
-              path="/willingorganisationsignup"
-              component={WillingOrganisationSignup}
-            />
+              path="/willingorganisationsignupstep1"
+              component={WillingOrganisationSignupStep1}
+                      />
+                      <Route
+                          path="/willingorganisationsignupstep2"
+                          component={WillingOrganisationSignupStep2}
+                      />
+                      <Route
+                          path="/willingorganisationsignupstep3"
+                          component={WillingOrganisationSignupStep3}
+                      />
+                      
+
           </Switch>
         </center>
         <br />
