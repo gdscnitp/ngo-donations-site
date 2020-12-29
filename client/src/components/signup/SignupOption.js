@@ -20,7 +20,7 @@ export const SignupOption = () => {
               value="Individual"
             ></input>
           </a>
-          <a href="/willingorganisationsignup">
+          <a href="/willingorganisationsignupstep1">
             <input
               type="button"
               name="next"
