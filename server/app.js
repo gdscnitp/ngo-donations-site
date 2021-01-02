@@ -15,7 +15,11 @@ const signupRouter = require("./routes/sign_up");
 const { SESSION_SECRET } = require("./secretConfig");
 
 require("dotenv").config();
-const PORT = process.env.PORT || 8080;  // change so that react client can still run on port 3000
+const User = require("./models/person");
+var string = require("string-sanitizer");
+
+var user;
+const PORT = process.env.PORT || 5000;  // changed so fronted runs on 3000 and server at 5000
 const DB_NAME = "muckin_testing"; // @note - later change it according to database used in production
 
 const MONGO_DB_URI = `mongodb+srv://dscnitp_webdept_muckin:${process.env.DB_PASSWORD}@cluster0.kokfw.gcp.mongodb.net?retryWrites=true`; // @note - Don't modify this, if it doesn't work for you please ask
@@ -25,7 +29,7 @@ mongoose
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
-    dbName: DB_NAME,
+      dbName: DB_NAME,
     w: "majority",
   })
   .catch((err) => {
@@ -55,6 +59,7 @@ app.use(
     max: 100,
   })
 );
+
 app.use(morgan("dev")); // to log requests made to api
 app.use(express.urlencoded({ extended: false })); // to parse url encoded data and form inputs
 app.use(express.json()); // to parse json data
@@ -75,6 +80,11 @@ app.use(
   })
 );
 
+//app.post('/sign_up', (req, res) => {
+  //  console.log('Hello')
+//})
+
+
 // Routes START
 app.use("/user", userRouter); // login, logout
 app.use("/sign_up", signupRouter); // sign_up individual and organisation
@@ -82,6 +92,111 @@ app.use("/activities", activitiesRouter); // image, update-details, delete-detai
 app.use("/requests", requestRouter); // /new request
 app.use("/feeds", feedRouter); // /get feeds
 // Routes END
+app.use("/org", signupRouter);
+
+
+
+
+app.post("/sign_up/", async (req, res) => { // finally url will be "/sign_up/" (as the previous one used)
+    console.log('Okay we can reach here')
+
+
+    bcrypt.hash(req.body.password, 10, (err, hash) => {
+        if (err) {
+            console.log("Password can not be encrypted");
+        }
+        user = new User({
+            name: req.body.name,
+            contactNumber: req.body.contactNumber,
+            email: req.body.email,
+            password: hash
+        });
+        user.save().then(() => {
+            console.log(user);
+        });
+
+    });
+
+    res.redirect('/willingorganisationsignupstep2')
+});
+
+
+
+app.post("/org", (req, res) => { // finally url will be "/sign_up/org" (as the previous one used)
+    user.Name_of_organisation = string.sanitize(req.body.nameorganisation);
+    user.Address_of_organisation = string.sanitize(
+        req.body.addressorganisation
+    );
+    user.License_number = string.sanitize(req.body.license);
+    user.Type_of_organisation = string.sanitize(req.body.typeorganisation);
+    user.Description_of_organisation = string.sanitize(
+        req.body.describe
+    );
+    user.Volunteers_number = string.sanitize(req.body.numbervolun);
+    user.Type_of_help = string.sanitize(req.body.help);
+    user.Open_for_volunteers = string.sanitize(req.body.isopen);
+    // console.log(typeof(req.body.Address_of_organisation))
+    // console.log(typeof(req.body.Volunteers_number))
+
+    User.updateOne(
+        { _id: user._id },
+        {
+            name: user.name,
+            email: user.email,
+            contactNumber: user.contactNumber,
+            password: user.password,
+            Name_of_organisation: user.Name_of_organisation,
+            Address_of_organisation: user.Address_of_organisation,
+            License_number: user.License_number,
+            Type_of_organisation: user.Type_of_organisation,
+            Description_of_organisation: user.Description_of_organisation,
+            Volunteers_number: user.Volunteers_number,
+            Type_of_help: user.Type_of_help,
+            Open_for_volunteers: user.Open_for_volunteers,
+        }
+    ).then(() => {
+        console.log(user)
+    });
+
+
+
+    res.redirect("/willingorganisationsignupstep3")
+});
+
+app.post("/accept", (req, res) => {
+    res.redirect('/')
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //404 and Error handlers
 app.use((req, res, next) => {
