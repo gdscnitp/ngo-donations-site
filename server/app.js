@@ -12,15 +12,14 @@ const activitiesRouter = require("./routes/activities");
 const feedRouter = require("./routes/feed");
 const requestRouter = require("./routes/request");
 const signupRouter = require("./routes/sign_up");
-const { random16BaseString } = require("./utils/random");
-const bcrypt = require('bcrypt')
+const { SESSION_SECRET } = require("./secretConfig");
+
 require("dotenv").config();
 const User = require("./models/person");
 var string = require("string-sanitizer");
 
 var user;
-const PORT = process.env.PORT || 3000;
-//const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const DB_NAME = "muckin_testing"; // @note - later change it according to database used in production
 
 const MONGO_DB_URI = `mongodb+srv://dscnitp_webdept_muckin:${process.env.DB_PASSWORD}@cluster0.kokfw.gcp.mongodb.net?retryWrites=true`; // @note - Don't modify this, if it doesn't work for you please ask
@@ -61,7 +60,7 @@ app.use(express.json()); // to parse json data
 app.use(express.static(join(__dirname, "public")));
 app.use(
   session({
-    secret: random16BaseString(10),
+    secret: SESSION_SECRET,
     resave: false, // since connect-mongo implements `touch` method, so resave:true not required
     saveUninitialized: false, // useful for implementing login sessions
     cookie: {
