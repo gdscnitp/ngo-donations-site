@@ -17,7 +17,6 @@ var user;
 router.get("/sign_up", (req, res) => {
     console.log('This is working')
 })
-console.log('Heyy')
 router.post("/sign_up/", async(req, res) => { // finally url will be "/sign_up/" (as the previous one used)
     console.log('Okay we can reach here')
 
@@ -109,5 +108,4 @@ router.post("/accept", (req, res) => {
 //  console.log("Root Route");
  // res.json({ message: "hello world" });
 //});
-console.log(router)
 module.exports = router;

@@ -1,9 +1,9 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-const ObjectID = mongoose.Schema.Types.ObjectID;
+const { Schema, model } = require("mongoose");
+const bcrypt = require("bcrypt");
+
 const User = new Schema({
   userID: {
-    type: ObjectID,
+    type: Schema.Types.ObjectID,
   },
   name: {
     type: String,
@@ -12,7 +12,6 @@ const User = new Schema({
   },
   contactNumber: {
     type: Number,
-    default: 0,
     // ,
     // required:true
   },
@@ -119,5 +118,5 @@ User.statics.authenticate = (email_id, pass) => (
   })
 );
 
-const personModel = mongoose.model("User", User);
+const personModel = model("User", User);
 module.exports = personModel;

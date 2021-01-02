@@ -19,6 +19,7 @@ export default () => {
               //   defaultChecked={this.state.checked}
               checked={checked}
               onChange={(e) => setChecked(e.target.value)}
+              required
               autoFocus
             />
             <span> Accept </span>{" "}

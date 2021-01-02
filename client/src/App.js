@@ -1,8 +1,9 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
+// import Carousel from "./components/carousel/carousel"
 import { Navbar } from "../src/components/Navbar/Navbar";
 import { Footer } from "../src/components/Footer/Footer";
 import Donation from "../src/components/donation_and_need_form/donation-form.js";
@@ -21,17 +22,33 @@ import { WillingOrganisationSignupStep1, WillingOrganisationSignupStep2, Willing
 import Feedback from "./components/Feed Page/Feedback";
 import {Videopopup } from './components/Video-popup/Video-popup';
 //import MultiStep from './components/signup/react-multistep';
-function App() {
+export default function App() {
   return (
     <Router>
       <div className="App">
-        
+        <br />
+        <br />
+        {/* <Carousel /> */}
+
+        <a
+          href="/donate"
+          className="btn btn-info"
+          style={{ float: "left", margin: "1rem" }}
+        >
+          Donate
+        </a>
+        <a
+          href="/need"
+          className="btn btn-info"
+          style={{ float: "right", margin: "1rem" }}
+        >
+          Need
+        </a>
         <br />
         <br />
         <Navbar />
-<br />
-<br />
-
+        <br />
+        <br />
         <center>
           <Switch>
             <Route path="/createevent" component={Event} />
@@ -81,5 +98,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;

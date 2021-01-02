@@ -19,7 +19,7 @@ const User = require("./models/person");
 var string = require("string-sanitizer");
 
 var user;
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;  // changed so fronted runs on 3000 and server at 5000
 const DB_NAME = "muckin_testing"; // @note - later change it according to database used in production
 
 const MONGO_DB_URI = `mongodb+srv://dscnitp_webdept_muckin:${process.env.DB_PASSWORD}@cluster0.kokfw.gcp.mongodb.net?retryWrites=true`; // @note - Don't modify this, if it doesn't work for you please ask
@@ -46,6 +46,12 @@ db.on("error", (err) => {
 db.once("open", () => {
   console.log(`Connected to the database : ${DB_NAME}`);
 });
+
+if( process.env.NODE_ENV !== 'production' )
+  app.use(
+    require("cors")({
+    origin: "*"
+  }))
 
 app.use(
   rateLimit({

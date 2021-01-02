@@ -11,20 +11,20 @@ router.use(passport.initialize());
 router.use(passport.session());
 
 passport.use(new localStrategy(
-  (uname, pass, done) => {
-    personModel.findOne({email: uname}).exec()
+  (email, pass, done) => {
+    personModel.findOne({email: email}).exec()
       .then((user) => {
         if( !user ){
           return done(null, false, { message: "User not Found" });
         }else{
-          personModel.authenticate(uname, pass)
+          personModel.authenticate(email, pass)
                       .then((user) => {
                         return done(null, user, {message: "Login of user successful"}); //logic successful
                       })
                       .catch((err) => {
                         err.status = 401;
 
-                        return done(err, false, {message: `Error during logging in uname - ${uname}`});          
+                        return done(err, false, {message: `Error during logging in uname - ${email}`});          
                       })
             }
       })
@@ -32,7 +32,7 @@ passport.use(new localStrategy(
         console.log("Error: ", err);
         err.status = 401;
 
-        return done(err, false, {message: `Error during logging in uname - ${uname}`});
+        return done(err, false, {message: `Error during logging in: ${email}`});
       })
   }
 ))
@@ -43,13 +43,15 @@ passport.serializeUser((user, callback) => {
 
 passport.deserializeUser((id, callback) => {
   personModel.findById( id, (err, user) => {
+    console.log(`Deserealizing, Result of finding by id: ${id}: `, err, user);
     if(err){
       callback(err, null);
     }
 
     callback(null, {
-      userID: user.id,
+      id: user.id,
       name: user.name,
+      email: user.email,
       contactNumber: user.contactNumber  // if avaialable
     });
 
@@ -90,14 +92,21 @@ router.post('/login', (req, res, next) => {
     }
 
     console.log(`[${Date.now()}] Login of ${user.email} successful`);
-    req.login( {
-      userID: user.id,
+    req.login({
+      id: user.id,
       name: user.name,
+      email: user.email,
       contactNumber: user.contactNumber  // if avaialable
-    }, (err) => {console.log("Error in login() call", err )} );  // when using a custom cb, this is advised
-    return res.status(200).json({
-      user: req.user
-    });
+    }, (err) => {
+      if( !err ) {
+        return res.status(200).json({
+          user: req.user
+        });
+      }
+
+      console.log("Error in login() call: ", err.message )
+      return res.status(500).send("Couldn't Login");
+    });  // when using a custom cb, this is advised
 
   })(req, res, next); // authenticate() returned a closure, to which we pass the req and res objects
 
