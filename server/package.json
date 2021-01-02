@@ -7,7 +7,6 @@
     "start": "node app.js",
     "dev": "nodemon app.js",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "deploy_check": "node deploy.ign.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "ISC",

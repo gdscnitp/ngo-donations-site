@@ -107,4 +107,4 @@ app.use((err, req, res, next) => {
     .send(err.message || `Request couldn't be completed`);
 });
 
-module.exports = app.listen(PORT, console.log(`Server listening on ${PORT}`));
+app.listen(PORT, console.log(`Server listening on ${PORT}`));
