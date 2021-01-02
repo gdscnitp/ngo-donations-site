@@ -12,6 +12,11 @@ const activitiesRouter = require("./routes/activities");
 const feedRouter = require("./routes/feed");
 const requestRouter = require("./routes/request");
 const signupRouter = require("./routes/sign_up");
+
+const route1 = require('./routes/userSignup');
+const route2 = require('./routes/orgSignup');
+const editUser = require('./routes/api.js');
+
 const { SESSION_SECRET } = require("./secretConfig");
 
 require("dotenv").config();
@@ -91,8 +96,12 @@ app.use("/sign_up", signupRouter); // sign_up individual and organisation
 app.use("/activities", activitiesRouter); // image, update-details, delete-details
 app.use("/requests", requestRouter); // /new request
 app.use("/feeds", feedRouter); // /get feeds
-// Routes END
+
 app.use("/org", signupRouter);
+app.use('/editUser',editUser); // edit user profile
+app.use('/api1', route1);  // signup user looking for help
+app.use('/api2',route2); // signup org looking for help
+// Routes END
 
 
 
