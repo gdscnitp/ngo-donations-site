@@ -13,23 +13,24 @@ const feedRouter = require("./routes/feed");
 const requestRouter = require("./routes/request");
 const signupRouter = require("./routes/sign_up");
 const { SESSION_SECRET } = require("./secretConfig");
-
+const sgMail = require('@sendgrid/mail')
 require("dotenv").config();
 const User = require("./models/person");
 var string = require("string-sanitizer");
-
+const bcrypt = require("bcrypt");
 var user;
+//PORT = 3001;
 const PORT = process.env.PORT || 5000;  // changed so fronted runs on 3000 and server at 5000
 const DB_NAME = "muckin_testing"; // @note - later change it according to database used in production
 
 const MONGO_DB_URI = `mongodb+srv://dscnitp_webdept_muckin:${process.env.DB_PASSWORD}@cluster0.kokfw.gcp.mongodb.net?retryWrites=true`; // @note - Don't modify this, if it doesn't work for you please ask
-
+//${process.env.DB_PASSWORD}
 mongoose
   .connect(MONGO_DB_URI, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
-      dbName: DB_NAME,
+      dbName:"fin",
     w: "majority",
   })
   .catch((err) => {
@@ -119,6 +120,76 @@ app.post("/sign_up/", async (req, res) => { // finally url will be "/sign_up/" (
 
     res.redirect('/willingorganisationsignupstep2')
 });
+
+var OTP;
+app.post('/verify-email', (req, res) => {
+    console.log('Hey there')
+    sgMail.setApiKey(process.env.API_KEY)
+    stringx = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    OTP = '';
+    var len = stringx.length;
+    for (let i = 0; i < 6; i++) {
+        OTP += stringx[Math.floor(Math.random() * len)];
+    }
+
+
+    mail = 'Your OTP is ' + OTP;
+    const msg = {
+        to: user.email, // Change to your recipient
+        from: 'muckinverify@gmail.com', // Change to your verified sender
+        subject: 'OTP',
+        text: mail,
+
+    }
+    sgMail
+        .send(msg)
+        .then(() => {
+            console.log('Email sent')
+        })
+        .catch((error) => {
+            console.error(error + ' Cannot send')
+        })
+    console.log('OTP ' + OTP)
+    res.redirect('/willingorganisationsignupstep2')
+})
+
+app.post('/verifyemail', (req, res) => {
+    otpReq = string.sanitize(req.body.otp);
+    if (otpReq === OTP) {
+        user.isVerifiedEmail = true;
+    }
+    user.save().then(() => {
+        console.log(user)
+    })
+    res.redirect('/willingorganisationsignupstep2')
+    console.log(otpReq);
+
+    console.log("OTP " + OTP);
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
