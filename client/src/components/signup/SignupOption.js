@@ -7,7 +7,7 @@ export const SignupOption = () => {
       <form id="msform">
         <span>Are you Already a user?? </span>
         <br />
-        <a href="/">Click here </a>
+        <a href="/login">Click here </a>
         <span>to sign in</span>
         <fieldset>
           <h2 class="fs-title">Willing to help??</h2>
@@ -20,7 +20,7 @@ export const SignupOption = () => {
               value="Individual"
             ></input>
           </a>
-          <a href="/willingorganisationsignup">
+          <a href="/willingorganisationsignupstep1">
             <input
               type="button"
               name="next"
