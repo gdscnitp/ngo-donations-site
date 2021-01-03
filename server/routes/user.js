@@ -71,7 +71,6 @@ passport.deserializeUser((id, callback) => {
  * 							   5xx (Server failure)
  */
 router.post('/login', (req, res, next) => {
-
   try{
     // checking if both username and password match regex patterns, @note - This can be done client side too
     if( ! validateLoginData(req.body.username, req.body.password) ){
