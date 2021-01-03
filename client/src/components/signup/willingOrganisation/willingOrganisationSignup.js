@@ -4,15 +4,15 @@ import "../css/skeleton.css";
 import StepOne from "./stepOne";
 import StepTwo from "./stepTwo";
 import StepThree from "./stepThree";
-
 const steps = [
   { component: <StepOne /> },
   { component: <StepTwo /> },
-  { component: <StepThree /> },
+    { component: <StepThree /> }
 ];
 const step1 = 0;
 const step2 = 1;
 const step3 = 2;
+
 const prevStyle = { background: "#33c3f0", "border-width": "2px" };
 const nextStyle = { background: "#33c3f0", "border-width": "2px" };
 
