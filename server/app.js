@@ -30,7 +30,7 @@ mongoose
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
-      dbName:"fin",
+    dbName: DB_NAME,
     w: "majority",
   })
   .catch((err) => {
