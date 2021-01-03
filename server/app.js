@@ -12,19 +12,22 @@ const activitiesRouter = require("./routes/activities");
 const feedRouter = require("./routes/feed");
 const requestRouter = require("./routes/request");
 const signupRouter = require("./routes/sign_up");
-
 const route1 = require('./routes/userSignup');
 const route2 = require('./routes/orgSignup');
 const editUser = require('./routes/api.js');
+//const rate = require('./routes/rating');
 
+// const { random16BaseString } = require("./utils/random");
 const { SESSION_SECRET } = require("./secretConfig");
 
 require("dotenv").config();
+
 const User = require("./models/person");
 var string = require("string-sanitizer");
 
 var user;
-const PORT = process.env.PORT || 5000;  // changed so fronted runs on 3000 and server at 5000
+
+const PORT = process.env.PORT || 5000;
 const DB_NAME = "muckin_testing"; // @note - later change it according to database used in production
 
 const MONGO_DB_URI = `mongodb+srv://dscnitp_webdept_muckin:${process.env.DB_PASSWORD}@cluster0.kokfw.gcp.mongodb.net?retryWrites=true`; // @note - Don't modify this, if it doesn't work for you please ask
@@ -34,7 +37,7 @@ mongoose
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
-      dbName: DB_NAME,
+    dbName: DB_NAME,
     w: "majority",
   })
   .catch((err) => {
@@ -51,20 +54,17 @@ db.on("error", (err) => {
 db.once("open", () => {
   console.log(`Connected to the database : ${DB_NAME}`);
 });
-
-if( process.env.NODE_ENV !== 'production' )
-  app.use(
-    require("cors")({
-    origin: "*"
-  }))
-
+// if( process.env.NODE_ENV !== 'production' )
+//   app.use(
+//     require("cors")({
+//     origin: "*"
+//   }))
 app.use(
   rateLimit({
     windowMs: 24 * 60 * 60 * 1000,
     max: 100,
   })
 );
-
 app.use(morgan("dev")); // to log requests made to api
 app.use(express.urlencoded({ extended: false })); // to parse url encoded data and form inputs
 app.use(express.json()); // to parse json data
@@ -84,11 +84,6 @@ app.use(
     }),
   })
 );
-
-//app.post('/sign_up', (req, res) => {
-  //  console.log('Hello')
-//})
-
 
 // Routes START
 app.use("/user", userRouter); // login, logout
