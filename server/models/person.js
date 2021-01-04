@@ -17,8 +17,7 @@ const User = new Schema({
   },
   isVerifiedPhone: {
     type: Boolean,
-    // ,
-    // default:false
+     default:false
   },
   email: {
     type: String,
@@ -27,8 +26,7 @@ const User = new Schema({
   },
   isVerifiedEmail: {
     type: Boolean,
-    // ,
-    // default:false
+   default:false
   },
   password: {
     type: String,

@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import { SearchBar } from "../Searchbar/SearchBar";
 import "./Navbar.css";
 import { SignupPopup } from "../signup/SignupPopup";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { CLEAR_AUTH } from "../../reducers/action_types";
 
 export function Navbar() {  // converted to functiona components to use the useSelector hook instead of storing complete state
   const [ addModelShow, setModelShow ] = useState(false);
 
-  const userAuth = useSelector(state => state.auth)
+  const userAuth = useSelector(state => state.auth);
+  const dispatch = useDispatch();
+
   const isAlreadyLoggedIn = userAuth.isLoggedIn;
 
   function openNav() {
@@ -39,8 +42,8 @@ export function Navbar() {  // converted to functiona components to use the useS
                   <li>
                     {
                       isAlreadyLoggedIn ? (
-                        <div>
-                          {"User: " + userAuth.user.email}
+                        <div onClick={(e) => {e.preventDefault(); dispatch({type: CLEAR_AUTH});}}>
+                          {"Logout: " + userAuth.user.email}
                         </div>
                       ) : 
                       (<>
