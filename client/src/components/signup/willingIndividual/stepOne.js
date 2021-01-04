@@ -13,7 +13,7 @@ export default (props) => {
             placeholder="Name"
             type="text"
             onChange={(e) => {setName(e.target.value)}}
-            required
+            required={true}
             autoFocus
           />
         </div>
@@ -25,7 +25,7 @@ export default (props) => {
             className="u-full-width"
             placeholder="Telephone"
             type="tel"
-            required
+            required={true}
             onChange={(e) => setContact(e.target.value)}
           />
         </div>
@@ -38,7 +38,7 @@ export default (props) => {
             placeholder="test@mailbox.com"
             type="email"
             onChange={(e) => setEmail(e.target.value)}
-            required
+            required={true}
             autoFocus
           />
         </div>
@@ -51,7 +51,7 @@ export default (props) => {
             placeholder="password"
             type="password"
             onChange={(e) => setPassword(e.target.value)}
-            required
+            required={true}
             autoFocus
           />
         </div>
@@ -65,7 +65,7 @@ export default (props) => {
             type="password"
             // @note @adi - No way to actually check if password matches, before user clicks SUBMIT, instead of checking it after steps, we should rather change the way the steps are shown, so we have better control
             // onChange={(e) => setConfirmPassword(e.target.value)}
-            required
+            required={true}
             autoFocus
           />
         </div>

@@ -32,6 +32,10 @@ const WillingIndividualSignup = () => {
   async function submitHandler(event) {
     event.preventDefault();
     console.log("Submitted Form");
+    if(!name || !password || !email || !contact) {  // only basic check since signup backend accepting empty value too
+      alert("Fill Correctly !")
+      window.location.reload();
+    }
 
     if( isLoggedIn ) {  // if already logged in, then redirect
       alert("You are already logged in :D");
@@ -49,6 +53,7 @@ const WillingIndividualSignup = () => {
                   })
                   .catch((err) => {
                     alert(err.msg || "SignUp Failed... Please try again")
+                    window.location.reload();
 
                     console.log(err);
                   });
