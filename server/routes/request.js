@@ -17,7 +17,7 @@ const { random16BaseString, randomBinaryString } = require("../utils/random");
  *
  *  @response -> When successful, responds with a JSON object, with the new document that was added in `Added Doc` key
  *
- *  @working -> just calls reqModel.create() after creating `newRequest`
+ *  @working -> calls reqModel.create() after creating `newRequest`
  */
 router.post("/new", (req, res) => {
   if (typeof req.body.needs === "string") {

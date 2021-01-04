@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default () => {
-  const [yourhelp, setYourHelp] = useState("");
-  const [address, setAddress] = useState("");
-  const [willhelp, setWilhlp] = useState("");
-  const [occupation, setOccupation] = useState("");
-  const [experience, setExperience] = useState("");
+export default (props) => {
+  // expecting the state management by the WillingIndividualSignup component, since it finally handles the submission; Not using redux here, can be more cleaner in a way then
+  // const [yourhelp, setYourHelp] = useState("");
+  // const [address, setAddress] = useState("");
+  // const [willhelp, setWilhlp] = useState("");
+  // const [occupation, setOccupation] = useState("");
+  // const [experience, setExperience] = useState("");
 
   return (
     <div>
@@ -16,8 +17,8 @@ export default () => {
             className="u-full-width"
             placeholder="Name"
             type="text"
-            onChange={(e) => setYourHelp(e.target.value)}
-            value={yourhelp}
+            onChange={(e) => props.setYourHelp(e.target.value)}
+            // value={yourhelp}
             autoFocus
           />
         </div>
@@ -29,8 +30,7 @@ export default () => {
             className="u-full-width"
             placeholder="Address"
             type="text"
-            onChange={(e) => setAddress(e.target.value)}
-            value={address}
+            onChange={(e) => props.setAddress(e.target.value)}
           />
         </div>
       </div>
@@ -40,8 +40,7 @@ export default () => {
           <select
             className="u-full-width required"
             placeholder="no choice"
-            onChange={(e) => setWilhlp(e.target.value)}
-            value={willhelp}
+            onChange={(e) => props.setWilhlp(e.target.value)}
             autoFocus
           >
             <option value="opel">YES</option>
@@ -55,8 +54,7 @@ export default () => {
           <input
             className="u-full-width required"
             type="text"
-            onChange={(e) => setOccupation(e.target.value)}
-            value={occupation}
+            onChange={(e) => props.setOccupation(e.target.value)}
             autoFocus
           />
         </div>
@@ -67,8 +65,7 @@ export default () => {
           <input
             className="u-full-width required"
             type="text"
-            onChange={(e) => setExperience(e.target.value)}
-            value={experience}
+            onChange={(e) => props.setExperience(e.target.value)}
             autoFocus
           />
         </div>

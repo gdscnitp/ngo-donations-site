@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  const [confirmpassword, setConfirmPassword] = useState("");
-  const [lastName, setLastName] = useState("");
-
+export default (props) => {
+  // expecting the state management by the WillingIndividualSignup component, since it finally handles the submission; Not using redux here, can be more cleaner in a way then
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [name, setName] = useState("");
+  // const [confirmpassword, setConfirmPassword] = useState("");
+  // const [lastName, setLastName] = useState("");
   return (
     <div>
       <div className="row row1">
@@ -16,8 +16,7 @@ export default () => {
             className="u-full-width"
             placeholder="Name"
             type="text"
-            onChange={(e) => setName(e.target.value)}
-            value={name}
+            onChange={(e) => { console.log("Change", props.changer); props.changer(); props.setName(e.target.value)}}
             autoFocus
           />
         </div>
@@ -29,8 +28,7 @@ export default () => {
             className="u-full-width"
             placeholder="Telephone"
             type="tel"
-            onChange={(e) => setLastName(e.target.value)}
-            value={lastName}
+            onChange={(e) => props.setLastName(e.target.value)}
           />
         </div>
       </div>
@@ -41,8 +39,7 @@ export default () => {
             className="u-full-width required"
             placeholder="test@mailbox.com"
             type="email"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
+            onChange={(e) => props.setEmail(e.target.value)}
             autoFocus
           />
         </div>
@@ -54,8 +51,7 @@ export default () => {
             className="u-full-width required"
             placeholder="password"
             type="password"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
+            onChange={(e) => props.setPassword(e.target.value)}
             autoFocus
           />
         </div>
@@ -67,8 +63,7 @@ export default () => {
             className="u-full-width required"
             placeholder="password"
             type="password"
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            value={confirmpassword}
+            onChange={(e) => props.setConfirmPassword(e.target.value)}
             autoFocus
           />
         </div>
