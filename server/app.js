@@ -114,11 +114,14 @@ app.post("/sign_up/", async (req, res) => { // finally url will be "/sign_up/" (
         });
         user.save().then(() => {
             console.log(user);
-        });
+            
+            res.sendStatus(200);
+        })
+        .catch(err => res.status(500).send(err));
 
     });
 
-    res.redirect('/willingorganisationsignupstep2')
+    // res.redirect('/willingorganisationsignupstep2')
 });
 
 var OTP;
