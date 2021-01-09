@@ -10,7 +10,7 @@ const Donation = () => {
       <Heading />
       <Cover />
       <Form />
-      <Button />
+     {/* <Button /> */}
     </>
   );
 };

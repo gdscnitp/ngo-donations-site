@@ -10,7 +10,7 @@ const Need = () => {
       <Heading2 />
       <Cover2 />
       <Form2 />
-      <Button />
+     {/* <Button /> */}
     </>
   );
 };
