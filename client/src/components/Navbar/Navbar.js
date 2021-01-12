@@ -34,12 +34,12 @@ export function Navbar() {  // converted to functiona components to use the useS
           </div>
         </div>
 
-        <div class="container navcontainer">
+        <div class="container col-12 navcontainer">
           <div class="row navrow">
             <div class="menu__wrapper d-none d-lg-block col-md-12">
               <nav class="navbar">
                 <ul>
-                  <li>
+                <li>
                     {
                       isAlreadyLoggedIn ? (
                         <div onClick={(e) => {e.preventDefault(); dispatch({type: CLEAR_AUTH});}}>
@@ -48,7 +48,7 @@ export function Navbar() {  // converted to functiona components to use the useS
                       ) : 
                       (<>
                         <div onClick={() => setModelShow(true)}>
-                          Signup/Login
+                          <button class="btn btn-warning">Signup/Login</button>
                         </div>
                         <SignupPopup
                           show={addModelShow}
@@ -80,9 +80,6 @@ export function Navbar() {  // converted to functiona components to use the useS
                     <div>FAQs
                     </div>
                     </a>
-                  </li>
-                  <li>
-                    <div>About us</div>
                   </li>
                   <li><a href="/events">
                     <div>Events</div></a>
