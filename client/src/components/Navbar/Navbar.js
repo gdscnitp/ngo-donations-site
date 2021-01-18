@@ -58,14 +58,15 @@ export function Navbar() {  // converted to functiona components to use the useS
                     }
                   </li>
                   <li><a href="/donate">
-                    <div>Donate</div>
+                    <div className="Donate">Donate</div>
                     </a>
                   </li>
-                  <li>
-                    <div href="/about-us">About us</div>
+                  <li><a href="/aboutus">
+                    <div className="About-us">About us</div>
+                    </a>
                   </li>
                    <li><a href="/feedback">
-                    <div>Feed</div>
+                    <div className="Feed">Feed</div>
                     </a>
                   </li>
                   <li><a href="/need">
@@ -76,13 +77,10 @@ export function Navbar() {  // converted to functiona components to use the useS
                     <div>How to Use</div>
                     </a>
                   </li>
-                  <li><a href="/faqs">
+                  <li><a href="/faq">
                     <div>FAQs
                     </div>
                     </a>
-                  </li>
-                  <li>
-                    <div>About us</div>
                   </li>
                   <li><a href="/events">
                     <div>Events</div></a>
@@ -94,12 +92,12 @@ export function Navbar() {  // converted to functiona components to use the useS
               <button class="closebtn" onClick={closeNav}>
                 ×
               </button>
-               <div href="/donate">Donate</div>
-                <div href="/events">Need</div>
-                 <div href="/events">How to Use</div>
-              <div href="/events">Events</div>
-              <div href="/about-us">About us</div>
-              <div href="/faqs">FAQs</div>
+               <div><a href="/donate">Donate</a></div>
+                <div><a href="/need">Need</a></div>
+                 <div><a href="/videopopup">How to Use</a></div>
+              <div><a href="/events">Events</a></div>
+              <div><a href="/aboutus">About us</a></div>
+              <div><a href="/faq">FAQs</a></div>
               <div
                 onClick={() => setModelShow(true)}
                 style={{ color: "white", cursor: "pointer" }}
