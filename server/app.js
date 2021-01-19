@@ -13,6 +13,7 @@ const feedRouter = require("./routes/feed");
 const requestRouter = require("./routes/request");
 const signupRouter = require("./routes/sign_up");
 const reqRouter = require("./routes/donation-need-routes/request")
+const activRouter =require("./routes/activities")
 const route1 = require('./routes/userSignup');
 const route2 = require('./routes/orgSignup');
 const editUser = require('./routes/api.js');
@@ -28,7 +29,7 @@ var user;
 //PORT = 3001;
 const PORT = process.env.PORT || 5000;  // changed so fronted runs on 3000 and server at 5000
 const DB_NAME = "muckin_testing"; // @note - later change it according to database used in production
-const MONGO_DB_URI = `mongodb+srv://dscnitp_webdept_muckin:${process.env.DB_PASSWORD}@cluster0.kokfw.gcp.mongodb.net?retryWrites=true`; // @note - Don't modify this, if it doesn't work for you please ask
+const MONGO_DB_URI = `mongodb+srv://dscnitp_webdept_muckin:dscnitp_webdept_muckin@cluster0.kokfw.gcp.mongodb.net?retryWrites=true`; // @note - Don't modify this, if it doesn't work for you please ask
 //${process.env.DB_PASSWORD}
 mongoose
   .connect(MONGO_DB_URI , {
@@ -91,18 +92,7 @@ app.use(
 //})
 
 
-// Routes START
-app.use("/user", userRouter); // login, logout
-app.use("/sign_up", signupRouter); // sign_up individual and organisation
-app.use("/activities", activitiesRouter); // image, update-details, delete-details
-app.use("/requests", requestRouter); // /new request
-app.use("/feeds", feedRouter); // /get feeds
-// Routes END
-app.use("/org", signupRouter);
-app.use('/editUser',editUser); // edit user profile
-app.use('/api1', route1);  // signup user looking for help
-app.use('/api2',route2); // signup org looking for help
-app.use('/request',reqRouter);
+
 
 
 
@@ -177,6 +167,19 @@ app.post('/verifyemail', (req, res) => {
 
 })
 
+// Routes START
+app.use("/user", userRouter); // login, logout
+app.use("/sign_up", signupRouter); // sign_up individual and organisation
+app.use("/activities", activitiesRouter); // image, update-details, delete-details
+app.use("/requests", requestRouter); // /new request
+app.use("/feeds", feedRouter); // /get feeds
+// Routes END
+app.use("/org", signupRouter);
+app.use('/editUser',editUser); // edit user profile
+app.use('/api1', route1);  // signup user looking for help
+app.use('/api2',route2); // signup org looking for help
+app.use('/request',reqRouter);
+app.use('/activity',activRouter);
 
 
 
