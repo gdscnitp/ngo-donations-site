@@ -63,46 +63,45 @@ const getTopNavStyles = (indx, length) => {
 const getButtonsState = (indx, length) => {
   if (indx > 0 && indx < length - 1) {
     return {
-      showPreviousBtn: false,
-      showNextBtn: false,
+      showPreviousBtn: true,
+      showNextBtn: true,
       showSubmitBtn: false,
     };
   } else if (indx === 0) {
     return {
       showPreviousBtn: false,
-      showNextBtn:false,
-      showSubmitBtn: false
+      showNextBtn: true,
+      showSubmitBtn: false,
     };
   } else {
     return {
-      showPreviousBtn: false,
+      showPreviousBtn: true,
       showNextBtn: false,
-      showSubmitBtn: false,
+      showSubmitBtn: true,
     };
   }
 };
 
 export default function MultiStep(props) {
+  const {onSubmit} = props;
   let showNav = true;
   if (props.showNavigation) showNav = props.showNavigation;
 
   const [stylesState, setStyles] = useState(
-    getTopNavStyles(props.step, props.steps.length)
+    getTopNavStyles(0, props.steps.length)
   );
-    const [ setComp] = useState(0);
-    var compState=props.step
+  const [compState, setComp] = useState(0);
   const [buttonsState, setButtons] = useState(
-    getButtonsState(0, 3)
+    getButtonsState(0, props.steps.length)
   );
-
 
   const setStepState = (indx) => {
-    setStyles(getTopNavStyles(indx, 3));
+    setStyles(getTopNavStyles(indx, props.steps.length));
     setComp(indx < props.steps.length ? indx : compState);
     setButtons(getButtonsState(indx, props.steps.length));
   };
 
-  const next = () => setStepState(compState+ 1);
+  const next = () => setStepState(compState + 1);
   const previous = () =>
     setStepState(compState > 0 ? compState - 1 : compState);
   const handleKeyDown = (evt) =>
@@ -149,13 +148,13 @@ export default function MultiStep(props) {
           }
           onClick={next}
         >
-          Save
+          Next
         </button>
         <button
           style={
             buttonsState.showSubmitBtn ? props.nextStyle : { display: "none" }
           }
-          onClick={console.log("Clicked submit")} // @todo -> Modifying onClick behaviour to call UserService.SignUp with the data
+          onClick={onSubmit}
         >
           Submit
         </button>
@@ -165,9 +164,7 @@ export default function MultiStep(props) {
   return (
     <div onKeyDown={handleKeyDown}>
       <Ol>{renderSteps()}</Ol>
-      
-              <div>{props.steps[compState].component}</div>
-          
+      <div>{props.steps[compState].component()}</div>
       <div>{renderNav(showNav)}</div>
     </div>
   );

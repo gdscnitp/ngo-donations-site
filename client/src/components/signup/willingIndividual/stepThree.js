@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default () => {
-  const [checked, setChecked] = useState("");
-
   return (
     <div>
       <div className="row">
@@ -17,8 +15,7 @@ export default () => {
             <input
               type="checkbox"
               //   defaultChecked={this.state.checked}
-              checked={checked}
-              onChange={(e) => setChecked(e.target.value)}
+              required={true}
               autoFocus
             />
             <span> Accept </span>{" "}
