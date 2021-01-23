@@ -77,23 +77,17 @@ router.post("/filter", async (req, res) => {
   var location = req.body.location;
   if(!location) res.send("Location is required");
   try {
-    const response = await Event.find({
-    
-        startDate: {
-          $gte: start,
-        },
-        endDate: {
-          $lte: endDate,
-        },
-        region: location 
-      }
-    );
-    if (response.length === 0) res.send("NO EVENT FOUND");
+    const response = await Event.find()
+          .where('startDate').gte(start)
+          .where('endDate').lte(start)
+          .where('region', location);
+
+    if (response.length === 0) return res.send("NO EVENT FOUND");
+
     res.send(response);
   } catch (error) {
-    console.log(error.message);
+    console.log(error.message || error.code);
   }
 });
-
 
 module.exports = router;
