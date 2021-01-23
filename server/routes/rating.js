@@ -21,7 +21,7 @@ router.post("/rate_review", auth, async (req, res) => {
     }
     res.status(200).send();
   } catch (e) {
-    res.status(400).send(e);
+    res.status(400).send(`Error : ${e.message || e.code}`);
   }
 });
 module.exports = router;
