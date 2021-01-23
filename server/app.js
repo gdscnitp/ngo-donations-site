@@ -183,7 +183,7 @@ app.use('/editUser',editUser); // edit user profile
 app.use('/api1', route1);  // signup user looking for help
 app.use('/api2',route2); // signup org looking for help
 
-app.use('/activity',activRouter);
+app.use('/activity', activitiesRouter);
 
 
 
