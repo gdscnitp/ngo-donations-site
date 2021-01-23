@@ -21,6 +21,7 @@ import WillingIndividualSignup from "./components/signup/willingIndividual/willi
 import { WillingOrganisationSignupStep1, WillingOrganisationSignupStep2, WillingOrganisationSignupStep3 } from "./components/signup/willingOrganisation/willingOrganisationSignup";
 import Feedback from "./components/Feed Page/Feedback";
 import {Videopopup } from './components/Video-popup/Video-popup';
+import Faq from "./components/Faq-page/Faq.js";
 //import MultiStep from './components/signup/react-multistep';
 export default function App() {
   return (
@@ -63,7 +64,7 @@ export default function App() {
             <Route path="/events" component={Events} />
             <Route path="/videopopup" component={Videopopup} />
               <Route path="/feedback" component={Feedback} />
-
+            <Route path="/faq" component={Faq} />
             <Route
               path="/lookingindividualsignup"
               component={LookingIndividualSignup}

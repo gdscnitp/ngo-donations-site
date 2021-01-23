@@ -37,7 +37,7 @@ export default class Card extends Component {
           <p className="card-text">{this.state[this.props.id].desc}</p>
           <a
             href={this.state[this.props.id].href}
-            className="btn btn-success btn-text"
+            className="btn btn-warning btn-text"
           >
             {this.state[this.props.id].btn}
           </a>

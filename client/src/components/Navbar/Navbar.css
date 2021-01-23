@@ -1,4 +1,5 @@
 .menu.menu--active {
+
   background-color: #fff;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.14);
 }
@@ -109,9 +110,11 @@
   list-style-type: disc;
   padding-bottom: 20px;
 }
-.menu .menu__wrapper nav div {
-  color: black;
-  opacity: 1;
+
+.menu .menu__wrapper nav div{
+    color:#ffffff;
+    opacity: 1;
+
 }
 .navbar ul li div {
   padding-right: 50px;
@@ -246,6 +249,26 @@
   transition: 0.3s;
 }
 
+  .closebtn {
+    position: absolute;
+    top: 0;
+    right: -40px;
+    margin-left: 50px;
+  
+    
+  }
+    .sidebar button {
+    padding: 0px 68px 1px 1px;
+    text-decoration: none;
+    border:2px solid black;
+    font-size: 40px;
+    color: #fff;
+    display: block;
+    background-color:black;
+    opacity:0.9;
+    transition: 0.3s;
+  }
+
 .otherLinks {
   background-color: white;
   color: #000;
@@ -258,3 +281,4 @@
 .otherLinks :hover {
   background-color: #fff;
 }
+

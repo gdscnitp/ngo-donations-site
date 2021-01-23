@@ -4,6 +4,7 @@ const Form = () => {
   return (
     <>
       <div className="table-responsive">
+        <form action="../../../../../activity" method="post">
         <table className="center">
           <tr>
             <td>
@@ -16,6 +17,7 @@ const Form = () => {
                 type="text"
                 class="form-control"
                 id="validationTooltip01"
+                name="donateTo"
                 required
               />
             </td>
@@ -29,6 +31,7 @@ const Form = () => {
                 type="text"
                 class="form-control"
                 id="validationTooltip01"
+                name="donationType"
                 required
               />
             </td>
@@ -44,6 +47,7 @@ const Form = () => {
               <div class="custom-file">
                 <input
                   type="file"
+                  name="photo"
                   class="custom-file-input"
                   id="validatedCustomFile"
                 />
@@ -67,11 +71,19 @@ const Form = () => {
                 type="text"
                 class="form-control"
                 id="validationTooltip01"
+                name="shareTheMoney"
+                placeholder="Please enter yes or no"
                 required
               />
             </td>
           </tr>
         </table>
+        <div className="button">
+      <button type="submit" class="btn btn-success">
+        Submit for Approval
+      </button>
+    </div>
+        </form>
       </div>
     </>
   );

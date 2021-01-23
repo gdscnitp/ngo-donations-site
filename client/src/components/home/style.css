@@ -114,7 +114,7 @@
         margin: 50px;
         transition: 500ms linear;
         padding: 20px;
-        background-color: rgb(88, 177, 168);
+        background-color: #071F3F;
         box-shadow: 0px 20px 30px rgba(153, 153, 153, 0.2); 
     }
     .cards-container{
@@ -127,10 +127,12 @@
     .title-of-card{
         font-size: 25px;
         font-weight: 5000;
-        color: rgb(80, 4, 67);
+        color: #f5e7e7;
     }
-
-
+    p.card-text{
+        color:#ffffff;
+    }
+  
 
   
   /* Stories carousel */
@@ -189,6 +191,16 @@ overflow-x: unset;
 overflow-y: auto;
 scrollbar-width: none;
 }
+.card-title{background-color: #071F3F; color:#ffffff;}
+.card-body{background-color: #071F3F;}
+#read-more-btn1{background-color: #ffc107;}
+#read-more-btn2{background-color: #ffc107;}
+#read-more-btn3{background-color: #ffc107;}
+#read-more-btn4{background-color: #ffc107;}
+#read-more-btn5{background-color: #ffc107;}
+#read-more-btn6{background-color: #ffc107;}
+#read-more-btn7{background-color: #ffc107;}
+
 
 #more{
     display: none;
@@ -196,6 +208,7 @@ scrollbar-width: none;
 
 .desc{
     font-size: medium;
+    
 }
 
 #read-more-btn{

@@ -6,6 +6,7 @@ const Form2 = () => {
   return (
     <>
       <div className="table-responsive">
+        <form action="../../../../../request" method = "post">
         <table className="center">
           <tr>
             <td>
@@ -16,6 +17,7 @@ const Form2 = () => {
                 type="text"
                 class="form-control"
                 id="validationTooltip01"
+                name="desc_problem"
                 required
               />
             </td>
@@ -25,7 +27,7 @@ const Form2 = () => {
               <label for="form-no">Describe your needs:</label>
             </td>
             <td>
-              <Input type="select" name="select" id="select">
+              <Input type="select" name="desc_need" id="select">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -41,6 +43,7 @@ const Form2 = () => {
                 type="text"
                 class="form-control"
                 id="validationTooltip01"
+                name="location"
                 required
               />
             </td>
@@ -54,6 +57,7 @@ const Form2 = () => {
                 type="text"
                 class="form-control"
                 id="validationTooltip01"
+                name="help_required_for"
                 required
               />
             </td>
@@ -64,14 +68,21 @@ const Form2 = () => {
             </td>
             <td>
               <input
-                type="text"
+                type="number"
                 class="form-control"
                 id="validationTooltip01"
+                name="no_of_persons"
                 required
               />
             </td>
           </tr>
         </table>
+        <div className="button">
+      <button type="submit" class="btn btn-success">
+        Submit for Approval
+      </button>
+    </div>
+    </form>
       </div>
     </>
   );

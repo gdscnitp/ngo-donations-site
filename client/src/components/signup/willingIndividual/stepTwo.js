@@ -19,6 +19,7 @@ export default (props) => {
             type="text"
             onChange={(e) => props.setYourHelp(e.target.value)}
             // value={yourhelp}
+            required={true}
             autoFocus
           />
         </div>
@@ -30,6 +31,7 @@ export default (props) => {
             className="u-full-width"
             placeholder="Address"
             type="text"
+            required={true}
             onChange={(e) => props.setAddress(e.target.value)}
           />
         </div>
@@ -41,6 +43,7 @@ export default (props) => {
             className="u-full-width required"
             placeholder="no choice"
             onChange={(e) => props.setWilhlp(e.target.value)}
+            required={true}
             autoFocus
           >
             <option value="opel">YES</option>
@@ -55,6 +58,7 @@ export default (props) => {
             className="u-full-width required"
             type="text"
             onChange={(e) => props.setOccupation(e.target.value)}
+            required={true}
             autoFocus
           />
         </div>
