@@ -55,11 +55,17 @@ db.once("open", () => {
   console.log(`Connected to the database : ${DB_NAME}`);
 });
 
-// if( process.env.NODE_ENV !== 'production' )
-//   app.use(
-//     require("cors")({
-//     origin: "*"
-//   }))
+// whitelist to allow CORS request from
+const whitelist = ["http://localhost:3000", "https://app.netlify.com/", "https://muckin.netlify.app"];
+app.use(
+  require("cors")({
+    origin: (origin, cb) => {
+      if(whitelist.includes(origin))
+        cb(null, true);
+      else cb('Not allowed by CORS');
+    }
+  })
+);
 
 app.use(
   rateLimit({
@@ -87,15 +93,6 @@ app.use(
     }),
   })
 );
-
-//app.post('/sign_up', (req, res) => {
-  //  console.log('Hello')
-//})
-
-
-
-
-
 
 app.post("/sign_up/", async (req, res) => { // finally url will be "/sign_up/" (as the previous one used)
     console.log('Okay we can reach here')

@@ -164,7 +164,7 @@ export default function MultiStep(props) {
   return (
     <div onKeyDown={handleKeyDown}>
       <Ol>{renderSteps()}</Ol>
-      <div>{props.steps[compState].component()}</div>
+      <div>{props.steps[compState].component}</div>
       <div>{renderNav(showNav)}</div>
     </div>
   );

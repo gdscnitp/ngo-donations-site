@@ -60,14 +60,14 @@ const WillingIndividualSignup = () => {
 
     console.debug("SignUp backend currently doesn't accept these: ",lastName, yourhelp, address,willhelp, occupation, experience);
   }
-
+     
   return (
     <div className="container cnt1" style={{ backgroundColor: "white" }}>
       <MultiStep
         steps={[
-          { component: ()=><StepOne setEmail={setEmail} setPassword={setPassword} setContact={setContact} setName={setName} setLastName={setLastName} /> },
-          { component: ()=><StepTwo setYourHelp={setYourHelp} setAddress={setAddress} setWilhlp={setWilhlp} setOccupation={setOccupation} setExperience={setExperience}/> },
-          { component: ()=><StepThree submitHandler={submitHandler} /> },
+          { component: <StepOne setEmail={setEmail} setPassword={setPassword} setContact={setContact} setName={setName} setLastName={setLastName} /> },
+          { component: <StepTwo setYourHelp={setYourHelp} setAddress={setAddress} setWilhlp={setWilhlp} setOccupation={setOccupation} setExperience={setExperience}/> },
+          { component: <StepThree submitHandler={submitHandler} /> },
         ]}
         prevStyle={prevStyle}
         nextStyle={nextStyle}
