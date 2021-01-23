@@ -18,8 +18,8 @@ router.get("/", async (req, res, next) => {
 });
 
 //Create a new Event
-router.post("", (req, res, next) => {
-  const User = new Event({
+router.post("/", (req, res, next) => {
+  const event = new Event({
     _id: new mongoose.Types.ObjectId(),
 
     name: req.body.name,
@@ -31,9 +31,9 @@ router.post("", (req, res, next) => {
     endTime: req.body.endTime,
   });
 
-  User.save()
+  event.save()
     .then(() => {
-      console.log(User);
+      console.log(event);
       res.send("Event Added Successfully");
     })
     .catch((err) => {
@@ -60,30 +60,10 @@ router.delete("/delete/:id", limiter, (req, res, next) => {
   res.send("Deleted");
 });
 
-router.get("", (req, res, next) => {
-  res.send("Get request handled by event page");
-});
-
-router.post("", (req, res, next) => {
-  const User = new Event({
-    _id: new mongoose.Types.ObjectId(),
-
-    name: req.body.name,
-    description: req.body.description,
-    region: req.body.region,
-    startDate: req.body.startDate,
-    endDate: req.body.endDate,
-    startTime: req.body.startTime,
-    endTime: req.body.endTime,
-  });
-
-  User.save()
-    .then(() => {
-      console.log(User);
-    })
-    .catch((err) => console.log(err));
-});
-
+// this route won't execute if correct route is accessed
+// router.get("", (req, res, next) => {
+//   res.send("Get request handled by event page");
+// });
 
 //@desc filter the events
 //@method POST
