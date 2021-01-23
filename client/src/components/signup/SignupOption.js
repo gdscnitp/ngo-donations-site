@@ -12,13 +12,13 @@ export const SignupOption = () => {
           <Link to="/login">Sign In</Link>
         </span>
         <fieldset>
-          <h2 class="fs-title">Willing to help??</h2>
-          <h3 class="fs-subtitle">Sign up here</h3>
+          <h2 className="fs-title">Willing to help??</h2>
+          <h3 className="fs-subtitle">Sign up here</h3>
           <a href="/willingindividualsignup">
             <input
               type="button"
               name="next"
-              class="next action-button"
+              className="next action-button"
               value="Individual"
             ></input>
           </a>
@@ -26,17 +26,17 @@ export const SignupOption = () => {
             <input
               type="button"
               name="next"
-              class="next action-button"
+              className="next action-button"
               value="Organisation"
             />
           </a>
-          <h2 class="fs-title">Looking for help??</h2>
-          <h3 class="fs-subtitle">Sign up here</h3>
+          <h2 className="fs-title">Looking for help??</h2>
+          <h3 className="fs-subtitle">Sign up here</h3>
           <a href="/lookingindividualsignup">
             <input
               type="button"
               name="next"
-              class="next action-button"
+              className="next action-button"
               value="Individual"
             ></input>
           </a>
@@ -44,7 +44,7 @@ export const SignupOption = () => {
             <input
               type="button"
               name="next"
-              class="next action-button"
+              className="next action-button"
               value="Organisation"
             ></input>
           </a>

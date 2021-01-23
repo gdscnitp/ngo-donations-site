@@ -12,7 +12,7 @@ const activitiesRouter = require("./routes/activities");
 const feedRouter = require("./routes/feed");
 const requestRouter = require("./routes/request");
 const signupRouter = require("./routes/sign_up");
-
+const reqRouter = require("./routes/donation-need-routes/request")
 const route1 = require('./routes/userSignup');
 const route2 = require('./routes/orgSignup');
 const editUser = require('./routes/api.js');
@@ -25,7 +25,7 @@ const User = require("./models/person");
 var string = require("string-sanitizer");
 const bcrypt = require("bcrypt");
 var user;
-//PORT = 3001;
+
 const PORT = process.env.PORT || 5000;  // changed so fronted runs on 3000 and server at 5000
 const DB_NAME = "muckin_testing"; // @note - later change it according to database used in production
 
@@ -94,16 +94,16 @@ app.use(
 
 // Routes START
 app.use("/user", userRouter); // login, logout
-app.use("/sign_up", signupRouter); // sign_up individual and organisation
+// app.use("/sign_up", signupRouter); // sign_up individual and organisation
 app.use("/activities", activitiesRouter); // image, update-details, delete-details
 app.use("/requests", requestRouter); // /new request
 app.use("/feeds", feedRouter); // /get feeds
 // Routes END
-app.use("/org", signupRouter);
+app.use(signupRouter);
 app.use('/editUser',editUser); // edit user profile
 app.use('/api1', route1);  // signup user looking for help
 app.use('/api2',route2); // signup org looking for help
-
+app.use(reqRouter)
 
 
 
@@ -123,11 +123,14 @@ app.post("/sign_up/", async (req, res) => { // finally url will be "/sign_up/" (
         });
         user.save().then(() => {
             console.log(user);
-        });
+            
+            res.sendStatus(200);
+        })
+        .catch(err => res.status(500).send(err));
 
     });
 
-    res.redirect('/willingorganisationsignupstep2')
+    // res.redirect('/willingorganisationsignupstep2')
 });
 
 var OTP;
