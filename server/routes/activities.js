@@ -1,15 +1,22 @@
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
-const User = require("../models/Activities");
+
+const path = require('path');
+const Activity = require("../models/Activity");
+
+const app = express();
+//  const upload = multer({dest: 'uploads/'});
+
 
 const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "./public/uploads/");
+  destination: (req, file, cb) =>{
+    cb(null, "./uploads/");
+    
   },
-  filename: function (req, file, cb) {
+  filename: (req, file, cb) => {
     cb(null, Date.now() + file.originalname);
-  },
+}
 });
 
 const fileFilter = (req, file, cb) => {
@@ -24,76 +31,40 @@ const fileFilter = (req, file, cb) => {
   }
 };
 
-var upload = multer({
+const upload = multer({
   storage: storage,
   limits: {
     fileSize: 1024 * 1024 * 5, // later updated;
   },
-  fileFilter: fileFilter,
+   fileFilter: fileFilter,
 });
 
-// image path
-// limit: 5mb
-// filter : png, jpeg,jpg
-// later checkAuth added to check user signin or not;
-router.patch("/image/:id", upload.single("profileImage"), function (
-  req,
-  res,
-  next
-) {
-  const id = req.params.id;
-  const profilePic = req.file.path;
+router.get('/activity', (req,res)=>
+{
+  console.log('Hello')
+ });
+router.post('/activity',upload.single('image'),(req, res, next) => {
+  console.log(req.file);
+   const act = new Activity(
+     {
+      donateTo:req.body. donateTo,
+      donationType:req.body.donationType,
+      shareTheMoney:req.body.shareTheMoney,
+       image: req.file.path 
 
-  userModel.findById(id, function (err, data) {
-    data.Image = profilePic ? profilePic : data.Image;
-    data
-      .save()
-      .then((doc) => {
-        res.status(201).json({
-          message: "Profile Image Updated Successfully",
-          results: doc,
-        });
-      })
-      .catch((err) => {
-        res.json(err);
-      });
+   });
+
+
+  act.
+  save()
+  .then(result => {
+    console.log(result);
+
   });
-});
-// update records route
-router.patch("/update-details/", function (req, res, next) {
-  // check added later
+    res.redirect('/need');
 
-  const id = req.params.id;
-  const Info = req.body.details;
-  userModel.findById(id, function (err, data) {
-    data.UserName = Info ? Info : data.UserName;
-    data
-      .save()
-      .then((doc) => {
-        res.status(201).json({
-          message: "Category Updated Successfully",
-          results: doc,
-        });
-      })
-      .catch((err) => {
-        res.json(err);
-      });
   });
-});
+module.exports = router
 
-// delete records route
-router.delete("/delete-details/", function (req, res, next) {
-  const id = req.body._id;
-  findByIdAndRemove(id)
-    .then((doc) => {
-      res.status(201).json({
-        message: "Category Deleted Successfully",
-        results: doc,
-      });
-    })
-    .catch((err) => {
-      res.json(err);
-    });
-});
 
-module.exports = router;
+
