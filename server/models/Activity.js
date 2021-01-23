@@ -12,26 +12,22 @@ const ActivitySchema = new Schema({
        type:String,
        required:true
    },
-
-   
    shareTheMoney:{
        type:String,
        required:true
    },
-   image: {
-        type: String,
-         required: true }
-})
+    image: {
+         type: String,
+         required: true
+    },
+    photo: {
+        type:Buffer
+    },
+    shareTheMoney:{
+        type:String,
+        required:true
+    }
+});
 
-module.exports = mongoose.model('Activity',ActivitySchema);
-=======
-   photo:{
-       type:Buffer
-   },
-   shareTheMoney:{
-       type:String,
-       required:true
-   }
-})
 const Activity = mongoose.model("Activity",ActivitySchema)
 module.exports = Activity
