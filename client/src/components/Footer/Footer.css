@@ -87,7 +87,7 @@ label.star:before {
 
 
 .worklink{
-    color: black;
+    color: white;
    margin-top: 30%;
     font-size: 150%;
     margin-left: 10%;
@@ -156,7 +156,7 @@ fieldset {
 	cursor:pointer;
 	width:80%;
 	border:none;
-	background:#0CF;
+	background:#ffc107;
 	color:#FFF;
 	margin:0 0 5px;
 	padding:10px;

@@ -1,4 +1,6 @@
-const mongoose = require("mongoose");
+
+const mongoose = require('mongoose')
+
 const Schema = mongoose.Schema
 
 const ActivitySchema = new Schema({
@@ -10,6 +12,7 @@ const ActivitySchema = new Schema({
        type:String,
        required:true
    },
+
    
    shareTheMoney:{
        type:String,
@@ -21,3 +24,14 @@ const ActivitySchema = new Schema({
 })
 
 module.exports = mongoose.model('Activity',ActivitySchema);
+=======
+   photo:{
+       type:Buffer
+   },
+   shareTheMoney:{
+       type:String,
+       required:true
+   }
+})
+const Activity = mongoose.model("Activity",ActivitySchema)
+module.exports = Activity

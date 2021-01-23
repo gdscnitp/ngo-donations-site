@@ -2,8 +2,8 @@ import React from "react";
 
 const Button = () => {
   return (
-    <div className="button">
-      <button type="button" class="btn btn-success">
+    <div>
+      <button type="button" class="btn btn-warning">
         Submit for Approval
       </button>
     </div>
