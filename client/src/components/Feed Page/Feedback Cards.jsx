@@ -11,13 +11,13 @@ const Feed = () => {
               <img src={icon} className="feed-img" alt="Feed" />
             </div>
             <div className="col-md-8">
-              <p className="mt-3 mb-3 text-center">Ratings</p>
+              <p className="mt-3 mb-3 text-center feed-title">Ratings</p>
               <p className="text-center feed-para">
                 organisation/Individual who need help Nearby Cards
               </p>
             </div>
             <div className="col-md-2">
-              <button className="btn btn-success mt-5 feed-card-btn">
+              <button className="btn btn-warning mt-5 feed-card-btn">
                 Contact
               </button>
             </div>
@@ -29,13 +29,13 @@ const Feed = () => {
               <img src={icon} className="feed-img" alt="Feed1" />
             </div>
             <div className="col-md-8">
-              <p className="mt-3 mb-3 text-center">Ratings</p>
+              <p className="mt-3 mb-3 text-center feed-title">Ratings</p>
               <p className="text-center feed-para">
                 organisation/Individual who need help Nearby Cards
               </p>
             </div>
             <div className="col-md-2">
-              <button className="btn btn-success mt-5 feed-card-btn">
+              <button className="btn btn-warning mt-5 feed-card-btn">
                 Contact
               </button>
             </div>
@@ -47,20 +47,20 @@ const Feed = () => {
               <img src={icon} className="feed-img" alt="Feed2" />
             </div>
             <div className="col-md-8">
-              <p className="mt-3 mb-3 text-center">Ratings</p>
+              <p className="mt-3 mb-3 text-center feed-title">Ratings</p>
               <p className="text-center feed-para">
                 organisation/Individual who need help Nearby Cards
               </p>
             </div>
             <div className="col-md-2">
-              <button className="btn btn-success mt-5 feed-card-btn">
+              <button className="btn btn-warning mt-5 feed-card-btn">
                 Contact
               </button>
             </div>
           </div>
         </div>
       </div>
-      <hr className="feed-hr" />
+      <br/><br/><br/>
     </>
   );
 };

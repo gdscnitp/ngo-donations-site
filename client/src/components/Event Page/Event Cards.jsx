@@ -43,7 +43,7 @@ const EventCards = () => {
                   </p>
                 </div>
                 <div className="class3">
-                  <p>
+                  <p className="para-1">
                     Pratham is an innovative learning organization created to
                     improve the quality of education in India. Established in
                     1995 to provide education to children in the slums of
@@ -51,7 +51,7 @@ const EventCards = () => {
                   </p>
                 </div>
                 <div className="class4">
-                  <button className="btn btn-primary card-button">
+                  <button className="btn btn-warning card-button">
                     Know More!
                   </button>
                 </div>
@@ -78,14 +78,14 @@ const EventCards = () => {
                   </p>
                 </div>
                 <div className="class3">
-                  <p>
+                  <p className="para-1">
                     Girls' education is a strategic development priority. Better
                     educated women tend to be more informed about nutrition and
                     healthcare, have fewer children, marry at a later age.
                   </p>
                 </div>
                 <div className="class4">
-                  <button className="btn btn-primary card-button">
+                  <button className="btn btn-warning card-button">
                     Know More!
                   </button>
                 </div>
@@ -112,14 +112,14 @@ const EventCards = () => {
                   </p>
                 </div>
                 <div className="class3">
-                  <p>
+                  <p className="para-1">
                     There are 36 million unemployed youth in India. Of these 24
                     million live in villages and substantial number move to
                     cities in search of employment.
                   </p>
                 </div>
                 <div className="class4">
-                  <button className="btn btn-primary card-button">
+                  <button className="btn btn-warning card-button">
                     Know More!
                   </button>
                 </div>
@@ -128,6 +128,8 @@ const EventCards = () => {
           </div>
         </div>
       </div>
+      <br/>
+      <br/>
     </>
   );
 };

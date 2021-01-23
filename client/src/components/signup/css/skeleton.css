@@ -112,9 +112,9 @@ are based on 10px sizing. So basically 1.5rem = 15px :) */
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .columns a {
-  color: #1EAEDB; }
+  color: #F2B822; }
 .columns a:hover {
-  color: #0FA0CE; }
+  color: #ffc107; }
 
 
 /* Buttons
@@ -160,8 +160,8 @@ input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
   color: #FFF;
-  background-color: #33C3F0;
-  border-color: #33C3F0; }
+  background-color: #ffc107;
+  border-color: #ffc107; }
 .button.button-primary:hover,
 button.button-primary:hover,
 input[type="submit"].button-primary:hover,
@@ -173,8 +173,8 @@ input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
   color: #FFF;
-  background-color: #1EAEDB;
-  border-color: #1EAEDB; }
+  background-color: #F2B822;
+  border-color: #F2B822; }
 
 
 /* Forms
@@ -223,7 +223,7 @@ input[type="button"].button-primary:focus {
 .columns input[type="password"]:focus,
 .columns textarea:focus,
 .columns select:focus {
-  border: 1px solid #33C3F0;
+  border: 1px solid #ffc107;
   outline: 0; }
 .columns label,
 .columns legend {
