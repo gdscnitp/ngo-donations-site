@@ -1,91 +1,137 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { SearchBar } from "../Searchbar/SearchBar";
 import "./Navbar.css";
 import { SignupPopup } from "../signup/SignupPopup";
+import { useDispatch, useSelector } from "react-redux";
+import { CLEAR_AUTH } from "../../reducers/action_types";
+import Dropdown from "react-bootstrap/Dropdown";
 
-export class Navbar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { addModelShow: false };
-  }
-  openNav() {
+export function Navbar() {
+  // converted to functiona components to use the useSelector hook instead of storing complete state
+  const [addModelShow, setModelShow] = useState(false);
+
+  const userAuth = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+
+  const isAlreadyLoggedIn = userAuth.isLoggedIn;
+
+  function openNav() {
     document.getElementById("mySidebar").style.width = "300px";
   }
 
-  closeNav() {
+  function closeNav() {
     document.getElementById("mySidebar").style.width = "0";
   }
-  render() {
-    let addModelClose = () => this.setState({ addModelShow: false });
-    return (
-      <div class="menu menu--active" id="menu">
-        <div class="logo">
-          <a href="/">
-            <img src="logo.svg" alt="react logo" class="pictureimg"></img>
-          </a>
-          <div class="search-bar">
-            <SearchBar></SearchBar>
-          </div>
-        </div>
 
-        <div class="container navcontainer">
-          <div class="row navrow">
-            <div class="menu__wrapper d-none d-lg-block col-md-12">
-              <nav class="navbar">
-                <ul>
-                  <li>
-                    <div onClick={() => this.setState({ addModelShow: true })}>
-                      Signup/Login
+  let ModelClose = () => setModelShow(false);
+
+  return (
+    <div class="menu menu--active" id="menu">
+      <div class="logo">
+        <a href="/">
+          <img src="logo.svg" alt="react logo" class="pictureimg"></img>
+        </a>
+        <div class="search-bar">
+          <SearchBar></SearchBar>
+        </div>
+      </div>
+
+      <div class="container navcontainer">
+        <div class="row navrow">
+          <div class="menu__wrapper d-none d-lg-block col-md-12">
+            <nav class="navbar">
+              <ul>
+                <li>
+                  {isAlreadyLoggedIn ? (
+                    <div
+                      onClick={(e) => {
+                        e.preventDefault();
+                        dispatch({ type: CLEAR_AUTH });
+                      }}
+                    >
+                      {"Logout: " + userAuth.user.email}
                     </div>
-                    <SignupPopup
-                      show={this.state.addModelShow}
-                      onHide={addModelClose}
-                    />
-                  </li>
-                  <li>
-                    <div href="/faqs">FAQs</div>
-                  </li>
-                  <li>
-                    <div href="/aboutus">About us</div>
-                  </li>
-                  <li>
-                    <div href="/events">Events</div>
-                  </li>
-                </ul>
-              </nav>
+                  ) : (
+                    <>
+                      <div onClick={() => setModelShow(true)}>Signup/Login</div>
+                      <SignupPopup show={addModelShow} onHide={ModelClose} />
+                    </>
+                  )}
+                </li>
+                <li>
+                  <Dropdown className="other-links">
+                    <Dropdown.Toggle
+                      variant="light"
+                      id="dropdown-basic"
+                      className="otherLinks"
+                    >
+                      <strong>OTHER LINKS</strong>
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                      <Dropdown.Item href="/events">Need</Dropdown.Item>
+                      <Dropdown.Item href="/videopopup">
+                        How to use
+                      </Dropdown.Item>
+                      <Dropdown.Item href="/events">Events</Dropdown.Item>
+                      <Dropdown.Item href="/about-us">About Us</Dropdown.Item>
+                      <Dropdown.Item href="/faqs">FAQs</Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </li>
+                <li>
+                  <a href="/donate">
+                    <div>Donate</div>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="/feedback">
+                    <div>Feed</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/need">
+                    <div>Need</div>
+                  </a>
+                </li>
+
+                {/* <li>
+                  <a href="/faqs">
+                    <div>FAQs</div>
+                  </a>
+                </li> */}
+              </ul>
+            </nav>
+          </div>
+          <div id="mySidebar" class="sidebar">
+            <button class="closebtn" onClick={closeNav}>
+              ×
+            </button>
+
+            {/* <div href="/donate">Donate</div>
+            <div href="">Need</div>
+            <div href="">How to Use</div>
+            <div href="">Events</div>
+            <div href="/about-us">About us</div>
+            <div href="/faqs">FAQs</div> */}
+            <div
+              onClick={() => setModelShow(true)}
+              style={{ color: "white", cursor: "pointer" }}
+            >
+              Signup/Login
             </div>
-            <div id="mySidebar" class="sidebar">
-              <button class="closebtn" onClick={this.closeNav}>
-                ×
-              </button>
-              <div href="/events">Events</div>
-              <div href="/aboutus">About us</div>
-              <div href="/faqs">FAQs</div>
-              <div
-                onClick={() => this.setState({ addModelShow: true })}
-                style={{ color: "white", cursor: "pointer" }}
-              >
-                Signup/Login
-              </div>
-              <SignupPopup
-                show={this.state.addModelShow}
-                onHide={addModelClose}
-              />
-            </div>
-            <div class="menu__wrapper col-md-12 d-lg-none">
-              <button
-                type="button"
-                class="menu__mobile-button"
-                onClick={this.openNav}
-              >
-                <span>
-                  <i class="fa fa-bars" aria-hidden="true"></i>
-                </span>
-              </button>
-            </div>
+            <SignupPopup show={addModelShow} onHide={ModelClose} />
+          </div>
+          <div class="menu__wrapper col-md-12 d-lg-none">
+            <button type="button" class="menu__mobile-button" onClick={openNav}>
+              <span>
+                <i class="fa fa-bars" aria-hidden="true"></i>
+              </span>
+            </button>
           </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }

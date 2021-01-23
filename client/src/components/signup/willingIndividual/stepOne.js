@@ -1,11 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  const [confirmpassword, setConfirmPassword] = useState("");
-  const [lastName, setLastName] = useState("");
+export default (props) => {
+  const {setEmail, setPassword, setName, setContact} = props;
 
   return (
     <div>
@@ -16,8 +12,8 @@ export default () => {
             className="u-full-width"
             placeholder="Name"
             type="text"
-            onChange={(e) => setName(e.target.value)}
-            value={name}
+            onChange={(e) => {setName(e.target.value)}}
+            required={true}
             autoFocus
           />
         </div>
@@ -29,8 +25,8 @@ export default () => {
             className="u-full-width"
             placeholder="Telephone"
             type="tel"
-            onChange={(e) => setLastName(e.target.value)}
-            value={lastName}
+            required={true}
+            onChange={(e) => setContact(e.target.value)}
           />
         </div>
       </div>
@@ -42,7 +38,7 @@ export default () => {
             placeholder="test@mailbox.com"
             type="email"
             onChange={(e) => setEmail(e.target.value)}
-            value={email}
+            required={true}
             autoFocus
           />
         </div>
@@ -55,20 +51,21 @@ export default () => {
             placeholder="password"
             type="password"
             onChange={(e) => setPassword(e.target.value)}
-            value={password}
+            required={true}
             autoFocus
           />
         </div>
       </div>
       <div className="row">
         <div className="six columns">
-          <label>confirm password</label>
+          <label>Confirm Password</label>
           <input
             className="u-full-width required"
             placeholder="password"
             type="password"
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            value={confirmpassword}
+            // @note @adi - No way to actually check if password matches, before user clicks SUBMIT, instead of checking it after steps, we should rather change the way the steps are shown, so we have better control
+            // onChange={(e) => setConfirmPassword(e.target.value)}
+            required={true}
             autoFocus
           />
         </div>

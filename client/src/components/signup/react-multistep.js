@@ -83,6 +83,7 @@ const getButtonsState = (indx, length) => {
 };
 
 export default function MultiStep(props) {
+  const {onSubmit} = props;
   let showNav = true;
   if (props.showNavigation) showNav = props.showNavigation;
 
@@ -153,7 +154,7 @@ export default function MultiStep(props) {
           style={
             buttonsState.showSubmitBtn ? props.nextStyle : { display: "none" }
           }
-          onClick={console.log("clickced submit")}
+          onClick={onSubmit}
         >
           Submit
         </button>
@@ -163,7 +164,7 @@ export default function MultiStep(props) {
   return (
     <div onKeyDown={handleKeyDown}>
       <Ol>{renderSteps()}</Ol>
-      <div>{props.steps[compState].component}</div>
+      <div>{props.steps[compState].component()}</div>
       <div>{renderNav(showNav)}</div>
     </div>
   );

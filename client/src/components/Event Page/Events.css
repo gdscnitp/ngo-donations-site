@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
 
+.hello{
+  text-align: center;
+}
+
 .title-navbar{
   font-size: 2rem;
 }
@@ -47,7 +51,9 @@
 
 .card-heading {
   text-align: center;
+  color: #ffffff;
 }
+
 
 .fill {
   margin: 20px;
@@ -66,10 +72,19 @@
 .filter-title{
   font-size: 30px;
   text-decoration: underline;
+  background-color: #ffffff;
+  color:black;
 }
 .fill{
   min-width: 20rem;
 }
+
+.cardss{
+  background-color: #071F3F;
+}
+.paragraph{background-color: #ffffff;}
+.para-1{color: lightgrey;}
+.fil-car{background-color: #ffffff;}
 
 @media only screen and (max-width: 2500px) {
   .filter-card{
