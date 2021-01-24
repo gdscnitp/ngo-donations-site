@@ -24,14 +24,4 @@ const ActivitySchema = new Schema({
 })
 
 module.exports = mongoose.model('Activity',ActivitySchema);
-=======
-   photo:{
-       type:Buffer
-   },
-   shareTheMoney:{
-       type:String,
-       required:true
-   }
-})
-const Activity = mongoose.model("Activity",ActivitySchema)
-module.exports = Activity
+
