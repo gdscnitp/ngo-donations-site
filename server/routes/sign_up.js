@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt");
 const User = require("../models/person");
 
 var string = require("string-sanitizer");
-
+const sgMail = require('@sendgrid/mail')
 var user;
 // app.set('view engine','ejs')
 
@@ -14,10 +14,7 @@ var user;
 //
 // res.render("sign_up")
 // });
-router.get("/sign_up", (req, res) => {
-    console.log('This is working')
-})
-router.post("/sign_up/", async(req, res) => { // finally url will be "/sign_up/" (as the previous one used)
+router.post("/sign_up/", async (req, res) => { // finally url will be "/sign_up/" (as the previous one used)
     console.log('Okay we can reach here')
 
 
@@ -33,12 +30,65 @@ router.post("/sign_up/", async(req, res) => { // finally url will be "/sign_up/"
         });
         user.save().then(() => {
             console.log(user);
-        });
+            
+           // res.sendStatus(200);
+        })
+        .catch(err => res.status(500).send(err));
 
     });
 
-    res.redirect('/willingorganisationsignupstep2')
+     res.redirect('/willingorganisationsignupstep2')
 });
+
+
+var OTP;
+router.post('/verify-email', (req, res) => {
+    console.log('Hey there')
+    sgMail.setApiKey(process.env.API_key)
+    stringx = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    OTP = '';
+    var len = stringx.length;
+    for (let i = 0; i < 6; i++) {
+        OTP += stringx[Math.floor(Math.random() * len)];
+    }
+
+
+    mail = 'Your OTP is ' + OTP;
+    const msg = {
+        to: user.email, // Change to your recipient
+        from: 'muckinverify@gmail.com', // Change to your verified sender
+        subject: 'OTP',
+        text: mail,
+
+    }
+    sgMail
+        .send(msg)
+        .then(() => {
+            console.log('Email sent')
+        })
+        .catch((error) => {
+            console.error(error + ' Cannot send')
+        })
+    console.log('OTP ' + OTP)
+    res.redirect('/willingorganisationsignupstep2')
+})
+
+router.post('/verifyemail', (req, res) => {
+    otpReq = string.sanitize(req.body.otp);
+    if (otpReq === OTP) {
+        user.isVerifiedEmail = true;
+    }
+    user.save().then(() => {
+        console.log(user)
+    })
+    res.redirect('/willingorganisationsignupstep2')
+    console.log(otpReq);
+
+    console.log("OTP " + OTP);
+
+
+})
+
 
 
 
@@ -86,26 +136,4 @@ router.post("/org", (req, res) => { // finally url will be "/sign_up/org" (as th
 router.post("/accept", (req, res) => {
     res.redirect('/')
 })
-
-
-
-// app.get("/sign_up/org/preview",(req,res)=>{
-//   res.render("preview",{
-//     user:user
-//   })
-// })
-
-// app.post("/sign_up/org/preview",(req,res)=>{
-//   user.isChecked=true
-//   User.updateOne({_id:user._id},{
-//     user:user}).then(()=>{
-//     console.log(user)
-//   })
-//
-// })
-
-////router.get("/", function (req, res) {
-//  console.log("Root Route");
- // res.json({ message: "hello world" });
-//});
-module.exports = router;
+module.exports = router
