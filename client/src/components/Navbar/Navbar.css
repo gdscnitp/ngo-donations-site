@@ -1,6 +1,6 @@
 .menu.menu--active {
 
-  background-color: #fff;
+  background-color: #071f3f;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.14);
 }
 .menu {
@@ -270,15 +270,13 @@
   }
 
 .otherLinks {
-  background-color: white;
-  color: #000;
+  background-color:inherit;
+  color: #fff;
   border: none;
   font-family: Roboto Mono, monospace;
   font-weight: bold;
   margin-top: -10px;
 }
 
-.otherLinks :hover {
-  background-color: #fff;
-}
+
 

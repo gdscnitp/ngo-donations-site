@@ -53,7 +53,7 @@ export function Navbar() {
                     </div>
                   ) : (
                     <>
-                      <div onClick={() => setModelShow(true)}>Signup/Login</div>
+                      <div onClick={() => setModelShow(true)}><button className="btn btn-warning">Signup/Login</button></div>
                       <SignupPopup show={addModelShow} onHide={ModelClose} />
                     </>
                   )}
@@ -69,7 +69,7 @@ export function Navbar() {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                      <Dropdown.Item href="/events">Need</Dropdown.Item>
+                      
                       <Dropdown.Item href="/videopopup">
                         How to use
                       </Dropdown.Item>

@@ -78,8 +78,8 @@ const Form = () => {
             </td>
           </tr>
         </table>
-        <div className="button">
-      <button type="submit" class="btn btn-success">
+        <div class="form-btn">
+      <button type="submit" class="btn btn-warning">
         Submit for Approval
       </button>
     </div>
