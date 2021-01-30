@@ -28,14 +28,18 @@ db.once("open", () => {
     } else if (opType === "rename") {
       // Collection name changed
       console.warn(
-        `[${Date.now()}] ⚠⚠ Collection name has been changed from ${delta.to.db}.${delta.to.coll} ⚠⚠`
+        `[${Date.now()}] ⚠⚠ Collection name has been changed from ${
+          delta.to.db
+        }.${delta.to.coll} ⚠⚠`
       );
     } else if (opType === "invalidate") {
       // caused by drop or rename
       io.emit("critical:deleteAll", null); // since the server side data has been deleted, remove ALL from client side, let it know it's a critical error (rather i think the client should be taken down)
 
       console.error(
-        `[${Date.now()}] ‼‼🔺 Watch on collection ${reqModel.collection.name} INVALIDATED due to ${opType}. Resume Token is ${delta._id}`
+        `[${Date.now()}] ‼‼🔺 Watch on collection ${
+          reqModel.collection.name
+        } INVALIDATED due to ${opType}. Resume Token is ${delta._id}`
       );
     }
   });
@@ -57,21 +61,25 @@ db.once("open", () => {
  */
 app.get("/get", (req, res) => {
   const max_limit = 100; //max feeds to fetch (ONLY `if` limit)
-  const num = parseInt(req.query.limit) || parseInt(req.body.limit) || max_limit;
+  const num =
+    parseInt(req.query.limit) || parseInt(req.body.limit) || max_limit;
   const type = req.query.type || req.body.type || null; // by default both types to be returned
 
   let feeds = []; // feeds to return
 
   // fetching requests
   const query = reqModel.find({}).limit(num).sort({ createdAt: "desc" });
-  query.exec()
+  query
+    .exec()
     .then((docs) => {
       if (docs.length === 0) {
         if (reqModel.estimatedDocumentCount() === 0 && reqModel.count() === 0) {
-            //making it sure, doing .count() earlier can be comparatively costly for large databases (ours can become if it becomes famous (though :D))
-            console.log(`[${Date()}] No feeds were found in the database (All time)`);
+          //making it sure, doing .count() earlier can be comparatively costly for large databases (ours can become if it becomes famous (though :D))
+          console.log(
+            `[${Date()}] No feeds were found in the database (All time)`
+          );
 
-            return res.status(200).send({ err: "No Feeds in database" });
+          return res.status(200).send({ err: "No Feeds in database" });
         }
       }
 
@@ -91,9 +99,7 @@ app.get("/get", (req, res) => {
 
       return res.send({ feeds: feeds.slice(-num) }); // `newest` num feeds
     })
-    .then((feeds) => {
-
-    })
+    .then((feeds) => {})
     .catch((err) => {
       console.error("Couldn't fetch all feeds: ", err);
     });

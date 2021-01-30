@@ -12,8 +12,9 @@ const ActivitySchema = new Schema({
        type:String,
        required:true
    },
-
-   
+   photo:{
+       type:Buffer
+   },
    shareTheMoney:{
        type:String,
        required:true
@@ -24,4 +25,3 @@ const ActivitySchema = new Schema({
 })
 
 module.exports = mongoose.model('Activity',ActivitySchema);
-

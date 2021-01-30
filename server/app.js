@@ -10,6 +10,7 @@ const rateLimit = require("express-rate-limit");
 const userRouter = require("./routes/user");
 const activitiesRouter = require("./routes/activities");
 const feedRouter = require("./routes/feed");
+const events = require("./routes/event");
 const requestRouter = require("./routes/request");
 const signupRouter = require("./routes/sign_up");
 const reqRouter = require("./routes/donation-need-routes/request")
@@ -37,7 +38,7 @@ mongoose
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
-     dbName: "finaldb",
+    dbName: DB_NAME,
     w: "majority",
   })
   .catch((err) => {
@@ -107,26 +108,6 @@ app.use('/api2',route2); // signup org looking for help
 app.use('/activity',activitiesRouter);
 app.use(reqRouter)
 
-
-
-
-
-
-
-
-
-
-//404 and Error handlers
-app.use((req, res, next) => {
-  //catch any request to endpoint not available
-  next({ status: 404, message: `Route ${req.baseUrl} not found` }, req, res);
-});
-app.use((err, req, res, next) => {
-  //error handler
-  res
-    .status(err.status || 500)
-    .send(err.message || `Request couldn't be completed`);
-});
 
 //404 and Error handlers
 app.use((req, res, next) => {
