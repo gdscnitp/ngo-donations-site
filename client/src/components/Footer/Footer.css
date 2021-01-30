@@ -1,202 +1,251 @@
-.footer{
-    height:400px; 
-    background-color:rgb(7, 31, 63);
-    height:550px;
+.footer {
+  background-color: rgb(7, 31, 63);
+  height: 550px;
+  position: relative;
 }
-.sas2{
-    width: 90%;
-     float:left;
-    margin-top: 3%;
-   color: white
+.sas2 {
+  width: 90%;
+  float: left;
+  margin-top: 3%;
+  color: white;
+  display: flex;
+  flex-flow: row wrap;
 }
-.sas2-1,.sas2-2,.sas2-3,.sas2-4{
-    float:left;
-    margin-top: 3%;
-   color: white
+.sas2-1,
+.sas2-2,
+.sas2-3,
+.sas2-4 {
+  float: left;
+  margin-top: 3%;
+  color: white;
 }
-li{
-    list-style-type: none;
-    font-size: 120%;
-   
+li {
+  list-style-type: none;
+  font-size: 120%;
 }
 
-.cities1 li{
-    text-align: center;
-    padding: 16%;
+.cities1 li {
+  text-align: center;
+  padding: 16%;
 }
-.li_img{
-    margin-left: 10%;
-    margin-top: 4%;
+.li_img {
+  margin-left: 10%;
+  margin-top: 4%;
 }
-#IconSpan{
+#IconSpan {
   width: 10%;
 }
 
-.footerIcons{
+.footerIcons {
   width: 120%;
   height: 107px;
   padding: 2%;
   color: rgb(86, 129, 153);
 }
 
-.sas{
- float: right;
- margin-top: -32%;
- margin-right: 5%;
+.sas {
+  /* margin-right: ; */
+  float: right;
+  margin-top: -32%;
+  margin-right: 5%;
 }
-.stars p{
-  font-family: Roboto Mono,monospace;
+.stars p {
+  font-family: Roboto Mono, monospace;
   font-size: 30px;
 }
-
 
 div.stars {
   width: 270px;
   display: inline-block;
 }
 
-input.star { display: none; }
+input.star {
+  display: none;
+}
 
 label.star {
   float: right;
   padding: 10px;
   font-size: 36px;
   color: rgb(162, 197, 236);
-  transition: all .2s;
+  transition: all 0.2s;
 }
 
 input.star:checked ~ label.star:before {
-  content: '\f005';
-  color: #FD4;
-  transition: all .25s;
+  content: "\f005";
+  color: #fd4;
+  transition: all 0.25s;
 }
 
 input.star-5:checked ~ label.star:before {
-  color: #FE7;
+  color: #fe7;
   text-shadow: 0 0 20px #952;
 }
 
-input.star-1:checked ~ label.star:before { color: #F62; }
+input.star-1:checked ~ label.star:before {
+  color: #f62;
+}
 
-label.star:hover { transform: rotate(-15deg) scale(1.3); }
+label.star:hover {
+  transform: rotate(-15deg) scale(1.3);
+}
 
 label.star:before {
-  content: '\f006';
+  content: "\f006";
   font-family: FontAwesome;
 }
 
-
-.worklink{
-    color: white;
-   margin-top: 30%;
-    font-size: 150%;
-    margin-left: 10%;
+.muckin {
+  color: antiquewhite;
+  background-color: rgb(58, 104, 156);
+  padding-top: 20px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  font-weight: bold;
+  /* margin-top: 40%;
+  font-size: 150%;
+  margin-left: 0; */
 }
 
-
-.csm {
-	max-width:400px;
-	width:100%;
-	margin:0 auto;
-	position:relative;
+.sm {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
 }
-#suggestion_box textarea, #suggestion_box button[type="submit"] { font:400 16px/16px "Open Sans", Helvetica, Arial, sans-serif; }
+#suggestion_box textarea,
+#suggestion_box button[type="submit"] {
+  font: 400 16px/16px "Open Sans", Helvetica, Arial, sans-serif;
+}
 
 #suggestion_box {
-  width:80%;
+  width: 80%;
   text-align: center;
   background-color: lightgray;
   padding: 15px 50px 50px 50px;
-	margin:50px 50px 50px 50px;
+  margin: 50px 50px;
 }
 
 #suggestion_box h3 {
-	color: #000;
-	display: block;
-	font-size: 20px;
-	font-weight: 900;
+  color: #000;
+  display: block;
+  font-size: 20px;
+  font-weight: 900;
 }
 
 #suggestion_box h4 {
-	margin:5px 0 15px;
-	display:block;
-	font-size:13px;
+  margin: 5px 0 15px;
+  display: block;
+  font-size: 13px;
 }
 
 #suggestion_box h5 {
-	margin:5px 0 15px;
-	display:block;
-	font-size:10px;
+  margin: 5px 0 15px;
+  display: block;
+  font-size: 10px;
 }
 
 fieldset {
-	border: medium none !important;
-	margin: 0 0 20px;
-	min-width: 80%;
-	padding: 0;
-	width: 100%;
+  border: medium none !important;
+  margin: 0 0 20px;
+  min-width: 80%;
+  padding: 0;
+  width: 100%;
 }
 
 #suggestion_box textarea {
-	width:80%;
-	border:1px solid #CCC;
-	background:#FFF;
-	margin:0 0 5px;
-	padding:10px;
+  width: 80%;
+  border: 1px solid #ccc;
+  background: #fff;
+  margin: 0 0 5px;
+  padding: 10px;
 }
 
 #suggestion_box textarea:hover {
-	-webkit-transition:border-color 0.3s ease-in-out;
-	-moz-transition:border-color 0.3s ease-in-out;
-	transition:border-color 0.3s ease-in-out;
-	border:1px solid #AAA;
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
 }
 
 #suggestion_box button[type="submit"] {
-	cursor:pointer;
-	width:80%;
-	border:none;
-	background:#ffc107;
-	color:#FFF;
-	margin:0 0 5px;
-	padding:10px;
-	font-size:15px;
+  cursor: pointer;
+  width: 80%;
+  border: none;
+  background: #ffc107;
+  color: #fff;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
 }
 
 #suggestion_box button[type="submit"]:hover {
-	background:black;
-	-webkit-transition: 0.3s ease-in-out;
-	-moz-transition:  0.3s ease-in-out;
-	transition:background-color 0.3s ease-in-out;
+  background: black;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
-#suggestion_box button[type="submit"]:active { box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); }
+#suggestion_box button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
 
-#suggestion_box input:focus, #suggestion_box textarea:focus {
-	outline:0;
-	border:1px solid #999;
+#suggestion_box input:focus,
+#suggestion_box textarea:focus {
+  outline: 0;
+  border: 1px solid #999;
 }
 ::-webkit-input-placeholder {
- color:#888;
+  color: #888;
 }
 :-moz-placeholder {
- color:#888;
+  color: #888;
 }
 ::-moz-placeholder {
- color:#888;
+  color: #888;
 }
 :-ms-input-placeholder {
- color:#888;
+  color: #888;
 }
 
-
-
-
-@media (min-width: 700px){
-    
-  .sas{
+@media (min-width: 700px) {
+  .sas {
     float: right;
     padding-right: 40px;
   }
-  
+}
+
+@media (max-width: 700px) {
+  .footer {
+    height: 90vh;
+  }
+  .footerIcons {
+    width: 50px;
+    height: 50px;
+    padding: 5px 0;
+  }
+  #IconSpan {
+    width: 100px;
+    margin-top: 25px;
+    margin-left: 0;
+  }
+  .sas2 {
+    width: fit-content;
+    margin: 0;
+    font-size: 10px;
+  }
+  .sas {
+    margin-top: -5vh;
+    margin-right: 20%;
+  }
+  .sm {
+    padding-top: 0;
+  }
+  #suggestion_box {
+    padding: 0;
+    margin-top: 10px;
+  }
 }

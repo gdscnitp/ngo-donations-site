@@ -65,7 +65,7 @@ export function Navbar() {
                       id="dropdown-basic"
                       className="otherLinks"
                     >
-                      <strong>OTHER LINKS</strong>
+                      <strong style={{ color: "grey" }}>OTHER LINKS</strong>
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
