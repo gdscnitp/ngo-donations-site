@@ -7,7 +7,7 @@ const Filter = () => {
         <div className="row">
           <div className="col-md-12">
             <div className="card filter-card">
-              <div className="card-body">
+              <div className="card-body fil-car">
                 <h5 className="card-title text-center filter-title">Filter</h5>
                 <p className="filter-event-type text-center">
                   <a className="card-link filter-link" href="#top">

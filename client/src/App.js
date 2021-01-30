@@ -1,8 +1,9 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
+// import Carousel from "./components/carousel/carousel"
 import { Navbar } from "../src/components/Navbar/Navbar";
 import { Footer } from "../src/components/Footer/Footer";
 import Donation from "../src/components/donation_and_need_form/donation-form.js";
@@ -13,23 +14,22 @@ import User from "./components/User-profile/User.js";
 import { Loginpage } from "./components/Login-page/Login-page";
 import Homepage from "./pages/Homepage";
 import Event from "./components/Event/Event.js";
-import Carousel from "./components/carousel/carousel.js";
 import Events from "./components/Event Page/Events";
 import LookingIndividualSignup from "./components/signup/lookingIndividual/lookingIndividualSignup";
 import LookingOrganisationSignup from "./components/signup/lookingOrganisation/lookingOrganisationSignup";
 import WillingIndividualSignup from "./components/signup/willingIndividual/willingIndividualSignup";
-import WillingOrganisationSignup from "./components/signup/willingOrganisation/willingOrganisationSignup";
+import { WillingOrganisationSignupStep1, WillingOrganisationSignupStep2, WillingOrganisationSignupStep3 } from "./components/signup/willingOrganisation/willingOrganisationSignup";
 import Feedback from "./components/Feed Page/Feedback";
 import {Videopopup } from './components/Video-popup/Video-popup';
-
-function App() {
+import Faq from "./components/Faq-page/Faq.js";
+//import MultiStep from './components/signup/react-multistep';
+export default function App() {
   return (
     <Router>
       <div className="App">
         <br />
         <br />
-
-        <Carousel />
+        {/* <Carousel /> */}
 
         <a
           href="/donate"
@@ -48,7 +48,8 @@ function App() {
         <br />
         <br />
         <Navbar />
-
+        <br />
+        <br />
         <center>
           <Switch>
             <Route path="/createevent" component={Event} />
@@ -61,6 +62,9 @@ function App() {
             <Route path="/need" component={Need} />
             <Route path="/userprofile" component={User} />
             <Route path="/events" component={Events} />
+            <Route path="/videopopup" component={Videopopup} />
+              <Route path="/feedback" component={Feedback} />
+            <Route path="/faq" component={Faq} />
             <Route
               path="/lookingindividualsignup"
               component={LookingIndividualSignup}
@@ -74,18 +78,24 @@ function App() {
               component={WillingIndividualSignup}
             />
             <Route
-              path="/willingorganisationsignup"
-              component={WillingOrganisationSignup}
-            />
+              path="/willingorganisationsignupstep1"
+              component={WillingOrganisationSignupStep1}
+                      />
+                      <Route
+                          path="/willingorganisationsignupstep2"
+                          component={WillingOrganisationSignupStep2}
+                      />
+                      <Route
+                          path="/willingorganisationsignupstep3"
+                          component={WillingOrganisationSignupStep3}
+                      />
+                     
+
           </Switch>
         </center>
         <br />
-        <Videopopup />
-        <Feedback />
         <Footer />
       </div>
     </Router>
   );
 }
-
-export default App;

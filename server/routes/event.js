@@ -18,8 +18,8 @@ router.get("/", async (req, res, next) => {
 });
 
 //Create a new Event
-router.post("", (req, res, next) => {
-  const User = new Event({
+router.post("/", (req, res, next) => {
+  const event = new Event({
     _id: new mongoose.Types.ObjectId(),
 
     name: req.body.name,
@@ -31,9 +31,9 @@ router.post("", (req, res, next) => {
     endTime: req.body.endTime,
   });
 
-  User.save()
+  event.save()
     .then(() => {
-      console.log(User);
+      console.log(event);
       res.send("Event Added Successfully");
     })
     .catch((err) => {
@@ -60,30 +60,10 @@ router.delete("/delete/:id", limiter, (req, res, next) => {
   res.send("Deleted");
 });
 
-router.get("", (req, res, next) => {
-  res.send("Get request handled by event page");
-});
-
-router.post("", (req, res, next) => {
-  const User = new Event({
-    _id: new mongoose.Types.ObjectId(),
-
-    name: req.body.name,
-    description: req.body.description,
-    region: req.body.region,
-    startDate: req.body.startDate,
-    endDate: req.body.endDate,
-    startTime: req.body.startTime,
-    endTime: req.body.endTime,
-  });
-
-  User.save()
-    .then(() => {
-      console.log(User);
-    })
-    .catch((err) => console.log(err));
-});
-
+// this route won't execute if correct route is accessed
+// router.get("", (req, res, next) => {
+//   res.send("Get request handled by event page");
+// });
 
 //@desc filter the events
 //@method POST
@@ -97,23 +77,17 @@ router.post("/filter", async (req, res) => {
   var location = req.body.location;
   if(!location) res.send("Location is required");
   try {
-    const response = await Event.find({
-    
-        startDate: {
-          $gte: start,
-        },
-        endDate: {
-          $lte: endDate,
-        },
-        region: location 
-      }
-    );
-    if (response.length === 0) res.send("NO EVENT FOUND");
+    const response = await Event.find()
+          .where('startDate').gte(start)
+          .where('endDate').lte(start)
+          .where('region', location);
+
+    if (response.length === 0) return res.send("NO EVENT FOUND");
+
     res.send(response);
   } catch (error) {
-    console.log(error.message);
+    console.log(error.message || error.code);
   }
 });
-
 
 module.exports = router;

@@ -1,16 +1,22 @@
 .feed-card {
   min-width: 18rem;
+  background-color:#071F3F;
 }
-
+.feed-title{
+  color:#ffffff;
+}
 .feed-btn-1 {
   width: 40%;
   margin-right: 50px;
+  background-color: #F56552;
 }
 .feed-btn-2 {
   width: 40%;
+  background-color: #F56552;
 }
 
 .feed-para {
+  color: #ffffff;
   position: absolute;
   top: 50%;
   left: 30%;
@@ -19,12 +25,7 @@
   margin: 5px;
   white-space: nowrap;
 }
-.feed-hr {
-  border: dotted #eaf6f6 6px;
-  border-bottom: none;
-  width: 4%;
-  margin: 100px auto;
-}
+
 .feed-a {
   margin-left: 37.5%;
   margin-top: 20%;
