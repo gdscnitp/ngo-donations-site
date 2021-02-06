@@ -8,13 +8,7 @@ function closeFormEmail() {
     document.getElementsByClassName("form-popup-email")[0].style.display = "none";
 }
 
-function openFormPhone() {
-    document.getElementsByClassName("form-popup-phone")[0].style.display = "block";
-}
 
-function closeFormPhone() {
-    document.getElementsByClassName("form-popup-phone")[0].style.display = "none";
-}
 
 
 
@@ -37,9 +31,7 @@ export default () => {
             <center>  <button type='button' onClick={openFormEmail}
                 style={{ background: "#33c3f0", borderWidth: "2px", color: "6c7a86", borderRadius: "1.2em", padding: "4px", height: "40px", width: "50%" }}>Verify your Email</button>
             </center>
-            <center><button type='button' onClick={openFormPhone}
-                style={{ background: "#33c3f0", borderWidth: "2px", color: "6c7a86", borderRadius: "1.2em", padding: "4px", height: "40px", width: "50%" }}>Verify your Contact Number</button>
-            </center>
+            
 
 
 
@@ -64,25 +56,7 @@ export default () => {
 
                 </form>
             </div>
-            <div className="form-popup-phone" >
-                <button className="close-button" onClick={closeFormPhone}>Close</button>
-                <form action="../../../../../verifyphone" className="form-container">
-                    <form action="../../../../../verify-phone" method="post">
-                        <button type="submit" className="verify-link" >Send OTP</button>
-                    </form>
-                    <input
-                        className="otp"
-                        placeholder="Enter OTP"
-                        type="text"
-                        name="otp"
-                    />
-
-
-
-                    <button type="submit" className='submit-button'>Verify</button>
-
-                </form>
-            </div>
+            
 
 
 

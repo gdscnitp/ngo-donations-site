@@ -14,7 +14,7 @@ export const SignupOption = () => {
         <fieldset>
           <h2 className="fs-title">Willing to help??</h2>
           <h3 className="fs-subtitle">Sign up here</h3>
-          <a href="/willingindividualsignup">
+          <a href="/willingindividualsignupstep1">
             <input
               type="button"
               name="next"
@@ -32,7 +32,7 @@ export const SignupOption = () => {
           </a>
           <h2 className="fs-title">Looking for help??</h2>
           <h3 className="fs-subtitle">Sign up here</h3>
-          <a href="/lookingindividualsignup">
+          <a href="/lookingindividualsignupstep1">
             <input
               type="button"
               name="next"
@@ -40,7 +40,7 @@ export const SignupOption = () => {
               value="Individual"
             ></input>
           </a>
-          <a href="/lookingorganisationsignup">
+          <a href="/lookingorganisationsignupstep1">
             <input
               type="button"
               name="next"
