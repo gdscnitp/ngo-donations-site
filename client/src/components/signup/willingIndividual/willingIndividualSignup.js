@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
-import {useSelector} from "react-redux"
+import React /*{ useState } */ from "react";
+// import { useHistory } from "react-router-dom";
+// import {useSelector} from "react-redux"
 import MultiStep from "../react-multistep";
 import "../css/skeleton.css";
 import StepOne from "./stepOne";
 import StepTwo from "./stepTwo";
 import StepThree from "./stepThree";
-import { SignUpInd } from "../../../services/user_service";
+// import { SignUpInd } from "../../../services/user_service";
 
 
 const steps = [

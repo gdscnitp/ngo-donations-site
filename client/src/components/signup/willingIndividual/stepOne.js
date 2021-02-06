@@ -1,7 +1,7 @@
 import React from "react";
 
 export default (props) => {
-  const {setEmail, setPassword, setName, setContact} = props;
+  // const {setEmail, setPassword, setName, setContact} = props;
 
   return (
     <div>
