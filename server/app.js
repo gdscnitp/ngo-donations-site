@@ -33,7 +33,7 @@ var user;
 const PORT = process.env.PORT || 5000;  // changed so fronted runs on 3000 and server at 5000
 const DB_NAME = "muckin_testing"; // @note - later change it according to database used in production
 
-const MONGO_DB_URI = `mongodb+srv://dscnitp_webdept_muckin:dscnitp_webdept_muckin@cluster0.kokfw.gcp.mongodb.net?retryWrites=true`; // @note - Don't modify this, if it doesn't work for you please ask
+const MONGO_DB_URI = `mongodb+srv://dscnitp_webdept_muckin:${process.env.DB_PASSWORD}@cluster0.kokfw.gcp.mongodb.net?retryWrites=true`; // @note - Don't modify this, if it doesn't work for you please ask
 //${process.env.DB_PASSWORD}
 mongoose
   .connect(MONGO_DB_URI , {

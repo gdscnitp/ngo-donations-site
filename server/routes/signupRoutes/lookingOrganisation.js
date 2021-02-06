@@ -33,7 +33,7 @@ router.post('/lookingOrganisationStep1',(req,res)=>{
 var OTP;
 router.post('/lookingOrganisationverify-email', (req, res) => {
     console.log('Hey there')
-    sgMail.setApiKey('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')
+    sgMail.setApiKey(process.env.API_KEY)
     stringx = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
     OTP = '';
     var len = stringx.length;

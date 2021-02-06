@@ -44,7 +44,7 @@ router.post("/sign_up/", async (req, res) => { // finally url will be "/sign_up/
 var OTP;
 router.post('/verify-email', (req, res) => {
     console.log('Hey there')
-    sgMail.setApiKey('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')
+    sgMail.setApiKey(process.env.API_KEY)
     stringx = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
     OTP = '';
     var len = stringx.length;
