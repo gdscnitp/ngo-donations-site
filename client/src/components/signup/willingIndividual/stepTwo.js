@@ -1,4 +1,12 @@
 import React from "react";
+import './verify.css'
+function openFormEmail() {
+    document.getElementsByClassName("form-popup-email")[0].style.display = "block";
+}
+
+function closeFormEmail() {
+    document.getElementsByClassName("form-popup-email")[0].style.display = "none";
+}
 
 export default (props) => {
   // expecting the state management by the WillingIndividualSignup component, since it finally handles the submission; Not using redux here, can be more cleaner in a way then
@@ -10,6 +18,33 @@ export default (props) => {
 
   return (
     <div>
+      <center>  <button type='button' onClick={openFormEmail}
+                style={{ background: "#33c3f0", borderWidth: "2px", color: "6c7a86", borderRadius: "1.2em", padding: "4px", height: "40px", width: "50%" }}>Verify your Email</button>
+            </center>
+            <div className="form-popup-email" >
+                <button className="close-button" onClick={closeFormEmail} >Close</button>
+                <form action="../../../../../willingIndividualverifyemail" className="form-container" method="post">
+                    <form action="../../../../../willingIndividualverify-email" method="post">
+                        <button type="submit" className="verify-link" onSubmit={openFormEmail}>Send OTP</button>
+                    </form>
+                    <input
+                        className="otp"
+                        placeholder="Enter OTP"
+                        type="text"
+                        name="otp"
+                    />
+
+
+
+                    <button type="submit" className='submit-button'>Verify</button>
+
+                </form>
+            </div>
+
+
+
+
+       <form action="../../../../../willingIndividualStep2" method="post">
       <div className="row">
         <div className="six columns">
           <label>How do you wish to help??</label>
@@ -17,7 +52,8 @@ export default (props) => {
             className="u-full-width"
             placeholder="Name"
             type="text"
-            onChange={(e) => props.setYourHelp(e.target.value)}
+            name="how_to_help"
+            // onChange={(e) => props.setYourHelp(e.target.value)}
             // value={yourhelp}
             required={true}
             autoFocus
@@ -31,8 +67,9 @@ export default (props) => {
             className="u-full-width"
             placeholder="Address"
             type="text"
+            name="address"
             required={true}
-            onChange={(e) => props.setAddress(e.target.value)}
+            // onChange={(e) => props.setAddress(e.target.value)}
           />
         </div>
       </div>
@@ -42,8 +79,9 @@ export default (props) => {
           <select
             className="u-full-width required"
             placeholder="no choice"
-            onChange={(e) => props.setWilhlp(e.target.value)}
-            required={true}
+            name="willJoinOrgnaisation"
+            // onChange={(e) => props.setWilhlp(e.target.value)}
+            //required={true}
             autoFocus
           >
             <option value="opel">YES</option>
@@ -57,7 +95,8 @@ export default (props) => {
           <input
             className="u-full-width required"
             type="text"
-            onChange={(e) => props.setOccupation(e.target.value)}
+            name="occupation"
+            // onChange={(e) => props.setOccupation(e.target.value)}
             required={true}
             autoFocus
           />
@@ -69,11 +108,14 @@ export default (props) => {
           <input
             className="u-full-width required"
             type="text"
-            onChange={(e) => props.setExperience(e.target.value)}
+            name="prev_exp"
+            // onChange={(e) => props.setExperience(e.target.value)}
             autoFocus
           />
         </div>
       </div>
+      <button style={{ background: "#33c3f0", borderWidth: "2px", color: "6c7a86", borderRadius: "1.2em", padding: "4px",height:"40px",width:"100px"}}   type="submit" >Save</button>
+    </form>
     </div>
   );
 };

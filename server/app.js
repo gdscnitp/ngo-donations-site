@@ -14,7 +14,9 @@ const events = require("./routes/event");
 const requestRouter = require("./routes/request");
 const signupRouter = require("./routes/sign_up");
 const reqRouter = require("./routes/donation-need-routes/request")
-
+const lookingIndividual = require("./routes/signupRoutes/lookingIndividual")
+const lookingOrganisation = require("./routes/signupRoutes/lookingOrganisation")
+const willingIndividual = require("./routes/signupRoutes/willingIndividual")
 const route1 = require('./routes/userSignup');
 const route2 = require('./routes/orgSignup');
 const editUser = require('./routes/api.js');
@@ -96,7 +98,7 @@ app.use(
 // Routes START
 app.use("/user", userRouter); // login, logout
 app.use(signupRouter); // sign_up individual and organisation
-app.use("/activities", activitiesRouter); // image, update-details, delete-details
+app.use(activitiesRouter); // image, update-details, delete-details
 app.use("/requests", requestRouter); // /new request
 app.use("/feeds", feedRouter); // /get feeds
 // Routes END
@@ -107,8 +109,9 @@ app.use('/api2',route2); // signup org looking for help
 
 app.use('/activity',activitiesRouter);
 app.use(reqRouter)
-
-
+app.use(lookingIndividual)
+app.use(lookingOrganisation)
+app.use(willingIndividual)
 //404 and Error handlers
 app.use((req, res, next) => {
   //catch any request to endpoint not available

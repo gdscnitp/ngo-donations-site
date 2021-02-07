@@ -39,10 +39,10 @@ const upload = multer({
    fileFilter: fileFilter,
 });
 
-router.get('/activity', (req,res)=>
-{
-  console.log('Hello')
- });
+// router.get('/activity', (req,res)=>
+// {
+//   console.log('Hello')
+//  });
 router.post('/activity',upload.single('image'),(req, res, next) => {
   console.log(req.file);
    const act = new Activity(
