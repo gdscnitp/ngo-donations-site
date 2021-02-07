@@ -10,7 +10,9 @@ const Homepage = () => {
   return (
     <center> 
 <Carousel/>
-
+ <br />
+ <br />
+ <br />
       <h3>
         <strong>Recent Events</strong>
       </h3>
@@ -24,7 +26,9 @@ const Homepage = () => {
       <News />
       <br />
       <br />
+      <br />
       <Cause />
+      <br />
       <h3>
         <strong>About Us BOOK!</strong>
       </h3>

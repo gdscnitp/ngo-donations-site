@@ -28,23 +28,8 @@ export default function App() {
     <Router>
       <div className="App">
         <br />
-        <br />
         {/* <Carousel /> */}
 
-        <a
-          href="/donate"
-          className="btn btn-info"
-          style={{ float: "left", margin: "1rem" }}
-        >
-          Donate
-        </a>
-        <a
-          href="/need"
-          className="btn btn-info"
-          style={{ float: "right", margin: "1rem" }}
-        >
-          Need
-        </a>
         <br />
         <br />
         <Navbar />

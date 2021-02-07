@@ -1,6 +1,7 @@
 
 #aboutus{
     width: 80%;
+
 }
 .Heading{
     text-align: center;
@@ -12,7 +13,7 @@
 
 .dev{
     transition: 500ms;
-    margin: 0px;
+    margin-top: 0px;
 }
 
 .dev:hover{
@@ -94,7 +95,7 @@
   }
 
 .dev-container{
-    padding: 30px;
+    padding:2px;
     display: flex;
     justify-content: center;
     align-items: center ;
@@ -137,8 +138,8 @@
   
   /* Stories carousel */
   .top-stories{
-      margin-bottom: 10%;
-      margin-top: 10%;
+      margin-bottom: 8%;
+      margin-top: 5%;
       margin-left: 5%;
       margin-right: 5%;
   } */
@@ -153,8 +154,8 @@
 
   .ratings{
    
-      margin-top: 15%;
-      margin-bottom: 15%;
+      margin-top: 1 rem;
+      margin-bottom:1 rem;
       
     
   }
@@ -192,6 +193,7 @@ height: 500px;
 overflow-x: unset;
 overflow-y: auto;
 scrollbar-width: none;
+text-align:center;
 }
 .card-title{background-color: #071F3F; color:#ffffff;}
 .card-body{background-color: #071F3F;}
@@ -210,6 +212,7 @@ scrollbar-width: none;
 
 .desc{
     font-size: medium;
+
     
 }
 
@@ -242,4 +245,3 @@ scrollbar-width: none;
          border-radius: 5px;
     }
 }
-

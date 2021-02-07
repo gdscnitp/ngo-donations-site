@@ -75,7 +75,7 @@ export function Navbar() {
                       </Dropdown.Item>
                       <Dropdown.Item href="/events">Events</Dropdown.Item>
                       <Dropdown.Item href="/about-us">About Us</Dropdown.Item>
-                      <Dropdown.Item href="/faqs">FAQs</Dropdown.Item>
+                      <Dropdown.Item href="/faq">FAQs</Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </li>

@@ -4,6 +4,7 @@
    margin-top: 25px;
    margin-left: auto;
    margin-right: auto;
+   width:80%;
 }
 .form-control{
    margin: 15px;
@@ -13,14 +14,14 @@
    margin-left: 14px;
 }
 .img{
-  width:100%;
+  width:80%;
   height:25rem;
 }
 
 
 .h1{
   text-align:center;
-  font-size:3rem;
+  font-size:4rem;
   font-family: 'Times New Roman', Times, serif;
   display: fixed;
 }
