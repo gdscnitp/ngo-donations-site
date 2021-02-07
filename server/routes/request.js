@@ -88,4 +88,33 @@ router.get("/createSamples", async (req, res) => {
   res.sendStatus(200);
 });
 
+
+//@url /requests/getlist
+//@desc To get all the request saved in the database
+//@auth public
+
+router.get('/getlist', async (req, res) => {
+  try {
+    let response = await reqModel.find({});
+    if(response.length === 0) return res.status(400).send("Nothing Found");
+    res.status(200).json(response);
+  } catch (error) {
+    console.log(error.message);
+  }
+})
+
+//@url /requests/getlist
+//@desc To get all the request filtered using location saved in the database
+//@auth public
+
+router.get('/getlist', async (req, res) => {
+  try {
+    let response = await reqModel.find({});
+    if(response.length === 0) return res.status(400).send("Nothing Found");
+    res.status(200).json(response);
+  } catch (error) {
+    console.log(error.message);
+  }
+})
+
 module.exports = router;
