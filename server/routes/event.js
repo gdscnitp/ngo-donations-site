@@ -9,7 +9,7 @@ const limiter = rateLimit({
 });
 
 var string = require("string-sanitizer");
-var sanitizer = require("sanitize")();
+var sanitizer = require("sanitize")();  
 
 //Get all the events
 router.get("/", async (req, res, next) => {
@@ -45,7 +45,8 @@ router.post("/", (req, res, next) => {
 // Edit Event
 router.post("/update/:id", limiter, (req, res, next) => {
   let _id  = req.params.id;
-  Event.findByIdAndUpdate(_id, string.sanitize(req.body), () => {
+  const data =  req.body
+  Event.findByIdAndUpdate(_id, {data}, () => {
     console.log("data updated");
   });
   res.send("updated");
@@ -60,10 +61,6 @@ router.delete("/delete/:id", limiter, (req, res, next) => {
   res.send("Deleted");
 });
 
-// this route won't execute if correct route is accessed
-// router.get("", (req, res, next) => {
-//   res.send("Get request handled by event page");
-// });
 
 //@desc filter the events
 //@method POST
@@ -77,14 +74,19 @@ router.post("/filter", async (req, res) => {
   var location = req.body.location;
   if(!location) res.send("Location is required");
   try {
-    const response = await Event.find()
-          .where('startDate').gte(start)
-          .where('endDate').lte(start)
-          .where('region', location);
-
-    if (response.length === 0) return res.send("NO EVENT FOUND");
-
-    res.send(response);
+    const response = await Event.find({
+    
+        startDate: {
+          $gte: start,
+        },
+        endDate: {
+          $lte: endDate,
+        },
+        region: location 
+      }
+    );
+    if (response.length === 0) res.send("NO EVENT FOUND");
+    res.json(response);
   } catch (error) {
     console.log(error.message || error.code);
   }

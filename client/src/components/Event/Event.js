@@ -32,6 +32,12 @@ function Event() {
     setEndTime(event.target.value);
   }
 
+  const formData = {
+    Name, Description, Region, StartDate, EndDate, StartTime, EndTime
+  }
+
+  
+
   return (
     <div className="Event-conttainer">
       <img
