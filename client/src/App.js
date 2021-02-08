@@ -27,29 +27,13 @@ export default function App() {
   return (
     <Router>
       <div className="App">
+        {/*<br />
         <br />
+        {/* <Carousel /> 
         <br />
-        {/* <Carousel /> */}
-
-        <a
-          href="/donate"
-          className="btn btn-info"
-          style={{ float: "left", margin: "1rem" }}
-        >
-          Donate
-        </a>
-        <a
-          href="/need"
-          className="btn btn-info"
-          style={{ float: "right", margin: "1rem" }}
-        >
-          Need
-        </a>
-        <br />
-        <br />
+        <br />*/}
         <Navbar />
-        <br />
-        <br />
+        <br/>
         <center>
           <Switch>
             <Route path="/createevent" component={Event} />
