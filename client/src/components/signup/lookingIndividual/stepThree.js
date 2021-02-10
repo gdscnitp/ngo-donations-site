@@ -5,6 +5,7 @@ export default () => {
 
   return (
     <div>
+      <form method='post' action='../../../../../lookingIndividualStep3'>
       <div className="row">
         <div className="ten columns terms">
           <span>By clicking "Accept" I agree that:</span>
@@ -26,6 +27,8 @@ export default () => {
           </label>
         </div>
       </div>
+      <button style={{ background: "#33c3f0", borderWidth: "2px", color: "6c7a86", borderRadius: "1.2em", padding: "4px",height:"40px",width:"100px"}}   type="submit" >Submit</button>
+    </form>
     </div>
   );
 };

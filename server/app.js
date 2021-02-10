@@ -14,7 +14,9 @@ const events = require("./routes/event");
 const requestRouter = require("./routes/request");
 const signupRouter = require("./routes/sign_up");
 const reqRouter = require("./routes/donation-need-routes/request")
-
+const lookingIndividual = require("./routes/signupRoutes/lookingIndividual")
+const lookingOrganisation = require("./routes/signupRoutes/lookingOrganisation")
+const willingIndividual = require("./routes/signupRoutes/willingIndividual")
 const route1 = require('./routes/userSignup');
 const route2 = require('./routes/orgSignup');
 const editUser = require('./routes/api.js');
@@ -69,7 +71,26 @@ app.use(
   })
 );
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.use(morgan("dev")); // to log requests made to api
+
+// whitelist to allow CORS request from
+const whitelist = ["http://localhost:3000", "https://app.netlify.com/", "https://muckin.netlify.app"];
+app.use(
+  require("cors")({
+    origin: (origin, cb) => {
+      if(whitelist.includes(origin))
+        cb(null, true);
+      else cb('Not allowed by CORS');
+    }
+  })
+);
+
 app.use(express.urlencoded({ extended: false })); // to parse url encoded data and form inputs
 app.use(express.json()); // to parse json data
 app.use(express.static(join(__dirname, "public")));
@@ -96,7 +117,7 @@ app.use(
 // Routes START
 app.use("/user", userRouter); // login, logout
 app.use(signupRouter); // sign_up individual and organisation
-app.use("/activities", activitiesRouter); // image, update-details, delete-details
+app.use(activitiesRouter); // image, update-details, delete-details
 app.use("/requests", requestRouter); // /new request
 app.use("/feeds", feedRouter); // /get feeds
 // Routes END
@@ -107,8 +128,9 @@ app.use('/api2',route2); // signup org looking for help
 
 app.use('/activity',activitiesRouter);
 app.use(reqRouter)
-
-
+app.use(lookingIndividual)
+app.use(lookingOrganisation)
+app.use(willingIndividual)
 //404 and Error handlers
 app.use((req, res, next) => {
   //catch any request to endpoint not available
