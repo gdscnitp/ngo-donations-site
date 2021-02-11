@@ -1,5 +1,4 @@
 .menu.menu--active {
-
   background-color: #071f3f;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.14);
 }
@@ -34,7 +33,10 @@
     max-width: 540px;
   }
 }
-
+/* CHANGES */
+/* .navbar-signup-button {
+  margin-right: 500px;
+  /* margin-left: 400px; */
 .navcontainer {
   margin-right: 0;
   margin-left: auto;
@@ -49,6 +51,7 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
+  /* flex-direction: row; */
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
@@ -112,7 +115,7 @@
 }
 
 .menu .menu__wrapper nav div {
-  color: grey;
+  color: white;
   opacity: 1;
 }
 .navbar ul li div {
@@ -133,6 +136,8 @@
   float: right;
 }
 .navbar ul {
+  width: 800px;
+
   display: block;
   list-style-type: disc;
   margin-block-start: 1em;
@@ -143,6 +148,11 @@
 }
 .pictureimg {
   float: left;
+  /* background-color: whitesmoke; */
+  /* width: 50px;
+  height: 100px; */
+  border: none;
+  /* border-radius: 50%; */
 }
 .logo {
   margin: 8px;
@@ -267,7 +277,7 @@
 }
 
 .otherLinks {
-  background-color:inherit;
+  background-color: inherit;
   color: #fff;
   border: none;
   font-family: Roboto Mono, monospace;
@@ -275,3 +285,6 @@
   margin-top: -10px;
 }
 
+.navbar-signup-button {
+  height: fit-content;
+}
