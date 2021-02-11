@@ -12,7 +12,7 @@
 
 .dev{
     transition: 500ms;
-    margin: 0px;
+    margin-top: 0px;
 }
 
 .dev:hover{
@@ -94,7 +94,7 @@
   }
 
 .dev-container{
-    padding: 30px;
+    padding: 2px;
     display: flex;
     justify-content: center;
     align-items: center ;
@@ -105,6 +105,7 @@
 
 .dev{
     width:100px;
+
 }
 
 
@@ -137,8 +138,8 @@
   
   /* Stories carousel */
   .top-stories{
-      margin-bottom: 10%;
-      margin-top: 10%;
+      margin-bottom: 8%;
+      margin-top: 5%;
       margin-left: 5%;
       margin-right: 5%;
   } */
@@ -153,8 +154,8 @@
 
   .ratings{
    
-      margin-top: 15%;
-      margin-bottom: 15%;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
       
     
   }
