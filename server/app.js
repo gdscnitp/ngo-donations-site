@@ -78,19 +78,6 @@ app.use(function(req, res, next) {
 });
 
 app.use(morgan("dev")); // to log requests made to api
-
-// whitelist to allow CORS request from
-const whitelist = ["http://localhost:3000", "https://app.netlify.com/", "https://muckin.netlify.app"];
-app.use(
-  require("cors")({
-    origin: (origin, cb) => {
-      if(whitelist.includes(origin))
-        cb(null, true);
-      else cb('Not allowed by CORS');
-    }
-  })
-);
-
 app.use(express.urlencoded({ extended: false })); // to parse url encoded data and form inputs
 app.use(express.json()); // to parse json data
 app.use(express.static(join(__dirname, "public")));
