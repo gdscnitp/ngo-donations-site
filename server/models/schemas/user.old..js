@@ -1,4 +1,4 @@
-  // won't use now, but left as a template for future change
+// won't use now, but left as a template for future change
 const { Schema, model, SchemaTypes } = require("mongoose");
 
 const bcrypt = require("bcrypt");
@@ -11,18 +11,18 @@ const userSchema = Schema({
     unique: true,
     required: true,
     index: true,
-    alias: "name"
+    alias: "name",
   },
   email: {
     // email or mobile one of them should be required
     type: String,
     unique: true,
-    sparse: true
+    sparse: true,
   },
   mobile: {
     type: String,
     unique: true,
-    sparse: true
+    sparse: true,
   },
   oauth: {
     // oauth token
@@ -82,7 +82,7 @@ userSchema.pre("save", function (next) {
  * @note - This function will take in user_id and passowrd, and RETURNS A PROMISE
  * So that it can be easily used with then and catch instead of providing callbacks
  */
-userSchema.statics.authenticate = (user_id, pass) => (
+userSchema.statics.authenticate = (user_id, pass) =>
   new Promise((resolve, reject) => {
     userModel.findOne({ userName: user_id }, (err, doc) => {
       if (err) {
@@ -100,24 +100,23 @@ userSchema.statics.authenticate = (user_id, pass) => (
           if (result === true) {
             console.log(`Successful Login of ${user_id}`);
 
-            return resolve( doc );  // SUCCESS
+            return resolve(doc); // SUCCESS
           } else {
             console.log(`Failed login attempt by ${user_id}`);
             err = { message: `Failed Login Attempt` };
             err.status = 401;
-  
+
             return reject(err);
           }
         })
         .catch((err) => {
           err.message = `Password comparison failed with an error`;
           console.error(err.message, err);
-  
+
           return reject({ msg: err.message, code: err.code });
         });
     });
-  })
-);
+  });
 
 // const userModel = model("auth", userSchema);
 // module.exports = userModel;  // no more in use, so intentionally commenting out

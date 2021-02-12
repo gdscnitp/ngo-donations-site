@@ -36,31 +36,31 @@ var upload = multer({
 // limit: 5mb
 // filter : png, jpeg,jpg
 // later checkAuth added to check user signin or not;
-router.patch("/update-profile/:id", upload.single("profileImage"), function (
-  req,
-  res,
-  next
-) {
-  const id = req.params.id;
-  const info = req.body.UserName;
-  const profilePic = req.file.path;
+router.patch(
+  "/update-profile/:id",
+  upload.single("profileImage"),
+  function (req, res, next) {
+    const id = req.params.id;
+    const info = req.body.UserName;
+    const profilePic = req.file.path;
 
-  userModel.findById(id, function (err, data) {
-    data.profileImage = profilePic ? profilePic : data.profileImage;
-    data.UserName = info;
-    data
-      .save()
-      .then((doc) => {
-        res.status(201).json({
-          message: "Profile Image Updated Successfully",
-          results: doc,
+    userModel.findById(id, function (err, data) {
+      data.profileImage = profilePic ? profilePic : data.profileImage;
+      data.UserName = info;
+      data
+        .save()
+        .then((doc) => {
+          res.status(201).json({
+            message: "Profile Image Updated Successfully",
+            results: doc,
+          });
+        })
+        .catch((err) => {
+          res.json(err);
         });
-      })
-      .catch((err) => {
-        res.json(err);
-      });
-  });
-});
+    });
+  }
+);
 
 // update records route
 router.patch("/update-info/", function (req, res, next) {

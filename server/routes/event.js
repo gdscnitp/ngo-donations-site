@@ -9,7 +9,7 @@ const limiter = rateLimit({
 });
 
 var string = require("string-sanitizer");
-var sanitizer = require("sanitize")();  
+var sanitizer = require("sanitize")();
 
 //Get all the events
 router.get("/", async (req, res, next) => {
@@ -31,7 +31,8 @@ router.post("/", (req, res, next) => {
     endTime: req.body.endTime,
   });
 
-  event.save()
+  event
+    .save()
     .then(() => {
       console.log(event);
       res.send("Event Added Successfully");
@@ -44,9 +45,9 @@ router.post("/", (req, res, next) => {
 
 // Edit Event
 router.post("/update/:id", limiter, (req, res, next) => {
-  let _id  = req.params.id;
-  const data =  req.body
-  Event.findByIdAndUpdate(_id, {data}, () => {
+  let _id = req.params.id;
+  const data = req.body;
+  Event.findByIdAndUpdate(_id, { data }, () => {
     console.log("data updated");
   });
   res.send("updated");
@@ -54,13 +55,12 @@ router.post("/update/:id", limiter, (req, res, next) => {
 
 //Delete Event
 router.delete("/delete/:id", limiter, (req, res, next) => {
-  let _id  = req.params.id;
+  let _id = req.params.id;
   Event.findByIdAndRemove(_id, () => {
     console.log("Event deleted successfully");
   });
   res.send("Deleted");
 });
-
 
 //@desc filter the events
 //@method POST
@@ -68,23 +68,21 @@ router.delete("/delete/:id", limiter, (req, res, next) => {
 
 router.post("/filter", async (req, res) => {
   var start = req.body.startDate;
-  if(!start) res.send("Start date is req.")
+  if (!start) res.send("Start date is req.");
   var endDate = req.body.endDate;
-  if(!endDate) res.send("EndDate is Required");
+  if (!endDate) res.send("EndDate is Required");
   var location = req.body.location;
-  if(!location) res.send("Location is required");
+  if (!location) res.send("Location is required");
   try {
     const response = await Event.find({
-    
-        startDate: {
-          $gte: start,
-        },
-        endDate: {
-          $lte: endDate,
-        },
-        region: location 
-      }
-    );
+      startDate: {
+        $gte: start,
+      },
+      endDate: {
+        $lte: endDate,
+      },
+      region: location,
+    });
     if (response.length === 0) res.send("NO EVENT FOUND");
     res.json(response);
   } catch (error) {

@@ -8,18 +8,15 @@ const Faq = () => {
     <>
       <Heading />
       <br />
-      <Accordion 
-      title="abcdddd"
-      content="iijifjifjiowejfioewjfiojewiofjewiofjiowejfiojweiofjew"
-      />
-      <Accordion 
-      title="jjdfksfkjeklfjwkeljfklewf"
-      content="lhdjshfjdklwjdlwldlwkldkecjkejckejwkskfjkfjkwefkewf"
-      />                      
       <Accordion
-      title="hfejfkemkfmew"
-      content="dhfewhfjewkfjwekfref"
+        title="abcdddd"
+        content="iijifjifjiowejfioewjfiojewiofjewiofjiowejfiojweiofjew"
       />
+      <Accordion
+        title="jjdfksfkjeklfjwkeljfklewf"
+        content="lhdjshfjdklwjdlwldlwkldkecjkejckejwkskfjkfjkwefkewf"
+      />
+      <Accordion title="hfejfkemkfmew" content="dhfewhfjewkfjwekfref" />
       <br />
       <br />
       <Bottom />

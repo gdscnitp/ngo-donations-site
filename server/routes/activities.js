@@ -2,21 +2,19 @@ const express = require("express");
 const router = express.Router();
 const multer = require("multer");
 
-const path = require('path');
+const path = require("path");
 const Activity = require("../models/Activity");
 
 const app = express();
 //  const upload = multer({dest: 'uploads/'});
 
-
 const storage = multer.diskStorage({
-  destination: (req, file, cb) =>{
+  destination: (req, file, cb) => {
     cb(null, "./uploads/");
-    
   },
   filename: (req, file, cb) => {
     cb(null, Date.now() + file.originalname);
-}
+  },
 });
 
 const fileFilter = (req, file, cb) => {
@@ -36,35 +34,24 @@ const upload = multer({
   limits: {
     fileSize: 1024 * 1024 * 5, // later updated;
   },
-   fileFilter: fileFilter,
+  fileFilter: fileFilter,
 });
 
-router.get('/activity', (req,res)=>
-{
-  console.log('Hello')
- });
-router.post('/activity',upload.single('image'),(req, res, next) => {
+router.get("/activity", (req, res) => {
+  console.log("Hello");
+});
+router.post("/activity", upload.single("image"), (req, res, next) => {
   console.log(req.file);
-   const act = new Activity(
-     {
-      donateTo:req.body. donateTo,
-      donationType:req.body.donationType,
-      shareTheMoney:req.body.shareTheMoney,
-       image: req.file.path 
+  const act = new Activity({
+    donateTo: req.body.donateTo,
+    donationType: req.body.donationType,
+    shareTheMoney: req.body.shareTheMoney,
+    image: req.file.path,
+  });
 
-   });
-
-
-  act.
-  save()
-  .then(result => {
+  act.save().then((result) => {
     console.log(result);
-
   });
-    res.redirect('/need');
-
-  });
-module.exports = router
-
-
-
+  res.redirect("/need");
+});
+module.exports = router;

@@ -18,9 +18,13 @@ import Events from "./components/Event Page/Events";
 import LookingIndividualSignup from "./components/signup/lookingIndividual/lookingIndividualSignup";
 import LookingOrganisationSignup from "./components/signup/lookingOrganisation/lookingOrganisationSignup";
 import WillingIndividualSignup from "./components/signup/willingIndividual/willingIndividualSignup";
-import { WillingOrganisationSignupStep1, WillingOrganisationSignupStep2, WillingOrganisationSignupStep3 } from "./components/signup/willingOrganisation/willingOrganisationSignup";
+import {
+  WillingOrganisationSignupStep1,
+  WillingOrganisationSignupStep2,
+  WillingOrganisationSignupStep3,
+} from "./components/signup/willingOrganisation/willingOrganisationSignup";
 import Feedback from "./components/Feed Page/Feedback";
-import {Videopopup } from './components/Video-popup/Video-popup';
+import { Videopopup } from "./components/Video-popup/Video-popup";
 import Faq from "./components/Faq-page/Faq.js";
 //import MultiStep from './components/signup/react-multistep';
 export default function App() {
@@ -63,7 +67,7 @@ export default function App() {
             <Route path="/userprofile" component={User} />
             <Route path="/events" component={Events} />
             <Route path="/videopopup" component={Videopopup} />
-              <Route path="/feedback" component={Feedback} />
+            <Route path="/feedback" component={Feedback} />
             <Route path="/faq" component={Faq} />
             <Route
               path="/lookingindividualsignup"
@@ -80,17 +84,15 @@ export default function App() {
             <Route
               path="/willingorganisationsignupstep1"
               component={WillingOrganisationSignupStep1}
-                      />
-                      <Route
-                          path="/willingorganisationsignupstep2"
-                          component={WillingOrganisationSignupStep2}
-                      />
-                      <Route
-                          path="/willingorganisationsignupstep3"
-                          component={WillingOrganisationSignupStep3}
-                      />
-                     
-
+            />
+            <Route
+              path="/willingorganisationsignupstep2"
+              component={WillingOrganisationSignupStep2}
+            />
+            <Route
+              path="/willingorganisationsignupstep3"
+              component={WillingOrganisationSignupStep3}
+            />
           </Switch>
         </center>
         <br />

@@ -7,8 +7,8 @@ import Tabbs from "./Tabbs";
 function Feedback() {
   return (
     <>
-    <br />
-    <br />
+      <br />
+      <br />
       <Button />
       <Tabbs />
       <Feed />

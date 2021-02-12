@@ -17,7 +17,7 @@ const User = new Schema({
   },
   isVerifiedPhone: {
     type: Boolean,
-     default:false
+    default: false,
   },
   email: {
     type: String,
@@ -26,7 +26,7 @@ const User = new Schema({
   },
   isVerifiedEmail: {
     type: Boolean,
-   default:false
+    default: false,
   },
   password: {
     type: String,
@@ -79,7 +79,7 @@ const User = new Schema({
  * @note - This function will take in email_id and passowrd, and RETURNS A PROMISE
  * So that it can be easily used with then and catch instead of providing callbacks
  */
-User.statics.authenticate = (email_id, pass) => (
+User.statics.authenticate = (email_id, pass) =>
   new Promise((resolve, reject) => {
     personModel.findOne({ email: email_id }, (err, doc) => {
       if (err) {
@@ -97,24 +97,23 @@ User.statics.authenticate = (email_id, pass) => (
           if (result === true) {
             console.log(`Successful Login of ${email_id}`);
 
-            return resolve( doc );  // SUCCESS
+            return resolve(doc); // SUCCESS
           } else {
             console.log(`Failed login attempt by ${email_id}`);
             err = { message: `Failed Login Attempt` };
             err.status = 401;
-  
+
             return reject(err);
           }
         })
         .catch((err) => {
           err.message = `Password comparison failed with an error`;
           console.error(err.message, err);
-  
+
           return reject({ msg: err.message, code: err.code });
         });
     });
-  })
-);
+  });
 
 const personModel = model("User", User);
 module.exports = personModel;

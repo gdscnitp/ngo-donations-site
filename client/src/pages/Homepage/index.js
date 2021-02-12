@@ -8,8 +8,8 @@ import Carousel from "./../../components/carousel/carousel.js";
 
 const Homepage = () => {
   return (
-    <center> 
-<Carousel/>
+    <center>
+      <Carousel />
 
       <h3>
         <strong>Recent Events</strong>

@@ -1,7 +1,7 @@
 import React from "react";
 
 export default (props) => {
-  const {setEmail, setPassword, setName, setContact} = props;
+  const { setEmail, setPassword, setName, setContact } = props;
 
   return (
     <div>
@@ -12,7 +12,9 @@ export default (props) => {
             className="u-full-width"
             placeholder="Name"
             type="text"
-            onChange={(e) => {setName(e.target.value)}}
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
             required={true}
             autoFocus
           />

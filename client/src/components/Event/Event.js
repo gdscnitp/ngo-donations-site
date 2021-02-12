@@ -32,11 +32,11 @@ function Event() {
     setEndTime(event.target.value);
   }
 
-  const formData = {
-    Name, Description, Region, StartDate, EndDate, StartTime, EndTime
-  }
+  // const formData = {
+  //   name, Description, Region, StartDate, EndDate, StartTime, EndTime
+  // }
 
-  
+  // console.log(name);
 
   return (
     <div className="Event-conttainer">
