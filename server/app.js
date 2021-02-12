@@ -21,10 +21,6 @@ const route1 = require('./routes/userSignup');
 const route2 = require('./routes/orgSignup');
 const editUser = require('./routes/api.js');
 
-const route1 = require("./routes/userSignup");
-const route2 = require("./routes/orgSignup");
-const editUser = require("./routes/api.js");
-
 const { SESSION_SECRET } = require("./secretConfig");
 
 require("dotenv").config();
