@@ -220,7 +220,7 @@ fieldset {
 
 @media (max-width: 700px) {
   .footer {
-    height: 90vh;
+    height: 145vh;
   }
   .footerIcons {
     width: 50px;

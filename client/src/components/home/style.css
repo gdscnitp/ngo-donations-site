@@ -179,7 +179,9 @@
     align-items: center;
     margin: 5%;
 }
-
+div.owl-item{
+    background-color: #ffffff;
+}
 
 /* News Component */
 

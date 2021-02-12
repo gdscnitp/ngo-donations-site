@@ -12,35 +12,35 @@ const Carousel1 = () => {
 
         <label for="s1" id="slide1">
           <img
-            src="https://www.imagesource.com/wp-content/uploads/2019/06/Rio.jpg"
+            src="https://c0.wallpaperflare.com/preview/977/488/918/alliance-blue-daylight-facial-expression.jpg"
             alt="img"
             className="img1"
           />
         </label>
         <label for="s2" id="slide2">
           <img
-            src="https://wallpapersdsc.net/wp-content/uploads/2016/09/Cape-Town-Images.jpeg"
+            src="https://thefunquotes.com/wp-content/uploads/2020/10/best-practices-for-ngo-websites.jpg"
             alt="img"
             className="img2"
           />
         </label>
         <label for="s3" id="slide3">
           <img
-            src="http://www.latestwall.com/images/wallpaper/beautiful-nature-photography-hd-background-jpg"
+            src="https://reliefindiatrustngoinindia.files.wordpress.com/2014/12/15eda-happy-childrens2bmaking2bresponsible2bat2brelief2bindia2btrust.jpg"
             alt="img"
             className="img3"
           />
         </label>
         <label for="s4" id="slide4">
           <img
-            src="http://thewowstyle.com/wp-content/uploads/2015/01/nature-images-wallpaper.jpg"
+            src="https://wallpapercave.com/wp/wp6608514.jpg"
             alt="img"
             className="img4"
           />
         </label>
         <label for="s5" id="slide5">
           <img
-            src="https://thewowstyle.com/wp-content/uploads/2015/07/natural-water-bridge-hd-pictures.jpg.jpg"
+            src="https://3blaws.s3.amazonaws.com/images/poverty-education-facts.jpg"
             alt="img"
             className="img5"
           />

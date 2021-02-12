@@ -15,14 +15,10 @@ import { Loginpage } from "./components/Login-page/Login-page";
 import Homepage from "./pages/Homepage";
 import Event from "./components/Event/Event.js";
 import Events from "./components/Event Page/Events";
-import LookingIndividualSignup from "./components/signup/lookingIndividual/lookingIndividualSignup";
-import LookingOrganisationSignup from "./components/signup/lookingOrganisation/lookingOrganisationSignup";
-import WillingIndividualSignup from "./components/signup/willingIndividual/willingIndividualSignup";
-import {
-  WillingOrganisationSignupStep1,
-  WillingOrganisationSignupStep2,
-  WillingOrganisationSignupStep3,
-} from "./components/signup/willingOrganisation/willingOrganisationSignup";
+import { LookingIndividualSignupStep1, LookingIndividualSignupStep2, LookingIndividualSignupStep3 } from "./components/signup/lookingIndividual/lookingIndividualSignup";
+import {LookingOrganisationSignupStep1, LookingOrganisationSignupStep2, LookingOrganisationSignupStep3} from "./components/signup/lookingOrganisation/lookingOrganisationSignup";
+import { WillingIndividualSignupStep1, WillingIndividualSignupStep2, WillingIndividualSignupStep3 } from "./components/signup/willingIndividual/willingIndividualSignup";
+import { WillingOrganisationSignupStep1, WillingOrganisationSignupStep2, WillingOrganisationSignupStep3 } from "./components/signup/willingOrganisation/willingOrganisationSignup";
 import Feedback from "./components/Feed Page/Feedback";
 import { Videopopup } from "./components/Video-popup/Video-popup";
 import Faq from "./components/Faq-page/Faq.js";
@@ -31,29 +27,13 @@ export default function App() {
   return (
     <Router>
       <div className="App">
+        {/*<br />
         <br />
+        {/* <Carousel /> 
         <br />
-        {/* <Carousel /> */}
-
-        <a
-          href="/donate"
-          className="btn btn-info"
-          style={{ float: "left", margin: "1rem" }}
-        >
-          Donate
-        </a>
-        <a
-          href="/need"
-          className="btn btn-info"
-          style={{ float: "right", margin: "1rem" }}
-        >
-          Need
-        </a>
-        <br />
-        <br />
+        <br />*/}
         <Navbar />
-        <br />
-        <br />
+        <br/>
         <center>
           <Switch>
             <Route path="/createevent" component={Event} />
@@ -69,30 +49,67 @@ export default function App() {
             <Route path="/videopopup" component={Videopopup} />
             <Route path="/feedback" component={Feedback} />
             <Route path="/faq" component={Faq} />
-            <Route
+            {/* <Route
               path="/lookingindividualsignup"
               component={LookingIndividualSignup}
-            />
-            <Route
+            /> */}
+            {/* <Route
               path="/lookingorganisationsignup"
               component={LookingOrganisationSignup}
-            />
-            <Route
+            /> */}
+            {/* <Route
               path="/willingindividualsignup"
               component={WillingIndividualSignup}
-            />
+            /> */}
             <Route
               path="/willingorganisationsignupstep1"
               component={WillingOrganisationSignupStep1}
-            />
-            <Route
-              path="/willingorganisationsignupstep2"
-              component={WillingOrganisationSignupStep2}
-            />
-            <Route
-              path="/willingorganisationsignupstep3"
-              component={WillingOrganisationSignupStep3}
-            />
+                      />
+                      <Route
+                          path="/willingorganisationsignupstep2"
+                          component={WillingOrganisationSignupStep2}
+                      />
+                      <Route
+                          path="/willingorganisationsignupstep3"
+                          component={WillingOrganisationSignupStep3}
+                      />
+                     <Route
+              path="/willingindividualsignupstep1"
+              component={WillingIndividualSignupStep1}
+                      />
+                      <Route
+                          path="/willingindividualsignupstep2"
+                          component={WillingIndividualSignupStep2}
+                      />
+                      <Route
+                          path="/willingindividualsignupstep3"
+                          component={WillingIndividualSignupStep3}
+                      />
+                      <Route
+              path="/lookingindividualsignupstep1"
+              component={LookingIndividualSignupStep1}
+                      />
+                      <Route
+                          path="/lookingindividualsignupstep2"
+                          component={LookingIndividualSignupStep2}
+                      />
+                      <Route
+                          path="/lookingindividualsignupstep3"
+                          component={LookingIndividualSignupStep3}
+                      />
+                       <Route
+              path="/lookingorganisationsignupstep1"
+              component={LookingOrganisationSignupStep1}
+                      />
+                      <Route
+                          path="/lookingorganisationsignupstep2"
+                          component={LookingOrganisationSignupStep2}
+                      />
+                      <Route
+                          path="/lookingorganisationsignupstep3"
+                          component={LookingOrganisationSignupStep3}
+                      />
+
           </Switch>
         </center>
         <br />

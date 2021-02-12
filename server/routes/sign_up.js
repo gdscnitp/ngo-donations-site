@@ -42,27 +42,44 @@ router.post("/sign_up/", async (req, res) => {
 });
 
 var OTP;
-router.post("/verify-email", (req, res) => {
-  console.log("Hey there");
-  sgMail.setApiKey(process.env.API_key);
-  stringx = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  OTP = "";
-  var len = stringx.length;
-  for (let i = 0; i < 6; i++) {
-    OTP += stringx[Math.floor(Math.random() * len)];
-  }
+router.post('/verify-email', (req, res) => {
+    console.log('Hey there')
+    sgMail.setApiKey(process.env.API_KEY)
+    stringx = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    OTP = '';
+    var len = stringx.length;
+    for (let i = 0; i < 6; i++) {
+        OTP += stringx[Math.floor(Math.random() * len)];
+    }
 
-  mail = "Your OTP is " + OTP;
-  const msg = {
-    to: user.email, // Change to your recipient
-    from: "muckinverify@gmail.com", // Change to your verified sender
-    subject: "OTP",
-    text: mail,
-  };
-  sgMail
-    .send(msg)
-    .then(() => {
-      console.log("Email sent");
+
+    mail = 'Your OTP is ' + OTP;
+    const msg = {
+        to: user.email, // Change to your recipient
+        from: 'muckinverify@gmail.com', // Change to your verified sender
+        subject: 'OTP',
+        text: mail,
+
+    }
+    sgMail
+        .send(msg)
+        .then(() => {
+            console.log('Email sent')
+        })
+        .catch((error) => {
+            console.error(error + ' Cannot send')
+        })
+    console.log('OTP ' + OTP)
+    res.redirect('/willingorganisationsignupstep2')
+})
+
+router.post('/verifyemail', (req, res) => {
+    otpReq = string.sanitize(req.body.otp);
+    if (otpReq === OTP) {
+        user.isVerifiedEmail = true;
+    }
+    user.save().then(() => {
+        console.log(user)
     })
     .catch((error) => {
       console.error(error + " Cannot send");

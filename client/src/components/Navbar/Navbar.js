@@ -38,7 +38,7 @@ export function Navbar() {
 
       <div class="container navcontainer">
         <div class="row navrow">
-          <div class="menu__wrapper d-none d-lg-block col-md-12">
+          <div class="menu__wrapper d-none d-lg-block">
             <nav class="navbar">
               <ul>
                 <li>
@@ -53,7 +53,17 @@ export function Navbar() {
                     </div>
                   ) : (
                     <>
-                      <div onClick={() => setModelShow(true)}>Signup/Login</div>
+                      <div
+                        onClick={() => setModelShow(true)}
+                        className="navbar-signup-button"
+                      >
+                        <button
+                          className="btn btn-warning "
+                          // style={{ marginBottom: "30px" }}
+                        >
+                          Signup/Login
+                        </button>
+                      </div>
                       <SignupPopup show={addModelShow} onHide={ModelClose} />
                     </>
                   )}
@@ -65,17 +75,16 @@ export function Navbar() {
                       id="dropdown-basic"
                       className="otherLinks"
                     >
-                      <strong>OTHER LINKS</strong>
+                      <strong style={{ color: "white" }}>OTHER LINKS</strong>
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                      <Dropdown.Item href="/events">Need</Dropdown.Item>
                       <Dropdown.Item href="/videopopup">
                         How to use
                       </Dropdown.Item>
                       <Dropdown.Item href="/events">Events</Dropdown.Item>
                       <Dropdown.Item href="/about-us">About Us</Dropdown.Item>
-                      <Dropdown.Item href="/faqs">FAQs</Dropdown.Item>
+                      <Dropdown.Item href="/faq">FAQs</Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </li>
@@ -109,12 +118,24 @@ export function Navbar() {
               ×
             </button>
 
-            {/* <div href="/donate">Donate</div>
-            <div href="">Need</div>
-            <div href="">How to Use</div>
-            <div href="">Events</div>
-            <div href="/about-us">About us</div>
-            <div href="/faqs">FAQs</div> */}
+            <div>
+              <a href="/donate">Donate</a>
+            </div>
+            <div>
+              <a href="/need">Need</a>
+            </div>
+            <div>
+              <a href="/videopopup">How to Use</a>
+            </div>
+            <div>
+              <a href="/events">Events</a>
+            </div>
+            <div>
+              <a href="/about-us">About us</a>
+            </div>
+            <div>
+              <a href="/faq">FAQs</a>
+            </div>
             <div
               onClick={() => setModelShow(true)}
               style={{ color: "white", cursor: "pointer" }}

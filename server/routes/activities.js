@@ -37,10 +37,11 @@ const upload = multer({
   fileFilter: fileFilter,
 });
 
-router.get("/activity", (req, res) => {
-  console.log("Hello");
-});
-router.post("/activity", upload.single("image"), (req, res, next) => {
+// router.get('/activity', (req,res)=>
+// {
+//   console.log('Hello')
+//  });
+router.post('/activity',upload.single('image'),(req, res, next) => {
   console.log(req.file);
   const act = new Activity({
     donateTo: req.body.donateTo,
@@ -55,3 +56,21 @@ router.post("/activity", upload.single("image"), (req, res, next) => {
   res.redirect("/need");
 });
 module.exports = router;
+
+
+//@url /activities/getlist
+//@desc to get all the list of the activities
+//@auth public
+
+router.get('/getlist', async (req, res) => {
+  try {
+    const response = await Activity.find({});
+    res.status(200).json(response)
+  } catch (error) {
+    console.log(error.message)
+  }
+})
+module.exports = router
+
+
+

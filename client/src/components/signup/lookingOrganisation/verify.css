@@ -1,0 +1,52 @@
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: #708090;
+    z-index:9;
+}
+.form-popup-email {
+    width:30%;
+    display: none;
+    position: fixed;
+    top: 150px;
+    right: 500px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    background-color:#708090;
+    border-radius:0.8em;
+}
+
+.form-popup-phone {
+    width: 30%;
+    display: none;
+    position: fixed;
+    top: 150px;
+    right: 500px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    background-color: #708090;
+    border-radius: 0.8em;
+}
+
+
+.otp {
+    width:100%;
+}
+.submit-button {
+    background-color:darkseagreen;
+    margin-left:225px;
+    //padding-bottom:10px;
+    border-radius:0.5em;
+    color:white;
+}
+.close-button {
+    background-color: red;
+    margin-left: 380px;
+    padding-top: 0px;
+    border-radius: 0.8em;
+    color: white;
+}
+
+.verify-link {
+    color:black;
+}

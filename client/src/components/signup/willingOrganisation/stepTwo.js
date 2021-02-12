@@ -9,14 +9,6 @@ function closeFormEmail() {
   document.getElementsByClassName("form-popup-email")[0].style.display = "none";
 }
 
-function openFormPhone() {
-  document.getElementsByClassName("form-popup-phone")[0].style.display =
-    "block";
-}
-
-function closeFormPhone() {
-  document.getElementsByClassName("form-popup-phone")[0].style.display = "none";
-}
 
 export default () => {
   const [nameorganisation, setNameOrganisation] = useState("");

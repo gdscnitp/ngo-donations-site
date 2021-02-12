@@ -12,7 +12,7 @@ export const SearchBar = () => {
           type="text"
           placeholder="Search organisation/NGO"
           name="search"
-          size="25"
+          // size="50"
           class="input"
         ></input>
         <button type="submit">
