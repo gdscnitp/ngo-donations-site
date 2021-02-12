@@ -4,6 +4,7 @@
   "description": "This site is made to help the person who is willing to donate.",
   "main": "app.js",
   "scripts": {
+    "start": "npm start --prefix server",
     "server": "npm run dev --prefix server",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
