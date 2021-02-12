@@ -7,7 +7,7 @@ const Feed = () => {
   });
   var res;
   const getList = async () => {
-   res = await axios.get(`http://localhost:5000/requests/getlist`);
+   res = await axios.get(`/requests/getlist`);
    setResponse(res);
   };
   
