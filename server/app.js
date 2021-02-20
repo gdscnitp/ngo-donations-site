@@ -110,6 +110,7 @@ app.use(signupRouter); // sign_up individual and organisation
 app.use(activitiesRouter); // image, update-details, delete-details
 app.use("/requests", requestRouter); // /new request
 app.use("/feeds", feedRouter); // /get feeds
+app.use('/events', events); //Events Route
 // Routes END
 
 app.use('/editUser',editUser); // edit user profile
