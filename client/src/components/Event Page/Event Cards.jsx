@@ -53,7 +53,7 @@ const EventCards = () =>  {
                   <div className="row">
                     <div className="col-md-3 class5">
                       <img
-                        src={c1}
+                        src={c1 || c2 || c3}
                         alt="Prathma"
                         className="img-responsive image-card"
                       />
