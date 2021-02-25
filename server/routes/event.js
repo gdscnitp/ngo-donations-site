@@ -46,7 +46,7 @@ router.post("/", (req, res, next) => {
 // Edit Event
 router.post("/update/:id", limiter, (req, res, next) => {
   let _id = req.params.id;
-  const data = req.body;
+  const data = req.body.data;
   Event.findByIdAndUpdate(_id, { data }, () => {
     console.log("data updated");
   });
