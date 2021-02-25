@@ -170,7 +170,6 @@
 //   );
 // }
 
-
 import React, { useState } from "react";
 import { css, styled, setup } from "goober";
 setup(React.createElement);
@@ -243,8 +242,8 @@ const getButtonsState = (indx, length) => {
   } else if (indx === 0) {
     return {
       showPreviousBtn: false,
-      showNextBtn:false,
-      showSubmitBtn: false
+      showNextBtn: false,
+      showSubmitBtn: false,
     };
   } else {
     return {
@@ -262,12 +261,9 @@ export default function MultiStep(props) {
   const [stylesState, setStyles] = useState(
     getTopNavStyles(props.step, props.steps.length)
   );
-    const [ setComp] = useState(0);
-    var compState=props.step
-  const [buttonsState, setButtons] = useState(
-    getButtonsState(0, 3)
-  );
-
+  const [setComp] = useState(0);
+  var compState = props.step;
+  const [buttonsState, setButtons] = useState(getButtonsState(0, 3));
 
   const setStepState = (indx) => {
     setStyles(getTopNavStyles(indx, 3));
@@ -275,7 +271,7 @@ export default function MultiStep(props) {
     setButtons(getButtonsState(indx, props.steps.length));
   };
 
-  const next = () => setStepState(compState+ 1);
+  const next = () => setStepState(compState + 1);
   const previous = () =>
     setStepState(compState > 0 ? compState - 1 : compState);
   const handleKeyDown = (evt) =>
@@ -338,12 +334,10 @@ export default function MultiStep(props) {
   return (
     <div onKeyDown={handleKeyDown}>
       <Ol>{renderSteps()}</Ol>
-      
-              <div>{props.steps[compState].component}</div>
-          
+
+      <div>{props.steps[compState].component}</div>
+
       <div>{renderNav(showNav)}</div>
     </div>
   );
 }
-
-

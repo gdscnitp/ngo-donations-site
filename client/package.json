@@ -8,11 +8,14 @@
     "bootstrap": "^4.6.0",
     "font-awesome": "^4.7.0",
     "fontawesome": "^5.6.3",
+    "moment": "^2.29.1",
+    "prettier": "^2.2.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.11.0",
     "react-icons": "^3.11.0",
+    "react-moment": "^1.1.1",
     "react-multistep": "^5.1.0",
     "react-owl-carousel": "^2.3.1",
     "react-pageflip": "^1.0.0",
@@ -29,7 +32,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\""
   },
   "eslintConfig": {
     "extends": "react-app"

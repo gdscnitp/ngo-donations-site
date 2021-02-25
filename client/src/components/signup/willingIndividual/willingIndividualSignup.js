@@ -8,45 +8,57 @@ import StepTwo from "./stepTwo";
 import StepThree from "./stepThree";
 // import { SignUpInd } from "../../../services/user_service";
 
-
 const steps = [
   { component: <StepOne /> },
   { component: <StepTwo /> },
-    { component: <StepThree /> }
+  { component: <StepThree /> },
 ];
 const step1 = 0;
 const step2 = 1;
 const step3 = 2;
 
-const prevStyle = { background: "#33c3f0", "borderWidth": "2px" };
-const nextStyle = { background: "#33c3f0", "borderWidth": "2px" };
-
-
+const prevStyle = { background: "#33c3f0", borderWidth: "2px" };
+const nextStyle = { background: "#33c3f0", borderWidth: "2px" };
 
 const WillingIndividualSignupStep1 = () => (
   <div className="container cnt1" style={{ backgroundColor: "white" }}>
-        <MultiStep steps={steps} prevStyle={prevStyle} nextStyle={nextStyle} step={ step1}/>
+    <MultiStep
+      steps={steps}
+      prevStyle={prevStyle}
+      nextStyle={nextStyle}
+      step={step1}
+    />
     <div className="container app-footer"></div>
   </div>
 );
 const WillingIndividualSignupStep2 = () => (
-    <div className="container cnt1" style={{ backgroundColor: "white" }}>
-        <MultiStep steps={steps} prevStyle={prevStyle} nextStyle={nextStyle} step={step2} />
-        <div className="container app-footer"></div>
-    </div>
+  <div className="container cnt1" style={{ backgroundColor: "white" }}>
+    <MultiStep
+      steps={steps}
+      prevStyle={prevStyle}
+      nextStyle={nextStyle}
+      step={step2}
+    />
+    <div className="container app-footer"></div>
+  </div>
 );
 const WillingIndividualSignupStep3 = () => (
-    <div className="container cnt1" style={{ backgroundColor: "white" }}>
-        <MultiStep steps={steps} prevStyle={prevStyle} nextStyle={nextStyle} step={step3} />
-        <div className="container app-footer"></div>
-    </div>
+  <div className="container cnt1" style={{ backgroundColor: "white" }}>
+    <MultiStep
+      steps={steps}
+      prevStyle={prevStyle}
+      nextStyle={nextStyle}
+      step={step3}
+    />
+    <div className="container app-footer"></div>
+  </div>
 );
 
-
-
-
-
-export { WillingIndividualSignupStep1, WillingIndividualSignupStep2, WillingIndividualSignupStep3 };
+export {
+  WillingIndividualSignupStep1,
+  WillingIndividualSignupStep2,
+  WillingIndividualSignupStep3,
+};
 
 // const WillingIndividualSignup = () => {
 //   const history = useHistory();

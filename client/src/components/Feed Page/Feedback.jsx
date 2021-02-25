@@ -6,8 +6,8 @@ import Button from "./Buttons";
 function Feedback() {
   return (
     <>
-    <br />
-    <br />
+      <br />
+      <br />
       <Button />
       <Feed />
     </>
