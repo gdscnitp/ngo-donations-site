@@ -43,7 +43,7 @@ const EventCards = () =>  {
             </div>
           </div>
           <div className="row" id="load">
-            <button className="success" onClick={() => loadData()}>Load all Event</button>
+            <button className="success" onClick={() => loadData()}> &#10227; Load all Event</button>
           </div>
           {data.data !== undefined ? (
             data.data.length > 0 ? (
