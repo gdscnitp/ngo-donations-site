@@ -46,8 +46,8 @@ router.post("/", (req, res, next) => {
 // Edit Event
 router.post("/update/:id", limiter, (req, res, next) => {
   let _id = req.params.id;
-  const data = req.body;
-  Event.findByIdAndUpdate(_id, { data }, () => {
+  const data = req.body ?? {};  // if data not passed in body, then simply don't make any changes
+  Event.findByIdAndUpdate(_id, { ...data }, () => { // will fail for malicious inputs
     console.log("data updated");
   });
   res.send("updated");
@@ -67,11 +67,10 @@ router.delete("/delete/:id", limiter, (req, res, next) => {
 //@security Public
 
 router.post("/filter", async (req, res) => {
-  var start = req.body.startDate;
+  var { start, endDate, location } = req.body;
+
   if (!start) res.send("Start date is req.");
-  var endDate = req.body.endDate;
   if (!endDate) res.send("EndDate is Required");
-  var location = req.body.location;
   if (!location) res.send("Location is required");
   try {
     const response = await Event.find({
