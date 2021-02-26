@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom"
 import "./SignupOption.css";
 
 export const SignupOption = () => {
@@ -9,7 +8,7 @@ export const SignupOption = () => {
         <span>Already a user? </span>
         <br />
         <span>
-          <Link to="/login">Sign In</Link>
+          <href to="/login">Sign In</href>
         </span>
         <fieldset>
           <h2 className="fs-title">Willing to help??</h2>

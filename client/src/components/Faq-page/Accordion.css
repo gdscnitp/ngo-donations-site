@@ -4,7 +4,7 @@
     }
 
 .accordion{
-    background-color:#090088;
+    background-color:#071F3F;
     color: #fff;
     cursor: pointer;
     padding: 2px;
@@ -16,7 +16,7 @@
     outline-style:none;
     outline-width:0;
     transition: background-color 0.4s ease;
-    height:60px;
+    height:auto;
     margin-bottom:5px;
     width:90%;
     position:relative;
@@ -30,9 +30,8 @@
 }
 
 
-.accordion:hover,
-.active{
-    background-color: #21209c;
+.accordion:hover{
+    background-color: #0d335d;
 }
 
 .accordion__title{
@@ -40,7 +39,9 @@
     font-weight:600;
     font-size: 18px;
     margin-left:25px;
-    margin-top:36px;
+    margin-top:15px;
+    text-align:left;
+    margin-bottom:15px;
 }
 
 .accordion__icon{
@@ -55,14 +56,14 @@
 }
 
 .accordion__content{
-    background-color: #614ad3 ;
+    background-color: #AEBAC9 ;
     overflow:hidden;
-    height:60px;
+    height:auto;
     transition: max-height 0.4s ease;
     margin-bottom:15px;
     width:90%;
     position:relative;
-    left:5%;
+   left:5%;
     border:none;
     border-radius:20px;
 }
@@ -70,10 +71,12 @@
 .accordion__text
 {
     font-family: "Open Sans", sans-serif;
-    color: #fff;
+    color: #000;
     font-weight:400;
     font-size: 18px;
     padding: 15px;
+    margin-left:11px;
+    text-align:left;  
 
 }
 

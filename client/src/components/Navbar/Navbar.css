@@ -160,7 +160,8 @@
 }
 
 .logo img {
-  max-height: 50px;
+  max-height: 55px;
+  background-color:#fff;
 }
 
 @media (min-width: 992px) {
