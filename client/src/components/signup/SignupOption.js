@@ -8,7 +8,7 @@ export const SignupOption = () => {
         <span>Already a user? </span>
         <br />
         <span>
-          <href to="/login">Sign In</href>
+          <a href="/login">Sign In </a>
         </span>
         <fieldset>
           <h2 className="fs-title">Willing to help??</h2>
