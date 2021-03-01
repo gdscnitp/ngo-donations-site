@@ -35,7 +35,7 @@ const Filter =  () => {
   return (
     <>
       <div id="countryModal" class="modal fade" role="dialog">
-         <div class="modal-dialog modal-lg" role="content">
+         <div class="modal-dialog modal-lg" role="contentinfo">
             <div class="modal-content">
                <div class="modal-header filter_head">
                   <h4 class="modal-title">Choose Your Location </h4>
