@@ -100,7 +100,7 @@ const Filter =  () => {
                   <a
                     className="card-link filter-link"
                     data-toggle="modal" 
-                    data-target="#countryModal"
+                    href="#countryModal"
                   >
                     Location
                   </a>
