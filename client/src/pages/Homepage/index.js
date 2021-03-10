@@ -24,7 +24,9 @@ const Homepage = () => {
       <News />
       <br />
       <br />
+      <br />
       <Cause />
+      <br />
       <h3>
         <strong>About Us BOOK!</strong>
       </h3>

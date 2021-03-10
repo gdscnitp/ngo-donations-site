@@ -43,11 +43,10 @@ export default function App() {
   return (
     <Router>
       <div className="App">
-        {/*<br />
         <br />
-        {/* <Carousel /> 
         <br />
-        <br />*/}
+        {/* <Carousel /> */} 
+        <br />
         <Navbar />
         <br />
         <center>
