@@ -89,4 +89,18 @@ router.post("/filter", async (req, res) => {
   }
 });
 
+//@desc search the events by name
+//@method POST
+//@security Public
+router.post('/search', async (req, res) => {
+  var {search} = req.body;
+  try {
+    const response = await Event.find({"name": search});
+    if(!response) return res.status(200).json({msg: "No search found!"});
+    res.status(200).json(response);
+  } catch (error) {
+    console.log(error.message || error.code);
+  }
+});
+
 module.exports = router;
