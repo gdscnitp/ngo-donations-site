@@ -27,9 +27,7 @@ export const Loginpage = () => {
   const [emailError, setEmailError] = useState("");
   const [passError, setPassError] = useState("");
   const [isStrong, setStrong] = useState(false);
-  const validateEmail = (e) => {
-    var email = e.target.value;
-
+  const validateEmail = (email) => {
     if (validator.isEmail(email)) {
       setEmailError("");
     } else {
@@ -38,9 +36,7 @@ export const Loginpage = () => {
   };
 
   //password validation
-  const validatePass = (e) => {
-    var password = e.target.value;
-
+  const validatePass = (password) => {
     if (validator.isStrongPassword(password)) {
       setPassError("Strong password");
       setStrong(true);
@@ -108,7 +104,7 @@ export const Loginpage = () => {
               placeholder="Enter Email"
               name="email"
               onChange={
-                ((e) => setEmail(e.target.value), (e) => validateEmail(e))
+                (e) => { validateEmail(e.target.value); setEmail(e.target.value); }
               }
               required
             ></input>
@@ -134,7 +130,7 @@ export const Loginpage = () => {
               type="password"
               placeholder="Password"
               onChange={
-                ((e) => setPassword(e.target.value), (e) => validatePass(e))
+                (e) => { validatePass(e.target.value); setPassword(e.target.value); }
               }
               name="pass"
               required
