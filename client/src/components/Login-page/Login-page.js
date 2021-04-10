@@ -108,7 +108,7 @@ export const Loginpage = () => {
               placeholder="Enter Email"
               name="email"
               onChange={
-                ((e) => setEmail(e.target.value), (e) => validateEmail(e))
+                (e) => setEmail(e.target.value)
               }
               required
             ></input>
@@ -134,7 +134,7 @@ export const Loginpage = () => {
               type="password"
               placeholder="Password"
               onChange={
-                ((e) => setPassword(e.target.value), (e) => validatePass(e))
+                (e) => setPassword(e.target.value)
               }
               name="pass"
               required
