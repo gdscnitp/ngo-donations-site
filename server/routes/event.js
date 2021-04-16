@@ -43,15 +43,15 @@ router.post("/", (req, res, next) => {
     });
 });
 
-// Edit Event
-router.post("/update/:id", limiter, (req, res, next) => {
-  let _id = req.params.id;
-  const data = req.body ?? {};  // if data not passed in body, then simply don't make any changes
-  Event.findByIdAndUpdate(_id, { ...data }, () => { // will fail for malicious inputs
-    console.log("data updated");
-  });
-  res.send("updated");
-});
+// // Edit Event
+// router.post("/update/:id", limiter, (req, res, next) => {
+//   let _id = req.params.id;
+//   const data = req.body ?? {};  // if data not passed in body, then simply don't make any changes
+//   Event.findByIdAndUpdate(_id, { ...data }, () => { // will fail for malicious inputs
+//     console.log("data updated");
+//   });
+//   res.send("updated");
+// });
 
 //Delete Event
 router.delete("/delete/:id", limiter, (req, res, next) => {
