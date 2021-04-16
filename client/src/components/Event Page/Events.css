@@ -86,6 +86,21 @@
 .para-1{color: lightgrey;}
 .fil-car{background-color: #ffffff;}
 
+.filter_head{
+   background-color: #071f3f;
+   color:#ffffff;
+}
+.close{
+  color:floralwhite;
+}
+.close:hover{
+  color:floralwhite;
+}
+.filter_body{
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media only screen and (max-width: 2500px) {
   .filter-card{
     width:100%;

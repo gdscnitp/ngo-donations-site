@@ -10,6 +10,9 @@ import { LoginUser } from "../../services/user_service";
 import { STORE_AUTH } from "../../reducers/action_types";
 //  import Image from "div2.jpg"
 
+//Added for form validation
+import validator from "validator";
+
 export const Loginpage = () => {
   const [email, setEmail] = useState(""); // we can do without these too, by accessing the value from the refs only at submit
   const [password, setPassword] = useState("");
@@ -19,6 +22,28 @@ export const Loginpage = () => {
   const dispatch = useDispatch(); // only to store in redux store, so that can check from any component whether logged in or not
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const auth = useSelector((state) => state.auth);
+
+  //Added for form validation
+  const [emailError, setEmailError] = useState("");
+  const [passError, setPassError] = useState("");
+  const [isStrong, setStrong] = useState(false);
+  const validateEmail = (email) => {
+    if (validator.isEmail(email)) {
+      setEmailError("");
+    } else {
+      setEmailError("Enter valid Email!");
+    }
+  };
+
+  //password validation
+  const validatePass = (password) => {
+    if (validator.isStrongPassword(password)) {
+      setPassError("Strong password");
+      setStrong(true);
+    } else {
+      setPassError("Weak Password");
+    }
+  };
 
   async function submitHandler(event) {
     event.preventDefault();
@@ -65,11 +90,12 @@ export const Loginpage = () => {
   return (
     <div className="divmain">
       <div className="flex-container">
-        <div id="div1">
+        <div className="left-form-container">
           <h3 style={{ color: "rgb(41 3 71)" }}>WELCOME TO</h3>
           <h1 style={{ fontSize: "50px" }}>MuckIn</h1>
           <h4>Sign In</h4>
           <form id="Loginform" onSubmit={submitHandler}>
+            {/* login field */}
             <label for="email" style={{ textAlign: "left" }}>
               <AiFillMail className="icon1" />
             </label>
@@ -77,49 +103,81 @@ export const Loginpage = () => {
               type="text"
               placeholder="Enter Email"
               name="email"
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={
+                (e) => { validateEmail(e.target.value); setEmail(e.target.value); }
+              }
               required
             ></input>
+            <br />
+            <span
+              style={{
+                marginTop: "0",
+                marginLeft: "2px",
+                fontWeight: "bold",
+                color: "red",
+                fontSize: "11px",
+              }}
+            >
+              {emailError}
+            </span>
             <br></br>
             <br></br>
+
             <label for="psw" style={{ textAlign: "left" }}>
               <AiFillLock className="icon1" />
             </label>
             <input
               type="password"
               placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={
+                (e) => { validatePass(e.target.value); setPassword(e.target.value); }
+              }
               name="pass"
               required
             ></input>
+            <br />
+            <span
+              style={{
+                color: isStrong ? "green" : "red",
+                marginTop: "0",
+                marginLeft: "2px",
+                fontSize: "11px",
+                fontWeight: "bold",
+              }}
+            >
+              {passError}
+            </span>
             <br></br>
+            <div style={{ textAlign: "center" }}>
+              <input
+                type="checkbox"
+                onChange={(e) => toggleRemember(e.target.checked)}
+                name="remember"
+              />
+              <label for="remember" style={{ color: "	 #595959" }}>
+                {" "}
+                Keep me Signed In
+              </label>
+            </div>
 
-            <input
-              type="checkbox"
-              onChange={(e) => toggleRemember(e.target.checked)}
-              name="remember"
-            />
-            <label for="remember" style={{ marginRight: "200px" }}>
-              {" "}
-              Keep me Signed In
-            </label>
-            <br></br>
-
-            <br></br>
             <button type="submit" className="btns">
               Sign In
             </button>
           </form>
           <h5>
-            <a href=" ">Forgot password?</a>
+            <a href=" " className="Ask-Account">
+              Forgot password?
+            </a>
           </h5>
-          <h4 style={{ color: "rgb(106, 128, 143)" }}>
+          <h4 style={{ color: "rgb(106, 128, 143)" }} className="Ask-Account">
             Don't have an account? <a href=" ">Sign Up Now</a>
           </h4>
 
           <hr className="hrline"></hr>
 
-          <h4 style={{ color: "rgb(106, 128, 143)" }}>Or login using</h4>
+          <h4 style={{ color: "rgb(106, 128, 143)" }} className="Ask-Account">
+            Or login using
+          </h4>
           <table className="tableLogin">
             <tr>
               <a href=" ">
@@ -131,7 +189,8 @@ export const Loginpage = () => {
             </tr>
           </table>
         </div>
-        <div id="div2">
+
+        <div className="right-form-container">
           {/* <p className="img_div"></p> */}
           {/* <img src={} alt="img" id="img_div"></img> */}
         </div>
