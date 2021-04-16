@@ -65,12 +65,8 @@ const whitelist = ["http://localhost:3000", "http://localhost:5000/", "https://a
 app.use(
   require("cors")({
     origin: (origin, cb) => {
-      if(whitelist.includes(origin))
+      
         cb(null, true);
-      else{
-        console.debug(origin, " blocked!");
-        cb('Not allowed by CORS');
-      }
     }
   })
 );
