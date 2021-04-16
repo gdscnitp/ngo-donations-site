@@ -31,7 +31,8 @@ router.post("/", (req, res, next) => {
     endTime: req.body.endTime,
   });
 
-  event.save()
+  event
+    .save()
     .then(() => {
       console.log(event);
       res.send("Event Added Successfully");
@@ -42,52 +43,64 @@ router.post("/", (req, res, next) => {
     });
 });
 
-// Edit Event
-router.post("/update/:id", limiter, (req, res, next) => {
-  let _id  = req.params.id;
-  Event.findByIdAndUpdate(_id, string.sanitize(req.body), () => {
-    console.log("data updated");
-  });
-  res.send("updated");
-});
+// // Edit Event
+// router.post("/update/:id", limiter, (req, res, next) => {
+//   let _id = req.params.id;
+//   const data = req.body ?? {};  // if data not passed in body, then simply don't make any changes
+//   Event.findByIdAndUpdate(_id, { ...data }, () => { // will fail for malicious inputs
+//     console.log("data updated");
+//   });
+//   res.send("updated");
+// });
 
 //Delete Event
 router.delete("/delete/:id", limiter, (req, res, next) => {
-  let _id  = req.params.id;
+  let _id = req.params.id;
   Event.findByIdAndRemove(_id, () => {
     console.log("Event deleted successfully");
   });
   res.send("Deleted");
 });
 
-// this route won't execute if correct route is accessed
-// router.get("", (req, res, next) => {
-//   res.send("Get request handled by event page");
-// });
-
 //@desc filter the events
 //@method POST
 //@security Public
 
-router.post("/filter", async (req, res) => {
-  var start = req.body.startDate;
-  if(!start) res.send("Start date is req.")
-  var endDate = req.body.endDate;
-  if(!endDate) res.send("EndDate is Required");
-  var location = req.body.location;
-  if(!location) res.send("Location is required");
+{/*router.post("/filter", async (req, res) => {
+  var { start, endDate, location } = req.body;
+
+  if (!start) res.send("Start date is req.");
+  if (!endDate) res.send("EndDate is Required");
+  if (!location) res.send("Location is required");
   try {
-    const response = await Event.find()
-          .where('startDate').gte(start)
-          .where('endDate').lte(start)
-          .where('region', location);
-
-    if (response.length === 0) return res.send("NO EVENT FOUND");
-
-    res.send(response);
+    const response = await Event.find({
+      startDate: {
+        $gte: start,
+      },
+      endDate: {
+        $lte: endDate,
+      },
+      region: location,
+    });
+    if (response.length === 0) res.send("NO EVENT FOUND");
+    res.json(response);
   } catch (error) {
     console.log(error.message || error.code);
   }
-});
+}); */}
+
+// //@desc search the events by name
+// //@method POST
+// //@security Public
+// router.post('/search', async (req, res) => {
+//   var {search} = req.body;
+//   try {
+//     const response = await Event.find({"name": search});
+//     if(!response) return res.status(200).json({msg: "No search found!"});
+//     res.status(200).json(response);
+//   } catch (error) {
+//     console.log(error.message || error.code);
+//   }
+// });
 
 module.exports = router;

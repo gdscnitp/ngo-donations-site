@@ -24,6 +24,7 @@ const Faq = () => {
       title="How will the donation items be collected from me?"
       content="The ngo will be in touch with you and will collect the donated items."
       />
+      <Accordion title="hfejfkemkfmew" content="dhfewhfjewkfjwekfref" />
       <br />
       <br />
       <Bottom />
