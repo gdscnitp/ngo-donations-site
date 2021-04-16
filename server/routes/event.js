@@ -66,7 +66,7 @@ router.delete("/delete/:id", limiter, (req, res, next) => {
 //@method POST
 //@security Public
 
-router.post("/filter", async (req, res) => {
+{/*router.post("/filter", async (req, res) => {
   var { start, endDate, location } = req.body;
 
   if (!start) res.send("Start date is req.");
@@ -87,7 +87,7 @@ router.post("/filter", async (req, res) => {
   } catch (error) {
     console.log(error.message || error.code);
   }
-});
+}); */}
 
 //@desc search the events by name
 //@method POST
