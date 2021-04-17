@@ -7,9 +7,9 @@ export default class Newslist extends Component {
       title: "News Header",
       desc: {
         less:
-          "This paragraph contains the description of the news and this is use to detail the news headlines",
+          "This paragraph contains the description of the news and this is use to detail the news headlines.",
         more:
-          "You have now clicked the read more button to read more text of the news and the detailing",
+          " You have now clicked the read more button to read more text of the news and the detailing",
       },
       poster:
         "https://image.shutterstock.com/image-vector/international-day-eradication-poverty-banner-260nw-1513555064.jpg",
@@ -19,9 +19,9 @@ export default class Newslist extends Component {
       title: "News Header",
       desc: {
         less:
-          "This paragraph contains the description of the news and this is use to detail the news headlines",
+          "This paragraph contains the description of the news and this is use to detail the news headlines.",
         more:
-          "You have now clicked the read more button to read more text of the news and the detailing",
+          " You have now clicked the read more button to read more text of the news and the detailing",
       },
       poster:
         "https://image.shutterstock.com/image-vector/international-day-eradication-poverty-banner-260nw-1513555064.jpg",
@@ -31,9 +31,9 @@ export default class Newslist extends Component {
       title: "News Header",
       desc: {
         less:
-          "This paragraph contains the description of the news and this is use to detail the news headlines",
+          "This paragraph contains the description of the news and this is use to detail the news headlines.",
         more:
-          "You have now clicked the read more button to read more text of the news and the detailing",
+          " You have now clicked the read more button to read more text of the news and the detailing",
       },
       poster:
         "https://image.shutterstock.com/image-vector/international-day-eradication-poverty-banner-260nw-1513555064.jpg",
@@ -43,9 +43,9 @@ export default class Newslist extends Component {
       title: "News Header",
       desc: {
         less:
-          "This paragraph contains the description of the news and this is use to detail the news headlines",
+          "This paragraph contains the description of the news and this is use to detail the news headlines.",
         more:
-          "You have now clicked the read more button to read more text of the news and the detailing",
+          " You have now clicked the read more button to read more text of the news and the detailing",
       },
       poster:
         "https://image.shutterstock.com/image-vector/international-day-eradication-poverty-banner-260nw-1513555064.jpg",
@@ -55,9 +55,9 @@ export default class Newslist extends Component {
       title: "News Header",
       desc: {
         less:
-          "This paragraph contains the description of the news and this is use to detail the news headlines",
+          "This paragraph contains the description of the news and this is use to detail the news headlines.",
         more:
-          "You have now clicked the read more button to read more text of the news and the detailing",
+          " You have now clicked the read more button to read more text of the news and the detailing",
       },
       poster:
         "https://image.shutterstock.com/image-vector/international-day-eradication-poverty-banner-260nw-1513555064.jpg",
@@ -67,9 +67,9 @@ export default class Newslist extends Component {
       title: "News Header",
       desc: {
         less:
-          "This paragraph contains the description of the news and this is use to detail the news headlines",
+          "This paragraph contains the description of the news and this is use to detail the news headlines.",
         more:
-          "You have now clicked the read more button to read more text of the news and the detailing",
+          " You have now clicked the read more button to read more text of the news and the detailing",
       },
       poster:
         "https://image.shutterstock.com/image-vector/international-day-eradication-poverty-banner-260nw-1513555064.jpg",
@@ -79,9 +79,9 @@ export default class Newslist extends Component {
       title: "News Header",
       desc: {
         less:
-          "This paragraph contains the description of the news and this is use to detail the news headlines",
+          "This paragraph contains the description of the news and this is use to detail the news headlines.",
         more:
-          "You have now clicked the read more button to read more text of the news and the detailing",
+          " You have now clicked the read more button to read more text of the news and the detailing",
       },
       poster:
         "https://image.shutterstock.com/image-vector/international-day-eradication-poverty-banner-260nw-1513555064.jpg",

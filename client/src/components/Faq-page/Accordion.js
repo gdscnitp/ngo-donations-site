@@ -28,6 +28,8 @@ function Accordion(props) {
         ref={content}
         style={{ maxHeight: `${setHeight}` }}
         className="accordion__content"
+
+
       >
         <div
           className="accordion__text"

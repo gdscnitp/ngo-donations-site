@@ -216,10 +216,14 @@ scrollbar-width: none;
 
 #read-more-btn{
     width: 30%;
+
+}
+.card-title{
+    margin-left:60px;
 }
 .text-of-news{
     width: 70%;
-    margin-left: 10%;
+    margin-left:4%;
 }
 .news-detail{
     display: flex;
