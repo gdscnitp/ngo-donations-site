@@ -7,11 +7,11 @@
     background-color:#071F3F;
     color: #fff;
     cursor: pointer;
-    padding: 2px;
+    padding: 10px;
     display: flex;
     align-items:center;
     border: none;
-    border-radius:20px;
+    border-radius:10px;
     outline: none;
     outline-style:none;
     outline-width:0;
@@ -59,13 +59,14 @@
     background-color: #AEBAC9 ;
     overflow:hidden;
     height:auto;
-    transition: max-height 0.4s ease;
+    transition:  max-height 0.4s ease;
     margin-bottom:15px;
     width:90%;
     position:relative;
-   left:5%;
+    left:5%;
     border:none;
-    border-radius:20px;
+    border-radius:8px;
+   
 }
 
 .accordion__text
@@ -75,9 +76,9 @@
     font-weight:400;
     font-size: 18px;
     padding: 15px;
-    margin-left:11px;
+    margin-left:10px;
     text-align:left;  
-
+    height:200px;
 }
 
 .h4{
