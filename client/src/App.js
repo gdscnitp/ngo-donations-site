@@ -45,7 +45,7 @@ export default function App() {
       <div className="App">
         <br />
         <br />
-        {/* <Carousel /> */} 
+        {/* <Carousel /> */}
         <br />
         <Navbar />
         <br />
@@ -126,6 +126,7 @@ export default function App() {
             />
           </Switch>
         </center>
+
         <br />
         <Footer />
       </div>

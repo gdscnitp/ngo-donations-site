@@ -148,6 +148,7 @@ export const Loginpage = () => {
               {passError}
             </span>
             <br></br>
+            <br></br>
             <div style={{ textAlign: "center" }}>
               <input
                 type="checkbox"

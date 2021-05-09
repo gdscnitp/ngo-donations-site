@@ -1,6 +1,7 @@
 import React from "react";
 import Feature from "./feature.js";
 import Activity from "./Activity.js";
+import image from "./user-icon.png";
 import "./Userstyle.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap-grid.css";
@@ -11,7 +12,7 @@ function User() {
       <div className="User-profile-head">
         <div className="Userprofile-head-img">
           <img
-            src="//placehold.it/100"
+            src={image}
             alt="Organization "
             class="avatar User-profile-top-img"
           />
@@ -36,42 +37,42 @@ function User() {
       {/* Activity SECTION */}
 
       <div className="User-profile-middle">
-        <div className="row">
-          <div className="col-md-3">
+        {/* <div className="row"> */}
+        {/* <div className="col-md-3">
             <div className="User-profile-boxs ">
-              <div className=" User-profile-box-side">
+              {/* <div className=" User-profile-box-side">
                 <div className="User-profile-inside">
                   <p>
                     " Around 200 people have joined our organization. Hoping to
                     expand help as much we can"
                   </p>
                 </div>
-              </div>
+              </div> 
             </div>
-          </div>
+          </div>  */}
 
-          <div class="col-md-6 ">
-            <div className="User-profile-boxs User-profile-boxs-center">
-              <h1 className="User-profile-activities-head">Activities</h1>
-              <div className=" User-profile-activities">
-                <Activity
-                  img="https://bootdey.com/img/Content/avatar/avatar1.png"
-                  description="First Activity"
-                />
-                <br />
-                <Activity
-                  img="https://bootdey.com/img/Content/avatar/avatar1.png"
-                  description="Second Activity"
-                />
-                <br />
-                <Activity
-                  img="https://bootdey.com/img/Content/avatar/avatar1.png"
-                  description="Third Activity"
-                />
-              </div>
-            </div>
+        {/* <div class="col-md-6 "> */}
+        <div className="User-profile-boxs User-profile-boxs-center">
+          <h1 className="User-profile-activities-head">Activities</h1>
+          <div className=" User-profile-activities">
+            <Activity
+              img="https://bootdey.com/img/Content/avatar/avatar1.png"
+              description="First Activity"
+            />
+            <br />
+            <Activity
+              img="https://bootdey.com/img/Content/avatar/avatar1.png"
+              description="Second Activity"
+            />
+            <br />
+            <Activity
+              img="https://bootdey.com/img/Content/avatar/avatar1.png"
+              description="Third Activity"
+            />
           </div>
-          <div class="col-md-3 ">
+        </div>
+        {/* </div> */}
+        {/* <div class="col-md-3 ">
             <div className="User-profile-boxs ">
               <div className="User-profile-box-side">
                 <div className="User-profile-inside">
@@ -79,8 +80,8 @@ function User() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </div>
       <hr />
       {/* CARDS SECTION END */}
@@ -88,11 +89,11 @@ function User() {
       {/* Featured */}
 
       <div className="User-profile-bottom">
-        <div clclassName="container">
+        <div className="container">
           <div class="row">
             <div class="col-md-6     User-profile-bottom-item">
-              <h4>Featured Photos : </h4>
               <div class="User-profile-feature">
+                <h4>Featured Photos</h4>
                 <div class="User-profile-profile-page-block-outer clearfix">
                   <Feature img="https://bootdey.com/img/Content/avatar/avatar1.png" />
                   <Feature img="https://bootdey.com/img/Content/avatar/avatar2.png" />
@@ -102,11 +103,32 @@ function User() {
                   <Feature img="https://bootdey.com/img/Content/avatar/avatar6.png" />
                   <Feature img="https://bootdey.com/img/Content/avatar/avatar7.png" />
                   <Feature img="https://bootdey.com/img/Content/avatar/avatar5.png" />
+                  <Feature img="https://bootdey.com/img/Content/avatar/avatar7.png" />
+                  <Feature img="https://bootdey.com/img/Content/avatar/avatar5.png" />
+                  <Feature img="https://bootdey.com/img/Content/avatar/avatar7.png" />
+                  <Feature img="https://bootdey.com/img/Content/avatar/avatar5.png" />
+                  <Feature img="https://bootdey.com/img/Content/avatar/avatar1.png" />
+                  <Feature img="https://bootdey.com/img/Content/avatar/avatar2.png" />
+                  <Feature img="https://bootdey.com/img/Content/avatar/avatar3.png" />
+                  <Feature img="https://bootdey.com/img/Content/avatar/avatar4.png" />
+                  <Feature img="https://bootdey.com/img/Content/avatar/avatar5.png" />
+                  <Feature img="https://bootdey.com/img/Content/avatar/avatar6.png" />
+                  <Feature img="https://bootdey.com/img/Content/avatar/avatar7.png" />
+                  <Feature img="https://bootdey.com/img/Content/avatar/avatar5.png" />
+                  <Feature img="https://bootdey.com/img/Content/avatar/avatar7.png" />
+                  <Feature img="https://bootdey.com/img/Content/avatar/avatar5.png" />
+                  <Feature img="https://bootdey.com/img/Content/avatar/avatar7.png" />
+                  <Feature img="https://bootdey.com/img/Content/avatar/avatar5.png" />
                 </div>
               </div>
             </div>
-            <div class="col-md-6   User-profile-bottom-item">
-              <h4> Reviews </h4>
+            <div class="vl"></div>
+
+            <div class="col-md-3   User-profile-bottom-item User-profile-reviews-box">
+              <h4 style={{ marginTop: "5px" }}> Reviews </h4>
+              <div className="User-profile-reviews">
+                <p> " One of the best NGOs we can look for." </p>
+              </div>
               <div className="User-profile-reviews">
                 <p> " One of the best NGOs we can look for." </p>
               </div>
